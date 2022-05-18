@@ -1,1 +1,95 @@
-site_name: Python Refresher
+# Project information
+site_name: PythonRefresher
+site_url: https://arcelopera.github.io/PythonRefresher
+site_description: Python refresher.
+site_author: ArceLopera
+
+# Repository
+repo_url: https://github.com/ArceLopera/PythonRefresher
+repo_name: ArceLopera/PythonRefresher
+edit_uri: "" #disables edit button
+
+# Copyright
+copyright: Copyright &copy; 2022
+
+# Social media
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/ArceLopera
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/carlos-arcelopera
+    - icon: fontawesome/brands/github
+      link: https://github.com/ArceLopera
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:arcelopera.carlos@gmail.com
+
+# Configuration
+theme:
+  name: material
+  logo: static/images/logo.png
+  favicon: static/images/favicon.ico
+  palette:
+    primary: indigo
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.expand
+  icon:
+    repo: fontawesome/brands/github
+
+# Extensions
+markdown_extensions:
+  - meta
+  - admonition # alerts
+  - pymdownx.details #  collapsible alerts
+  - pymdownx.superfences # nest code and content inside alerts
+  - attr_list # add HTML and CSS to Markdown elements
+  - pymdownx.inlinehilite # inline code highlights
+  - pymdownx.keys # show keystroke symbols
+  - pymdownx.snippets # insert content from other files
+  - footnotes
+  - def_list
+  - pymdownx.arithmatex: # mathjax
+      generic: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - pymdownx.highlight:
+      use_pygments: true
+  - toc:
+      toc_depth: 4
+
+# Plugins
+plugins:
+  - search
+
+
+# Extra CSS
+extra_css:
+  - static/css/custom.css
+
+# Extra JS
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# Page tree
+nav:
+  - Home:
+      - PythonRefresher: index.md
+  - Getting started: getting_started.md
+  - Operations: PythonRefresher/main.md
+  - Configurations: config/config.md
+  - Reference:
+    - Data: PythonRefresher/data.md
+    - Eval: PythonRefresher/data.md
+    - Models: PythonRefresher/models.md
+    - Training: PythonRefresher/train.md
+    - Inference: PythonRefresher/predict.md
+    - Utilities: PythonRefresher/utils.md
