@@ -1,7 +1,7 @@
 # Project information
-site_name: PythonRefresher
+site_name: Python Refresher
 site_url: https://arcelopera.github.io/PythonRefresher
-site_description: Python refresher.
+site_description: Python and coding refresher.
 site_author: ArceLopera
 
 # Repository
@@ -29,14 +29,26 @@ extra:
 # Configuration
 theme:
   name: material
-  logo: static/images/logo.png
-  favicon: static/images/favicon.ico
+  logo: images/logo.png
+  favicon: images/favicon.ico
   palette:
-    primary: indigo
-    accent: indigo
+    
+    - media: "(prefers-color-scheme: light)" 
+      scheme: default
+      primary: teal
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)" 
+      scheme: slate
+      primary: deep orange
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
   font:
     text: Roboto
     code: Roboto Mono
+
   features:
     - navigation.tabs
     - navigation.expand
@@ -70,10 +82,6 @@ plugins:
   - search
 
 
-# Extra CSS
-extra_css:
-  - static/css/custom.css
-
 # Extra JS
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js
@@ -81,15 +89,16 @@ extra_javascript:
 
 # Page tree
 nav:
-  - Home:
-      - PythonRefresher: index.md
-  - Getting started: getting_started.md
-  - Operations: PythonRefresher/main.md
-  - Configurations: config/config.md
-  - Reference:
-    - Data: PythonRefresher/data.md
-    - Eval: PythonRefresher/data.md
-    - Models: PythonRefresher/models.md
-    - Training: PythonRefresher/train.md
-    - Inference: PythonRefresher/predict.md
-    - Utilities: PythonRefresher/utils.md
+  - Home: index.md
+  - Python: 
+     - Basics: pythonRefresh.md
+     - Variables and Assignments: 
+        - Variables: PythonRefresh/pyVar1.md
+        - Type Casting: PythonRefresh/pyVar2.md
+        - Scope of Variables: PythonRefresh/pyVar3.md
+        - del Keyword: PythonRefresh/pyVar4.md
+     - Strings:
+        - Backslashes: PythonRefresh/pyStr1.md
+        - String operations: PythonRefresh/pyStr2.md
+        - String formatting: PythonRefresh/pyStr3.md
+        - String formatting specifications: PythonRefresh/pyStr4.md

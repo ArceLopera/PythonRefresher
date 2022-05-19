@@ -1,8 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://madewithml.com/PythonRefresher/</loc>
-         <lastmod>2022-05-18</lastmod>
+         <loc>https://arcelopera.github.io/PythonRefresher/</loc>
+         <lastmod>2022-05-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://arcelopera.github.io/PythonRefresher/pythonRefresh/</loc>
+         <lastmod>2022-05-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://arcelopera.github.io/PythonRefresher/PythonRefresh/pyStr1/</loc>
+         <lastmod>2022-05-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://arcelopera.github.io/PythonRefresher/PythonRefresh/pyStr2/</loc>
+         <lastmod>2022-05-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://arcelopera.github.io/PythonRefresher/PythonRefresh/pyStr3/</loc>
+         <lastmod>2022-05-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://arcelopera.github.io/PythonRefresher/PythonRefresh/pyStr4/</loc>
+         <lastmod>2022-05-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://arcelopera.github.io/PythonRefresher/PythonRefresh/pyVar1/</loc>
+         <lastmod>2022-05-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://arcelopera.github.io/PythonRefresher/PythonRefresh/pyVar2/</loc>
+         <lastmod>2022-05-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://arcelopera.github.io/PythonRefresher/PythonRefresh/pyVar3/</loc>
+         <lastmod>2022-05-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://arcelopera.github.io/PythonRefresher/PythonRefresh/pyVar4/</loc>
+         <lastmod>2022-05-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
