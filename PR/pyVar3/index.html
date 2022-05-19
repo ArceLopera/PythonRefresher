@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/PythonRefresh/pyStr2/">
+        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/PR/pyVar3/">
       
       <link rel="icon" href="../../Images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>String operations - Python Refresher</title>
+        <title>pyVar3 - Python Refresher</title>
       
     
     
@@ -68,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#global-keyword" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -96,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              String operations
+              pyVar3
             
           </span>
         </div>
@@ -202,15 +207,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../pythonRefresh/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../pythonRefresh/" class="md-tabs__link">
         Python
       </a>
     </li>
@@ -281,14 +284,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -351,7 +352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyVar1/" class="md-nav__link">
+      <a href="../../PythonRefresh/pyVar1.md" class="md-nav__link">
         Variables
       </a>
     </li>
@@ -365,7 +366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyVar2/" class="md-nav__link">
+      <a href="../../PythonRefresh/pyVar2.md" class="md-nav__link">
         Type Casting
       </a>
     </li>
@@ -379,7 +380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyVar3/" class="md-nav__link">
+      <a href="../../PythonRefresh/pyVar3.md" class="md-nav__link">
         Scope of Variables
       </a>
     </li>
@@ -393,7 +394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyVar4/" class="md-nav__link">
+      <a href="../../PythonRefresh/pyVar4.md" class="md-nav__link">
         del Keyword
       </a>
     </li>
@@ -412,14 +413,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3" checked>
       
       
       
@@ -442,7 +441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyStr1/" class="md-nav__link">
+      <a href="../../PythonRefresh/pyStr1.md" class="md-nav__link">
         Backslashes
       </a>
     </li>
@@ -454,19 +453,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../PythonRefresh/pyStr2.md" class="md-nav__link">
         String operations
       </a>
-      
     </li>
   
 
@@ -478,7 +469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyStr3/" class="md-nav__link">
+      <a href="../../PythonRefresh/pyStr3.md" class="md-nav__link">
         String formatting
       </a>
     </li>
@@ -492,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyStr4/" class="md-nav__link">
+      <a href="../../PythonRefresh/pyStr4.md" class="md-nav__link">
         String formatting specifications
       </a>
     </li>
@@ -531,6 +522,28 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#global-keyword" class="md-nav__link">
+    Global Keyword
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nonlocal-keyword" class="md-nav__link">
+    Nonlocal Keyword
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -543,22 +556,79 @@
                 
 
 
-  <h1>String operations</h1>
+  <h1>pyVar3</h1>
 
-<p><strong>String Operations</strong>: 
-(+) concatenation
-(*) multiplication - Strings can also be multiplied by integers. This produces a repeated version of the original string.</p>
-<p><strong>User Input</strong>: The input function prompts the user for input, and returns what they enter as a string</p>
-<p><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;spam&quot;</span><span class="o">+</span><span class="s2">&quot; eggs&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;spam &quot;</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">name</span><span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;your name is?&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello &quot;</span><span class="o">+</span><span class="n">name</span><span class="p">)</span>
+<p>The location where we can find a variable and also access it if required is called the scope of a variable. Python resolves names using the so-called LEGB rule, which is named after the Python scope for names. The letters in LEGB stand for Local, Enclosing, Global, and Built-in. When you use nested functions, names are resolved by first checking the local scope or the innermost function’s local scope. Then, Python looks at all enclosing scopes of outer functions from the innermost scope to the outermost scope. If no match is found, then Python looks at the global and built-in scopes. If it can’t find the name, then you’ll get an error.</p>
+<h3 id="global-keyword">Global Keyword</h3>
+<p>Global variables are the ones that are defined and declared outside any function and are not specified to any function. They can be used by any part of the program.</p>
+<p>We only need to use the global keyword in a function if we want to do assignments or change the global variable. global is not needed for printing and accessing. Python “assumes” that we want a local variable due to the assignment to s inside of f(), so the first statement throws the error message. Any variable which is changed or created inside of a function is local if it hasn’t been declared as a global variable. To tell Python, that we want to use the global variable, we have to use the keyword “global”</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Uses global because there is no local &#39;a&#39;</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Inside f() : &#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+
+<span class="c1"># Variable &#39;a&#39; is redefined as a local</span>
+<span class="k">def</span> <span class="nf">g</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Inside g() : &#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+
+<span class="c1"># Uses global keyword to modify global &#39;a&#39;</span>
+<span class="k">def</span> <span class="nf">h</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">a</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Inside h() : &#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+
+
+<span class="c1"># Global scope</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;global : &#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">f</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;global : &#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">g</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;global : &#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">h</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;global : &#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>spam eggs
-spam spam spam 
-your name is?Carlos
-Hello Carlos
+<div class="highlight"><pre><span></span><code>global :  1
+Inside f() :  1
+global :  1
+Inside g() :  2
+global :  1
+Inside h() :  3
+global :  3
 </code></pre></div></p>
+<h3 id="nonlocal-keyword">Nonlocal Keyword</h3>
+<p>In Python, nonlocal keyword is used in the case of nested functions. This keyword works similar to the global, but rather than global, this keyword declares a variable to point to the variable of outside enclosing function, in case of nested functions.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Python program to demonstrate</span>
+<span class="c1"># nonlocal keyword</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Value of a using nonlocal is : &quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">outer</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="k">def</span> <span class="nf">inner</span><span class="p">():</span>
+        <span class="k">nonlocal</span> <span class="n">a</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">inner</span><span class="p">()</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="n">outer</span><span class="p">()</span>
+
+<span class="c1"># demonstrating without non local</span>
+<span class="c1"># inner loop not changing the value of outer a</span>
+<span class="c1"># prints 5</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Value of a without using nonlocal is : &quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">outer</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="k">def</span> <span class="nf">inner</span><span class="p">():</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">inner</span><span class="p">()</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="n">outer</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Value of a using nonlocal is : 10
+Value of a without using nonlocal is : 5
+</code></pre></div>
 
               
             </article>
@@ -568,41 +638,6 @@ Hello Carlos
       </main>
       
         <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../pyStr1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Backslashes" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Backslashes
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../pyStr3/" class="md-footer__link md-footer__link--next" aria-label="Next: String formatting" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              String formatting
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
