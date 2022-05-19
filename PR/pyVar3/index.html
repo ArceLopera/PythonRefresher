@@ -19,7 +19,7 @@
     
     
       
-        <title>pyVar3 - Python Refresher</title>
+        <title>Scope of Variables - Python Refresher</title>
       
     
     
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              pyVar3
+              Scope of Variables
             
           </span>
         </div>
@@ -207,13 +207,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../pythonRefresh/" class="md-tabs__link">
+      <a href="../../pythonRefresh/" class="md-tabs__link md-tabs__link--active">
         Python
       </a>
     </li>
@@ -284,12 +286,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -324,12 +328,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" data-md-state="indeterminate" type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
       
       
       
@@ -352,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PythonRefresh/pyVar1.md" class="md-nav__link">
+      <a href="../pyVar1/" class="md-nav__link">
         Variables
       </a>
     </li>
@@ -366,7 +372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PythonRefresh/pyVar2.md" class="md-nav__link">
+      <a href="../pyVar2/" class="md-nav__link">
         Type Casting
       </a>
     </li>
@@ -378,11 +384,55 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../PythonRefresh/pyVar3.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Scope of Variables
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Scope of Variables
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#global-keyword" class="md-nav__link">
+    Global Keyword
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nonlocal-keyword" class="md-nav__link">
+    Nonlocal Keyword
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -394,7 +444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PythonRefresh/pyVar4.md" class="md-nav__link">
+      <a href="../pyVar4/" class="md-nav__link">
         del Keyword
       </a>
     </li>
@@ -441,7 +491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PythonRefresh/pyStr1.md" class="md-nav__link">
+      <a href="../pyStr1/" class="md-nav__link">
         Backslashes
       </a>
     </li>
@@ -455,7 +505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PythonRefresh/pyStr2.md" class="md-nav__link">
+      <a href="../pyStr2/" class="md-nav__link">
         String operations
       </a>
     </li>
@@ -469,7 +519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PythonRefresh/pyStr3.md" class="md-nav__link">
+      <a href="../pyStr3/" class="md-nav__link">
         String formatting
       </a>
     </li>
@@ -483,7 +533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../PythonRefresh/pyStr4.md" class="md-nav__link">
+      <a href="../pyStr4/" class="md-nav__link">
         String formatting specifications
       </a>
     </li>
@@ -556,7 +606,7 @@
                 
 
 
-  <h1>pyVar3</h1>
+  <h1>Scope of Variables</h1>
 
 <p>The location where we can find a variable and also access it if required is called the scope of a variable. Python resolves names using the so-called LEGB rule, which is named after the Python scope for names. The letters in LEGB stand for Local, Enclosing, Global, and Built-in. When you use nested functions, names are resolved by first checking the local scope or the innermost function’s local scope. Then, Python looks at all enclosing scopes of outer functions from the innermost scope to the outermost scope. If no match is found, then Python looks at the global and built-in scopes. If it can’t find the name, then you’ll get an error.</p>
 <h3 id="global-keyword">Global Keyword</h3>
@@ -638,6 +688,41 @@ Value of a without using nonlocal is : 5
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../pyVar2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Type Casting" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Type Casting
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../pyVar4/" class="md-footer__link md-footer__link--next" aria-label="Next: del Keyword" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              del Keyword
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
