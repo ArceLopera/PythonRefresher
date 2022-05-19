@@ -29,8 +29,8 @@ extra:
 # Configuration
 theme:
   name: material
-  logo: images/logo.png
-  favicon: images/favicon.ico
+  logo: Images/logo.png
+  favicon: Images/favicon.ico
   palette:
     
     - media: "(prefers-color-scheme: light)" 
