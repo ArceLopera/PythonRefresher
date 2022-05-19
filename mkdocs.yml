@@ -93,12 +93,12 @@ nav:
   - Python: 
      - Basics: pythonRefresh.md
      - Variables and Assignments: 
-        - Variables: PythonRefresh/pyVar1.md
-        - Type Casting: PythonRefresh/pyVar2.md
-        - Scope of Variables: PythonRefresh/pyVar3.md
-        - del Keyword: PythonRefresh/pyVar4.md
+        - Variables: PR/pyVar1.md
+        - Type Casting: PR/pyVar2.md
+        - Scope of Variables: PR/pyVar3.md
+        - del Keyword: PR/pyVar4.md
      - Strings:
-        - Backslashes: PythonRefresh/pyStr1.md
-        - String operations: PythonRefresh/pyStr2.md
-        - String formatting: PythonRefresh/pyStr3.md
-        - String formatting specifications: PythonRefresh/pyStr4.md
+        - Backslashes: PR/pyStr1.md
+        - String operations: PR/pyStr2.md
+        - String formatting: PR/pyStr3.md
+        - String formatting specifications: PR/pyStr4.md
