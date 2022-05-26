@@ -102,3 +102,14 @@ nav:
         - String operations: PR/pyStr2.md
         - String formatting: PR/pyStr3.md
         - String formatting specifications: PR/pyStr4.md
+     - Operators:
+        - Arithmethic: PR/pyOp1.md
+        - Bitwise: PR/pyOp2.md
+        - In-Place: PR/pyOp3.md
+        - Walrus: PR/pyOp4.md
+        - Comparison: PR/pyOp5.md
+        - /@: PR/pyOp6.md
+        - (star) *: PR/pyOp7.md
+     - Exceptions: PR/pyExp.md
+     - Assertions: PR/pyAsser.md
+
