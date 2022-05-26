@@ -1,4 +1,6 @@
-Python is strongly typed (i.e. types are enforced), dynamically, implicitly typed (i.e. you don’t have to declare variables), case sensitive (i.e. var and VAR are two different variables) and object-oriented (i.e. everything is an object). Like C# and Java.
+Python is strongly typed (i.e. types are enforced), dynamically, implicitly typed (i.e. you don’t have to declare variables), case sensitive (i.e. var and VAR are two different variables) and object-oriented (i.e. everything is an object, Like C# and Java).
+
+A unique aspect of the Python language: indentation. While a language like C uses curly braces to contain code statements within loops or conditionals, Python indicates these statements through indentation.  This feature lends Python code readability. Notice the colon at the end of the expression in the for, while and if statement.
 
 ## Python Resources
  

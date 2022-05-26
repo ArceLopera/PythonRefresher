@@ -90,8 +90,8 @@ extra_javascript:
 # Page tree
 nav:
   - Home: index.md
-  - Python: 
-     - Basics: pythonRefresh.md
+  - Python Basics: 
+     - General: pythonRefresh.md
      - Variables and Assignments: 
         - Variables: PR/pyVar1.md
         - Type Casting: PR/pyVar2.md
@@ -112,4 +112,8 @@ nav:
         - (star) *: PR/pyOp7.md
      - Exceptions: PR/pyExp.md
      - Assertions: PR/pyAsser.md
+     - Control Flow:
+        - For-loops: PR/pyfor.md
+  - Data Structures:
+     - General : DS/pyDS.md 
 
