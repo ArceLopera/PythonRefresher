@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/PR/pyStr1/">
+        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/PR/pyfor/">
       
       <link rel="icon" href="../../Images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Backslashes - Python Refresher</title>
+        <title>For-loops - Python Refresher</title>
       
     
     
@@ -68,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#range-function" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -96,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Backslashes
+              For-loops
             
           </span>
         </div>
@@ -428,14 +433,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3" checked>
       
       
       
@@ -456,19 +459,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../pyStr1/" class="md-nav__link">
         Backslashes
       </a>
-      
     </li>
   
 
@@ -686,12 +681,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" data-md-state="indeterminate" type="checkbox" id="__nav_2_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" checked>
       
       
       
@@ -712,11 +709,62 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../pyfor/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          For-loops
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         For-loops
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#range-function" class="md-nav__link">
+    Range function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elements-in-lists" class="md-nav__link">
+    elements in lists
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#break-and-continue" class="md-nav__link">
+    Break and Continue
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -857,6 +905,35 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#range-function" class="md-nav__link">
+    Range function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elements-in-lists" class="md-nav__link">
+    elements in lists
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#break-and-continue" class="md-nav__link">
+    Break and Continue
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -869,29 +946,72 @@
                 
 
 
-  <h1>Backslashes</h1>
+  <h1>For-loops</h1>
 
-<p><strong>Backslashes</strong> can also be used to escape tabs or arbitrary Unicode characters. \n represents a new line. Similarly, \t represents a tab. Newlines will be automatically added for strings that are created using three quotes. This makes it easier to format long, multi-line texts without the need to explicitly put \n for line breaks.</p>
-<p><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hugo</span><span class="se">\&#39;</span><span class="s2">s house </span><span class="se">\n</span><span class="s2"> Jane</span><span class="se">\&#39;</span><span class="s2">s mother </span><span class="se">\t</span><span class="s2"> Diana</span><span class="se">\&#39;</span><span class="s2">s dog&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;This</span>
-<span class="s2">is</span>
-<span class="s2">multline</span>
-<span class="s2">text&quot;&quot;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s </span><span class="se">\&quot;</span><span class="s2">cool</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Look, a mountain: /</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1</span><span class="se">\n</span><span class="s2">2 3&quot;</span><span class="p">)</span>
+<p>Looping statements allow for the repeated execution of a section of code. For instance, suppose we wanted to add up all of the integers between zero (0) and ten (10), not including ten. We could, of course, do this in one line, but we could also use a loop to add each integer one at a time. Below is the code for a simple accumulator that accomplishes this:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">i</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+<span class="n">alternative_sum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="o">+</span><span class="mi">5</span><span class="o">+</span><span class="mi">6</span><span class="o">+</span><span class="mi">7</span><span class="o">+</span><span class="mi">8</span><span class="o">+</span><span class="mi">9</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">alternative_sum</span><span class="o">==</span><span class="nb">sum</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>Hugo&#39;s house 
- Jane&#39;s mother   Diana&#39;s dog
-This
-is
-multline
-text
-That&#39;s &quot;cool&quot;
-Look, a mountain: /\
-1
-2 3
+<div class="highlight"><pre><span></span><code>45
+True
+</code></pre></div>
+<h3 id="range-function">Range function</h3>
+<p>The <em>range</em>() built-in function generates the sequence of values that we loop over, and notice that range(10) does not include 10 itself. In order to output the range as a list, we need to explicitly convert it to a list, using the list() function. If range is called with one argument, it produces an object with values from 0 to that argument. If it is called with two arguments, it produces values from the first to the second. range can have a third argument, which determines the interval of the sequence produced, also called the step. We can also create list of decreasing numbers, using a negative number as the third argument.</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">numbers</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+
+<span class="n">numbers</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+
+<span class="n">numbers</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[5, 6, 7, 8, 9]
+[5, 7, 9]
+[20, 18, 16, 14, 12, 10, 8, 6]
 </code></pre></div></p>
+<h3 id="elements-in-lists">elements in lists</h3>
+<p>In addition to looping over a sequence of integers using the range() function, we can also loop over the elements in a list, which is shown below:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ingredients</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;flour&quot;</span><span class="p">,</span> <span class="s2">&quot;sugar&quot;</span><span class="p">,</span> <span class="s2">&quot;eggs&quot;</span><span class="p">,</span> <span class="s2">&quot;oil&quot;</span><span class="p">,</span> <span class="s2">&quot;baking soda&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">ingredient</span> <span class="ow">in</span> <span class="n">ingredients</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ingredient</span><span class="p">)</span>
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code>flour
+sugar
+eggs
+oil
+baking soda
+</code></pre></div>
+Above, the for-loop iterates over the elements of the list <em>ingredients</em>, and within the loop each of those elements is referred to as <em>ingredient</em>. The use of singular/plural nouns to handle this iteration is a common Python motif, but is by no means necessary to use in your own programming. </p>
+<h3 id="break-and-continue">Break and Continue</h3>
+<p>Similar to while loops, the break and continue statements can be used in for loops, to stop the loop or jump to the next iteration.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># use the break and continue statements</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">7</span><span class="p">):</span> <span class="k">break</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span> <span class="k">continue</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+  <span class="c1">#using the enumerate() function to get index </span>
+<span class="n">days</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Mon&quot;</span><span class="p">,</span><span class="s2">&quot;Tue&quot;</span><span class="p">,</span><span class="s2">&quot;Wed&quot;</span><span class="p">,</span><span class="s2">&quot;Thu&quot;</span><span class="p">,</span><span class="s2">&quot;Fri&quot;</span><span class="p">,</span><span class="s2">&quot;Sat&quot;</span><span class="p">,</span><span class="s2">&quot;Sun&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">days</span><span class="p">):</span>
+  <span class="nb">print</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>5
+0 Mon
+1 Tue
+2 Wed
+3 Thu
+4 Fri
+5 Sat
+6 Sun
+</code></pre></div>
 
               
             </article>
@@ -905,7 +1025,7 @@ Look, a mountain: /\
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../pyVar4/" class="md-footer__link md-footer__link--prev" aria-label="Previous: del Keyword" rel="prev">
+        <a href="../pyAsser/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Assertions" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -914,20 +1034,20 @@ Look, a mountain: /\
               <span class="md-footer__direction">
                 Previous
               </span>
-              del Keyword
+              Assertions
             </div>
           </div>
         </a>
       
       
         
-        <a href="../pyStr2/" class="md-footer__link md-footer__link--next" aria-label="Next: String operations" rel="next">
+        <a href="../pyWhile/" class="md-footer__link md-footer__link--next" aria-label="Next: While-loops" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              String operations
+              While-loops
             </div>
           </div>
           <div class="md-footer__button md-icon">

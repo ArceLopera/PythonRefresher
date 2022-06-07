@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/PR/pyStr1/">
+        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/PR/pyOp1/">
       
       <link rel="icon" href="../../Images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Backslashes - Python Refresher</title>
+        <title>Arithmethic - Python Refresher</title>
       
     
     
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Backslashes
+              Arithmethic
             
           </span>
         </div>
@@ -428,14 +428,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3" checked>
       
       
       
@@ -456,19 +454,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../pyStr1/" class="md-nav__link">
         Backslashes
       </a>
-      
     </li>
   
 
@@ -527,12 +517,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" data-md-state="indeterminate" type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
       
       
       
@@ -553,11 +545,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../pyOp1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Arithmethic
       </a>
+      
     </li>
   
 
@@ -869,28 +869,79 @@
                 
 
 
-  <h1>Backslashes</h1>
+  <h1>Arithmethic</h1>
 
-<p><strong>Backslashes</strong> can also be used to escape tabs or arbitrary Unicode characters. \n represents a new line. Similarly, \t represents a tab. Newlines will be automatically added for strings that are created using three quotes. This makes it easier to format long, multi-line texts without the need to explicitly put \n for line breaks.</p>
-<p><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hugo</span><span class="se">\&#39;</span><span class="s2">s house </span><span class="se">\n</span><span class="s2"> Jane</span><span class="se">\&#39;</span><span class="s2">s mother </span><span class="se">\t</span><span class="s2"> Diana</span><span class="se">\&#39;</span><span class="s2">s dog&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;This</span>
-<span class="s2">is</span>
-<span class="s2">multline</span>
-<span class="s2">text&quot;&quot;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s </span><span class="se">\&quot;</span><span class="s2">cool</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Look, a mountain: /</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1</span><span class="se">\n</span><span class="s2">2 3&quot;</span><span class="p">)</span>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a + b</code></td>
+<td>Addition</td>
+<td>Sum of <code>a</code> and <code>b</code></td>
+</tr>
+<tr>
+<td><code>a - b</code></td>
+<td>Subtraction</td>
+<td>Difference of <code>a</code> and <code>b</code></td>
+</tr>
+<tr>
+<td><code>a * b</code></td>
+<td>Multiplication</td>
+<td>Product of <code>a</code> and <code>b</code></td>
+</tr>
+<tr>
+<td><code>a / b</code></td>
+<td>True division</td>
+<td>Quotient of <code>a</code> and <code>b</code></td>
+</tr>
+<tr>
+<td><code>a // b</code></td>
+<td>Floor division</td>
+<td>Quotient of <code>a</code> and <code>b</code>, removing fractional parts</td>
+</tr>
+<tr>
+<td><code>a % b</code></td>
+<td>Modulus</td>
+<td>Integer remainder after division of <code>a</code> by <code>b</code></td>
+</tr>
+<tr>
+<td><code>a ** b</code></td>
+<td>Exponentiation</td>
+<td><code>a</code> raised to the power of <code>b</code></td>
+</tr>
+<tr>
+<td><code>-a</code></td>
+<td>Negation</td>
+<td>The negative of <code>a</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="o">=</span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span><span class="o">**</span><span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">9</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="c1">#result is float</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">20</span><span class="o">//</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># Quotient</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">20</span><span class="o">%</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># Modulo or remainder</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>Hugo&#39;s house 
- Jane&#39;s mother   Diana&#39;s dog
-This
-is
-multline
-text
-That&#39;s &quot;cool&quot;
-Look, a mountain: /\
-1
-2 3
+<div class="highlight"><pre><span></span><code>9
+256
+3.0
+3
+2
+</code></pre></div>
+<p>For enhanced precision, the decimal module provides support for fast correctly-rounded decimal floating point arithmetic.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">getcontext</span><span class="p">()</span><span class="o">.</span><span class="n">prec</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">Decimal</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">Decimal</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Decimal(&#39;0.142857&#39;)
 </code></pre></div></p>
 
               
@@ -905,7 +956,7 @@ Look, a mountain: /\
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../pyVar4/" class="md-footer__link md-footer__link--prev" aria-label="Previous: del Keyword" rel="prev">
+        <a href="../pyStr4/" class="md-footer__link md-footer__link--prev" aria-label="Previous: String formatting specifications" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -914,20 +965,20 @@ Look, a mountain: /\
               <span class="md-footer__direction">
                 Previous
               </span>
-              del Keyword
+              String formatting specifications
             </div>
           </div>
         </a>
       
       
         
-        <a href="../pyStr2/" class="md-footer__link md-footer__link--next" aria-label="Next: String operations" rel="next">
+        <a href="../pyOp2/" class="md-footer__link md-footer__link--next" aria-label="Next: Bitwise" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              String operations
+              Bitwise
             </div>
           </div>
           <div class="md-footer__button md-icon">
