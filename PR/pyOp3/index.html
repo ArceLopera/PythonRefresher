@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/PR/pyStr1/">
+        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/PR/pyOp3/">
       
       <link rel="icon" href="../../Images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Backslashes - Python Refresher</title>
+        <title>In-Place - Python Refresher</title>
       
     
     
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Backslashes
+              In-Place
             
           </span>
         </div>
@@ -428,14 +428,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3" checked>
       
       
       
@@ -456,19 +454,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../pyStr1/" class="md-nav__link">
         Backslashes
       </a>
-      
     </li>
   
 
@@ -527,12 +517,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" data-md-state="indeterminate" type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
       
       
       
@@ -581,11 +573,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../pyOp3/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         In-Place
       </a>
+      
     </li>
   
 
@@ -869,29 +869,23 @@
                 
 
 
-  <h1>Backslashes</h1>
+  <h1>In-Place</h1>
 
-<p><strong>Backslashes</strong> can also be used to escape tabs or arbitrary Unicode characters. \n represents a new line. Similarly, \t represents a tab. Newlines will be automatically added for strings that are created using three quotes. This makes it easier to format long, multi-line texts without the need to explicitly put \n for line breaks.</p>
-<p><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hugo</span><span class="se">\&#39;</span><span class="s2">s house </span><span class="se">\n</span><span class="s2"> Jane</span><span class="se">\&#39;</span><span class="s2">s mother </span><span class="se">\t</span><span class="s2"> Diana</span><span class="se">\&#39;</span><span class="s2">s dog&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;This</span>
-<span class="s2">is</span>
-<span class="s2">multline</span>
-<span class="s2">text&quot;&quot;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s </span><span class="se">\&quot;</span><span class="s2">cool</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Look, a mountain: /</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1</span><span class="se">\n</span><span class="s2">2 3&quot;</span><span class="p">)</span>
+<p><strong>In-place operators</strong> allow you to write code like 'x = x + 3' more concisely, as 'x += 3'.
+In-place operators can be used for any numerical operation (+, -, <em>, /, %, </em>*, //). These operators can be used on types other than numbers, as well, such as strings.</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">x</span><span class="o">+=</span><span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span><span class="o">*=</span><span class="mi">7</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y</span><span class="o">=</span><span class="s2">&quot;spam &quot;</span>
+<span class="n">y</span><span class="o">*=</span><span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>Hugo&#39;s house 
- Jane&#39;s mother   Diana&#39;s dog
-This
-is
-multline
-text
-That&#39;s &quot;cool&quot;
-Look, a mountain: /\
-1
-2 3
-</code></pre></div></p>
+<div class="highlight"><pre><span></span><code>5
+35
+spam spam spam 
+</code></pre></div>
 
               
             </article>
@@ -905,7 +899,7 @@ Look, a mountain: /\
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../pyVar4/" class="md-footer__link md-footer__link--prev" aria-label="Previous: del Keyword" rel="prev">
+        <a href="../pyOp2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Bitwise" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -914,20 +908,20 @@ Look, a mountain: /\
               <span class="md-footer__direction">
                 Previous
               </span>
-              del Keyword
+              Bitwise
             </div>
           </div>
         </a>
       
       
         
-        <a href="../pyStr2/" class="md-footer__link md-footer__link--next" aria-label="Next: String operations" rel="next">
+        <a href="../pyOp4/" class="md-footer__link md-footer__link--next" aria-label="Next: Walrus" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              String operations
+              Walrus
             </div>
           </div>
           <div class="md-footer__button md-icon">

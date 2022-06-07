@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/PR/pyStr1/">
+        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/PR/pyExp/">
       
       <link rel="icon" href="../../Images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Backslashes - Python Refresher</title>
+        <title>Exceptions - Python Refresher</title>
       
     
     
@@ -68,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#exceptions" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -96,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Backslashes
+              Exceptions
             
           </span>
         </div>
@@ -428,14 +433,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3" checked>
       
       
       
@@ -456,19 +459,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../pyStr1/" class="md-nav__link">
         Backslashes
       </a>
-      
     </li>
   
 
@@ -658,11 +653,69 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../pyExp/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Exceptions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Exceptions
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exceptions" class="md-nav__link">
+    Exceptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exception-handling" class="md-nav__link">
+    Exception Handling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finally" class="md-nav__link">
+    Finally
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raising-exceptions" class="md-nav__link">
+    Raising Exceptions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -857,6 +910,42 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exceptions" class="md-nav__link">
+    Exceptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exception-handling" class="md-nav__link">
+    Exception Handling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finally" class="md-nav__link">
+    Finally
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raising-exceptions" class="md-nav__link">
+    Raising Exceptions
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -869,28 +958,63 @@
                 
 
 
-  <h1>Backslashes</h1>
+  <h1>Exceptions</h1>
 
-<p><strong>Backslashes</strong> can also be used to escape tabs or arbitrary Unicode characters. \n represents a new line. Similarly, \t represents a tab. Newlines will be automatically added for strings that are created using three quotes. This makes it easier to format long, multi-line texts without the need to explicitly put \n for line breaks.</p>
-<p><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hugo</span><span class="se">\&#39;</span><span class="s2">s house </span><span class="se">\n</span><span class="s2"> Jane</span><span class="se">\&#39;</span><span class="s2">s mother </span><span class="se">\t</span><span class="s2"> Diana</span><span class="se">\&#39;</span><span class="s2">s dog&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;This</span>
-<span class="s2">is</span>
-<span class="s2">multline</span>
-<span class="s2">text&quot;&quot;&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s </span><span class="se">\&quot;</span><span class="s2">cool</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Look, a mountain: /</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1</span><span class="se">\n</span><span class="s2">2 3&quot;</span><span class="p">)</span>
+<h2 id="exceptions"><strong>Exceptions</strong></h2>
+<ul>
+<li>ImportError: an import fails;</li>
+<li>IndexError: a list is indexed with an out-of-range number;</li>
+<li>NameError: an unknown variable is used;</li>
+<li>SyntaxError: the code can't be parsed properly;</li>
+<li>TypeError: a function is called on a value of an inappropriate type;</li>
+<li>ValueError: a function is called on a value of the correct type, but with an inappropriate value.</li>
+</ul>
+<h2 id="exception-handling"><strong>Exception Handling</strong></h2>
+<p>To handle exceptions, and to call code when an exception occurs, you can use a try/except statement. Multiple exceptions can also be put into a single except block using parentheses, to have the except block handle all of them. An except statement without any exception specified will catch all errors.</p>
+<h2 id="finally"><strong>Finally</strong></h2>
+<p>To ensure some code runs no matter what errors occur, you can use a finally statement. The finally statement is placed at the bottom of a try/except statement.</p>
+<div class="highlight"><pre><span></span><code>  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+  <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Error!&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span><span class="ne">TypeError</span><span class="p">):</span>
+  <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Error 2!&quot;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unknown error: </span><span class="si">{</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No errors&#39;</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bye bye&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>Hugo&#39;s house 
- Jane&#39;s mother   Diana&#39;s dog
-This
-is
-multline
-text
-That&#39;s &quot;cool&quot;
-Look, a mountain: /\
-1
-2 3
+<div class="highlight"><pre><span></span><code>0.0
+Error 2!
+Bye bye
+</code></pre></div>
+<h2 id="raising-exceptions"><strong>Raising Exceptions</strong></h2>
+<p>Use raise statement
+Exceptions can be raised with arguments that give detail about them.</p>
+<p><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">raise</span> <span class="ne">ValueError</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>1
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+&lt;ipython-input-75-990863ff3a0f&gt; in &lt;module&gt;()
+      1 print(1)
+----&gt; 2 raise ValueError
+      3 print(2)
+
+ValueError: 
+</code></pre></div></p>
+<p><div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+  <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;123&quot;</span>
+  <span class="k">raise</span> <span class="ne">NameError</span><span class="p">(</span><span class="s2">&quot;Invalid Name!&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">NameError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Name error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Name error: Invalid Name!
+2
 </code></pre></div></p>
 
               
@@ -905,7 +1029,7 @@ Look, a mountain: /\
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../pyVar4/" class="md-footer__link md-footer__link--prev" aria-label="Previous: del Keyword" rel="prev">
+        <a href="../pyOp7/" class="md-footer__link md-footer__link--prev" aria-label="Previous: (star) *" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -914,20 +1038,20 @@ Look, a mountain: /\
               <span class="md-footer__direction">
                 Previous
               </span>
-              del Keyword
+              (star) *
             </div>
           </div>
         </a>
       
       
         
-        <a href="../pyStr2/" class="md-footer__link md-footer__link--next" aria-label="Next: String operations" rel="next">
+        <a href="../pyAsser/" class="md-footer__link md-footer__link--next" aria-label="Next: Assertions" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              String operations
+              Assertions
             </div>
           </div>
           <div class="md-footer__button md-icon">
