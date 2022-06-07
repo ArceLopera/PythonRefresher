@@ -79,12 +79,3 @@ for i, d in enumerate(days):
 5 Sat
 6 Sun
 ```
-
-
-``` py
-
-```
-
-```
-
-```

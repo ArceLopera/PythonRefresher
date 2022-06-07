@@ -114,6 +114,10 @@ nav:
      - Assertions: PR/pyAsser.md
      - Control Flow:
         - For-loops: PR/pyfor.md
+        - While-loops: PR/pyWhile.md
+        - Else-4loopsExcep: PR/pyElse.md
+        - Conditionals: PR/pyCond.md
+        - Comprehensions: PR/pyCompr.md
   - Data Structures:
      - General : DS/pyDS.md 
 
