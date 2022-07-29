@@ -120,4 +120,7 @@ nav:
         - Comprehensions: PR/pyCompr.md
   - Data Structures:
      - General : DS/pyDS.md 
+     - List:
+        - List General: DS/pyList.md
+        - List Sorted: DS/pyListSorted.md
 
