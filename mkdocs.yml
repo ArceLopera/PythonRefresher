@@ -100,6 +100,7 @@ nav:
      - Strings:
         - Backslashes: PR/pyStr1.md
         - String operations: PR/pyStr2.md
+        - String functions: PR/pyStr5.md
         - String formatting: PR/pyStr3.md
         - String formatting specifications: PR/pyStr4.md
      - Operators:
