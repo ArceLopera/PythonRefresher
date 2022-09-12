@@ -13,7 +13,11 @@ To handle exceptions, and to call code when an exception occurs, you can use a t
 To ensure some code runs no matter what errors occur, you can use a finally statement. The finally statement is placed at the bottom of a try/except statement.
 
 ``` py
-
+try:
+  a=0
+  b=1
+  print(a/b)
+  #print(b/a)
   print(a+"a")
 except ZeroDivisionError:
   print ("Error!")
