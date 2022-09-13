@@ -88,7 +88,9 @@ print(s[6])
 w
 ```
 
-List Operations: The item at a certain index in a list can be reassigned. Lists can be added and multiplied in the same way as strings. To check if an item is in a list, the in operator can be used. It returns True if the item occurs one or more times in the list, and False if it doesn't. The in operator is also used to determine whether or not a string is a substring of another string.
+### List Operations 
+
+The item at a certain index in a list can be reassigned. Lists can be added and multiplied in the same way as strings. To check if an item is in a list, the in operator can be used. It returns True if the item occurs one or more times in the list, and False if it doesn't. The in operator is also used to determine whether or not a string is a substring of another string.
 
 ``` py
 M=[1,1,1]
@@ -110,7 +112,7 @@ False
 False
 ```
 
-List Functions:
+### List Functions:
 
 + len(list): to get the number of items in a list.
 + max(list): Returns the list item with the maximum value

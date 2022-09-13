@@ -33,12 +33,12 @@ Many times, a tuple is used in combination with a dictionary, for example, a tup
 | Tuples | Lists | Dict | Sets |
 | --- | --- | --- | --- |
 | ( ) | [ ] | {k:v} | { } |
-|Immutable|Mutable|Mutable|Mutable|
+|*Immutable*|Mutable|Mutable|Mutable|
 |Ordered|Ordered|Ordered(>3.7)|Unordered|
 |Iterable|Iterable|Iterable|Iterable|
-|Constant time|Linear time|Constant time|Constant time|
+|Constant time|*Linear time*|Constant time|Constant time|
 |mytuple[0]|mylist[0]|mydict['somekey']|myset[0]|
-|Allow repetition|Allow repetition|Allow repetition|Unique data|
+|Allow repetition|Allow repetition|Allow repetition|*Unique data*|
 |len(mytuple)|len(mylist)|len(mydict)|len(myset)|
 |.count()|.append() and .insert()|.keys(), .values() and .items()|.add() and .update()|
 |.index()|.pop() and .remove()|.pop() or del mydict['somekey']|.remove()|
