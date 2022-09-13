@@ -1,4 +1,4 @@
-## When initialicing
+## When initializing
 ```
 pip install mkdocs mkdocs-material
 mkdocs new .
