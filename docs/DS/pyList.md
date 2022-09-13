@@ -112,7 +112,7 @@ False
 False
 ```
 
-### List Functions:
+### List Functions
 
 + len(list): to get the number of items in a list.
 + max(list): Returns the list item with the maximum value
