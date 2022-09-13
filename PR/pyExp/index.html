@@ -489,6 +489,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../pyStr5/" class="md-nav__link">
+        String functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../pyStr3/" class="md-nav__link">
         String formatting
       </a>
@@ -886,6 +900,100 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" data-md-state="indeterminate" type="checkbox" id="__nav_3_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Collections
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Collections" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Collections
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DS/pyList/" class="md-nav__link">
+        Lists
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_2" data-md-state="indeterminate" type="checkbox" id="__nav_3_2_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2_2">
+          Iterable Functions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Iterable Functions" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Iterable Functions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DS/pyIterSorted/" class="md-nav__link">
+        Sorted
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -973,7 +1081,12 @@
 <p>To handle exceptions, and to call code when an exception occurs, you can use a try/except statement. Multiple exceptions can also be put into a single except block using parentheses, to have the except block handle all of them. An except statement without any exception specified will catch all errors.</p>
 <h2 id="finally"><strong>Finally</strong></h2>
 <p>To ensure some code runs no matter what errors occur, you can use a finally statement. The finally statement is placed at the bottom of a try/except statement.</p>
-<div class="highlight"><pre><span></span><code>  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+  <span class="n">a</span><span class="o">=</span><span class="mi">0</span>
+  <span class="n">b</span><span class="o">=</span><span class="mi">1</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="p">)</span>
+  <span class="c1">#print(b/a)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Error!&quot;</span><span class="p">)</span>
 <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span><span class="ne">TypeError</span><span class="p">):</span>
