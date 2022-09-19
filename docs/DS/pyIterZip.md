@@ -1,4 +1,4 @@
-# Zip
+## Zip
 Python zip() method takes iterable or containers and returns a single iterator object, having mapped values from all the containers.
 
 It is used to map the similar index of multiple containers so that they can be used just using a single entity.
@@ -44,7 +44,7 @@ print(new_dict)
 {'reliance': 2175, 'infosys': 1127, 'tcs': 2750}
 
 ```
-# Unzip
+## Unzip
 
 How to unzip? 
 Unzipping means converting the zipped values back to the individual self as they were. This is done with the help of “*” operator.

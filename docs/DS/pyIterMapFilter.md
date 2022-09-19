@@ -1,7 +1,7 @@
 
 The built-in functions map and filter are very useful higher-order functions that operate on lists (or similar objects called iterables).
 
-# Map
+## Map
 
 The function map takes a function and an iterable as arguments, and returns a new iterable with the function applied to each argument.
 
@@ -25,7 +25,7 @@ print(result)
 [16, 27, 38, 49, 60]
 ```
 
-# Filter
+## Filter
 
 The function filter filters an iterable by removing items that don't match a predicate (a function that returns a Boolean). Like map, the result has to be explicitly converted to a list if you want to print it.
 

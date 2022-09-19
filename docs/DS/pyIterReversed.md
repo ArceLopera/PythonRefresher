@@ -1,7 +1,7 @@
 Returns an iterator
 Python reversed() method returns an iterator that accesses the given sequence in the reverse order.
 
-3 ways to reverse a sequence:
+**3 ways to reverse a sequence:**
 
 1. iter.reverse() reverses a mutable sequence in place and is not available for inmutable sequences
 2. Slicing [::-1] creates a reversed copy of a sequence, it is the fastest but creates a copy of the sequence. Memory considerations to reverse millions of items. Used for both mutable and inmutable sequences.
