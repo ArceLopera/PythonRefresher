@@ -125,4 +125,5 @@ nav:
         - Lists : DS/pyList.md
         - Iterable Functions :
           - Sorted: DS/pyIterSorted.md
+          - Map & Filter: DS/pyIterMapFilter.md
 
