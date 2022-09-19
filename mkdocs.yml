@@ -126,8 +126,8 @@ nav:
         - Iterable Functions :
           - Sorted: DS/pyIterSorted.md
           - Map & Filter: DS/pyIterMapFilter.md
-          - All & Any: DS/AllAny.md
-          - Enumerate: DS/Enumerate.md
+          - All & Any: DS/pyIterAllAny.md
+          - Enumerate: DS/pyIterEnumerate.md
           - Zip: DS/pyIterZip.md
           - Reversed: DS/pyIterReversed.md
 
