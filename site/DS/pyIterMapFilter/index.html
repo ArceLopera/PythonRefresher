@@ -938,12 +938,46 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Map & Filter
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Map & Filter
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    Map
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filter" class="md-nav__link">
+    Filter
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1043,8 +1077,28 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    Map
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filter" class="md-nav__link">
+    Filter
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1058,8 +1112,10 @@
                 
 
 
+  <h1>Map & Filter</h1>
+
 <p>The built-in functions map and filter are very useful higher-order functions that operate on lists (or similar objects called iterables).</p>
-<h1 id="map">Map</h1>
+<h2 id="map">Map</h2>
 <p>The function map takes a function and an iterable as arguments, and returns a new iterable with the function applied to each argument.</p>
 <p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_five</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
   <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="mi">5</span>
@@ -1076,7 +1132,7 @@
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>[16, 27, 38, 49, 60]
 </code></pre></div></p>
-<h1 id="filter">Filter</h1>
+<h2 id="filter">Filter</h2>
 <p>The function filter filters an iterable by removing items that don't match a predicate (a function that returns a Boolean). Like map, the result has to be explicitly converted to a list if you want to print it.</p>
 <div class="highlight"><pre><span></span><code><span class="n">nums</span><span class="o">=</span><span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">55</span><span class="p">]</span>
 <span class="n">res</span><span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span><span class="n">nums</span><span class="p">))</span>
