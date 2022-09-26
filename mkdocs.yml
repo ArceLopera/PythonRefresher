@@ -131,4 +131,5 @@ nav:
           - Zip: DS/pyIterZip.md
           - Reversed: DS/pyIterReversed.md
         - Tuple : DS/pyTuple.md
+        - Dictionary : DS/pyDict.md
 
