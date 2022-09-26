@@ -57,7 +57,6 @@ theme:
 
 # Extensions
 markdown_extensions:
-  - meta
   - admonition # alerts
   - pymdownx.details #  collapsible alerts
   - pymdownx.superfences # nest code and content inside alerts
