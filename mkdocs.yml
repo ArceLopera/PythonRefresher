@@ -131,4 +131,5 @@ nav:
           - Reversed: DS/pyIterReversed.md
         - Tuple : DS/pyTuple.md
         - Dictionary : DS/pyDict.md
+        - Array: DS/pyArray.md
 
