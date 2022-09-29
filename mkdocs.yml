@@ -132,4 +132,6 @@ nav:
         - Tuple : DS/pyTuple.md
         - Dictionary : DS/pyDict.md
         - Array: DS/pyArray.md
+     - Generators : DS/pyGen.md
+     - Generator Expressions : DS/pyGenX.md
 
