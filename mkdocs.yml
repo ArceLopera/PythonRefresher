@@ -120,7 +120,7 @@ nav:
         - Comprehensions: PR/pyCompr.md
   - Data Structures:
      - General : DS/pyDS.md 
-     - Collections:
+     - Basic Collections:
         - Lists : DS/pyList.md
         - Iterable Functions :
           - Sorted: DS/pyIterSorted.md
@@ -132,6 +132,7 @@ nav:
         - Tuple : DS/pyTuple.md
         - Dictionary : DS/pyDict.md
         - Array: DS/pyArray.md
+        - Set : DS/pySet.md
      - Generators : DS/pyGen.md
      - Generator Expressions : DS/pyGenX.md
 
