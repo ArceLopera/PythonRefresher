@@ -135,4 +135,6 @@ nav:
         - Set : DS/pySet.md
      - Generators : DS/pyGen.md
      - Generator Expressions : DS/pyGenX.md
+     - Other Collections :
+        - Deque : DS/pydeque.md
 
