@@ -138,4 +138,5 @@ nav:
      - Other Collections :
         - Deque : DS/pydeque.md
         - NamedTuple : DS/pyNamedTuple.md
+        - Counter : DS/pyCounter.md
 
