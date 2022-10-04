@@ -2,7 +2,7 @@ A Counter is a subclass of dict. Therefore it is an unordered collection where e
 
 Counter class is a special type of object data-set provided with the collections module in Python3. Collections module provides the user with specialized container datatypes, thus, providing an alternative to Python’s general-purpose built-ins like dictionaries, lists and tuples. Counter is a sub-class that is used to count hashable objects. It implicitly creates a hash table of an iterable when invoked.
 
-Counter object along with its functions are used collectively for processing huge amounts of data. We can see that Counter() creates a hash-map for the data container invoked with it which is very useful than by manual processing of elements. It is one of a very high processing and functioning tools and can even function with a wide range of data too.
+Counter object along with its functions are used collectively for processing huge amounts of data. 
 
 ## Initialization
 The constructor of counter can be called in any one of the following ways :
