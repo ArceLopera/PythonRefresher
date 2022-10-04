@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/DS/pyList/">
+        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/DS/pyDefaultdict/">
       
       <link rel="icon" href="../../Images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Lists - Python Refresher</title>
+        <title>Defaultdict - Python Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#list-operations" class="md-skip">
+        <a href="#inner-working-of-defaultdict" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lists
+              Defaultdict
             
           </span>
         </div>
@@ -846,14 +846,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" data-md-state="indeterminate" type="checkbox" id="__nav_3_2" checked>
       
       
       
@@ -874,55 +872,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Lists
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../pyList/" class="md-nav__link">
         Lists
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#list-operations" class="md-nav__link">
-    List Operations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#list-functions" class="md-nav__link">
-    List Functions
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1140,12 +1094,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" data-md-state="indeterminate" type="checkbox" id="__nav_3_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" checked>
       
       
       
@@ -1208,11 +1164,55 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../pyDefaultdict/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Defaultdict
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Defaultdict
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inner-working-of-defaultdict" class="md-nav__link">
+    Inner Working of defaultdict
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-vivification" class="md-nav__link">
+    Auto-vivification
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1256,15 +1256,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#list-operations" class="md-nav__link">
-    List Operations
+  <a href="#inner-working-of-defaultdict" class="md-nav__link">
+    Inner Working of defaultdict
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#list-functions" class="md-nav__link">
-    List Functions
+  <a href="#auto-vivification" class="md-nav__link">
+    Auto-vivification
   </a>
   
 </li>
@@ -1283,183 +1283,126 @@
                 
 
 
-  <h1>Lists</h1>
+  <h1>Defaultdict</h1>
 
-<p>A list comprises a sequence of objects, usually represented using square brackets with commas between the items in the sequence as is done below:</p>
-<div class="highlight"><pre><span></span><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+<p>Dictionary in Python is an unordered collection of data values that are used to store data values like a map. Unlike other Data Types that hold only single value as an element, the Dictionary holds key-value pair. In Dictionary, the key must be unique and immutable. This means that a Python Tuple can be a key whereas a Python List can not. A Dictionary can be created by placing a sequence of elements within curly {} braces, separated by ‘comma’.</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Python program to demonstrate</span>
+<span class="c1"># dictionary</span>
+<span class="n">Dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;Treats&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;For&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;Pricks&#39;</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dictionary:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Dict</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Dict</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Uncommenting this print(Dict[4])</span>
+<span class="c1"># will raise a KeyError as the</span>
+<span class="c1"># 4 is not present in the dictionary</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]
+<div class="highlight"><pre><span></span><code>Dictionary:
+{1: &#39;Treats&#39;, 2: &#39;For&#39;, 3: &#39;Pricks&#39;}
+Treats
 </code></pre></div>
-<p>Above, my_list contains a sequence of character objects. Lists, however, accomodate items of varying types of objects:</p>
-<div class="highlight"><pre><span></span><code><span class="n">varied_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mf">3.14159</span><span class="p">]</span> <span class="c1"># a list with elements of char, integer, and float types</span>
-<span class="n">nested_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;governor&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.618</span><span class="p">,</span> <span class="mi">42</span><span class="p">]]</span> <span class="c1"># a list within a list!</span>
+Sometimes, when the KeyError is raised, it might become a problem. To overcome this Python introduces another dictionary like container known as Defaultdict which is present inside the collections module.</p>
+<p>Defaultdict is a container like dictionaries present in the module collections. Defaultdict is a sub-class of the dictionary class that returns a dictionary-like object. The functionality of both dictionaries and defaultdict are almost same except for the fact that defaultdict never raises a KeyError. It provides a default value for the key that does not exists.</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Python program to demonstrate defaultdict</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="c1"># Function to return a default</span>
+<span class="c1"># values for keys that are not present</span>
+<span class="k">def</span> <span class="nf">def_value</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">&quot;Not Present&quot;</span>
+
+<span class="c1"># Defining the dict</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="n">def_value</span><span class="p">)</span>
+<span class="n">d</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">d</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">])</span>
 </code></pre></div>
-<p>Lists allow for what is called indexing, in which a specified element of the list may be obtained. For instance, say you wanted to grab the second element of varied_list above. Then you could index the list as so:</p>
-<div class="highlight"><pre><span></span><code><span class="n">second_element</span> <span class="o">=</span> <span class="n">varied_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Grab second element of varied_list</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">second_element</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>1
+2
+Not Present
+</code></pre></div></p>
+<h2 id="inner-working-of-defaultdict">Inner Working of defaultdict</h2>
+<p>Defaultdict adds one writable instance variable and one method in addition to the standard dictionary operations. The instance variable is the default_factory parameter and the method provided is missing.</p>
+<p>Default_factory: It is a function returning the default value for the dictionary defined. If this argument is absent then the dictionary raises a KeyError.</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Python program to demonstrate # default_factory argument of # defaultdict</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="c1"># Defining the dict and passing # lambda as default_factory argument</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="s2">&quot;Not Present&quot;</span><span class="p">)</span>
+<span class="n">d</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">d</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">])</span>
 </code></pre></div>
-<p>Now is a good time to mention that Python is what's called a zero-indexed programming language. This simply means that the "first" element in a list or other collection of data items is indexed using "0" (zero) rather than "1". This is why, above, we grab the second element of varied_list using the integer index "1" instead of "2" as some might expect from a one-indexed language (like MATLab).</p>
-<p>Another feature of python indexing that comes in handy is the use of negative indexing. As we discussed above, the "first" element of a python list is denoted by index "0"; thus, it is almost natural to consider the last element of the list as being indexed by "-1". Observe the following examples of negative indexing:</p>
-<p><div class="highlight"><pre><span></span><code><span class="n">last_element</span> <span class="o">=</span> <span class="n">my_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># the last element of my_list</span>
-<span class="n">last_element_2</span> <span class="o">=</span> <span class="n">my_list</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># also the last element of my_list, obtained differently</span>
-<span class="n">second_to_last_element</span> <span class="o">=</span> <span class="n">my_list</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
-</code></pre></div>
-Similar to indexing is list slicing, in which a contiguous section of list may be accessed. The colon (:) is used to perform slicing, with integers denoting the positions at which to begin and end the slice. Below, we show that the beginning or ending integer for a slice may be omited when one is slicing from the beginning or to the end of the list. Also note below that the index for slice beginning is included in the slice, but the index for the slice end is not included.</p>
-<div class="highlight"><pre><span></span><code><span class="n">NFL_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Chargers&quot;</span><span class="p">,</span> <span class="s2">&quot;Broncos&quot;</span><span class="p">,</span> <span class="s2">&quot;Raiders&quot;</span><span class="p">,</span> <span class="s2">&quot;Chiefs&quot;</span><span class="p">,</span> <span class="s2">&quot;Panthers&quot;</span><span class="p">,</span> <span class="s2">&quot;Falcons&quot;</span><span class="p">,</span> <span class="s2">&quot;Cowboys&quot;</span><span class="p">,</span> <span class="s2">&quot;Eagles&quot;</span><span class="p">]</span>
-<span class="n">AFC_west_list</span> <span class="o">=</span> <span class="n">NFL_list</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span> <span class="c1"># Slice to grab list indices 0, 1, 2, 3 -- &quot;Chargers&quot;, &quot;Broncos&quot;, &quot;Raiders&quot;, &quot;Chiefs&quot;</span>
-<span class="n">NFC_south_list</span> <span class="o">=</span> <span class="n">NFL_list</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span> <span class="c1"># Slice list indices 4, 5 -- &quot;Panthers&quot;, &quot;Falcons&quot;</span>
-<span class="n">NFC_east_list</span> <span class="o">=</span> <span class="n">NFL_list</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span> <span class="c1"># Slice list indices 6, 7 -- &quot;Cowboys&quot;, &quot;Eagles&quot;</span>
-</code></pre></div>
-<p>List slices can also have a third number, representing the step, to include only alternate values in the slice.</p>
-<div class="highlight"><pre><span></span><code><span class="n">NFL_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Chargers&quot;</span><span class="p">,</span> <span class="s2">&quot;Broncos&quot;</span><span class="p">,</span> <span class="s2">&quot;Raiders&quot;</span><span class="p">,</span> <span class="s2">&quot;Chiefs&quot;</span><span class="p">,</span> <span class="s2">&quot;Panthers&quot;</span><span class="p">,</span> <span class="s2">&quot;Falcons&quot;</span><span class="p">,</span> <span class="s2">&quot;Cowboys&quot;</span><span class="p">,</span> <span class="s2">&quot;Eagles&quot;</span><span class="p">]</span>
-<span class="n">list1</span> <span class="o">=</span> <span class="n">NFL_list</span><span class="p">[</span><span class="mi">3</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>[&#39;Chiefs&#39;, &#39;Falcons&#39;, &#39;Eagles&#39;]
-</code></pre></div>
-<p>Negative values can be used in list slicing (and normal list indexing). When negative values are used for the first and second values in a slice (or a normal index), they count from the end of the list. If a negative value is used for the step, the slice is done backwards. Using [::-1] as a slice is a common and idiomatic way to reverse a list.</p>
-<div class="highlight"><pre><span></span><code><span class="n">squares</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">49</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">81</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">[:</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>[1, 4, 9, 16, 25, 36]
-[81, 64, 49, 36, 25, 16, 9, 4, 1, 0]
-[81, 64, 49, 36, 25]
-</code></pre></div>
-<p>Sometimes you need to create an empty list and populate it later during the program. For example, if you are creating a queue management program, the queue is going to be empty in the beginning and get populated with people data later. An empty list is created with an empty pair of square brackets. Nested lists can be used to represent 2D grids, such as matrices. Indexing strings behaves as though you are indexing a list containing each character in the string.</p>
-<div class="highlight"><pre><span></span><code><span class="n">empty_list</span><span class="o">=</span><span class="p">[]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">empty_list</span><span class="p">)</span>
-<span class="n">m</span><span class="o">=</span><span class="p">[</span>
-   <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
-   <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
-   <span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-<span class="n">s</span><span class="o">=</span><span class="s2">&quot;Hello world&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code>1
+2
+Not Present
+</code></pre></div></p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="c1"># Correct instantiation</span>
+<span class="n">def_dict</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>  <span class="c1"># Pass list to .default_factory</span>
+<span class="n">def_dict</span><span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Add a key-value pair</span>
+<span class="n">def_dict</span><span class="p">[</span><span class="s1">&#39;missing&#39;</span><span class="p">]</span>  <span class="c1"># Access a missing key returns an empty list</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>[]
-[[1, 2, 3], [4, 5, 6]]
-w
-</code></pre></div>
-<h3 id="list-operations">List Operations</h3>
-<p>The item at a certain index in a list can be reassigned. Lists can be added and multiplied in the same way as strings. To check if an item is in a list, the in operator can be used. It returns True if the item occurs one or more times in the list, and False if it doesn't. The in operator is also used to determine whether or not a string is a substring of another string.</p>
-<div class="highlight"><pre><span></span><code><span class="n">M</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;hello&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">M</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">M</span><span class="o">+</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">M</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Spam&quot;</span> <span class="ow">in</span> <span class="n">M</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="s2">&quot;hello&quot;</span> <span class="ow">in</span> <span class="n">M</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>[1, &#39;hello&#39;, 1]
-[1, &#39;hello&#39;, 1, 1, &#39;hello&#39;, 1, 1, &#39;hello&#39;, 1]
-[1, &#39;hello&#39;, 1, 1, 2]
-True
-False
-False
-</code></pre></div>
-<h3 id="list-functions">List Functions</h3>
-<ul>
-<li>len(list): to get the number of items in a list.</li>
-<li>max(list): Returns the list item with the maximum value</li>
-<li>min(list): Returns the list item with minimum value</li>
-<li>list.append(item): adds an item to the end of an existing list.</li>
-<li>list.insert(index, item): is similar to append, except that it allows you to insert a new item at any position in the list, as opposed to just at the end.</li>
-<li>list.index(item): finds the first occurrence of a list item and returns its index. If the item isn't in the list, it raises a ValueError.</li>
-<li>list.count(item): Returns a count of how many times an item occurs in a list</li>
-<li>list.remove(item): Removes an object from a list</li>
-<li>list.pop(index) removes the item at the given index.</li>
-<li>list.reverse(): Reverses items in a list.</li>
-<li>list.sort() sorts the list. By default, the list is sorted ascending. You can specify reverse=True as the parameter, to sort descending.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="n">nums</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
-<span class="n">nums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
-<span class="n">nums</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">nums</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-<span class="n">nums</span><span class="o">+=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">nums</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-<span class="n">nums</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">nums</span><span class="o">.</span><span class="n">reverse</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">nums</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">nums</span><span class="p">))</span>
-</code></pre></div>
-<p><div class="highlight"><pre><span></span><code>[1, 2, 3, 4]
-[1, 2, &#39;hello&#39;, 3, 4]
-5
-3
-3
-None
-4
-1
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># use iterator functions like enumerate, zip, iter, next</span>
-    <span class="c1"># define a list of days in English and French</span>
-<span class="n">days</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Sun&quot;</span><span class="p">,</span> <span class="s2">&quot;Mon&quot;</span><span class="p">,</span> <span class="s2">&quot;Tue&quot;</span><span class="p">,</span> <span class="s2">&quot;Wed&quot;</span><span class="p">,</span> <span class="s2">&quot;Thu&quot;</span><span class="p">,</span> <span class="s2">&quot;Fri&quot;</span><span class="p">,</span> <span class="s2">&quot;Sat&quot;</span><span class="p">]</span>
-<span class="n">daysFr</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Dim&quot;</span><span class="p">,</span> <span class="s2">&quot;Lun&quot;</span><span class="p">,</span> <span class="s2">&quot;Mar&quot;</span><span class="p">,</span> <span class="s2">&quot;Mer&quot;</span><span class="p">,</span> <span class="s2">&quot;Jeu&quot;</span><span class="p">,</span> <span class="s2">&quot;Ven&quot;</span><span class="p">,</span> <span class="s2">&quot;Sam&quot;</span><span class="p">]</span>
-
-    <span class="c1"># use iter to create an iterator over a collection</span>
-<span class="n">i</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">days</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>  <span class="c1"># Sun</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>  <span class="c1"># Mon</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>  <span class="c1"># Tue</span>
-
-    <span class="c1"># iterate using a function and a sentinel</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;game.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-   <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">iter</span><span class="p">(</span><span class="n">fp</span><span class="o">.</span><span class="n">readline</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">):</span>
-      <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-
-    <span class="c1"># use regular interation over the days</span>
-<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">days</span><span class="p">)):</span>
-   <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">days</span><span class="p">[</span><span class="n">m</span><span class="p">])</span>
 </code></pre></div></p>
-<p><div class="highlight"><pre><span></span><code>1 Sun
-2 Mon
-3 Tue
-4 Wed
-5 Thu
-6 Fri
-7 Sat
+<p><div class="highlight"><pre><span></span><code><span class="n">def_dict</span><span class="p">[</span><span class="s1">&#39;another_missing&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># Modify a missing key</span>
+<span class="n">def_dict</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># using enumerate reduces code and provides a counter</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">days</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>defaultdict(list, {&#39;another_missing&#39;: [4], &#39;missing&#39;: [], &#39;one&#39;: 1})
 </code></pre></div></p>
-<p><div class="highlight"><pre><span></span><code>1 Sun
-2 Mon
-3 Tue
-4 Wed
-5 Thu
-6 Fri
-7 Sat
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># use zip to combine sequences</span>
-<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">days</span><span class="p">,</span> <span class="n">daysFr</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<p><div class="highlight"><pre><span></span><code><span class="n">dep</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;John Doe&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;Martin Smith&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Accounting&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane Doe&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Marketing&#39;</span><span class="p">,</span> <span class="s1">&#39;Elizabeth Smith&#39;</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">&#39;Marketing&#39;</span><span class="p">,</span> <span class="s1">&#39;Adam Doe&#39;</span><span class="p">)]</span>
 
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">days</span><span class="p">,</span> <span class="n">daysFr</span><span class="p">),</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;in French&quot;</span><span class="p">)</span>
-</code></pre></div></p>
-<div class="highlight"><pre><span></span><code>(&#39;Sun&#39;, &#39;Dim&#39;)
-(&#39;Mon&#39;, &#39;Lun&#39;)
-(&#39;Tue&#39;, &#39;Mar&#39;)
-(&#39;Wed&#39;, &#39;Mer&#39;)
-(&#39;Thu&#39;, &#39;Jeu&#39;)
-(&#39;Fri&#39;, &#39;Ven&#39;)
-(&#39;Sat&#39;, &#39;Sam&#39;)
-1 Sun = Dim in French
-2 Mon = Lun in French
-3 Tue = Mar in French
-4 Wed = Mer in French
-5 Thu = Jeu in French
-6 Fri = Ven in French
-7 Sat = Sam in French
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="n">dep_dd</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span> <span class="c1">#For uniqueness instead of list use set</span>
+<span class="k">for</span> <span class="n">department</span><span class="p">,</span> <span class="n">employee</span> <span class="ow">in</span> <span class="n">dep</span><span class="p">:</span>
+    <span class="n">dep_dd</span><span class="p">[</span><span class="n">department</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">employee</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dep_dd</span><span class="p">)</span>
 </code></pre></div>
+<div class="highlight"><pre><span></span><code>defaultdict(&lt;class &#39;list&#39;&gt;, {&#39;Sales&#39;: [&#39;John Doe&#39;, &#39;Martin Smith&#39;], &#39;Accounting&#39;: [&#39;Jane Doe&#39;], &#39;Marketing&#39;: [&#39;Elizabeth Smith&#39;, &#39;Adam Doe&#39;]})
+</code></pre></div>
+In this example, you group the employees by their department using a defaultdict with .default_factory set to list. To do this with a regular dictionary, you can use dict.setdefault() as follows:</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">dep_d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">department</span><span class="p">,</span> <span class="n">employee</span> <span class="ow">in</span> <span class="n">dep</span><span class="p">:</span>
+    <span class="n">dep_d</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">department</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">employee</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dep_d</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>{&#39;Sales&#39;: [&#39;John Doe&#39;, &#39;Martin Smith&#39;], &#39;Accounting&#39;: [&#39;Jane Doe&#39;], &#39;Marketing&#39;: [&#39;Elizabeth Smith&#39;, &#39;Adam Doe&#39;]}
+</code></pre></div></p>
+<p>This code is straightforward, and you’ll find similar code quite often in your work as a Python coder. However, the defaultdict version is arguably more readable, and for large datasets, it can also be a lot faster and more efficient. So, if speed is a concern for you, then you should consider using a defaultdict instead of a standard dict.</p>
+<h2 id="auto-vivification">Auto-vivification</h2>
+<p>Defauldict are used to easily make nested dicts. It is called Auto-vivification.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="k">def</span> <span class="nf">turtles</span><span class="p">():</span>
+  <span class="k">return</span> <span class="n">defaultdict</span><span class="p">(</span><span class="n">turtles</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">turtles</span><span class="p">()</span>
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;Hello&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;Hey!&quot;</span>
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;Foo&quot;</span><span class="p">][</span><span class="s2">&quot;bar&quot;</span><span class="p">][</span><span class="s2">&quot;baz&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;hmmm&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>{
+ &quot;Hello&quot;: &quot;Hey!&quot;,
+ &quot;Foo&quot;: {
+  &quot;bar&quot;: {
+   &quot;baz&quot;: &quot;hmmm&quot;
+  }
+ }
+}
+</code></pre></div></p>
 
               
             </article>
@@ -1473,7 +1416,7 @@ None
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../pyDS/" class="md-footer__link md-footer__link--prev" aria-label="Previous: General" rel="prev">
+        <a href="../pyCounter/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Counter" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1482,26 +1425,11 @@ None
               <span class="md-footer__direction">
                 Previous
               </span>
-              General
+              Counter
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../pyIterSorted/" class="md-footer__link md-footer__link--next" aria-label="Next: Sorted" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Sorted
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
