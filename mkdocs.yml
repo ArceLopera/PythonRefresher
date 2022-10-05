@@ -140,4 +140,5 @@ nav:
         - NamedTuple : DS/pyNamedTuple.md
         - Counter : DS/pyCounter.md
         - Defaultdict: DS/pyDefaultdict.md
+        - Ordereddict: DS/pyOrdereddict.md
 
