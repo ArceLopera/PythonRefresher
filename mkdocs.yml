@@ -141,4 +141,5 @@ nav:
         - Counter : DS/pyCounter.md
         - Defaultdict: DS/pyDefaultdict.md
         - Ordereddict: DS/pyOrdereddict.md
+        - ChainMap: DS/pyChainMap.md
 
