@@ -142,4 +142,7 @@ nav:
         - Defaultdict: DS/pyDefaultdict.md
         - Ordereddict: DS/pyOrdereddict.md
         - ChainMap: DS/pyChainMap.md
+     - User-Defined DS : 
+        - General: DS/pyUserDefGen.md
+        
 
