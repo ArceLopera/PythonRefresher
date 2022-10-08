@@ -144,5 +144,5 @@ nav:
         - ChainMap: DS/pyChainMap.md
      - User-Defined DS : 
         - General: DS/pyUserDefGen.md
-        
+        - Stacks: DS/pyStack.md
 
