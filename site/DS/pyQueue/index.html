@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/PR/pyStr5/">
+        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/DS/pyQueue/">
       
       <link rel="icon" href="../../Images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>String functions - Python Refresher</title>
+        <title>Queue - Python Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#join" class="md-skip">
+        <a href="#using-list" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              String functions
+              Queue
             
           </span>
         </div>
@@ -207,15 +207,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../pythonRefresh/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../pythonRefresh/" class="md-tabs__link">
         Python Basics
       </a>
     </li>
@@ -225,13 +223,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../DS/pyDS/" class="md-tabs__link">
+      <a href="../pyDS/" class="md-tabs__link md-tabs__link--active">
         Data Structures
       </a>
     </li>
@@ -302,14 +302,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -372,7 +370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyVar1/" class="md-nav__link">
+      <a href="../../PR/pyVar1/" class="md-nav__link">
         Variables
       </a>
     </li>
@@ -386,7 +384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyVar2/" class="md-nav__link">
+      <a href="../../PR/pyVar2/" class="md-nav__link">
         Type Casting
       </a>
     </li>
@@ -400,7 +398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyVar3/" class="md-nav__link">
+      <a href="../../PR/pyVar3/" class="md-nav__link">
         Scope of Variables
       </a>
     </li>
@@ -414,7 +412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyVar4/" class="md-nav__link">
+      <a href="../../PR/pyVar4/" class="md-nav__link">
         del Keyword
       </a>
     </li>
@@ -433,14 +431,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3" checked>
       
       
       
@@ -463,7 +459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyStr1/" class="md-nav__link">
+      <a href="../../PR/pyStr1/" class="md-nav__link">
         Backslashes
       </a>
     </li>
@@ -477,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyStr2/" class="md-nav__link">
+      <a href="../../PR/pyStr2/" class="md-nav__link">
         String operations
       </a>
     </li>
@@ -489,90 +485,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          String functions
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../PR/pyStr5/" class="md-nav__link">
         String functions
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#join" class="md-nav__link">
-    join
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#replace" class="md-nav__link">
-    replace
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#startswith-and-endswith" class="md-nav__link">
-    startswith and endswith
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#find-and-rfind" class="md-nav__link">
-    find and rfind
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lower-and-upper" class="md-nav__link">
-    lower and upper
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#split" class="md-nav__link">
-    split
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#count" class="md-nav__link">
-    count
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -584,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyStr3/" class="md-nav__link">
+      <a href="../../PR/pyStr3/" class="md-nav__link">
         String formatting
       </a>
     </li>
@@ -598,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyStr4/" class="md-nav__link">
+      <a href="../../PR/pyStr4/" class="md-nav__link">
         String formatting specifications
       </a>
     </li>
@@ -645,7 +562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyOp1/" class="md-nav__link">
+      <a href="../../PR/pyOp1/" class="md-nav__link">
         Arithmethic
       </a>
     </li>
@@ -659,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyOp2/" class="md-nav__link">
+      <a href="../../PR/pyOp2/" class="md-nav__link">
         Bitwise
       </a>
     </li>
@@ -673,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyOp3/" class="md-nav__link">
+      <a href="../../PR/pyOp3/" class="md-nav__link">
         In-Place
       </a>
     </li>
@@ -687,7 +604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyOp4/" class="md-nav__link">
+      <a href="../../PR/pyOp4/" class="md-nav__link">
         Walrus
       </a>
     </li>
@@ -701,7 +618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyOp5/" class="md-nav__link">
+      <a href="../../PR/pyOp5/" class="md-nav__link">
         Comparison
       </a>
     </li>
@@ -715,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyOp6/" class="md-nav__link">
+      <a href="../../PR/pyOp6/" class="md-nav__link">
         /@
       </a>
     </li>
@@ -729,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyOp7/" class="md-nav__link">
+      <a href="../../PR/pyOp7/" class="md-nav__link">
         (star) *
       </a>
     </li>
@@ -750,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyExp/" class="md-nav__link">
+      <a href="../../PR/pyExp/" class="md-nav__link">
         Exceptions
       </a>
     </li>
@@ -764,7 +681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyAsser/" class="md-nav__link">
+      <a href="../../PR/pyAsser/" class="md-nav__link">
         Assertions
       </a>
     </li>
@@ -804,7 +721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyfor/" class="md-nav__link">
+      <a href="../../PR/pyfor/" class="md-nav__link">
         For-loops
       </a>
     </li>
@@ -818,7 +735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyWhile/" class="md-nav__link">
+      <a href="../../PR/pyWhile/" class="md-nav__link">
         While-loops
       </a>
     </li>
@@ -832,7 +749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyElse/" class="md-nav__link">
+      <a href="../../PR/pyElse/" class="md-nav__link">
         Else-4loopsExcep
       </a>
     </li>
@@ -846,7 +763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyCond/" class="md-nav__link">
+      <a href="../../PR/pyCond/" class="md-nav__link">
         Conditionals
       </a>
     </li>
@@ -860,7 +777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyCompr/" class="md-nav__link">
+      <a href="../../PR/pyCompr/" class="md-nav__link">
         Comprehensions
       </a>
     </li>
@@ -887,12 +804,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -915,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pyDS/" class="md-nav__link">
+      <a href="../pyDS/" class="md-nav__link">
         General
       </a>
     </li>
@@ -955,7 +874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pyList/" class="md-nav__link">
+      <a href="../pyList/" class="md-nav__link">
         Lists
       </a>
     </li>
@@ -995,7 +914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pyIterSorted/" class="md-nav__link">
+      <a href="../pyIterSorted/" class="md-nav__link">
         Sorted
       </a>
     </li>
@@ -1009,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pyIterMapFilter/" class="md-nav__link">
+      <a href="../pyIterMapFilter/" class="md-nav__link">
         Map & Filter
       </a>
     </li>
@@ -1023,7 +942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pyIterAllAny/" class="md-nav__link">
+      <a href="../pyIterAllAny/" class="md-nav__link">
         All & Any
       </a>
     </li>
@@ -1037,7 +956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pyIterEnumerate/" class="md-nav__link">
+      <a href="../pyIterEnumerate/" class="md-nav__link">
         Enumerate
       </a>
     </li>
@@ -1051,7 +970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pyIterZip/" class="md-nav__link">
+      <a href="../pyIterZip/" class="md-nav__link">
         Zip
       </a>
     </li>
@@ -1065,7 +984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pyIterReversed/" class="md-nav__link">
+      <a href="../pyIterReversed/" class="md-nav__link">
         Reversed
       </a>
     </li>
@@ -1086,7 +1005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pyTuple/" class="md-nav__link">
+      <a href="../pyTuple/" class="md-nav__link">
         Tuple
       </a>
     </li>
@@ -1100,7 +1019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pyDict/" class="md-nav__link">
+      <a href="../pyDict/" class="md-nav__link">
         Dictionary
       </a>
     </li>
@@ -1114,7 +1033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pyArray/" class="md-nav__link">
+      <a href="../pyArray/" class="md-nav__link">
         Array
       </a>
     </li>
@@ -1128,7 +1047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pySet/" class="md-nav__link">
+      <a href="../pySet/" class="md-nav__link">
         Set
       </a>
     </li>
@@ -1149,7 +1068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pyGen/" class="md-nav__link">
+      <a href="../pyGen/" class="md-nav__link">
         Generators
       </a>
     </li>
@@ -1163,7 +1082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pyGenX/" class="md-nav__link">
+      <a href="../pyGenX/" class="md-nav__link">
         Generator Expressions
       </a>
     </li>
@@ -1203,7 +1122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pydeque/" class="md-nav__link">
+      <a href="../pydeque/" class="md-nav__link">
         Deque
       </a>
     </li>
@@ -1217,7 +1136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pyNamedTuple/" class="md-nav__link">
+      <a href="../pyNamedTuple/" class="md-nav__link">
         NamedTuple
       </a>
     </li>
@@ -1231,7 +1150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pyCounter/" class="md-nav__link">
+      <a href="../pyCounter/" class="md-nav__link">
         Counter
       </a>
     </li>
@@ -1245,7 +1164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pyDefaultdict/" class="md-nav__link">
+      <a href="../pyDefaultdict/" class="md-nav__link">
         Defaultdict
       </a>
     </li>
@@ -1259,7 +1178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pyOrdereddict/" class="md-nav__link">
+      <a href="../pyOrdereddict/" class="md-nav__link">
         Ordereddict
       </a>
     </li>
@@ -1273,7 +1192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pyChainMap/" class="md-nav__link">
+      <a href="../pyChainMap/" class="md-nav__link">
         ChainMap
       </a>
     </li>
@@ -1292,12 +1211,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" data-md-state="indeterminate" type="checkbox" id="__nav_3_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" checked>
       
       
       
@@ -1320,7 +1241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pyUserDefGen/" class="md-nav__link">
+      <a href="../pyUserDefGen/" class="md-nav__link">
         General
       </a>
     </li>
@@ -1334,7 +1255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DS/pyStack/" class="md-nav__link">
+      <a href="../pyStack/" class="md-nav__link">
         Stacks
       </a>
     </li>
@@ -1346,11 +1267,62 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../DS/pyQueue/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Queue
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Queue
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-list" class="md-nav__link">
+    Using List
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-collectionsdeque" class="md-nav__link">
+    Using collections.deque
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-queuequeue" class="md-nav__link">
+    Using queue.Queue
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1394,50 +1366,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#join" class="md-nav__link">
-    join
+  <a href="#using-list" class="md-nav__link">
+    Using List
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#replace" class="md-nav__link">
-    replace
+  <a href="#using-collectionsdeque" class="md-nav__link">
+    Using collections.deque
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#startswith-and-endswith" class="md-nav__link">
-    startswith and endswith
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#find-and-rfind" class="md-nav__link">
-    find and rfind
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lower-and-upper" class="md-nav__link">
-    lower and upper
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#split" class="md-nav__link">
-    split
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#count" class="md-nav__link">
-    count
+  <a href="#using-queuequeue" class="md-nav__link">
+    Using queue.Queue
   </a>
   
 </li>
@@ -1456,50 +1400,169 @@
                 
 
 
-  <h1>String functions</h1>
+  <h1>Queue</h1>
 
-<p>Python contains many useful built-in functions and methods to accomplish common tasks.</p>
-<h3 id="join">join</h3>
-<p>joins a list of strings with another string as a separator.
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;spam&quot;</span><span class="p">,</span><span class="s2">&quot;eggs&quot;</span><span class="p">,</span><span class="s2">&quot;ham&quot;</span><span class="p">]))</span>
+<p>A queue is similar to a stack, but defines a different way to add and remove elements. The elements are inserted from one end, called the rear, and deleted from the other end, called the front. This behavior is called FIFO (First in First Out).</p>
+<p>Terminology The process of adding new elements into the queue is called enqueue. The process of removal of an element from the queue is called dequeue.</p>
+<p>Applications Queues are used whenever we need to manage objects in order starting with the first one in. Scenarios include printing documents on a printer, call center systems answering people on hold, and so on.</p>
+<p>Queue in Python can be implemented by the following ways:</p>
+<ul>
+<li><a href="#using-list">list</a></li>
+<li><a href="#using-collectionsdeque">collections.deque</a></li>
+<li><a href="#using-queuequeue">queue.Queue</a></li>
+</ul>
+<h2 id="using-list">Using List</h2>
+<p>Python lists are the easiest way to implement a queue functionality. List is a Python’s built-in data structure that can be used as a queue. Instead of enqueue() and dequeue(), append() and pop() function is used. However, lists are quite slow for this purpose because inserting or deleting an element at the beginning requires shifting all of the other elements by one, requiring O(n) time.</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Python program to</span>
+<span class="c1"># demonstrate queue implementation</span>
+<span class="c1"># using list</span>
+
+<span class="c1"># Initializing a queue</span>
+<span class="n">queue</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Adding elements to the queue</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initial queue&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span>
+
+<span class="c1"># Removing elements from the queue</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Elements dequeued from queue&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Queue after removing elements&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span>
+
+<span class="c1"># Uncommenting print(queue.pop(0))</span>
+<span class="c1"># will raise and IndexError</span>
+<span class="c1"># as the queue is now empty</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>spam, eggs, ham
+<div class="highlight"><pre><span></span><code>Initial queue
+[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+
+Elements dequeued from queue
+a
+b
+c
+
+Queue after removing elements
+[]
 </code></pre></div></p>
-<h3 id="replace">replace</h3>
-<p>replaces one substring in a string with another.
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Me&quot;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Me&quot;</span><span class="p">,</span> <span class="s2">&quot;Ham&quot;</span><span class="p">))</span>
+<h2 id="using-collectionsdeque">Using collections.deque</h2>
+<p>Queue in Python can be implemented using deque class from the collections module. Deque is preferred over list in the cases where we need quicker append and pop operations from both the ends of container, as deque provides an O(1) time complexity for append and pop operations as compared to list which provides O(n) time complexity. Instead of enqueue and deque, append() and popleft() functions are used.</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Python program to</span>
+<span class="c1"># demonstrate queue implementation</span>
+<span class="c1"># using collections.dequeue</span>
+
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+
+<span class="c1"># Initializing a queue</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+
+<span class="c1"># Adding elements to a queue</span>
+<span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initial queue&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+
+<span class="c1"># Removing elements from a queue</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Elements dequeued from the queue&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">popleft</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">popleft</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">popleft</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Queue after removing elements&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+
+<span class="c1"># Uncommenting q.popleft()</span>
+<span class="c1"># will raise an IndexError</span>
+<span class="c1"># as queue is now empty</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>Hello Ham
+<div class="highlight"><pre><span></span><code>Initial queue
+deque([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;])
+
+Elements dequeued from the queue
+a
+b
+c
+
+Queue after removing elements
+deque([])
 </code></pre></div></p>
-<h3 id="startswith-and-endswith">startswith and endswith</h3>
-<p>determine if there is a substring at the start and end of a string, respectively.</p>
-<h3 id="find-and-rfind">find and rfind</h3>
-<p>search for a substr in a larger str. returns the index or -1 if not found. rfind starts from the right end to search. (Use the in operator for boolean result)
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Me&quot;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;lo&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Me&quot;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;lop&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Me&quot;</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s1">&#39;lo&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;lo&quot;</span> <span class="ow">in</span> <span class="s2">&quot;Hello Me&quot;</span><span class="p">)</span>
+<h2 id="using-queuequeue">Using queue.Queue</h2>
+<p>Queue is built-in module of Python which is used to implement a queue. queue.Queue(maxsize) initializes a variable to a maximum size of maxsize. A maxsize of zero ‘0’ means a infinite queue. This Queue follows FIFO rule. 
+There are various functions available in this module: </p>
+<ul>
+<li>maxsize – Number of items allowed in the queue.</li>
+<li>empty() – Return True if the queue is empty, False otherwise.</li>
+<li>full() – Return True if there are maxsize items in the queue. If the queue was initialized with maxsize=0 (the default), then full() never returns True.</li>
+<li>get() – Remove and return an item from the queue. If queue is empty, wait until an item is available.</li>
+<li>get_nowait() – Return an item if one is immediately available, else raise QueueEmpty.</li>
+<li>put(item) – Put an item into the queue. If the queue is full, wait until a free slot is available before adding the item.</li>
+<li>put_nowait(item) – Put an item into the queue without blocking. If no free slot is immediately available, raise QueueFull.</li>
+<li>qsize() – Return the number of items in the queue.</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Python program to</span>
+<span class="c1"># demonstrate implementation of</span>
+<span class="c1"># queue using queue module</span>
+
+
+<span class="kn">from</span> <span class="nn">queue</span> <span class="kn">import</span> <span class="n">Queue</span>
+
+<span class="c1"># Initializing a queue</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">(</span><span class="n">maxsize</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># qsize() give the maxsize</span>
+<span class="c1"># of the Queue</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">qsize</span><span class="p">())</span>
+
+<span class="c1"># Adding of element to queue</span>
+<span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+
+<span class="c1"># Return Boolean for Full</span>
+<span class="c1"># Queue</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Full: &quot;</span><span class="p">,</span> <span class="n">q</span><span class="o">.</span><span class="n">full</span><span class="p">())</span>
+
+<span class="c1"># Removing element from queue</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Elements dequeued from the queue&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+
+<span class="c1"># Return Boolean for Empty</span>
+<span class="c1"># Queue</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Empty: &quot;</span><span class="p">,</span> <span class="n">q</span><span class="o">.</span><span class="n">empty</span><span class="p">())</span>
+
+<span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Empty: &quot;</span><span class="p">,</span> <span class="n">q</span><span class="o">.</span><span class="n">empty</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Full: &quot;</span><span class="p">,</span> <span class="n">q</span><span class="o">.</span><span class="n">full</span><span class="p">())</span>
+
+<span class="c1"># This would result into Infinite</span>
+<span class="c1"># Loop as the Queue is empty.</span>
+<span class="c1"># print(q.get())</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>3
--1
-3
-True
-</code></pre></div></p>
-<h3 id="lower-and-upper">lower and upper</h3>
-<p>To change the case of a string, you can use lower and upper.</p>
-<h3 id="split">split</h3>
-<p>is the opposite of join turning a string with a certain separator into a list.
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;spam, eggs, ham&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">))</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>[&#39;spam&#39;, &#39;eggs&#39;, &#39;ham&#39;]
-</code></pre></div></p>
-<h3 id="count">count</h3>
-<p>to count the number of times a substring is present.
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Me Hello Me&quot;</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;Me&quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Me Hello Me&quot;</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;Meh&quot;</span><span class="p">))</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>2
-0
+<div class="highlight"><pre><span></span><code>0
+
+Full:  True
+
+Elements dequeued from the queue
+a
+b
+c
+
+Empty:  True
+
+Empty:  False
+Full:  False
 </code></pre></div></p>
 
               
@@ -1514,7 +1577,7 @@ True
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../pyStr2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: String operations" rel="prev">
+        <a href="../pyStack/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Stacks" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1523,26 +1586,11 @@ True
               <span class="md-footer__direction">
                 Previous
               </span>
-              String operations
+              Stacks
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../pyStr3/" class="md-footer__link md-footer__link--next" aria-label="Next: String formatting" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              String formatting
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   

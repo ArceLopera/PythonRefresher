@@ -145,4 +145,5 @@ nav:
      - User-Defined DS : 
         - General: DS/pyUserDefGen.md
         - Stacks: DS/pyStack.md
+        - Queue: DS/pyQueue.md
 
