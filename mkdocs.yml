@@ -146,4 +146,5 @@ nav:
         - General: DS/pyUserDefGen.md
         - Stacks: DS/pyStack.md
         - Queue: DS/pyQueue.md
+        - LinkedList: DS/pyLinkedList.md
 
