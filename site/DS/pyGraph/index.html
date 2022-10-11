@@ -1534,11 +1534,12 @@ Optionally, you can provide attributes that are associated with the node. In thi
 </code></pre></div>
 Optionally, you can provide attributes that are associated with the edge. In this example, the second edge has an attribute called type that indicates the nature of the relationship.</p>
 <p>Here’s how to draw the graph.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">draw_graph</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">draw_graph</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
     <span class="n">nx</span><span class="o">.</span><span class="n">draw_circular</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">1500</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">draw_graph</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 </code></pre></div>
+<img alt="Graph" src="../Images/2.png" /></p>
 <h2 id="graph-representation">Graph Representation</h2>
 <p>NetworkX represents graphs using a dictionary that maps from each node to a dictionary that maps from nodes to edges.</p>
 <p>If we select an element from the top-level dictionary, the result is a dictionary-like object.</p>
@@ -1598,8 +1599,9 @@ But there’s a method that does the same thing.</p>
 <p><div class="highlight"><pre><span></span><code><span class="n">complete</span> <span class="o">=</span> <span class="n">make_complete_graph</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </code></pre></div>
 And here’s what it looks like.</p>
-<div class="highlight"><pre><span></span><code><span class="n">draw_graph</span><span class="p">(</span><span class="n">complete</span><span class="p">)</span>
+<p><div class="highlight"><pre><span></span><code><span class="n">draw_graph</span><span class="p">(</span><span class="n">complete</span><span class="p">)</span>
 </code></pre></div>
+<img alt="Graph" src="../Images/3.png" /></p>
 <h2 id="random-graphs">Random Graphs</h2>
 <p>Next we’ll make an Erdos-Renyi graph, which is a random graph where the probability of an edge between each pair of nodes is .</p>
 <p>The helper function flip returns True with probability p and False with probability 1-p</p>
@@ -1630,9 +1632,8 @@ Here’s an example with n=10 and p=0.3</p>
 </code></pre></div>
 And here’s what it looks like:
 <div class="highlight"><pre><span></span><code><span class="n">draw_graph</span><span class="p">(</span><span class="n">random_graph</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>view 4.png
 </code></pre></div></p>
+<p><img alt="Random Graph" src="../Images/4.png" /></p>
 <h2 id="connectivity">Connectivity</h2>
 <p>A graph is connected if you can start from any node and follow a sequence of edges to reach any other node.</p>
 <p>To check whether a graph is connected, we’ll use a version of a depth-first search.</p>
@@ -1651,14 +1652,13 @@ And here’s what it looks like:
 <div class="highlight"><pre><span></span><code>NodeView((0, 1, 2, 3, 4, 5, 6, 7, 8, 9))
 </code></pre></div>
 The result is a ring where each node holds hands with its immediate neighbors.</p>
-<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">draw_graph</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">draw_graph</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
     <span class="n">nx</span><span class="o">.</span><span class="n">draw_circular</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">draw_graph</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>5.png
-</code></pre></div>
-Note: If k is odd, it gets “rounded down” to an even number.</p>
+<p><img alt="Watts-Strogatz Graph" src="../Images/5.png" /></p>
+<p>Note: If k is odd, it gets “rounded down” to an even number.</p>
 <h2 id="depth-first-search">Depth-First Search</h2>
 <p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">reachable_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">start</span><span class="p">):</span>
     <span class="n">seen</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>

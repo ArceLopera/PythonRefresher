@@ -68,6 +68,8 @@ def draw_graph(G):
 
 draw_graph(G)
 ```
+![Graph](./Images/2.png)
+
 ## Graph Representation
 
 NetworkX represents graphs using a dictionary that maps from each node to a dictionary that maps from nodes to edges.
@@ -160,6 +162,7 @@ And here’s what it looks like.
 ``` py
 draw_graph(complete)
 ```
+![Graph](./Images/3.png)
 ## Random Graphs
 
 Next we’ll make an Erdos-Renyi graph, which is a random graph where the probability of an edge between each pair of nodes is .
@@ -203,9 +206,8 @@ And here’s what it looks like:
 ``` py
 draw_graph(random_graph)
 ```
-```
-view 4.png
-```
+
+![Random Graph](./Images/4.png)
 
 ## Connectivity
 
@@ -244,9 +246,9 @@ def draw_graph(G):
 
 draw_graph(G)
 ```
-```
-5.png
-```
+
+![Watts-Strogatz Graph](./Images/5.png)
+
 Note: If k is odd, it gets “rounded down” to an even number.
 
 ## Depth-First Search
