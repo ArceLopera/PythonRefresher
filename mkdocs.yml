@@ -150,4 +150,5 @@ nav:
         - Graphs: DS/pyGraph.md
         - Hierarchical Structures:
           - Trees : DS/pyTrees.md
+          - HeapQueue : DS/pyHeapQueue.md
 

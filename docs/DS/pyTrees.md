@@ -8,13 +8,14 @@ Tree Vocabulary:
     For example, ‘a’ is a child of ‘f’, and ‘f’ is the parent of ‘a’. 
 + **Leaf** Finally, elements with no children are called leaves.
 
-Main applications of trees include: 
-1. Manipulate hierarchical data. 
-2. Make information easy to search (see tree traversal). 
-3. Manipulate sorted lists of data. 
-4. As a workflow for compositing digital images for visual effects. 
-5. Router algorithms 
-6. Form of a multi-stage decision-making
+Main applications of trees include:
+
+1. 	Manipulate hierarchical data. 
+2. 	Make information easy to search (see tree traversal). 
+3.	Manipulate sorted lists of data. 
+4. 	As a workflow for compositing digital images for visual effects. 
+5. 	Router algorithms 
+6. 	Form of a multi-stage decision-making
 
 ``` py
 # Python program to introduce Binary Tree
