@@ -151,4 +151,5 @@ nav:
         - Hierarchical Structures:
           - Trees : DS/pyTrees.md
           - HeapQueue : DS/pyHeapQueue.md
+          - Trie : DS/pyTrie.md
 
