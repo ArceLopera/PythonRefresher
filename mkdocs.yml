@@ -152,4 +152,6 @@ nav:
           - Trees : DS/pyTrees.md
           - HeapQueue : DS/pyHeapQueue.md
           - Trie : DS/pyTrie.md
+  - Python Functions :
+     - General : Func/pyGen.md
 
