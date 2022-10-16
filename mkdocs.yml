@@ -155,4 +155,5 @@ nav:
   - Python Functions :
      - General : Func/pyGen.md
      - Documentation : Func/pyDoc.md
+     - Annotations : Func/pyAnn.md
 
