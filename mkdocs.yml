@@ -154,4 +154,5 @@ nav:
           - Trie : DS/pyTrie.md
   - Python Functions :
      - General : Func/pyGen.md
+     - Documentation : Func/pyDoc.md
 
