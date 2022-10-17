@@ -158,4 +158,5 @@ nav:
      - Annotations : Func/pyAnn.md
      - Function As Objects : Func/pyFuncObj.md
      - Lambdas : Func/pyLambdas.md
+     - Context Managers : Func/pyCtxtMgr.md
 
