@@ -157,4 +157,5 @@ nav:
      - Documentation : Func/pyDoc.md
      - Annotations : Func/pyAnn.md
      - Function As Objects : Func/pyFuncObj.md
+     - Lambdas : Func/pyLambdas.md
 
