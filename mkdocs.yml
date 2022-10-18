@@ -159,4 +159,5 @@ nav:
      - Function As Objects : Func/pyFuncObj.md
      - Lambdas : Func/pyLambdas.md
      - Context Managers : Func/pyCtxtMgr.md
+     - Regular Expressions : Func/pyRegex.md
 
