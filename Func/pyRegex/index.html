@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/Func/pyCtxtMgr/">
+        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/Func/pyRegex/">
       
       <link rel="icon" href="../../Images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Context Managers - Python Refresher</title>
+        <title>Regular Expressions - Python Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-with-keyword" class="md-skip">
+        <a href="#metacharacters" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Context Managers
+              Regular Expressions
             
           </span>
         </div>
@@ -1509,6 +1509,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../pyCtxtMgr/" class="md-nav__link">
+        Context Managers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -1519,12 +1533,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Context Managers
+          Regular Expressions
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Context Managers
+        Regular Expressions
       </a>
       
         
@@ -1541,15 +1555,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-with-keyword" class="md-nav__link">
-    The with Keyword
+  <a href="#metacharacters" class="md-nav__link">
+    Metacharacters
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-as-keyword" class="md-nav__link">
-    The as Keyword
+  <a href="#character-classes" class="md-nav__link">
+    Character Classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metacharacters-for-repetition" class="md-nav__link">
+    Metacharacters for repetition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groups" class="md-nav__link">
+    Groups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-sequences" class="md-nav__link">
+    Special sequences
   </a>
   
 </li>
@@ -1558,20 +1593,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../pyRegex/" class="md-nav__link">
-        Regular Expressions
-      </a>
     </li>
   
 
@@ -1608,15 +1629,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-with-keyword" class="md-nav__link">
-    The with Keyword
+  <a href="#metacharacters" class="md-nav__link">
+    Metacharacters
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-as-keyword" class="md-nav__link">
-    The as Keyword
+  <a href="#character-classes" class="md-nav__link">
+    Character Classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metacharacters-for-repetition" class="md-nav__link">
+    Metacharacters for repetition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groups" class="md-nav__link">
+    Groups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-sequences" class="md-nav__link">
+    Special sequences
   </a>
   
 </li>
@@ -1635,26 +1677,340 @@
                 
 
 
-  <h1>Context Managers</h1>
+  <h1>Regular Expressions</h1>
 
-<h2 id="the-with-keyword">The <strong>with</strong> Keyword</h2>
-<p>Context managers are a really helpful structure in Python. Each context manager executes specific code before and after the statements you specify. To use one, you use the with keyword:</p>
-<div class="highlight"><pre><span></span><code>with &lt;context manager&gt; as &lt;var&gt;:
-    &lt;statements&gt;
+<p>Regular expressions are a powerful tool for various kinds of string manipulation.
+They are a domain specific language (DSL) that is present as a library in most modern programming languages, not just Python.</p>
+<p>They are useful for two main tasks:
+- verifying that strings match a pattern (for instance, that a string has the format of an email address),
+- performing substitutions in a string (such as changing all American spellings to British ones).</p>
+<p>Domain specific languages are highly specialized mini programming languages.
+Regular expressions are a popular example, and SQL (for database manipulation) is another.
+Private domain-specific languages are often used for specific industrial purposes.</p>
+<p>Regular expressions in Python can be accessed using the re module, which is part of the standard library.
+After you've defined a regular expression, the re.match function can be used to determine whether it matches at the beginning of a string.
+If it does, match returns an object representing the match, if not, it returns None.
+To avoid any confusion while working with regular expressions, we would use raw strings as r"expression".
+Raw strings don't escape anything, which makes use of regular expressions easier.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;spam&quot;</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="s2">&quot;spamspamspam&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No match&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>Using with gives you a way to define code to be executed within the context manager’s scope. The most basic example of this is when you’re working with file I/O in Python.</p>
-<p>If you wanted to open a file, do something with that file, and then make sure that the file was closed correctly, then you would use a context manager. Consider this example in which names.txt contains a list of names, one per line:</p>
-<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;names.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_file</span><span class="p">:</span>
-  <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">input_file</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><code>Match
+</code></pre></div></p>
+<ul>
+<li>The function re.search finds a match of a pattern anywhere in the string.</li>
+<li>The function re.findall returns a list of all substrings that match a pattern.</li>
+<li>The function re.finditer does the same thing as re.findall, except it returns an iterator, rather than a list.</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;spam&quot;</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="s2">&quot;eggspamsausagespam&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No match&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="s2">&quot;eggspamsausagespam&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No match&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="s2">&quot;eggspamsausagespam&quot;</span><span class="p">))</span>
 </code></pre></div>
-<p>The file I/O context manager provided by open() and initiated with the with keyword opens the file for reading, assigns the open file pointer to input_file, then executes whatever code you specify in the with block. Then, after the block is executed, the file pointer closes. Even if your code in the with block raises an exception, the file pointer would still close.</p>
-<h2 id="the-as-keyword">The <strong>as</strong> Keyword</h2>
-<p>If you want access to the results of the expression or context manager passed to with, you’ll need to alias it using as. You may have also seen as used to alias imports and exceptions, and this is no different. The alias is available in the with block:</p>
-<p><div class="highlight"><pre><span></span><code>with &lt;expr&gt; as &lt;alias&gt;:
-    &lt;statements&gt;
+<div class="highlight"><pre><span></span><code>No match
+Match
+[&#39;spam&#39;, &#39;spam&#39;]
 </code></pre></div>
-Most of the time, you’ll see these two Python keywords, with and as, used together.</p>
+The regex search returns an object with several methods that give details about it. These methods include group which returns the string matched, start and end which return the start and ending positions of the first match, and span which returns the start and end positions of the first match as a tuple.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;pam&quot;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="s2">&quot;eggspamsausage&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">start</span><span class="p">())</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">end</span><span class="p">())</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">())</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>pam
+4
+7
+(4, 7)
+</code></pre></div></p>
+<p>One of the most important re methods that use regular expressions is sub.</p>
+<p><code>re.sub(pattern, repl, string, count=0)</code></p>
+<p>This method replaces all occurrences of the pattern in string with repl, substituting all occurrences, unless count provided. This method returns the modified string.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">hello</span><span class="o">=</span><span class="s2">&quot;My name is Carlos, Hi Carlos&quot;</span>
+<span class="n">pattern</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Carlos&quot;</span>
+<span class="n">newstr</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="s2">&quot;Diana&quot;</span><span class="p">,</span><span class="n">hello</span><span class="p">,</span> <span class="n">count</span> <span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">newstr</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>My name is Diana, Hi Carlos
+</code></pre></div></p>
+<h2 id="metacharacters">Metacharacters</h2>
+<p>Metacharacters are what make regular expressions more powerful than normal string methods.
+They allow you to create regular expressions to represent concepts like "one or more repetitions of a vowel".</p>
+<p>The existence of metacharacters poses a problem if you want to create a regular expression (or regex) that matches a literal metacharacter, such as "$". You can do this by escaping the metacharacters by putting a backslash in front of them.
+However, this can cause problems, since backslashes also have an escaping function in normal Python strings. This can mean putting three or four backslashes in a row to do all the escaping.</p>
+<p>To avoid this, you can use a raw string, which is a normal string with an "r" in front of it.</p>
+<ul>
+<li>. (dot) : This matches any character, other than a new line.</li>
+<li>^ and $ : These match the start and end of a string, respectively.</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">pattern</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;gr.y&quot;</span>
+<span class="n">pattern2</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;....&quot;</span> <span class="c1">#Any four character string with no newlines</span>
+<span class="n">patt3</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;^gr.y$&quot;</span>
+
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="s2">&quot;grey&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 1&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="s2">&quot;gray&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 2&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span><span class="s2">&quot;blue&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 3&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt3</span><span class="p">,</span><span class="s2">&quot;gray&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 4&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt3</span><span class="p">,</span><span class="s2">&quot;Stingray&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 5&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Match 1
+Match 2
+Match 4
+</code></pre></div></p>
+<h2 id="character-classes">Character Classes</h2>
+<p>Character classes provide a way to match only one of a specific set of characters. A character class is created by putting the characters it matches inside square brackets. The pattern [aeiou] in the search function matches all strings that contain any one of the characters defined.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">patt</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;[aeiou]&quot;</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;grey&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 1&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;qwertyuiop&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 2&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;rhythm myths&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 3&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Match 1
+Match 2
+</code></pre></div>
+Character classes can also match ranges of characters. Some examples: The class [a-z] matches any lowercase alphabetic character. The class [G-P] matches any uppercase character from G to P. The class [0-9] matches any digit. Multiple ranges can be included in one class. For example, [A-Za-z] matches a letter of any case.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="c1">#strings that contain two alphabetic uppercase letters followed by a digit.</span>
+<span class="n">patt</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;[A-Z][A-Z][0-9]&quot;</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;LS8&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 1&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;E3&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 2&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;1ab&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 3&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Match 1
+</code></pre></div>
+Place a ^ at the start of a character class to invert it. This causes it to match any character other than the ones included. Other metacharacters such as $ and ., have no meaning within character classes. The metacharacter ^ has no meaning unless it is the first character in a class.</p>
+<p>The pattern [^A-Z] excludes uppercase strings. Note, that the ^ should be inside the brackets to invert the character class.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">patt</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;[^A-Z]&quot;</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;this is all quiet&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 1&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;E31hsDD&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 2&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;SHOUT&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 3&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Match 1
+Match 2
+</code></pre></div></p>
+<h2 id="metacharacters-for-repetition">Metacharacters for repetition</h2>
+<p>Some more metacharacters are * + ? { and }.
+These specify numbers of repetitions.
+* The metacharacter * means "zero or more repetitions of the previous thing". It tries to match as many repetitions as possible. The "previous thing" can be a single character, a class, or a group of characters in parentheses. * matches 0 or more occurrences of the preceding expression.
+* The metacharacter + is very similar to *, except it means "one or more repetitions", as opposed to "zero or more repetitions". + matches 1 or more occurrence of the preceding expression.
+* The metacharacter ? means "zero or one repetitions".
+* Curly braces can be used to represent the number of repetitions between two numbers.
+The regex {x,y} means "between x and y repetitions of something".
+Hence {0,1} is the same thing as ?.
+If the first number is missing, it is taken to be zero. If the second number is missing, it is taken to be infinity.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="c1"># strings that start with &quot;egg&quot; and follow with zero or more &quot;spam&quot;s</span>
+<span class="n">patt</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;egg(spam)*&quot;</span>
+<span class="n">patt1</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;[a^]*&quot;</span> <span class="c1">#Zero or more repetitions of &quot;a&quot; or &quot;^&quot;</span>
+<span class="n">patt2</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;g+&quot;</span>
+<span class="n">patt3</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;(42)+$&quot;</span> <span class="c1">#One or more 42s</span>
+<span class="n">patt4</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;ice(-)?cream&quot;</span>
+<span class="n">patt5</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;colo(u)?r&quot;</span><span class="c1">#Matches both color and colour</span>
+<span class="n">patt6</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;9{1,3}$&quot;</span><span class="c1"># matches string that have 1 to 3 nines.</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;egg&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 1&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;eggspamspamegg&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 2&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;spam&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 3&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt2</span><span class="p">,</span><span class="s2">&quot;g&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 4&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt2</span><span class="p">,</span><span class="s2">&quot;gggggg&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 5&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt2</span><span class="p">,</span><span class="s2">&quot;abcde&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 6&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt4</span><span class="p">,</span><span class="s2">&quot;ice-cream&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 7&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt4</span><span class="p">,</span><span class="s2">&quot;icecream&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 8&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt4</span><span class="p">,</span><span class="s2">&quot;ice--cream&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 9&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt6</span><span class="p">,</span><span class="s2">&quot;9&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 10&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt6</span><span class="p">,</span><span class="s2">&quot;999&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 11&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt6</span><span class="p">,</span><span class="s2">&quot;9999&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 12&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Match 1
+Match 2
+Match 4
+Match 5
+Match 7
+Match 8
+Match 10
+Match 11
+</code></pre></div></p>
+<h2 id="groups">Groups</h2>
+<p>A group can be created by surrounding part of a regular expression with parentheses. This means that a group can be given as an argument to metacharacters such as * and ?. (spam) represents a group in the example pattern shown below.</p>
+<p>The content of groups in a match can be accessed using the group function. A call of group(0) or group() returns the whole match. A call of group(n), where n is greater than 0, returns the nth group from the left. The method groups() returns all groups up from 1. Groups can be nested</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="c1"># strings that start with &quot;egg&quot; and follow with zero or more &quot;spam&quot;s</span>
+<span class="n">patt</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;egg(spam)*&quot;</span>
+<span class="n">patt1</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;([^aeiou][aeiou][^aeiou])+&quot;</span><span class="c1">#one or more repetitions of a nonvowel, a vowel and nonvowel</span>
+<span class="n">patt2</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;a(bc)(de)(f(g)h)i&quot;</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;egg&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 1&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;eggspamspamegg&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 2&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;spam&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 3&quot;</span><span class="p">)</span>
+<span class="n">match</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt2</span><span class="p">,</span><span class="s2">&quot;abcdefghijklmnop&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">())</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Match 1
+Match 2
+abcdefghi
+abcdefghi
+bc
+de
+(&#39;bc&#39;, &#39;de&#39;, &#39;fgh&#39;, &#39;g&#39;)
+</code></pre></div></p>
+<p>There are several kinds of special groups.
+Two useful ones are named groups and non-capturing groups.
+* Named groups have the format (?P<name>...), where name is the name of the group, and ... is the content. They behave exactly the same as normal groups, except they can be accessed by group(name) in addition to its number.
+* Non-capturing groups have the format (?:...). They are not accessible by the group method, so they can be added to an existing regular expression without breaking the numbering.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">patt</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;(?P&lt;first&gt;abc)(?:def)(ghi)&quot;</span>
+<span class="n">match</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;abcdefghijklmnop&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;first&quot;</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">())</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>abc
+(&#39;abc&#39;, &#39;ghi&#39;)
+</code></pre></div></p>
+<p>Another important metacharacter is |. This means "or", so red|blue matches either "red" or "blue".</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">patt</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;gr(a|e)y&quot;</span>
+<span class="n">match</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 1&quot;</span><span class="p">)</span>
+<span class="n">match</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;grey&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 2&quot;</span><span class="p">)</span>
+<span class="n">match</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;griy&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 3&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Match 1
+Match 2
+</code></pre></div></p>
+<h2 id="special-sequences">Special sequences</h2>
+<p>There are various special sequences you can use in regular expressions. They are written as a backslash followed by another character. One useful special sequence is a backslash and a number between 1 and 99, e.g., \1 or \17. This matches the expression of the group of that number.</p>
+<p>Note, that "(.+) \1" is not the same as "(.+) (.+)", because \1 refers to the first group's subexpression, which is the matched expression itself, and not the regex pattern.</p>
+<p>More useful special sequences are \d, \s, and \w. These match digits, whitespace, and word characters respectively. In ASCII mode they are equivalent to [0-9], [ \t\n\r\f\v], and [a-zA-Z0-9_]. In Unicode mode they match certain other characters, as well. For instance, \w matches letters with accents. Versions of these special sequences with upper case letters - \D, \S, and \W - mean the opposite to the lower-case versions. For instance, \D matches anything that isn't a digit.</p>
+<p>Additional special sequences are \A, \Z, and \b. The sequences \A and \Z match the beginning and end of a string, respectively. The sequence \b matches the empty string between \w and \W characters, or \w characters and the beginning or end of the string. Informally, it represents the boundary between words. The sequence \B matches the empty string anywhere else.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="c1">#[\w\.-]+ matches one or more word character, dot or dash.</span>
+<span class="n">emailpattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;([\w\.-]+)@([\w\.-]+)(\.[\w\.]+)&quot;</span>
+<span class="n">patt</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;(.+) \1&quot;</span>
+<span class="n">match</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;word word&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 1&quot;</span><span class="p">)</span>
+<span class="n">match</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;?! ?!&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 2&quot;</span><span class="p">)</span>
+<span class="n">match</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;abc def&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 3&quot;</span><span class="p">)</span>
+
+<span class="n">patt</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;(\D+\d)&quot;</span> <span class="c1"># matches one or more non-digits followed by a digit.</span>
+<span class="n">match</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;Hi 999!&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 4&quot;</span><span class="p">)</span>
+<span class="n">match</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;1, 23, 456!!&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 5&quot;</span><span class="p">)</span>
+<span class="n">match</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot; ! $?&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 6&quot;</span><span class="p">)</span>
+
+<span class="n">patt</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;\b(cat)\b&quot;</span> <span class="c1"># matches the word &quot;cat&quot; surrounded by word boundaries.</span>
+<span class="n">match</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;The cat sat!&quot;</span><span class="p">)</span> <span class="c1">#needs search not match</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 7&quot;</span><span class="p">)</span>
+<span class="n">match</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;we s&gt;cat&lt;tered?&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 8&quot;</span><span class="p">)</span>
+<span class="n">match</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;We scattered.&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 9&quot;</span><span class="p">)</span>
+<span class="n">patt</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;\B(cat)\B&quot;</span>
+<span class="n">match</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">patt</span><span class="p">,</span><span class="s2">&quot;We scattered.&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Match 10&quot;</span><span class="p">)</span>
+<span class="c1">#[\w\.-]+ matches one or more word character, dot or dash. the dot is preceded by \ to treat it as a character</span>
+<span class="n">emailpattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;([\w\.-]+)@([\w\.-]+)(\.[\w\.]+)&quot;</span>
+<span class="n">match</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">emailpattern</span><span class="p">,</span><span class="s2">&quot;Please contact car.ar@laposte.net for any assitance&quot;</span><span class="p">)</span> <span class="c1">#needs search not match</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Match 1
+Match 2
+Match 4
+Match 7
+Match 8
+Match 10
+car.ar@laposte.net
+</code></pre></div></p>
+<p>Regexes can be more readable with the verbose flag</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1">#The usual compact way:</span>
+<span class="n">email_rx</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;^[^@ ]+@[^@ ]+\.[^@ ]+$&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="c1">#The verbose way:</span>
+<span class="n">email_rx</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;&quot;&quot;(?x)     #verbose flag</span>
+<span class="s2">    ^                   #beginning of string</span>
+<span class="s2">    [^@ ]+              #stuff without @ or space (name)</span>
+<span class="s2">    @                   #an @ sign</span>
+<span class="s2">    [^@ ]+              #more stuff (domain)</span>
+<span class="s2">    \.                  #a dot</span>
+<span class="s2">    [^@ ]+              #final stuff(com, org,..)</span>
+<span class="s2">    $                   #end of string</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">email_rx</span><span class="p">,</span><span class="s2">&quot;carlos@pollo.com&quot;</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&lt;re.Match object; span=(0, 16), match=&#39;carlos@pollo.com&#39;&gt;
+</code></pre></div></p>
 
               
             </article>
@@ -1668,7 +2024,7 @@ Most of the time, you’ll see these two Python keywords, with and as, used toge
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../pyLambdas/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lambdas" rel="prev">
+        <a href="../pyCtxtMgr/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Context Managers" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1677,26 +2033,11 @@ Most of the time, you’ll see these two Python keywords, with and as, used toge
               <span class="md-footer__direction">
                 Previous
               </span>
-              Lambdas
+              Context Managers
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../pyRegex/" class="md-footer__link md-footer__link--next" aria-label="Next: Regular Expressions" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Regular Expressions
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
