@@ -176,7 +176,7 @@ if re.search(patt,"SHOUT"):
 Match 1
 Match 2
 ```
-## Metacharacters for repetition
+## Metacharacters for Repetition
 
 Some more metacharacters are * + ? { and }.
 These specify numbers of repetitions.
@@ -308,7 +308,7 @@ Match 1
 Match 2
 ```
 
-## Special sequences
+## Special Sequences
 
 There are various special sequences you can use in regular expressions. They are written as a backslash followed by another character. One useful special sequence is a backslash and a number between 1 and 99, e.g., \1 or \17. This matches the expression of the group of that number.
 
