@@ -161,4 +161,5 @@ nav:
      - Context Managers : Func/pyCtxtMgr.md
      - Regular Expressions : Func/pyRegex.md
      - Numeric Functions : Func/pyNumFunc.md
+     - Decorators : Func/pyDecor.md
 
