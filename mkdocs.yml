@@ -158,6 +158,7 @@ nav:
      - Annotations : Func/pyAnn.md
      - Function As Objects : Func/pyFuncObj.md
      - Lambdas : Func/pyLambdas.md
+     - Arguments : Func/pyFnArgs.md
      - Context Managers : Func/pyCtxtMgr.md
      - Regular Expressions : Func/pyRegex.md
      - Numeric Functions : Func/pyNumFunc.md
