@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/Func/pyDoc/">
+        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/Func/pyFnArgs/">
       
       <link rel="icon" href="../../Images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Documentation - Python Refresher</title>
+        <title>Arguments - Python Refresher</title>
       
     
     
@@ -68,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#default-values" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -96,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Documentation
+              Arguments
             
           </span>
         </div>
@@ -1448,19 +1453,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../pyDoc/" class="md-nav__link">
         Documentation
       </a>
-      
     </li>
   
 
@@ -1512,11 +1509,69 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../pyFnArgs/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Arguments
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Arguments
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyword-arguments" class="md-nav__link">
+    Keyword Arguments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyword-only-arguments" class="md-nav__link">
+    Keyword-only Arguments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passing-arguments-by-value-and-by-reference" class="md-nav__link">
+    Passing Arguments By Value and By Reference
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1602,6 +1657,42 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    Default Values
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyword-arguments" class="md-nav__link">
+    Keyword Arguments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyword-only-arguments" class="md-nav__link">
+    Keyword-only Arguments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passing-arguments-by-value-and-by-reference" class="md-nav__link">
+    Passing Arguments By Value and By Reference
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1614,75 +1705,61 @@
                 
 
 
-  <h1>Documentation</h1>
+  <h1>Arguments</h1>
 
-<p>Docstrings (documentation strings) serve a similar purpose to comments, as they are designed to explain code. However, they are more specific and have a different syntax. They are created by putting a multiline string containing an explanation of the function below the function's first line. Unlike conventional comments, docstrings are retained throughout the runtime of the program. This allows the programmer to inspect these comments at run time.</p>
-<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">sumt</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
-  <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">  Multiplies by two the sum of parameters</span>
-
-<span class="sd">  Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    x : int</span>
-<span class="sd">      First Number.</span>
-<span class="sd">    y : int</span>
-<span class="sd">      Second Number.</span>
-<span class="sd">  Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    z : int</span>
-<span class="sd">      Result of the operation</span>
-
-<span class="sd">  Examples</span>
-<span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; sumt(2, 3)</span>
-<span class="sd">    12 </span>
-
-<span class="sd">  &quot;&quot;&quot;</span>
-  <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span>
+<p>Python allows to have function with varying number of arguments. Using <em>args as a function parameter enables you to pass an arbitrary number of arguments to that function. The arguments are then accessible as the tuple args in the body of the function. The parameter </em>args must come after the named parameters to a function. The name args is just a convention; you can choose to use another. *args is called an argument list.</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="n">named_args</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">named_args</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<span class="n">function</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
 </code></pre></div>
-The docstring is a triple-quoted string (which may span multiple lines) that comes immediately after the header of a function. When we call help() or .doc on a function, it shows the docstring.</p>
-<p><div class="highlight"><pre><span></span><code><span class="n">help</span><span class="p">(</span><span class="n">sumt</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>Help on function sumt in module __main__:
-
-sumt(x, y)
-    Multiplies by two the sum of parameters
-
-    Parameters
-      ----------
-      x : int
-        First Number.
-      y : int
-        Second Number.
-    Returns
-      -------
-      z : int
-        Result of the operation
-
-    Examples
-      --------
-      &gt;&gt;&gt; sumt(2, 3)
-      12
+<div class="highlight"><pre><span></span><code>1
+(2, 3, 4, 5, 6, 7)
 </code></pre></div></p>
-<p><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">sumt</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+<h2 id="default-values">Default Values</h2>
+<p>Named parameters to a function can be made optional by giving them a default value. These must come after named parameters without a default value. In case the argument is passed in, the default value is ignored. If the argument is not passed in, the default value is used.</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">food</span><span class="o">=</span><span class="s2">&quot;spam&quot;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">food</span><span class="p">)</span>
+
+<span class="n">function</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">function</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;eggs&quot;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>  Multiplies by two the sum of parameters
+<div class="highlight"><pre><span></span><code>spam
+eggs
+</code></pre></div></p>
+<h2 id="keyword-arguments">Keyword Arguments</h2>
+<p>kwargs (standing for keyword arguments) allows you to handle named arguments that you have not defined in advance. The keyword arguments return a **dictionary in which the keys are the argument names, and the values are the argument values.</p>
+<p>The arguments returned by *<em>kwargs are not included in </em>args</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">my_func</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span> <span class="c1">#a and b are the names of the arguments that we passed to the function call.</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>{&#39;a&#39;: 7, &#39;b&#39;: 8}
+</code></pre></div></p>
+<h2 id="keyword-only-arguments">Keyword-only Arguments</h2>
+<p>These are only specifiable via the name of the argument, and cannot be specified as a positional argument.</p>
+<p>For example, the following function takes a positional argument and two keyword-only arguments</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">keyword_only_function</span><span class="p">(</span><span class="n">parameter</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">option1</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">option2</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+    <span class="k">pass</span>
+</code></pre></div>
+In this example, option1, and option2 are only specifiable via the keyword argument syntax. The following is valid</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">keyword_only_function</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">option1</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">option2</span><span class="o">=</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
+</code></pre></div>
+But this example will raise an error</p>
+<div class="highlight"><pre><span></span><code><span class="n">keyword_only_function</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="passing-arguments-by-value-and-by-reference">Passing Arguments By Value and By Reference</h2>
+<p>Manipulating provided arguments inside the function will leave immutable arguments intact, but will update mutable arguments. Lists are mutable, int is inmutable. Passing List as arguments is similar to passing by reference. Passing int is similar to passing by value.</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">Func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+  <span class="n">a</span><span class="o">=</span><span class="mi">1</span>
+  <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
 
-  Parameters
-    ----------
-    x : int
-      First Number.
-    y : int
-      Second Number.
-  Returns
-    -------
-    z : int
-      Result of the operation
-
-  Examples
-    --------
-    &gt;&gt;&gt; sumt(2, 3)
-    12 
+<span class="n">x</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">Func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>0 [1]
 </code></pre></div></p>
 
               
@@ -1697,7 +1774,7 @@ sumt(x, y)
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../pyGen/" class="md-footer__link md-footer__link--prev" aria-label="Previous: General" rel="prev">
+        <a href="../pyLambdas/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lambdas" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1706,20 +1783,20 @@ sumt(x, y)
               <span class="md-footer__direction">
                 Previous
               </span>
-              General
+              Lambdas
             </div>
           </div>
         </a>
       
       
         
-        <a href="../pyAnn/" class="md-footer__link md-footer__link--next" aria-label="Next: Annotations" rel="next">
+        <a href="../pyCtxtMgr/" class="md-footer__link md-footer__link--next" aria-label="Next: Context Managers" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Annotations
+              Context Managers
             </div>
           </div>
           <div class="md-footer__button md-icon">
