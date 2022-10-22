@@ -165,4 +165,6 @@ nav:
      - Decorators : Func/pyDecor.md
      - Main : Func/pyMain.md
      - Functools : Func/pyFnTools.md
+  - Python Classes:
+     - General : Cls/pyGen.md
 

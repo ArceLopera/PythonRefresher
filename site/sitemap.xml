@@ -11,6 +11,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://arcelopera.github.io/PythonRefresher/Cls/pyGen/</loc>
+         <lastmod>2022-10-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyArray/</loc>
          <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
