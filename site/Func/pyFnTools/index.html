@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/Func/pyNumFunc/">
+        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/Func/pyFnTools/">
       
       <link rel="icon" href="../../Images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Numeric Functions - Python Refresher</title>
+        <title>Functools - Python Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#numeric-functions" class="md-skip">
+        <a href="#reduce" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Numeric Functions
+              Functools
             
           </span>
         </div>
@@ -1551,62 +1551,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Numeric Functions
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../pyNumFunc/" class="md-nav__link">
         Numeric Functions
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#numeric-functions" class="md-nav__link">
-    Numeric Functions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mathematical-functions" class="md-nav__link">
-    Mathematical Functions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#statistics" class="md-nav__link">
-    Statistics
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1644,11 +1593,48 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../pyFnTools/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Functools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Functools
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reduce" class="md-nav__link">
+    Reduce
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1685,22 +1671,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#numeric-functions" class="md-nav__link">
-    Numeric Functions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mathematical-functions" class="md-nav__link">
-    Mathematical Functions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#statistics" class="md-nav__link">
-    Statistics
+  <a href="#reduce" class="md-nav__link">
+    Reduce
   </a>
   
 </li>
@@ -1719,99 +1691,26 @@
                 
 
 
-  <h1>Numeric Functions</h1>
+  <h1>Functools</h1>
 
-<ul>
-<li>To find the maximum or minimum of some numbers or a list, you can use max or min.</li>
-<li>To find the distance of a number from zero (its absolute value), use abs.</li>
-<li>To round a number to a certain number of decimal places, use round.</li>
-<li>To find the total of a list, use sum.</li>
-</ul>
-<h2 id="numeric-functions">Numeric Functions</h2>
-<p><div class="highlight"><pre><span></span><code><span class="n">x</span><span class="o">=-</span><span class="mf">47.3</span>
-<span class="n">y</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x is </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x is </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x is </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x is </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> 
+<p>Functools module is for higher-order functions that work on other functions. It provides functions for working with other functions and callable objects to use or extend them without completely rewriting them.</p>
+<p><a href="https://docs.python.org/3/library/functools.html">Docs</a></p>
+<h2 id="reduce">Reduce</h2>
+<p>functools.reduce(function, iterable[, initializer])</p>
+<p>Apply function of two arguments cumulatively to the items of iterable, from left to right, so as to reduce the iterable to a single value. For example, reduce(lambda x, y: x+y, [1, 2, 3, 4, 5]) calculates ((((1+2)+3)+4)+5).</p>
+<p>If the optional initializer is present, it is placed before the items of the iterable in the calculation, and serves as a default when the iterable is empty. If initializer is not given and iterable contains only one item, the first item is returned.</p>
+<p>Roughly equivalent to:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">iterable</span><span class="p">,</span> <span class="n">initializer</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">initializer</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">initializer</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">it</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">element</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">value</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>x is &lt;class &#39;float&#39;&gt;
-x is -47.3
-x is &lt;class &#39;float&#39;&gt;
-x is 47.3
-</code></pre></div></p>
-<p><div class="highlight"><pre><span></span><code><span class="n">x</span><span class="o">=</span><span class="mi">47</span>
-<span class="n">y</span><span class="o">=</span><span class="nb">divmod</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x is </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x is </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x is </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x is </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> 
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>x is &lt;class &#39;int&#39;&gt;
-x is 47
-x is &lt;class &#39;tuple&#39;&gt;
-x is (15, 2)
-</code></pre></div></p>
-<p><div class="highlight"><pre><span></span><code><span class="n">x</span><span class="o">=</span><span class="mi">47</span>
-<span class="n">y</span><span class="o">=</span><span class="n">x</span> <span class="o">+</span> <span class="mi">73</span><span class="n">j</span>
-<span class="c1">#y=complex(x, 73)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x is </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x is </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x is </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x is </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>x is &lt;class &#39;int&#39;&gt;
-x is 47
-x is &lt;class &#39;complex&#39;&gt;
-x is (47+73j)
-</code></pre></div></p>
-<h2 id="mathematical-functions">Mathematical Functions</h2>
-<p>Mathematical functions</p>
-<p>import <a href="https://docs.python.org/3/library/math.html">math</a></p>
-<p>Mathematical functions for complex numbers</p>
-<p>import <a href="https://docs.python.org/3/library/cmath.html">cmath</a></p>
-<p><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">min</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">54</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="mf">0.6464</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">]))</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>-1
--1
-54
-0.65
-16
-</code></pre></div></p>
-<h2 id="statistics">Statistics</h2>
-<p>For more advanced function use numpy</p>
-<p><div class="highlight"><pre><span></span><code><span class="c1"># using Python statistics functions</span>
-<span class="kn">import</span> <span class="nn">statistics</span>
-
-<span class="c1"># simple statistics operations</span>
-<span class="n">sample_data1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
-<span class="n">sample_data2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-
-<span class="c1"># Use the mean function - calculates an average value</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sample_data1</span><span class="p">))</span>
-
-<span class="c1"># Use the different median functions</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">statistics</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">sample_data1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">statistics</span><span class="o">.</span><span class="n">median_low</span><span class="p">(</span><span class="n">sample_data1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">statistics</span><span class="o">.</span><span class="n">median_high</span><span class="p">(</span><span class="n">sample_data1</span><span class="p">))</span>
-
-<span class="c1"># The mode function indicates which data item occurs</span>
-<span class="c1"># most frequently</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">statistics</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">sample_data2</span><span class="p">))</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>4
-4.0
-3
-5
-3
-</code></pre></div></p>
+<p>See <a href="https://docs.python.org/3/library/itertools.html#itertools.accumulate">itertools.accumulate()</a> for an iterator that yields all intermediate values.</p>
 
               
             </article>
@@ -1825,7 +1724,7 @@ x is (47+73j)
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../pyRegex/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Regular Expressions" rel="prev">
+        <a href="../pyMain/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Main" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1834,26 +1733,11 @@ x is (47+73j)
               <span class="md-footer__direction">
                 Previous
               </span>
-              Regular Expressions
+              Main
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../pyDecor/" class="md-footer__link md-footer__link--next" aria-label="Next: Decorators" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Decorators
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
