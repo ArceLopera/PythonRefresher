@@ -167,4 +167,5 @@ nav:
      - Functools : Func/pyFnTools.md
   - Python Classes:
      - General : Cls/pyGen.md
+     - Constructor : Cls/pyConstructor.md
 
