@@ -168,4 +168,5 @@ nav:
   - Python Classes:
      - General : Cls/pyGen.md
      - Constructor : Cls/pyConstructor.md
+     - Inheritance : Cls/pyInheritance.md
 
