@@ -169,4 +169,5 @@ nav:
      - General : Cls/pyGen.md
      - Constructor : Cls/pyConstructor.md
      - Inheritance : Cls/pyInheritance.md
+     - Magic Methods : Cls/pyMagicMet.md
 
