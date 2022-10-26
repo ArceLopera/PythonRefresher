@@ -171,4 +171,5 @@ nav:
      - Inheritance : Cls/pyInheritance.md
      - Magic Methods : Cls/pyMagicMet.md
      - Data Hiding : Cls/pyDataHid.md
+     - Class & Static Methods : Cls/pyClsStaMet.md
 
