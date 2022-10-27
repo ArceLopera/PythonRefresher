@@ -173,4 +173,5 @@ nav:
      - Data Hiding : Cls/pyDataHid.md
      - Class & Static Methods : Cls/pyClsStaMet.md
      - Properties : Cls/pyProp.md
+     - Abstract Classes : Cls/pyAbsCls.md
 
