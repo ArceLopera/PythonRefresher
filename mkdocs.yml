@@ -172,4 +172,5 @@ nav:
      - Magic Methods : Cls/pyMagicMet.md
      - Data Hiding : Cls/pyDataHid.md
      - Class & Static Methods : Cls/pyClsStaMet.md
+     - Properties : Cls/pyProp.md
 
