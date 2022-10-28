@@ -174,4 +174,6 @@ nav:
      - Class & Static Methods : Cls/pyClsStaMet.md
      - Properties : Cls/pyProp.md
      - Abstract Classes : Cls/pyAbsCls.md
+     - DataClasses : Cls/pyDataCls.md
+     - Enumerations : Cls/pyEnum.md
 
