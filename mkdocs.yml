@@ -176,4 +176,6 @@ nav:
      - Abstract Classes : Cls/pyAbsCls.md
      - DataClasses : Cls/pyDataCls.md
      - Enumerations : Cls/pyEnum.md
+  - Useful Libraries :
+     - General : lib/pyGen.md
 
