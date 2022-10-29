@@ -178,4 +178,5 @@ nav:
      - Enumerations : Cls/pyEnum.md
   - Useful Libraries :
      - General : lib/pyGen.md
+     - IO & OS : lib/pyIO.md
 
