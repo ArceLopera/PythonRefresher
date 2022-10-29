@@ -602,5 +602,3 @@ First 5 rows are:
        7.8
 
 ```
-
-## ConfigParse Module
