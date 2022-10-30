@@ -1,6 +1,6 @@
-Functools module is for higher-order functions that work on other functions. It provides functions for working with other functions and callable objects to use or extend them without completely rewriting them.
+[Functools](https://docs.python.org/3/library/functools.html) module is for higher-order functions that work on other functions. It provides functions for working with other functions and callable objects to use or extend them without completely rewriting them.
 
-[Docs](https://docs.python.org/3/library/functools.html)
+
 
 ## Reduce
 

@@ -1,6 +1,13 @@
 Modules are pieces of code that other people have written to fulfill common tasks, such as generating random numbers, performing mathematical operations, etc. There are three main types of modules in Python, those you write yourself, those you install from external sources, and those that are preinstalled with Python.
 The last type is called the [standard library](https://docs.python.org/3/library/), and contains many useful modules. Some of the standard library's useful modules include string, re, datetime, math, random, os, multiprocessing, subprocess, socket, email, json, doctest, unittest, pdb, argparse and sys. 
 
+Python’s standard library is very extensive, offering a wide range of facilities such as:
+
++ [Functional Programming Modules](https://docs.python.org/3/library/functional.html)
+    + [itertools](pyIter.md) — Functions creating iterators for efficient looping
+    + [functools](../Func/pyFnTools.md) — Higher-order functions and operations on callable objects
+    + [operator](https://docs.python.org/3/library/operator.html) — Standard operators as functions
+
 Many third-party Python modules are stored on the [Python Package Index (PyPI)](https://pypi.org/).
 
 The best way to install these is using a program called pip.
