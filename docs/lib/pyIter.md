@@ -80,14 +80,17 @@ list(map(pow, range(10), itertools.repeat(2)))
 
 ## Iterators terminating on the shortest input sequence
 
+[All list](https://docs.python.org/3/library/itertools.html)
+
 | Iterator      | Arguments | Syntax      | Example |
 | ----------- | ----------- | ----------- | ----------- |
 |  [accumulate()](https://docs.python.org/3/library/itertools.html#itertools.accumulate)      | p [,func]      | p0, p0+p1, p0+p1+p2, …     | accumulate([1,2,3,4,5]) --> 1 3 6 10 15      |
 |[dropwhile()](https://docs.python.org/3/library/itertools.html#itertools.dropwhile) | pred, seq | seq[n], seq[n+1], starting when pred fails | dropwhile(lambda x: x<5, [1,4,6,4,1]) --> 6 4 1 |
-| [groupby()](https://docs.python.org/3/library/itertools.html#itertools.groupby)|iterable[, key] |sub-iterators grouped by value of key(v) | |
 | [takewhile()](https://docs.python.org/3/library/itertools.html#itertools.takewhile)|pred, seq|seq[0], seq[1], until pred fails|takewhile(lambda x: x<5, [1,4,6,4,1]) --> 1 4|
-|[zip_longest()](https://docs.python.org/3/library/itertools.html#itertools.zip_longest)|p, q, …|(p[0], q[0]), (p[1], q[1]), …|zip_longest('ABCD', 'xy', fillvalue='-') --> Ax By C- D-|
 |[chain()](https://docs.python.org/3/library/itertools.html#itertools.chain)|p, q, …|p0, p1, … plast, q0, q1, …|chain('ABC', 'DEF') --> A B C D E F|
+| [groupby()](https://docs.python.org/3/library/itertools.html#itertools.groupby)|iterable[, key] |sub-iterators grouped by value of key(v) | |
+|[zip_longest()](https://docs.python.org/3/library/itertools.html#itertools.zip_longest)|p, q, …|(p[0], q[0]), (p[1], q[1]), …|zip_longest('ABCD', 'xy', fillvalue='-') --> Ax By C- D-|
+
 
 * [accumulate()](https://docs.python.org/3/library/itertools.html#itertools.accumulate) - returns a running total of values in an iterable
 
