@@ -12,9 +12,9 @@ Python’s standard library is very extensive, offering a wide range of faciliti
     + [operator](https://docs.python.org/3/library/operator.html) — Standard operators as functions
 + [DataTypes](https://docs.python.org/3/library/datatypes.html)
     + [Collections](../DS/pyDS.md) - Container datatypes
-    + heapq — Heap queue algorithm
+    + [heapq](../DS/pyHeapQueue.md) — Heap queue algorithm
     + [bisect](../lib/pyBisect.md) — Array bisection algorithm
-    + array — Efficient arrays of numeric values
+    + [array](../DS/pyArray.md) — Efficient arrays of numeric values
     + pprint — Data pretty printer
     + [enum](../Cls/pyEnum.md) — Support for enumerations
 + [Numeric and Mathematical Modules](https://docs.python.org/3/library/numeric.html)
