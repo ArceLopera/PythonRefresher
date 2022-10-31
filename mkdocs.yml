@@ -180,4 +180,5 @@ nav:
      - General : lib/pyGen.md
      - IO & OS : lib/pyIO.md
      - Itertools : lib/pyIter.md
+     - Bisect : lib/pyBisect.md
 
