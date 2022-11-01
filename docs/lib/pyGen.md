@@ -23,7 +23,7 @@ Python’s standard library is very extensive, offering a wide range of faciliti
     + [cmath](../Func/pyNumFunc.md#mathematical-functions) — Mathematical functions for complex numbers
     + decimal — Decimal fixed point and floating point arithmetic
     + fractions — Rational numbers
-    + random — Generate pseudo-random numbers
+    + [random](./pyRandom.md) — Generate pseudo-random numbers
     + [statistics](../Func/pyNumFunc.md#statistics) — Mathematical statistics functions
 
 Many third-party Python modules are stored on the [Python Package Index (PyPI)](https://pypi.org/).
