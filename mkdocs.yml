@@ -182,4 +182,5 @@ nav:
      - Itertools : lib/pyIter.md
      - Bisect : lib/pyBisect.md
      - Random : lib/pyRandom.md
+     - Packaging : lib/pyPack.md
 
