@@ -183,4 +183,5 @@ nav:
      - Bisect : lib/pyBisect.md
      - Random : lib/pyRandom.md
      - Packaging : lib/pyPack.md
+     - Dates and Time : lib/pydatetime.md
 

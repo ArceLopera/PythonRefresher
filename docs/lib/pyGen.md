@@ -11,6 +11,8 @@ Python’s standard library is very extensive, offering a wide range of faciliti
     + [functools](../Func/pyFnTools.md) — Higher-order functions and operations on callable objects
     + [operator](https://docs.python.org/3/library/operator.html) — Standard operators as functions
 + [DataTypes](https://docs.python.org/3/library/datatypes.html)
+    + [datetime](pydatetime.md) - Basic date and time types
+    + [calendar](pydatetime.md#calendar) - General calendar-related functions 
     + [Collections](../DS/pyDS.md) - Container datatypes
     + [heapq](../DS/pyHeapQueue.md) — Heap queue algorithm
     + [bisect](../lib/pyBisect.md) — Array bisection algorithm
@@ -25,6 +27,11 @@ Python’s standard library is very extensive, offering a wide range of faciliti
     + fractions — Rational numbers
     + [random](./pyRandom.md) — Generate pseudo-random numbers
     + [statistics](../Func/pyNumFunc.md#statistics) — Mathematical statistics functions
++ [Development Tools](https://docs.python.org/3/library/development.html)
+    + [Debugging and Profiling]()
+    + [Testing Software]()
+    + [Logging]()
+    + [Software Packaging and Distribution](pyPack.md)
 
 Many third-party Python modules are stored on the [Python Package Index (PyPI)](https://pypi.org/).
 
