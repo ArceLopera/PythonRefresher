@@ -27,6 +27,9 @@ print(20%6) # Modulo or remainder
 3
 2
 ```
+## Decimal
+
+Decimal fixed point and floating point arithmetic
 
 For enhanced precision, the decimal module provides support for fast correctly-rounded decimal floating point arithmetic.
 

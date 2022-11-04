@@ -68,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#decimal" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -616,9 +621,38 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Arithmethic
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Arithmethic
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#decimal" class="md-nav__link">
+    Decimal
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1946,6 +1980,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lib/pySerial/" class="md-nav__link">
+        Serialization
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1969,6 +2017,21 @@
   
   
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#decimal" class="md-nav__link">
+    Decimal
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2049,6 +2112,8 @@
 3
 2
 </code></pre></div>
+<h2 id="decimal">Decimal</h2>
+<p>Decimal fixed point and floating point arithmetic</p>
 <p>For enhanced precision, the decimal module provides support for fast correctly-rounded decimal floating point arithmetic.</p>
 <p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">getcontext</span><span class="p">()</span><span class="o">.</span><span class="n">prec</span> <span class="o">=</span> <span class="mi">6</span>

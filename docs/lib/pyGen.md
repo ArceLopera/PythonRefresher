@@ -23,10 +23,13 @@ Python’s standard library is very extensive, offering a wide range of faciliti
     + numbers — Numeric abstract base classes
     + [math](../Func/pyNumFunc.md#mathematical-functions) — Mathematical functions
     + [cmath](../Func/pyNumFunc.md#mathematical-functions) — Mathematical functions for complex numbers
-    + decimal — Decimal fixed point and floating point arithmetic
+    + [decimal](../PR/pyOp1.md#decimal) — Decimal fixed point and floating point arithmetic
     + fractions — Rational numbers
     + [random](./pyRandom.md) — Generate pseudo-random numbers
     + [statistics](../Func/pyNumFunc.md#statistics) — Mathematical statistics functions
++ [Data Persistence](https://docs.python.org/3/library/persistence.html)
+    + [pickle](pySerial.md) - Python object serialization
+    + [json](pySerial.md#serialization-with-json) — JSON encoder and decoder
 + [Development Tools](https://docs.python.org/3/library/development.html)
     + [Debugging and Profiling]()
     + [Testing Software]()
