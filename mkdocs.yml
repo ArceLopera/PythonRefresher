@@ -185,4 +185,5 @@ nav:
      - Packaging : lib/pyPack.md
      - Dates and Time : lib/pydatetime.md
      - Serialization : lib/pySerial.md
+     - Emoji : lib/pyEmoji.md
 
