@@ -1958,6 +1958,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyEmoji/" class="md-nav__link">
+        Emoji
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1998,7 +2012,10 @@
 
 <p>Modules are pieces of code that other people have written to fulfill common tasks, such as generating random numbers, performing mathematical operations, etc. There are three main types of modules in Python, those you write yourself, those you install from external sources, and those that are preinstalled with Python.
 The last type is called the <a href="https://docs.python.org/3/library/">standard library</a>, and contains many useful modules. Some of the standard library's useful modules include <a href="https://docs.python.org/3/library/string.html">string</a>, <a href="https://docs.python.org/3/library/re.html">re</a>, <a href="https://docs.python.org/3/library/datetime.html">datetime</a>, <a href="https://docs.python.org/3/library/math.html">math</a>, <a href="https://docs.python.org/3/library/random.html">random</a>, <a href="https://docs.python.org/3/library/os.html">os</a>, <a href="https://docs.python.org/3/library/multiprocessing.html">multiprocessing</a>, <a href="https://docs.python.org/3/library/subprocess.html">subprocess</a>, <a href="https://docs.python.org/3/library/socket.html">socket</a>, <a href="https://docs.python.org/3/library/email.html">email</a>, <a href="https://docs.python.org/3/library/json.html">json</a>, <a href="https://docs.python.org/3/library/doctest.html">doctest</a>, <a href="https://docs.python.org/3/library/unittest.html">unittest</a>, <a href="https://docs.python.org/3/library/pdb.html">pdb</a>, <a href="https://docs.python.org/3/library/argparse.html">argparse</a> and <a href="https://docs.python.org/3/library/sys.html">sys</a>. </p>
-<p>Python’s standard library is very extensive, offering a wide range of facilities such as:</p>
+<p>Many third-party Python modules are stored on the <a href="https://pypi.org/">Python Package Index (PyPI)</a>.</p>
+<p>The best way to install these is using a program called pip.
+It's important to enter pip commands at the command line, not the Python interpreter.
+The basic way to use a module is to add import module_name at the top of your code, and then using module_name.var to access functions and values with the name var in the module. Use a comma separated list to import multiple objects.</p>
 <ul>
 <li><a href="https://docs.python.org/3/library/text.html">Text Processing Services</a><ul>
 <li><a href="../../PR/pyStr1/">string</a> — Common string operations</li>
@@ -2012,9 +2029,9 @@ The last type is called the <a href="https://docs.python.org/3/library/">standar
 </ul>
 </li>
 <li><a href="https://docs.python.org/3/library/datatypes.html">DataTypes</a><ul>
-<li><a href="../pydatetime/">datetime</a> - Basic date and time types</li>
-<li><a href="../pydatetime/#calendar">calendar</a> - General calendar-related functions </li>
-<li><a href="../../DS/pyDS/">Collections</a> - Container datatypes</li>
+<li><a href="../pydatetime/">datetime</a> — Basic date and time types</li>
+<li><a href="../pydatetime/#calendar">calendar</a> — General calendar-related functions </li>
+<li><a href="../../DS/pyDS/">Collections</a> — Container datatypes</li>
 <li><a href="../../DS/pyHeapQueue/">heapq</a> — Heap queue algorithm</li>
 <li><a href="../pyBisect/">bisect</a> — Array bisection algorithm</li>
 <li><a href="../../DS/pyArray/">array</a> — Efficient arrays of numeric values</li>
@@ -2032,23 +2049,65 @@ The last type is called the <a href="https://docs.python.org/3/library/">standar
 <li><a href="../../Func/pyNumFunc/#statistics">statistics</a> — Mathematical statistics functions</li>
 </ul>
 </li>
+<li><a href="../pyIO/">File Management</a><ul>
+<li><a href="../pyIO/#fast-inputoutput">Fast IO</a></li>
+<li><a href="../pyIO/#os-path-module">OS.path</a> — Common pathname manipulations</li>
+<li><a href="../pyIO/#glob-module">glob</a> — Unix style pathname pattern expansion</li>
+<li><a href="../pyIO/#shutil-module-filesystem-shell-methods">shutil</a> — High-level file operations </li>
+<li><a href="../pyIO/#pyfilesystem">PyFileSystem</a> — Common interface to any filesystem.</li>
+</ul>
+</li>
 <li><a href="https://docs.python.org/3/library/persistence.html">Data Persistence</a><ul>
-<li><a href="../pySerial/">pickle</a> - Python object serialization</li>
+<li><a href="../pySerial/">pickle</a> — Python object serialization</li>
 <li><a href="../pySerial/#serialization-with-json">json</a> — JSON encoder and decoder</li>
+<li><a href="../pyIO/#csv-io">csv</a> — CSV File Reading and Writing </li>
+</ul>
+</li>
+<li>Graphic User Interface<ul>
+<li><a href="https://docs.python.org/3/library/tk.html">GUI with Tk</a></li>
+<li><a href="../pyEmoji/">emoji</a> — Several ways to print emojis</li>
+<li><a href="https://ipywidgets.readthedocs.io/en/latest/">Interactivity with ipywidgets</a> —  Interactive browser controls for Jupyter notebooks</li>
+</ul>
+</li>
+<li><a href="">Networking and Internet</a><ul>
+<li><a href="https://requests.readthedocs.io/en/latest/">requests</a> — HTTP for humans</li>
+<li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">BeautifulSoup</a> — Parsing HTML and XML documents</li>
+</ul>
+</li>
+<li>Machine Learning<ul>
+<li>Pandas</li>
+<li>Numpy<ul>
+<li>Numba</li>
+</ul>
+</li>
+<li>Matplotlib</li>
+<li>Scikit-learn</li>
+</ul>
+</li>
+<li>Parallel Computing<ul>
+<li>Threads</li>
+<li>Processes</li>
+<li>Asyncio</li>
 </ul>
 </li>
 <li><a href="https://docs.python.org/3/library/development.html">Development Tools</a><ul>
-<li><a href="">Debugging and Profiling</a></li>
-<li><a href="">Testing Software</a></li>
+<li><a href="">Debugging and Profiling</a><ul>
+<li>pdb — The Python Debugger</li>
+<li>Time Profiling</li>
+<li>Memory Profiling</li>
+</ul>
+</li>
+<li><a href="">Testing Software</a><ul>
+<li>Unitest</li>
+<li>nose or nose2</li>
+<li>pytest</li>
+</ul>
+</li>
 <li><a href="">Logging</a></li>
 <li><a href="../pyPack/">Software Packaging and Distribution</a></li>
 </ul>
 </li>
 </ul>
-<p>Many third-party Python modules are stored on the <a href="https://pypi.org/">Python Package Index (PyPI)</a>.</p>
-<p>The best way to install these is using a program called pip.
-It's important to enter pip commands at the command line, not the Python interpreter.
-The basic way to use a module is to add import module_name at the top of your code, and then using module_name.var to access functions and values with the name var in the module. Use a comma separated list to import multiple objects.</p>
 
               
             </article>
