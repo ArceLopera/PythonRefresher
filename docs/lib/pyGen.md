@@ -63,7 +63,7 @@ The basic way to use a module is to add import module_name at the top of your co
 + [Development Tools](https://docs.python.org/3/library/development.html)
     + [Debugging and Profiling]()
         + pdb — The Python Debugger
-        + Time Profiling
+        + [Time Profiling](pyTimeP.md)
         + Memory Profiling
     + [Testing Software]()
         + Unitest
