@@ -186,4 +186,5 @@ nav:
      - Dates and Time : lib/pydatetime.md
      - Serialization : lib/pySerial.md
      - Emoji : lib/pyEmoji.md
+     - Time Profiling : lib/pyTimeP.md
 
