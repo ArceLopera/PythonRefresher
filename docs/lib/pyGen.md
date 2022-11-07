@@ -1,6 +1,8 @@
 Modules are pieces of code that other people have written to fulfill common tasks, such as generating random numbers, performing mathematical operations, etc. There are three main types of modules in Python, those you write yourself, those you install from external sources, and those that are preinstalled with Python.
 The last type is called the [standard library](https://docs.python.org/3/library/), and contains many useful modules. Some of the standard library's useful modules include [string](https://docs.python.org/3/library/string.html), [re](https://docs.python.org/3/library/re.html), [datetime](https://docs.python.org/3/library/datetime.html), [math](https://docs.python.org/3/library/math.html), [random](https://docs.python.org/3/library/random.html), [os](https://docs.python.org/3/library/os.html), [multiprocessing](https://docs.python.org/3/library/multiprocessing.html), [subprocess](https://docs.python.org/3/library/subprocess.html), [socket](https://docs.python.org/3/library/socket.html), [email](https://docs.python.org/3/library/email.html), [json](https://docs.python.org/3/library/json.html), [doctest](https://docs.python.org/3/library/doctest.html), [unittest](https://docs.python.org/3/library/unittest.html), [pdb](https://docs.python.org/3/library/pdb.html), [argparse](https://docs.python.org/3/library/argparse.html) and [sys](https://docs.python.org/3/library/sys.html). 
 
+[Python 3 Module of the Week](https://pymotw.com/3/) shows how to use the modules of the Python 3 standard library.
+
  Many third-party Python modules are stored on the [Python Package Index (PyPI)](https://pypi.org/).
 
 The best way to install these is using a program called pip.
@@ -64,7 +66,7 @@ The basic way to use a module is to add import module_name at the top of your co
     + [Debugging and Profiling]()
         + pdb — The Python Debugger
         + [Time Profiling](pyTimeP.md)
-        + Memory Profiling
+        + [Memory Profiling](pyMemP.md)
     + [Testing Software]()
         + Unitest
         + nose or nose2

@@ -187,4 +187,5 @@ nav:
      - Serialization : lib/pySerial.md
      - Emoji : lib/pyEmoji.md
      - Time Profiling : lib/pyTimeP.md
+     - Memory Profiling : lib/pyMemP.md
 
