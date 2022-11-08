@@ -89,7 +89,7 @@ extra_javascript:
 # Page tree
 nav:
   - Home: index.md
-  - Python Basics: 
+  - Basics: 
      - General: pythonRefresh.md
      - Variables and Assignments: 
         - Variables: PR/pyVar1.md
@@ -152,7 +152,7 @@ nav:
           - Trees : DS/pyTrees.md
           - HeapQueue : DS/pyHeapQueue.md
           - Trie : DS/pyTrie.md
-  - Python Functions :
+  - Functions :
      - General : Func/pyGen.md
      - Documentation : Func/pyDoc.md
      - Annotations : Func/pyAnn.md
@@ -164,7 +164,7 @@ nav:
      - Decorators : Func/pyDecor.md
      - Main : Func/pyMain.md
      - Functools : Func/pyFnTools.md
-  - Python Classes:
+  - Classes:
      - General : Cls/pyGen.md
      - Constructor : Cls/pyConstructor.md
      - Inheritance : Cls/pyInheritance.md
@@ -190,4 +190,10 @@ nav:
      - Memory Profiling : lib/pyMemP.md
      - Logging : lib/pylog.md
      - Testing : lib/pyTest.md
+  - ML :
+     - General : ML/pyGen.md
+  - Algo :
+     - General : Algo/pyGen.md
+  - Exercises : 
+     - General : Exe/pyGen.md
 
