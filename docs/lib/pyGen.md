@@ -67,9 +67,6 @@ The basic way to use a module is to add import module_name at the top of your co
         + pdb — The Python Debugger
         + [Time Profiling](pyTimeP.md)
         + [Memory Profiling](pyMemP.md)
-    + [Testing Software]()
-        + Unitest
-        + nose or nose2
-        + pytest
-    + [Logging]()
+    + [Testing Software](pyTest.md)
+    + [Logging](pylog.md)
     + [Software Packaging and Distribution](pyPack.md)

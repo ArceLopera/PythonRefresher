@@ -188,4 +188,6 @@ nav:
      - Emoji : lib/pyEmoji.md
      - Time Profiling : lib/pyTimeP.md
      - Memory Profiling : lib/pyMemP.md
+     - Logging : lib/pylog.md
+     - Testing : lib/pyTest.md
 
