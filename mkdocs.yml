@@ -160,7 +160,6 @@ nav:
      - Lambdas : Func/pyLambdas.md
      - Arguments : Func/pyFnArgs.md
      - Context Managers : Func/pyCtxtMgr.md
-     - Regular Expressions : Func/pyRegex.md
      - Numeric Functions : Func/pyNumFunc.md
      - Decorators : Func/pyDecor.md
      - Main : Func/pyMain.md
@@ -185,6 +184,7 @@ nav:
      - Packaging : lib/pyPack.md
      - Dates and Time : lib/pydatetime.md
      - Serialization : lib/pySerial.md
+     - Regular Expressions : Func/pyRegex.md
      - Emoji : lib/pyEmoji.md
      - Time Profiling : lib/pyTimeP.md
      - Memory Profiling : lib/pyMemP.md
