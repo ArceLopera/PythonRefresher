@@ -11,6 +11,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://arcelopera.github.io/PythonRefresher/Algo/pyGen/</loc>
+         <lastmod>2022-11-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Cls/pyAbsCls/</loc>
          <lastmod>2022-11-08</lastmod>
          <changefreq>daily</changefreq>
@@ -201,6 +206,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://arcelopera.github.io/PythonRefresher/Exe/pyGen/</loc>
+         <lastmod>2022-11-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Func/pyAnn/</loc>
          <lastmod>2022-11-08</lastmod>
          <changefreq>daily</changefreq>
@@ -257,6 +267,11 @@
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Func/pyRegex/</loc>
+         <lastmod>2022-11-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://arcelopera.github.io/PythonRefresher/ML/pyGen/</loc>
          <lastmod>2022-11-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
