@@ -28,6 +28,9 @@ True
 True
 True
 ```
+
+## Boolean Operators
+
 **Boolean logic** is used to make more complicated conditions for if statements that rely on more than one condition. 
 
 Python's **Boolean operators** are *and*, *or*, *not*, *in*, *not in*, *is* and, *is not*.
