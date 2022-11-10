@@ -192,6 +192,7 @@ nav:
      - Testing : lib/pyTest.md
   - ML :
      - General : ML/pyGen.md
+     - Pandas : ML/pyPandas.md
   - Algo :
      - General : Algo/pyGen.md
   - Exercises : 
