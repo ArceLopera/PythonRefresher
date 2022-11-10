@@ -2478,6 +2478,12 @@ Joe
 <td>chain('ABC', 'DEF') --&gt; A B C D E F</td>
 </tr>
 <tr>
+<td><a href="https://docs.python.org/3/library/itertools.html#itertools.chain.from_iterable">chain.from_iterable()</a></td>
+<td>iterable</td>
+<td>p0, p1, … plast, q0, q1, …</td>
+<td>chain.from_iterable(['ABC', 'DEF']) --&gt; A B C D E F</td>
+</tr>
+<tr>
 <td><a href="https://docs.python.org/3/library/itertools.html#itertools.groupby">groupby()</a></td>
 <td>iterable[, key]</td>
 <td>sub-iterators grouped by value of key(v)</td>
@@ -2488,6 +2494,42 @@ Joe
 <td>p, q, …</td>
 <td>(p[0], q[0]), (p[1], q[1]), …</td>
 <td>zip_longest('ABCD', 'xy', fillvalue='-') --&gt; Ax By C- D-</td>
+</tr>
+<tr>
+<td><a href="https://docs.python.org/3/library/itertools.html#itertools.compress">compress()</a></td>
+<td>data, selectors</td>
+<td>(d[0] if s[0]), (d[1] if s[1]), …</td>
+<td>compress('ABCDEF', [1,0,1,0,1,1]) --&gt; A C E F</td>
+</tr>
+<tr>
+<td><a href="https://docs.python.org/3/library/itertools.html#itertools.filterfalse">filterfalse()</a></td>
+<td>pred, seq</td>
+<td>elements of seq where pred(elem) is false</td>
+<td>filterfalse(lambda x: x%2, range(10)) --&gt; 0 2 4 6 8</td>
+</tr>
+<tr>
+<td><a href="https://docs.python.org/3/library/itertools.html#itertools.islice">islice()</a></td>
+<td>seq, [start,] stop [, step]</td>
+<td>elements from seq[start:stop:step]</td>
+<td>islice('ABCDEFG', 2, None) --&gt; C D E F G</td>
+</tr>
+<tr>
+<td><a href="https://docs.python.org/3/library/itertools.html#itertools.pairwise">pairwise()</a></td>
+<td>iterable</td>
+<td>(p[0], p[1]), (p[1], p[2])</td>
+<td>pairwise('ABCDEFG') --&gt; AB BC CD DE EF FG</td>
+</tr>
+<tr>
+<td><a href="https://docs.python.org/3/library/itertools.html#itertools.starmap">starmap()</a></td>
+<td>func, seq</td>
+<td>func(<em>seq[0]), func(</em>seq[1]), …</td>
+<td>starmap(pow, [(2,5), (3,2), (10,3)]) --&gt; 32 9 1000</td>
+</tr>
+<tr>
+<td><a href="https://docs.python.org/3/library/itertools.html#itertools.tee">tee()</a></td>
+<td>it, n</td>
+<td>it1, it2, … itn splits one iterator into n</td>
+<td></td>
 </tr>
 </tbody>
 </table>
