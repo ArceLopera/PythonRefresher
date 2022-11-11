@@ -16,7 +16,7 @@ Not dictionaries, sets, files and generators
 
 ###**Data Structures**
 
-Python supports the following data structures: lists, dictionaries, tuples, sets. For arrays, see numpy array.
+Python supports the following data structures: [lists](pyList.md), [dictionaries](pyDict.md), [tuples](pyTuple.md), [sets](pySet.md). For arrays, see [array](pyArray.md) or [numpy array](../ML/pyNumpy.md#numpy-array).
 
 When to use a dictionary:
 - When you need a logical association between a key:value pair.
