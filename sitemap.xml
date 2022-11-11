@@ -276,6 +276,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://arcelopera.github.io/PythonRefresher/ML/pyNumba/</loc>
+         <lastmod>2022-11-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://arcelopera.github.io/PythonRefresher/ML/pyNumpy/</loc>
          <lastmod>2022-11-11</lastmod>
          <changefreq>daily</changefreq>
