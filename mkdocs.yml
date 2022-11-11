@@ -194,6 +194,7 @@ nav:
      - General : ML/pyGen.md
      - Pandas : ML/pyPandas.md
      - Numpy : ML/pyNumpy.md
+     - Numba : ML/pyNumba.md
   - Algo :
      - General : Algo/pyGen.md
   - Exercises : 
