@@ -56,7 +56,7 @@ The basic way to use a module is to add import module_name at the top of your co
     + [Pandas](../ML/pyPandas.md)
     + [Numpy](../ML/pyNumpy.md)
         + [Numba](../ML/pyNumba.md)
-    + Matplotlib
+    + [Matplotlib](../ML/pyPlot.md)
     + Scikit-learn
 + Parallel Computing
     + Threads
