@@ -196,6 +196,7 @@ nav:
      - Numpy : ML/pyNumpy.md
      - Numba : ML/pyNumba.md
      - MatplotLib : ML/pyPlot.md
+     - EDA : ML/pyEda.md
   - Algo :
      - General : Algo/pyGen.md
   - Exercises : 

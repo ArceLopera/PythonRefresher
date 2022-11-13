@@ -53,18 +53,18 @@ The basic way to use a module is to add import module_name at the top of your co
     + [requests](https://requests.readthedocs.io/en/latest/) — HTTP for humans
     + [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) — Parsing HTML and XML documents
 + [Machine Learning](../ML/pyGen.md)
-    + [Pandas](../ML/pyPandas.md)
-    + [Numpy](../ML/pyNumpy.md)
-        + [Numba](../ML/pyNumba.md)
-    + [Matplotlib](../ML/pyPlot.md)
-    + Scikit-learn
+    + [Pandas](../ML/pyPandas.md) — Read and manipulate data
+    + [Numpy](../ML/pyNumpy.md) — Manipulating lists and tables of numerical data
+        + [Numba](../ML/pyNumba.md) — Makes Python code fast
+    + [Matplotlib](../ML/pyPlot.md) — For creating static, animated, and interactive visualizations in Python
+    + [Scikit-learn](../ML/pyGen.md) — Machine learning in Python
 + Parallel Computing
     + Threads
     + Processes
     + Asyncio
 + [Development Tools](https://docs.python.org/3/library/development.html)
     + [Debugging and Profiling]()
-        + pdb — The Python Debugger
+        + pdb — The Python debugger
         + [Time Profiling](pyTimeP.md)
         + [Memory Profiling](pyMemP.md)
     + [Testing Software](pyTest.md)

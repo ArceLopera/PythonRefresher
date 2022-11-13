@@ -1,7 +1,8 @@
 Useful modules for ML and Data Science
 
-+ [Pandas](pyPandas.md) - read and manipulate data.
++ [Pandas](pyPandas.md) - read and manipulate data
 + [Numpy](pyNumpy.md) - manipulating lists and tables of numerical data
-    + [Numba](pyNumba.md)
-+ [Matplotlib](pyPlot.md)
-+ Scikit-learn
+    + [Numba](pyNumba.md) - makes Python code fast
++ [Matplotlib](pyPlot.md) - for creating static, animated, and interactive visualizations in Python
++ [Scikit-learn](https://scikit-learn.org/stable/) - machine learning in Python
+    + [EDA](pyEda.md) - exploratory data analysis
