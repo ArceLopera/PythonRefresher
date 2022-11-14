@@ -197,6 +197,7 @@ nav:
      - Numba : ML/pyNumba.md
      - MatplotLib : ML/pyPlot.md
      - EDA : ML/pyEda.md
+     - Linear Regression : ML/pylinReg.md
   - Algo :
      - General : Algo/pyGen.md
   - Exercises : 

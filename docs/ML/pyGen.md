@@ -6,3 +6,4 @@ Useful modules for ML and Data Science
 + [Matplotlib](pyPlot.md) - for creating static, animated, and interactive visualizations in Python
 + [Scikit-learn](https://scikit-learn.org/stable/) - machine learning in Python
     + [EDA](pyEda.md) - exploratory data analysis
+    + [Linear Regression](pylinReg.md)
