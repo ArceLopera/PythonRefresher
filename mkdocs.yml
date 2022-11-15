@@ -198,6 +198,7 @@ nav:
      - MatplotLib : ML/pyPlot.md
      - EDA : ML/pyEda.md
      - Linear Regression : ML/pylinReg.md
+     - Logistic Regression : ML/pyLogReg.md
   - Algo :
      - General : Algo/pyGen.md
   - Exercises : 

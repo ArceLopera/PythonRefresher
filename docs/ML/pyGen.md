@@ -7,3 +7,4 @@ Useful modules for ML and Data Science
 + [Scikit-learn](https://scikit-learn.org/stable/) - machine learning in Python
     + [EDA](pyEda.md) - exploratory data analysis
     + [Linear Regression](pylinReg.md)
+    + [Logistic Regression](pyLogReg.md)
