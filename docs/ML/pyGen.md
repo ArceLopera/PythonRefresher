@@ -8,3 +8,4 @@ Useful modules for ML and Data Science
     + [EDA](pyEda.md) - exploratory data analysis
     + [Linear Regression](pylinReg.md)
     + [Logistic Regression](pyLogReg.md)
+    + [K-Nearest Neighbors](pyknn.md)

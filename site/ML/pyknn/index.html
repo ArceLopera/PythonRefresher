@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/Func/pyFuncObj/">
+        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/ML/pyknn/">
       
       <link rel="icon" href="../../Images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Function As Objects - Python Refresher</title>
+        <title>K-Nearest Neighbors - Python Refresher</title>
       
     
     
@@ -68,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#probablility-prediction" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -96,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Function As Objects
+              K-Nearest Neighbors
             
           </span>
         </div>
@@ -234,15 +239,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../pyGen/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../Func/pyGen/" class="md-tabs__link">
         Functions
       </a>
     </li>
@@ -284,13 +287,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../ML/pyGen/" class="md-tabs__link">
+      <a href="../pyGen/" class="md-tabs__link md-tabs__link--active">
         ML
       </a>
     </li>
@@ -1486,14 +1491,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -1516,7 +1519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyGen/" class="md-nav__link">
+      <a href="../../Func/pyGen/" class="md-nav__link">
         General
       </a>
     </li>
@@ -1530,7 +1533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyDoc/" class="md-nav__link">
+      <a href="../../Func/pyDoc/" class="md-nav__link">
         Documentation
       </a>
     </li>
@@ -1544,7 +1547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyAnn/" class="md-nav__link">
+      <a href="../../Func/pyAnn/" class="md-nav__link">
         Annotations
       </a>
     </li>
@@ -1556,19 +1559,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Func/pyFuncObj/" class="md-nav__link">
         Function As Objects
       </a>
-      
     </li>
   
 
@@ -1580,7 +1575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyLambdas/" class="md-nav__link">
+      <a href="../../Func/pyLambdas/" class="md-nav__link">
         Lambdas
       </a>
     </li>
@@ -1594,7 +1589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyFnArgs/" class="md-nav__link">
+      <a href="../../Func/pyFnArgs/" class="md-nav__link">
         Arguments
       </a>
     </li>
@@ -1608,7 +1603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyCtxtMgr/" class="md-nav__link">
+      <a href="../../Func/pyCtxtMgr/" class="md-nav__link">
         Context Managers
       </a>
     </li>
@@ -1622,7 +1617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyNumFunc/" class="md-nav__link">
+      <a href="../../Func/pyNumFunc/" class="md-nav__link">
         Numeric Functions
       </a>
     </li>
@@ -1636,7 +1631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyDecor/" class="md-nav__link">
+      <a href="../../Func/pyDecor/" class="md-nav__link">
         Decorators
       </a>
     </li>
@@ -1650,7 +1645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyMain/" class="md-nav__link">
+      <a href="../../Func/pyMain/" class="md-nav__link">
         Main
       </a>
     </li>
@@ -1664,7 +1659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyFnTools/" class="md-nav__link">
+      <a href="../../Func/pyFnTools/" class="md-nav__link">
         Functools
       </a>
     </li>
@@ -1998,7 +1993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyRegex/" class="md-nav__link">
+      <a href="../../Func/pyRegex/" class="md-nav__link">
         Regular Expressions
       </a>
     </li>
@@ -2088,12 +2083,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       
       
@@ -2116,7 +2113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyGen/" class="md-nav__link">
+      <a href="../pyGen/" class="md-nav__link">
         General
       </a>
     </li>
@@ -2130,7 +2127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyPandas/" class="md-nav__link">
+      <a href="../pyPandas/" class="md-nav__link">
         Pandas
       </a>
     </li>
@@ -2144,7 +2141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyNumpy/" class="md-nav__link">
+      <a href="../pyNumpy/" class="md-nav__link">
         Numpy
       </a>
     </li>
@@ -2158,7 +2155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyNumba/" class="md-nav__link">
+      <a href="../pyNumba/" class="md-nav__link">
         Numba
       </a>
     </li>
@@ -2172,7 +2169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyPlot/" class="md-nav__link">
+      <a href="../pyPlot/" class="md-nav__link">
         MatplotLib
       </a>
     </li>
@@ -2186,7 +2183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyEda/" class="md-nav__link">
+      <a href="../pyEda/" class="md-nav__link">
         EDA
       </a>
     </li>
@@ -2200,7 +2197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pylinReg/" class="md-nav__link">
+      <a href="../pylinReg/" class="md-nav__link">
         Linear Regression
       </a>
     </li>
@@ -2214,7 +2211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyLogReg/" class="md-nav__link">
+      <a href="../pyLogReg/" class="md-nav__link">
         Logistic Regression
       </a>
     </li>
@@ -2226,11 +2223,83 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../ML/pyknn/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          K-Nearest Neighbors
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         K-Nearest Neighbors
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#probablility-prediction" class="md-nav__link">
+    Probablility Prediction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accuracy" class="md-nav__link">
+    Accuracy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confusion-matrix" class="md-nav__link">
+    Confusion Matrix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k-fold-cross-validation" class="md-nav__link">
+    K-fold Cross Validation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grid-search" class="md-nav__link">
+    Grid Search
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#label-prediction-with-new-data" class="md-nav__link">
+    Label Prediction with New Data
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2356,6 +2425,56 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#probablility-prediction" class="md-nav__link">
+    Probablility Prediction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accuracy" class="md-nav__link">
+    Accuracy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confusion-matrix" class="md-nav__link">
+    Confusion Matrix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k-fold-cross-validation" class="md-nav__link">
+    K-fold Cross Validation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grid-search" class="md-nav__link">
+    Grid Search
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#label-prediction-with-new-data" class="md-nav__link">
+    Label Prediction with New Data
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2368,41 +2487,269 @@
                 
 
 
-  <h1>Function As Objects</h1>
+  <h1>K-Nearest Neighbors</h1>
 
-<p>Functions can also be used as arguments of other functions.</p>
-<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
-  <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+<p>K nearest neighbors (knn) is a supervised machine learning model that takes a data point, looks at its 'k' closest labeled data points, and assigns the label by a majority vote. Here we see that changing k could affect the output of the model. In knn, k is a hyperparameter. A hyperparameter in machine learning is a parameter whose value is set before the learning process begins.</p>
+<p>K nearest neighbors can also be used for regression problems. The difference lies in prediction. Instead of a majority vote, knn for regression makes a prediction using the mean labels of the k closest data points.</p>
+<p>The famous iris database, first used by Sir R. A. Fisher, is perhaps the best known dataset to be found in pattern recognition literature. There are 150 iris plants, each with 4 numeric attributes: sepal length in cm, sepal width in cm, petal length in cm, and petal width in cm.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="c1">#iris = pd.read_csv(&#39;./data/iris.csv&#39;)</span>
+<span class="c1"># import some data to play with</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
+<span class="n">df_iris</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> 
+<span class="n">columns</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">twice</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-  <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
-
-<span class="n">a</span><span class="o">=</span><span class="mi">2</span>
-<span class="n">b</span><span class="o">=</span><span class="mi">3</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">twice</span><span class="p">(</span><span class="n">add</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
+<span class="n">df_iris</span><span class="o">.</span><span class="n">shape</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>10
+<div class="highlight"><pre><span></span><code>(150, 4)
 </code></pre></div></p>
-<p>Functions that operate on other functions are called "higher-order functions." there are higher-order functions built into Python that you might find useful to call.</p>
-<p>Here's an interesting example using the max function.</p>
-<p>By default, max returns the largest of its arguments. But if we pass in a function using the optional key argument, it returns the argument x that maximizes key(x) (aka the 'argmax').</p>
-<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">mod_5</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return the remainder of x after dividing by 5&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">5</span>
-
-<span class="nb">print</span><span class="p">(</span>
-    <span class="s1">&#39;Which number is biggest?&#39;</span><span class="p">,</span>
-    <span class="nb">max</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span>
-    <span class="s1">&#39;Which number is the biggest modulo 5?&#39;</span><span class="p">,</span>
-    <span class="nb">max</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">mod_5</span><span class="p">),</span>
-    <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
-<span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">df_iris</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>Which number is biggest?
-100
-Which number is the biggest modulo 5?
-14
+<table>
+<thead>
+<tr>
+<th></th>
+<th>sepal length (cm)</th>
+<th>sepal width (cm)</th>
+<th>petal length (cm)</th>
+<th>petal width (cm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>5.1</td>
+<td>3.5</td>
+<td>1.4</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4.9</td>
+<td>3.0</td>
+<td>1.4</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4.7</td>
+<td>3.2</td>
+<td>1.3</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4.6</td>
+<td>3.1</td>
+<td>1.5</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5.0</td>
+<td>3.6</td>
+<td>1.4</td>
+<td>0.2</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="n">df_iris</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>sepal length (cm)</th>
+<th>sepal width (cm)</th>
+<th>petal length (cm)</th>
+<th>petal width (cm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>count</td>
+<td>150.000000</td>
+<td>150.000000</td>
+<td>150.000000</td>
+<td>150.000000</td>
+</tr>
+<tr>
+<td>mean</td>
+<td>5.843333</td>
+<td>3.057333</td>
+<td>3.758000</td>
+<td>1.199333</td>
+</tr>
+<tr>
+<td>std</td>
+<td>0.828066</td>
+<td>0.435866</td>
+<td>1.765298</td>
+<td>0.762238</td>
+</tr>
+<tr>
+<td>min</td>
+<td>4.300000</td>
+<td>2.000000</td>
+<td>1.000000</td>
+<td>0.100000</td>
+</tr>
+<tr>
+<td>25%</td>
+<td>5.100000</td>
+<td>2.800000</td>
+<td>1.600000</td>
+<td>0.300000</td>
+</tr>
+<tr>
+<td>50%</td>
+<td>5.800000</td>
+<td>3.000000</td>
+<td>4.350000</td>
+<td>1.300000</td>
+</tr>
+<tr>
+<td>75%</td>
+<td>6.400000</td>
+<td>3.300000</td>
+<td>5.100000</td>
+<td>1.800000</td>
+</tr>
+<tr>
+<td>max</td>
+<td>7.900000</td>
+<td>4.400000</td>
+<td>6.900000</td>
+<td>2.500000</td>
+</tr>
+</tbody>
+</table>
+<p><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">df_iris</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Index([&#39;sepal length (cm)&#39;, &#39;sepal width (cm)&#39;, &#39;petal length (cm)&#39;,
+       &#39;petal width (cm)&#39;],
+      dtype=&#39;object&#39;)
 </code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">df_iris</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<p><img alt="petalHist" src="../Images/petalhist.png" /></p>
+<p>In classifications, stratified sampling is often chosen to ensure that the train and test sets have approximately the same percentage of samples of each target class as the complete set.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">df_iris</span><span class="p">[[</span><span class="s1">&#39;petal length (cm)&#39;</span><span class="p">,</span> <span class="s1">&#39;petal width (cm)&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.30</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>KNeighborsClassifier(algorithm=&#39;auto&#39;, leaf_size=30, metric=&#39;minkowski&#39;,
+                     metric_params=None, n_jobs=None, n_neighbors=5, p=2,
+                     weights=&#39;uniform&#39;)
+</code></pre></div></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">pred</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1">#First five predictions</span>
+<span class="n">pred</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>array([2, 0, 0, 1, 1])
+</code></pre></div></p>
+<h2 id="probablility-prediction">Probablility Prediction</h2>
+<p>Of all classification algorithms implemented in scikit learn, there is an additional method 'predict_prob'. Instead of splitting the label, it outputs the probability for the target in array form.</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">y_pred_prob</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">y_pred_prob</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">12</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>array([[1. , 0. , 0. ],
+       [0. , 0.2, 0.8]])
+</code></pre></div></p>
+<p>For example, the probability of the 11th flower being predicted an iris-setosa is 1, an iris-versicolor and an iris-virginica are both 0. For the next flower, there is a 20% chance that it would be classified as iris-versicolor but 80% chance to be iris-virginica. What it tells us is that of the five nearest neighbours of the 12th flower in the testing set, 1 is an iris-versicolor, the rest 4 are iris-virginica.</p>
+<h2 id="accuracy">Accuracy</h2>
+<p><div class="highlight"><pre><span></span><code><span class="n">knn</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>0.9777777777777777
+</code></pre></div>
+Under the module sklearn.metrics, function accuracy_score(y_true, y_pred) does the same calculation.</p>
+<h2 id="confusion-matrix">Confusion Matrix</h2>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">plot_confusion_matrix</span>
+
+<span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">pred</span><span class="p">)</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">knn</span><span class="p">,</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&lt;sklearn.metrics._plot.confusion_matrix.ConfusionMatrixDisplay at 0x7fd70c24bcd0&gt;
+</code></pre></div>
+<img alt="PetalConfMAtrix" src="../Images/petalCM.png" /></p>
+<h2 id="k-fold-cross-validation">K-fold Cross Validation</h2>
+<p>Previously we made train-test split before fitting the model so that we can report the model performance on the test data. This is a simple kind of cross validation technique, also known as the holdout method. However, the split is random, as a result, model performance can be sensitive to how the data is split. To overcome this, we introduce k-fold cross validation.</p>
+<p>In k fold cross validation, the data is divided into k subsets. Then the holdout method is repeated k times, such that each time, one of the k subsets is used as the test set and the other k-1 subsets are combined to train the model. Then the accuracy is averaged over k trials to provide total effectiveness of the model. In this way, all data points are used; and there are more metrics so we don’t rely on one test data for model performance evaluation.</p>
+<p>The simplest way to use k-fold cross-validation in scikit-learn is to call the cross_val_score function on the model and the dataset.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
+<span class="c1"># create a new KNN model</span>
+<span class="n">knn_cv</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1"># train model with 5-fold cv</span>
+<span class="n">cv_scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">knn_cv</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="c1">#print each cv score (accuracy)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cv_scores</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[0.96666667 0.96666667 0.9        0.93333333 1.   
+</code></pre></div></p>
+<p><div class="highlight"><pre><span></span><code><span class="c1">#then, average</span>
+<span class="n">cv_scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>0.9533333333333334
+</code></pre></div>
+As a general rule, 5-fold or 10-fold cross validation is preferred; but there is no formal rule. As k gets larger, the difference in size between the training set and the resampling subsets gets smaller. As this difference decreases, the bias of the technique becomes smaller.</p>
+<h2 id="grid-search">Grid Search</h2>
+<p>When we built our first knn model, we set the hyperparameter k to 5, and then to 3 later in k-fold cross validation; random choices really. What is the best k? Finding the optimal k is called tuning the hyperparameter. A handy tool is grid search. In scikit-learn, we use GridSearchCV, which trains our model multiple times on a range of values specified with the param_grid parameter and computes cross validation score, so that we can check which of our values for the tested hyperparameter performed the best.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># create new a knn model</span>
+<span class="n">knn2</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">()</span>
+<span class="c1"># create a dict of all values we want to test for n_neighbors</span>
+<span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;n_neighbors&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)}</span>
+<span class="c1"># use gridsearch to test all values for n_neighbors</span>
+<span class="n">knn_gscv</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">knn2</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="c1">#fit model to data</span>
+<span class="n">knn_gscv</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="c1">#To check the top performing n_neighbors value</span>
+<span class="n">knn_gscv</span><span class="o">.</span><span class="n">best_params_</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>{&#39;n_neighbors&#39;: 4}
+</code></pre></div></p>
+<p><div class="highlight"><pre><span></span><code><span class="c1">#We can see that 4 is the best value for n_neighbors. </span>
+<span class="c1">#What is the accuracy of the model when k is 4</span>
+<span class="n">knn_gscv</span><span class="o">.</span><span class="n">best_score_</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>0.9666666666666668
+</code></pre></div></p>
+<p>By using grid search to find the optimal hyperparameter for our model, it improves the model accuracy by over 1%.</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">knn_final</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="n">knn_gscv</span><span class="o">.</span><span class="n">best_params_</span><span class="p">[</span><span class="s1">&#39;n_neighbors&#39;</span><span class="p">])</span>
+<span class="n">knn_final</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">y_pred</span><span class="o">=</span><span class="n">knn_final</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">knn_final</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>0.9733333333333334
+</code></pre></div>
+We can report that our final model, 4nn, has an accuracy of 97.3% in predicting the species of iris!</p>
+<p>The techniques of k-fold cross validation and tuning parameters with grid search is applicable to both classification and regression problems.</p>
+<h2 id="label-prediction-with-new-data">Label Prediction with New Data</h2>
+<p><div class="highlight"><pre><span></span><code><span class="n">new_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.76</span><span class="p">,</span> <span class="mf">1.20</span><span class="p">])</span>
+
+<span class="n">new_data</span> <span class="o">=</span> <span class="n">new_data</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">knn_final</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">new_data</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>array([1])
+</code></pre></div>
+Our model predicts that this iris is a versicolor.</p>
 
               
             </article>
@@ -2416,7 +2763,7 @@ Which number is the biggest modulo 5?
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../pyAnn/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Annotations" rel="prev">
+        <a href="../pyLogReg/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Logistic Regression" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -2425,20 +2772,20 @@ Which number is the biggest modulo 5?
               <span class="md-footer__direction">
                 Previous
               </span>
-              Annotations
+              Logistic Regression
             </div>
           </div>
         </a>
       
       
         
-        <a href="../pyLambdas/" class="md-footer__link md-footer__link--next" aria-label="Next: Lambdas" rel="next">
+        <a href="../../Algo/pyGen/" class="md-footer__link md-footer__link--next" aria-label="Next: General" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Lambdas
+              General
             </div>
           </div>
           <div class="md-footer__button md-icon">

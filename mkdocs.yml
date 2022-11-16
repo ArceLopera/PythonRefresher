@@ -199,6 +199,7 @@ nav:
      - EDA : ML/pyEda.md
      - Linear Regression : ML/pylinReg.md
      - Logistic Regression : ML/pyLogReg.md
+     - K-Nearest Neighbors : ML/pyknn.md
   - Algo :
      - General : Algo/pyGen.md
   - Exercises : 
