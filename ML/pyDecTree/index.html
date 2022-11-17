@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/DS/pyChainMap/">
+        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/ML/pyDecTree/">
       
       <link rel="icon" href="../../Images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>ChainMap - Python Refresher</title>
+        <title>Decision Trees - Python Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#adding-new-dictionary" class="md-skip">
+        <a href="#pre-pruning-techniques" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ChainMap
+              Decision Trees
             
           </span>
         </div>
@@ -223,15 +223,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../pyDS/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../DS/pyDS/" class="md-tabs__link">
         Data Structures
       </a>
     </li>
@@ -289,13 +287,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../ML/pyGen/" class="md-tabs__link">
+      <a href="../pyGen/" class="md-tabs__link md-tabs__link--active">
         ML
       </a>
     </li>
@@ -900,14 +900,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -930,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyDS/" class="md-nav__link">
+      <a href="../../DS/pyDS/" class="md-nav__link">
         General
       </a>
     </li>
@@ -970,7 +968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyList/" class="md-nav__link">
+      <a href="../../DS/pyList/" class="md-nav__link">
         Lists
       </a>
     </li>
@@ -1010,7 +1008,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyIterSorted/" class="md-nav__link">
+      <a href="../../DS/pyIterSorted/" class="md-nav__link">
         Sorted
       </a>
     </li>
@@ -1024,7 +1022,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyIterMapFilter/" class="md-nav__link">
+      <a href="../../DS/pyIterMapFilter/" class="md-nav__link">
         Map & Filter
       </a>
     </li>
@@ -1038,7 +1036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyIterAllAny/" class="md-nav__link">
+      <a href="../../DS/pyIterAllAny/" class="md-nav__link">
         All & Any
       </a>
     </li>
@@ -1052,7 +1050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyIterEnumerate/" class="md-nav__link">
+      <a href="../../DS/pyIterEnumerate/" class="md-nav__link">
         Enumerate
       </a>
     </li>
@@ -1066,7 +1064,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyIterZip/" class="md-nav__link">
+      <a href="../../DS/pyIterZip/" class="md-nav__link">
         Zip
       </a>
     </li>
@@ -1080,7 +1078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyIterReversed/" class="md-nav__link">
+      <a href="../../DS/pyIterReversed/" class="md-nav__link">
         Reversed
       </a>
     </li>
@@ -1101,7 +1099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyTuple/" class="md-nav__link">
+      <a href="../../DS/pyTuple/" class="md-nav__link">
         Tuple
       </a>
     </li>
@@ -1115,7 +1113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyDict/" class="md-nav__link">
+      <a href="../../DS/pyDict/" class="md-nav__link">
         Dictionary
       </a>
     </li>
@@ -1129,7 +1127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyArray/" class="md-nav__link">
+      <a href="../../DS/pyArray/" class="md-nav__link">
         Array
       </a>
     </li>
@@ -1143,7 +1141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pySet/" class="md-nav__link">
+      <a href="../../DS/pySet/" class="md-nav__link">
         Set
       </a>
     </li>
@@ -1164,7 +1162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyGen/" class="md-nav__link">
+      <a href="../../DS/pyGen/" class="md-nav__link">
         Generators
       </a>
     </li>
@@ -1178,7 +1176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyGenX/" class="md-nav__link">
+      <a href="../../DS/pyGenX/" class="md-nav__link">
         Generator Expressions
       </a>
     </li>
@@ -1190,14 +1188,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" data-md-state="indeterminate" type="checkbox" id="__nav_3_5" checked>
       
       
       
@@ -1220,7 +1216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pydeque/" class="md-nav__link">
+      <a href="../../DS/pydeque/" class="md-nav__link">
         Deque
       </a>
     </li>
@@ -1234,7 +1230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyNamedTuple/" class="md-nav__link">
+      <a href="../../DS/pyNamedTuple/" class="md-nav__link">
         NamedTuple
       </a>
     </li>
@@ -1248,7 +1244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyCounter/" class="md-nav__link">
+      <a href="../../DS/pyCounter/" class="md-nav__link">
         Counter
       </a>
     </li>
@@ -1262,7 +1258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyDefaultdict/" class="md-nav__link">
+      <a href="../../DS/pyDefaultdict/" class="md-nav__link">
         Defaultdict
       </a>
     </li>
@@ -1276,7 +1272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyOrdereddict/" class="md-nav__link">
+      <a href="../../DS/pyOrdereddict/" class="md-nav__link">
         Ordereddict
       </a>
     </li>
@@ -1288,48 +1284,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          ChainMap
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../DS/pyChainMap/" class="md-nav__link">
         ChainMap
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#adding-new-dictionary" class="md-nav__link">
-    Adding new dictionary
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1374,7 +1333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyUserDefGen/" class="md-nav__link">
+      <a href="../../DS/pyUserDefGen/" class="md-nav__link">
         General
       </a>
     </li>
@@ -1388,7 +1347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyStack/" class="md-nav__link">
+      <a href="../../DS/pyStack/" class="md-nav__link">
         Stacks
       </a>
     </li>
@@ -1402,7 +1361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyQueue/" class="md-nav__link">
+      <a href="../../DS/pyQueue/" class="md-nav__link">
         Queue
       </a>
     </li>
@@ -1416,7 +1375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyLinkedList/" class="md-nav__link">
+      <a href="../../DS/pyLinkedList/" class="md-nav__link">
         LinkedList
       </a>
     </li>
@@ -1430,7 +1389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyGraph/" class="md-nav__link">
+      <a href="../../DS/pyGraph/" class="md-nav__link">
         Graphs
       </a>
     </li>
@@ -1470,7 +1429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyTrees/" class="md-nav__link">
+      <a href="../../DS/pyTrees/" class="md-nav__link">
         Trees
       </a>
     </li>
@@ -1484,7 +1443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyHeapQueue/" class="md-nav__link">
+      <a href="../../DS/pyHeapQueue/" class="md-nav__link">
         HeapQueue
       </a>
     </li>
@@ -1498,7 +1457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyTrie/" class="md-nav__link">
+      <a href="../../DS/pyTrie/" class="md-nav__link">
         Trie
       </a>
     </li>
@@ -2124,12 +2083,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       
       
@@ -2152,7 +2113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyGen/" class="md-nav__link">
+      <a href="../pyGen/" class="md-nav__link">
         General
       </a>
     </li>
@@ -2166,7 +2127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyPandas/" class="md-nav__link">
+      <a href="../pyPandas/" class="md-nav__link">
         Pandas
       </a>
     </li>
@@ -2180,7 +2141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyNumpy/" class="md-nav__link">
+      <a href="../pyNumpy/" class="md-nav__link">
         Numpy
       </a>
     </li>
@@ -2194,7 +2155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyNumba/" class="md-nav__link">
+      <a href="../pyNumba/" class="md-nav__link">
         Numba
       </a>
     </li>
@@ -2208,7 +2169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyPlot/" class="md-nav__link">
+      <a href="../pyPlot/" class="md-nav__link">
         MatplotLib
       </a>
     </li>
@@ -2222,7 +2183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyEda/" class="md-nav__link">
+      <a href="../pyEda/" class="md-nav__link">
         EDA
       </a>
     </li>
@@ -2236,7 +2197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pylinReg/" class="md-nav__link">
+      <a href="../pylinReg/" class="md-nav__link">
         Linear Regression
       </a>
     </li>
@@ -2250,7 +2211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyLogReg/" class="md-nav__link">
+      <a href="../pyLogReg/" class="md-nav__link">
         Logistic Regression
       </a>
     </li>
@@ -2264,7 +2225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyknn/" class="md-nav__link">
+      <a href="../pyknn/" class="md-nav__link">
         K-Nearest Neighbors
       </a>
     </li>
@@ -2276,11 +2237,69 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../ML/pyDecTree/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Decision Trees
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Decision Trees
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-pruning-techniques" class="md-nav__link">
+    Pre-pruning techniques
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computation" class="md-nav__link">
+    Computation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    Performance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpretability" class="md-nav__link">
+    Interpretability
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2413,8 +2432,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#adding-new-dictionary" class="md-nav__link">
-    Adding new dictionary
+  <a href="#pre-pruning-techniques" class="md-nav__link">
+    Pre-pruning techniques
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computation" class="md-nav__link">
+    Computation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    Performance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpretability" class="md-nav__link">
+    Interpretability
   </a>
   
 </li>
@@ -2433,75 +2473,156 @@
                 
 
 
-  <h1>ChainMap</h1>
+  <h1>Decision Trees</h1>
 
-<p>A ChainMap encapsulates many dictionaries into a single unit and returns a list of dictionaries.</p>
-<p><div class="highlight"><pre><span></span><code><span class="c1"># Python program to demonstrate ChainMap</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">ChainMap</span>
-
-<span class="n">d1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
-<span class="n">d2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
-<span class="n">d3</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
-
-<span class="c1"># Defining the chainmap</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">ChainMap</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="n">d3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<p>In Logistic Regression, we look at the data graphically and draw a line to separate the data. The model is defined by the coefficients that define the line. These coefficients are called parameters. Since the model is defined by these parameters, Logistic Regression is a parametric machine learning algorithm.</p>
+<p>Decision Trees, are an example of a nonparametric machine learning algorithm. Decision Trees won’t be defined by a list of parameters.</p>
+<p>Every machine learning algorithm is either parametric or nonparametric. Decision Trees are often favored if you have a non-technical audience since they can easily interpret the model.</p>
+<p>The Logistic Regression model performs better, though we may still want to use a Decision Tree for its interpretability.</p>
+<p>The default impurity criterion in scikit-learn’s Decision Tree algorithm is the Gini Impurity (2p(1-p)). However, they’ve also implemented entropy and you can choose which one you’d like to use when you create the DecisionTreeClassifier object.</p>
+<div class="highlight"><pre><span></span><code><span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeClassifer</span><span class="p">(</span><span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>ChainMap({&#39;a&#39;: 1, &#39;b&#39;: 2}, {&#39;c&#39;: 3, &#39;d&#39;: 4}, {&#39;e&#39;: 5, &#39;f&#39;: 6})
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">export_graphviz</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">graphviz</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;titanic.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;male&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;male&#39;</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Pclass&#39;</span><span class="p">,</span> <span class="s1">&#39;male&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;Siblings/Spouses&#39;</span><span class="p">,</span> <span class="s1">&#39;Parents/Children&#39;</span><span class="p">,</span> <span class="s1">&#39;Fare&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Survived&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="kc">True</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">7.25</span><span class="p">]]))</span>
+
+<span class="n">feature_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Pclass&#39;</span><span class="p">,</span> <span class="s1">&#39;male&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;Siblings/Spouses&#39;</span><span class="p">,</span> <span class="s1">&#39;Parents/Children&#39;</span><span class="p">,</span> <span class="s1">&#39;Fare&#39;</span>  <span class="p">]</span>
+<span class="n">dot_file</span> <span class="o">=</span> <span class="n">export_graphviz</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">feature_names</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">graphviz</span><span class="o">.</span><span class="n">Source</span><span class="p">(</span><span class="n">dot_file</span><span class="p">)</span> <span class="c1">#graphviz module to convert it to a png image format</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;tree&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="n">cleanup</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
-Accessing Keys and Values from ChainMap Values from ChainMap can be accessed using the key name. They can also be accessed by using the keys() and values() method.</p>
-<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">ChainMap</span>
-
-<span class="n">d1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
-<span class="n">d2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
-<span class="n">d3</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
-
-<span class="c1"># Defining the chainmap</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">ChainMap</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="n">d3</span><span class="p">)</span>
-
-<span class="c1"># Accessing Values using key name</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">])</span>
-
-<span class="c1"># Accessing values using values()</span>
-<span class="c1"># method</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-
-<span class="c1"># Accessing keys using keys()</span>
-<span class="c1"># method</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><code>[0]
+tree.png
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>1
-ValuesView(ChainMap({&#39;a&#39;: 1, &#39;b&#39;: 2}, {&#39;c&#39;: 3, &#39;d&#39;: 4}, {&#39;e&#39;: 5, &#39;f&#39;: 6}))
-KeysView(ChainMap({&#39;a&#39;: 1, &#39;b&#39;: 2}, {&#39;c&#39;: 3, &#39;d&#39;: 4}, {&#39;e&#39;: 5, &#39;f&#39;: 6}))
+<img alt="tree1" src="../Images/tree.png" /></p>
+<p>Recall that overfitting is when we do a good job of building a model for the training set, but it doesn’t perform well on the test set. Decision Trees are incredibly prone to overfitting. Since they can keep having additional nodes in the tree that split on features, the model can really dig deep into the specifics of the training set. Depending on the data, this might result in a model that doesn’t capture the true nature of the data and doesn’t generalize.</p>
+<p>If you let a Decision Tree keep building, it may create a tree that’s overfit and doesn’t capture the essence of the data. </p>
+<p>In order to solve these issues, we do what’s called <strong>pruning</strong> the tree. This means we make the tree smaller with the goal of reducing overfitting.</p>
+<p>There are two types of pruning: pre-pruning &amp; post-pruning. In pre-pruning, we have rules of when to stop building the tree, so we stop building before the tree is too big. In post-pruning we build the whole tree and then we review the tree and decide which leaves to remove to make the tree smaller.</p>
+<h2 id="pre-pruning-techniques">Pre-pruning techniques</h2>
+<ul>
+<li><em>Max depth</em>: Only grow the tree up to a certain depth, or height of the tree. If the max depth is 3, there will be at most 3 splits for each datapoint.</li>
+<li><em>Leaf size</em>: Don’t split a node if the number of samples at that node is under a threshold</li>
+<li><em>Number of leaf nodes</em>: Limit the total number of leaf nodes allowed in the tree</li>
+</ul>
+<p>Pruning is a balance. For example, if you set the max depth too small, you won’t have much of a tree and you won’t have any predictive power. This is called underfitting. Similarly if the leaf size is too large, or the number of leaf nodes too small, you’ll have an underfit model.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://sololearn.com/uploads/files/titanic.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;male&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;male&#39;</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Pclass&#39;</span><span class="p">,</span> <span class="s1">&#39;male&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;Siblings/Spouses&#39;</span><span class="p">,</span> <span class="s1">&#39;Parents/Children&#39;</span><span class="p">,</span> <span class="s1">&#39;Fare&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Survived&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Decision Tree with the following properties:</span>
+<span class="sd">• max depth of 3</span>
+<span class="sd">• minimum samples per leaf of 2</span>
+<span class="sd">• maximum number of leaf nodes of 10</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">min_samples_leaf</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">max_leaf_nodes</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>
+<span class="n">dt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="kc">True</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">7.25</span><span class="p">]]))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[0]
+</code></pre></div>
+We’re not going to be able to intuit best values for the pre-pruning parameters. In order to decide on which to use, we use cross validation and compare metrics.</p>
+<p>GridSearchCV has four parameters that we’ll use:</p>
+<ol>
+<li>The model (in this case a DecisionTreeClassifier)</li>
+<li>Param grid: a dictionary of the parameters names and all the possible values</li>
+<li>What metric to use (default is accuracy)</li>
+<li>How many folds for k-fold cross validation</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://sololearn.com/uploads/files/titanic.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;male&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;male&#39;</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Pclass&#39;</span><span class="p">,</span> <span class="s1">&#39;male&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="s1">&#39;Siblings/Spouses&#39;</span><span class="p">,</span> <span class="s1">&#39;Parents/Children&#39;</span><span class="p">,</span> <span class="s1">&#39;Fare&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Survived&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="c1">#Since we have 3 possible values for max_depth, 2 for min_samples_leaf and </span>
+<span class="c1">#4 for max_leaf_nodes, we have 3 * 2 * 4 = 24 different combinations</span>
+<span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">25</span><span class="p">],</span>
+    <span class="s1">&#39;min_samples_leaf&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="s1">&#39;max_leaf_nodes&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">50</span><span class="p">]}</span>
+
+<span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">gs</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;f1&#39;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">gs</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best params: &quot;</span><span class="p">,</span><span class="n">gs</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best score: &quot;</span><span class="p">,</span><span class="n">gs</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Best params:  {&#39;max_depth&#39;: 25, &#39;max_leaf_nodes&#39;: 35, &#39;min_samples_leaf&#39;: 1}
+Best score:  0.7745375458302277
 </code></pre></div></p>
-<h2 id="adding-new-dictionary">Adding new dictionary</h2>
-<p>A new dictionary can be added by using the new_child() method. The newly added dictionary is added at the beginning of the ChainMap.</p>
-<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">collections</span>
+<h2 id="computation">Computation</h2>
+<p>When talking about how much computation is required for a machine learning algorithm, we separate it into two questions: how much computation is required to build the model and how much is required to predict.</p>
+<p>A decision tree is very computationally expensive to build. This is because at every node we are trying every single feature and threshold as a possible split. We have to calculate the information gain of each of these possible splits each time. This is computationally very expensive.</p>
+<p>Predicting with a decision tree on the other hand, is computational very inexpensive. You just need to ask a series of yes/no questions about the datapoint to get to the prediction. Generally we care much more about the computation time for prediction than training. Predictions often need to happen in real time while a user is waiting for a result.</p>
+<h2 id="performance">Performance</h2>
+<p>Decision Trees can perform decently well depending on the data, though as we have discussed, they are prone to overfitting. Since a leaf node can have just one datapoint that lands there, it gives too much power to individual datapoints.</p>
+<p>To remedy the overfitting issues, decision trees generally require some tuning to get the best possible model. Pruning techniques are used to limit the size of the tree and they help mitigate overfitting. Decision Trees often take work to perform on par with how other models perform with no tuning.</p>
+<h2 id="interpretability">Interpretability</h2>
+<p>The biggest reason that people like choosing decision trees is because they are easily interpretable. Depending on what you’re building a model for, you might need to give a reason why you made a certain prediction. A non-technical person can interpret a Decision Tree so it’s easy to give an explanation of a prediction.</p>
+<p>This particularly comes into play in legal situations. Say you are a bank and have a model to predict whether a person should be given a loan or not. It is important to be able to explain why the model made the decision, otherwise you could hide discriminatory practices within the model.</p>
+<div class="highlight"><pre><span></span><code><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Task</span>
+<span class="sd">Given a dataset and a split of the dataset, calculate the information gain </span>
+<span class="sd">using the gini impurity.</span>
+<span class="sd">The first line of the input is a list of the target values in the initial dataset. </span>
+<span class="sd">The second line is the target values of the left split and the third line is the </span>
+<span class="sd">target values of the right split.</span>
+<span class="sd">Round your result to 5 decimal places. You can use round(x, 5).</span>
 
-<span class="c1"># initializing dictionaries</span>
-<span class="n">dic1</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;a&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span> <span class="p">:</span> <span class="mi">2</span> <span class="p">}</span>
-<span class="n">dic2</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;b&#39;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span> <span class="p">:</span> <span class="mi">4</span> <span class="p">}</span>
-<span class="n">dic3</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;f&#39;</span> <span class="p">:</span> <span class="mi">5</span> <span class="p">}</span>
+<span class="sd">Input Format</span>
+<span class="sd">Three lines of 1&#39;s and 0&#39;s separated by spaces</span>
 
-<span class="c1"># initializing ChainMap</span>
-<span class="n">chain</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">ChainMap</span><span class="p">(</span><span class="n">dic1</span><span class="p">,</span> <span class="n">dic2</span><span class="p">)</span>
+<span class="sd">Output Format</span>
+<span class="sd">Float (rounded to 5 decimal places)</span>
 
-<span class="c1"># printing chainMap</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;All the ChainMap contents are : &quot;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">chain</span><span class="p">)</span>
-
-<span class="c1"># using new_child() to add new dictionary</span>
-<span class="n">chain1</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">new_child</span><span class="p">(</span><span class="n">dic3</span><span class="p">)</span>
-
-<span class="c1"># printing chainMap</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Displaying new ChainMap : &quot;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">chain1</span><span class="p">)</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">S</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
+<span class="n">sum_s</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span><span class="n">S</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+<span class="n">sum_a</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">sum_b</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span><span class="n">B</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="c1">#Gini</span>
+<span class="n">gini_s</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">sum_s</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">sum_s</span><span class="p">)</span>
+<span class="c1">#print(round(gini_s,5))</span>
+<span class="n">gini_a</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">sum_a</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">sum_a</span><span class="p">)</span>
+<span class="c1">#print(round(gini_a,5))</span>
+<span class="n">gini_b</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">sum_b</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">sum_b</span><span class="p">)</span>
+<span class="c1">#print(round(gini_b,5))</span>
+<span class="n">uno</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+<span class="n">dos</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">B</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+<span class="c1">#Information Gain</span>
+<span class="n">res</span><span class="o">=</span><span class="n">gini_s</span><span class="o">-</span><span class="p">(</span><span class="n">uno</span><span class="p">)</span><span class="o">*</span><span class="n">gini_a</span><span class="o">-</span><span class="p">(</span><span class="n">dos</span><span class="p">)</span><span class="o">*</span><span class="n">gini_b</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>All the ChainMap contents are : 
-ChainMap({&#39;a&#39;: 1, &#39;b&#39;: 2}, {&#39;b&#39;: 3, &#39;c&#39;: 4})
-Displaying new ChainMap : 
-ChainMap({&#39;f&#39;: 5}, {&#39;a&#39;: 1, &#39;b&#39;: 2}, {&#39;b&#39;: 3, &#39;c&#39;: 4})
-</code></pre></div></p>
 
               
             </article>
@@ -2515,7 +2636,7 @@ ChainMap({&#39;f&#39;: 5}, {&#39;a&#39;: 1, &#39;b&#39;: 2}, {&#39;b&#39;: 3, &#
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../pyOrdereddict/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Ordereddict" rel="prev">
+        <a href="../pyknn/" class="md-footer__link md-footer__link--prev" aria-label="Previous: K-Nearest Neighbors" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -2524,14 +2645,14 @@ ChainMap({&#39;f&#39;: 5}, {&#39;a&#39;: 1, &#39;b&#39;: 2}, {&#39;b&#39;: 3, &#
               <span class="md-footer__direction">
                 Previous
               </span>
-              Ordereddict
+              K-Nearest Neighbors
             </div>
           </div>
         </a>
       
       
         
-        <a href="../pyUserDefGen/" class="md-footer__link md-footer__link--next" aria-label="Next: General" rel="next">
+        <a href="../../Algo/pyGen/" class="md-footer__link md-footer__link--next" aria-label="Next: General" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
