@@ -9,3 +9,4 @@ Useful modules for ML and Data Science
     + [Linear Regression](pylinReg.md)
     + [Logistic Regression](pyLogReg.md)
     + [K-Nearest Neighbors](pyknn.md)
+    + [Decision Trees](pyDecTree.md)
