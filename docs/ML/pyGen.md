@@ -10,3 +10,4 @@ Useful modules for ML and Data Science
     + [Logistic Regression](pyLogReg.md)
     + [K-Nearest Neighbors](pyknn.md)
     + [Decision Trees](pyDecTree.md)
+    + [Random Forest](pyRandomFor.md)
