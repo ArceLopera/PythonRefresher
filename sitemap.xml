@@ -2,507 +2,512 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/pythonRefresh/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Algo/pyGen/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Cls/pyAbsCls/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Cls/pyClsStaMet/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Cls/pyConstructor/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Cls/pyDataCls/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Cls/pyDataHid/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Cls/pyEnum/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Cls/pyGen/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Cls/pyInheritance/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Cls/pyMagicMet/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Cls/pyProp/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyArray/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyChainMap/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyCounter/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyDS/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyDefaultdict/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyDict/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyGen/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyGenX/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyGraph/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyHeapQueue/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyIterAllAny/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyIterEnumerate/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyIterMapFilter/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyIterReversed/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyIterSorted/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyIterZip/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyLinkedList/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyList/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyNamedTuple/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyOrdereddict/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyQueue/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pySet/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyStack/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyTrees/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyTrie/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyTuple/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pyUserDefGen/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/DS/pydeque/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Exe/pyGen/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Func/pyAnn/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Func/pyCtxtMgr/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Func/pyDecor/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Func/pyDoc/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Func/pyFnArgs/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Func/pyFnTools/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Func/pyFuncObj/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Func/pyGen/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Func/pyLambdas/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Func/pyMain/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Func/pyNumFunc/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/Func/pyRegex/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/ML/pyDecTree/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/ML/pyEda/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/ML/pyGen/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/ML/pyLogReg/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://arcelopera.github.io/PythonRefresher/ML/pyNN/</loc>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/ML/pyNumba/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/ML/pyNumpy/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/ML/pyPandas/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/ML/pyPlot/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/ML/pyRandomFor/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/ML/pyknn/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/ML/pylinReg/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyAsser/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyCompr/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyCond/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyElse/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyExp/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyOp1/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyOp2/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyOp3/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyOp4/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyOp5/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyOp6/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyOp7/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyStr1/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyStr2/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyStr3/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyStr4/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyStr5/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyVar1/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyVar2/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyVar3/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyVar4/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyWhile/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/PR/pyfor/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/lib/pyBisect/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/lib/pyEmoji/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/lib/pyGen/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/lib/pyIO/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/lib/pyIter/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/lib/pyMemP/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/lib/pyPack/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/lib/pyRandom/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/lib/pySerial/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/lib/pyTest/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/lib/pyTimeP/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/lib/pydatetime/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/PythonRefresher/lib/pylog/</loc>
-         <lastmod>2022-11-18</lastmod>
+         <lastmod>2022-11-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
