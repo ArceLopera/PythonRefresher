@@ -202,6 +202,7 @@ nav:
      - K-Nearest Neighbors : ML/pyknn.md
      - Decision Trees : ML/pyDecTree.md
      - Random Forest : ML/pyRandomFor.md
+     - Neural Networks : ML/pyNN.md
   - Algo :
      - General : Algo/pyGen.md
   - Exercises : 

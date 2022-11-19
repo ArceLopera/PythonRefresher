@@ -11,3 +11,4 @@ Useful modules for ML and Data Science
     + [K-Nearest Neighbors](pyknn.md)
     + [Decision Trees](pyDecTree.md)
     + [Random Forest](pyRandomFor.md)
+    + [Neural Networks](pyNN.md)
