@@ -203,6 +203,7 @@ nav:
      - Decision Trees : ML/pyDecTree.md
      - Random Forest : ML/pyRandomFor.md
      - Neural Networks : ML/pyNN.md
+     - Clustering : ML/pyClust.md
   - Algo :
      - General : Algo/pyGen.md
   - Exercises : 

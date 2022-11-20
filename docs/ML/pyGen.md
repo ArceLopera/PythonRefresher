@@ -12,3 +12,4 @@ Useful modules for ML and Data Science
     + [Decision Trees](pyDecTree.md)
     + [Random Forest](pyRandomFor.md)
     + [Neural Networks](pyNN.md)
+    + [Clustering](pyClust.md)
