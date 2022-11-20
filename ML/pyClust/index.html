@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/lib/pyMemP/">
+        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/ML/pyClust/">
       
       <link rel="icon" href="../../Images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Memory Profiling - Python Refresher</title>
+        <title>Clustering - Python Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-tracemalloc" class="md-skip">
+        <a href="#k-means" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Memory Profiling
+              Clustering
             
           </span>
         </div>
@@ -271,15 +271,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../pyGen/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../lib/pyGen/" class="md-tabs__link">
         Useful Libraries
       </a>
     </li>
@@ -289,13 +287,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../ML/pyGen/" class="md-tabs__link">
+      <a href="../pyGen/" class="md-tabs__link md-tabs__link--active">
         ML
       </a>
     </li>
@@ -1853,14 +1853,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
       
       
       
@@ -1883,7 +1881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyGen/" class="md-nav__link">
+      <a href="../../lib/pyGen/" class="md-nav__link">
         General
       </a>
     </li>
@@ -1897,7 +1895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyIO/" class="md-nav__link">
+      <a href="../../lib/pyIO/" class="md-nav__link">
         IO & OS
       </a>
     </li>
@@ -1911,7 +1909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyIter/" class="md-nav__link">
+      <a href="../../lib/pyIter/" class="md-nav__link">
         Itertools
       </a>
     </li>
@@ -1925,7 +1923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyBisect/" class="md-nav__link">
+      <a href="../../lib/pyBisect/" class="md-nav__link">
         Bisect
       </a>
     </li>
@@ -1939,7 +1937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyRandom/" class="md-nav__link">
+      <a href="../../lib/pyRandom/" class="md-nav__link">
         Random
       </a>
     </li>
@@ -1953,7 +1951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyPack/" class="md-nav__link">
+      <a href="../../lib/pyPack/" class="md-nav__link">
         Packaging
       </a>
     </li>
@@ -1967,7 +1965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pydatetime/" class="md-nav__link">
+      <a href="../../lib/pydatetime/" class="md-nav__link">
         Dates and Time
       </a>
     </li>
@@ -1981,7 +1979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pySerial/" class="md-nav__link">
+      <a href="../../lib/pySerial/" class="md-nav__link">
         Serialization
       </a>
     </li>
@@ -2009,7 +2007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyEmoji/" class="md-nav__link">
+      <a href="../../lib/pyEmoji/" class="md-nav__link">
         Emoji
       </a>
     </li>
@@ -2023,7 +2021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyTimeP/" class="md-nav__link">
+      <a href="../../lib/pyTimeP/" class="md-nav__link">
         Time Profiling
       </a>
     </li>
@@ -2035,69 +2033,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Memory Profiling
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../lib/pyMemP/" class="md-nav__link">
         Memory Profiling
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#using-tracemalloc" class="md-nav__link">
-    Using Tracemalloc
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-psutil" class="md-nav__link">
-    Using Psutil
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-memory-profiler" class="md-nav__link">
-    Using Memory Profiler
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reducing-memory-consumption-with-slots" class="md-nav__link">
-    Reducing Memory Consumption with Slots
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2109,7 +2049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pylog/" class="md-nav__link">
+      <a href="../../lib/pylog/" class="md-nav__link">
         Logging
       </a>
     </li>
@@ -2123,7 +2063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyTest/" class="md-nav__link">
+      <a href="../../lib/pyTest/" class="md-nav__link">
         Testing
       </a>
     </li>
@@ -2143,12 +2083,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       
       
@@ -2171,7 +2113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyGen/" class="md-nav__link">
+      <a href="../pyGen/" class="md-nav__link">
         General
       </a>
     </li>
@@ -2185,7 +2127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyPandas/" class="md-nav__link">
+      <a href="../pyPandas/" class="md-nav__link">
         Pandas
       </a>
     </li>
@@ -2199,7 +2141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyNumpy/" class="md-nav__link">
+      <a href="../pyNumpy/" class="md-nav__link">
         Numpy
       </a>
     </li>
@@ -2213,7 +2155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyNumba/" class="md-nav__link">
+      <a href="../pyNumba/" class="md-nav__link">
         Numba
       </a>
     </li>
@@ -2227,7 +2169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyPlot/" class="md-nav__link">
+      <a href="../pyPlot/" class="md-nav__link">
         MatplotLib
       </a>
     </li>
@@ -2241,7 +2183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyEda/" class="md-nav__link">
+      <a href="../pyEda/" class="md-nav__link">
         EDA
       </a>
     </li>
@@ -2255,7 +2197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pylinReg/" class="md-nav__link">
+      <a href="../pylinReg/" class="md-nav__link">
         Linear Regression
       </a>
     </li>
@@ -2269,7 +2211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyLogReg/" class="md-nav__link">
+      <a href="../pyLogReg/" class="md-nav__link">
         Logistic Regression
       </a>
     </li>
@@ -2283,7 +2225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyknn/" class="md-nav__link">
+      <a href="../pyknn/" class="md-nav__link">
         K-Nearest Neighbors
       </a>
     </li>
@@ -2297,7 +2239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyDecTree/" class="md-nav__link">
+      <a href="../pyDecTree/" class="md-nav__link">
         Decision Trees
       </a>
     </li>
@@ -2311,7 +2253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyRandomFor/" class="md-nav__link">
+      <a href="../pyRandomFor/" class="md-nav__link">
         Random Forest
       </a>
     </li>
@@ -2325,7 +2267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyNN/" class="md-nav__link">
+      <a href="../pyNN/" class="md-nav__link">
         Neural Networks
       </a>
     </li>
@@ -2337,11 +2279,48 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../ML/pyClust/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Clustering
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Clustering
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#k-means" class="md-nav__link">
+    K-means
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2474,29 +2453,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-tracemalloc" class="md-nav__link">
-    Using Tracemalloc
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-psutil" class="md-nav__link">
-    Using Psutil
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-memory-profiler" class="md-nav__link">
-    Using Memory Profiler
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reducing-memory-consumption-with-slots" class="md-nav__link">
-    Reducing Memory Consumption with Slots
+  <a href="#k-means" class="md-nav__link">
+    K-means
   </a>
   
 </li>
@@ -2515,189 +2473,42 @@
                 
 
 
-  <h1>Memory Profiling</h1>
+  <h1>Clustering</h1>
 
-<p>Managing memory is important in any programming logic but this becomes necessary for python. As python is used in Ml and AI where vast data are used which needs to be managed. Memory leaks, i.e. the program is out of memory after running for several hours. To manage these memory leaks memory monitoring is essential. Monitoring memory is also called profiling. As a developer, it’s a necessity that we profile our program and use less memory allocation as much as possible.</p>
-<h2 id="using-tracemalloc">Using Tracemalloc</h2>
-<p>Tracemalloc is a library module that traces every memory block in python. The tracing starts by using the start() during runtime. This library module can also give information about the total size, number, and average size of allocated memory blocks.</p>
-<p><div class="highlight"><pre><span></span><code><span class="c1"># importing the module</span>
-<span class="kn">import</span> <span class="nn">tracemalloc</span>
-
-<span class="c1"># code or function for which memory</span>
-<span class="c1"># has to be monitored</span>
-<span class="k">def</span> <span class="nf">app</span><span class="p">():</span>
-    <span class="n">lt</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100000</span><span class="p">):</span>
-        <span class="n">lt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-
-<span class="c1"># starting the monitoring</span>
-<span class="n">tracemalloc</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-
-<span class="c1"># function call</span>
-<span class="n">app</span><span class="p">()</span>
-
-<span class="c1"># displaying the memory</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">tracemalloc</span><span class="o">.</span><span class="n">get_traced_memory</span><span class="p">())</span>
-
-<span class="c1"># stopping the library</span>
-<span class="n">tracemalloc</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>(729, 3617551)
-</code></pre></div></p>
-<p>The output is given in form of (current, peak), i.e. current memory is the memory the code is currently using and peak memory is the maximum space the program used while executing.</p>
-<h2 id="using-psutil">Using Psutil</h2>
-<p>Psutil is a python system library used to keep track of various resources in the system and their utilization. The library is used for profiling, limiting, and management of process resources.</p>
-<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">psutil</span>
-
-<span class="n">p</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">())</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-        <span class="n">mem_usage</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">memory_info</span><span class="p">()</span><span class="o">.</span><span class="n">rss</span> <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2"> MB&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">mem_usage</span><span class="p">))</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">memory_usage_psutil</span><span class="p">():</span>
-    <span class="c1"># return the memory usage in MB</span>
-    <span class="kn">import</span> <span class="nn">psutil</span>
-    <span class="n">process</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">())</span>
-    <span class="n">mem</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">get_memory_info</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">20</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">mem</span>
-</code></pre></div>
-The above function returns the memory usage of the current Python process in MiB. Depending on the platform it will choose the most accurate and fastest way to get this information. For example, in Windows it will use the C++ Win32 API while in Linux it will read from /proc, hiding the implementation details and proving on each platform a fast and accurate measurement.</p>
-<p>If you are looking for an easy way to get the memory consumption within Python this in my opinion your best shot.</p>
-<h2 id="using-memory-profiler">Using Memory Profiler</h2>
-<p><div class="highlight"><pre><span></span><code><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">memory</span><span class="o">-</span><span class="n">profiler</span> 
-</code></pre></div>
-Notice the @profile this is a decorator. Any function which is decorated by this decorator, that function will be tracked.</p>
-<p><div class="highlight"><pre><span></span><code><span class="o">%%</span><span class="n">file</span> <span class="n">sos</span><span class="o">.</span><span class="n">py</span>
-<span class="sd">&quot;&quot;&quot;memory_profiler example&quot;&quot;&quot;</span>
-
-<span class="nd">@profile</span>
-<span class="k">def</span> <span class="nf">sum_of_diffs</span><span class="p">(</span><span class="n">vals</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Compute sum of diffs&quot;&quot;&quot;</span>
-    <span class="n">vals2</span> <span class="o">=</span> <span class="n">vals</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-
-    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">vals2</span><span class="p">):</span>
-        <span class="n">total</span> <span class="o">+=</span> <span class="n">v2</span> <span class="o">-</span> <span class="n">v1</span>
-
-    <span class="k">return</span> <span class="n">total</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">vals</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1_000_000</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">sum_of_diffs</span><span class="p">(</span><span class="n">vals</span><span class="p">))</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>Writing sos.py
-</code></pre></div></p>
-<p><div class="highlight"><pre><span></span><code><span class="err">!</span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">memory_profiler</span> <span class="n">sos</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>999996
-Filename: /content/sos.py
-
-Line #    Mem usage    Increment  Occurrences   Line Contents
-=============================================================
-     3   52.160 MiB   52.160 MiB           1   @profile
-     4                                         def sum_of_diffs(vals):
-     5                                             &quot;&quot;&quot;Compute sum of diffs&quot;&quot;&quot;
-     6   54.738 MiB    2.578 MiB           1       vals2 = vals[1:]
-     7                                         
-     8   54.738 MiB    0.000 MiB           1       total = 0
-     9   54.738 MiB    0.000 MiB      333333       for v1, v2 in zip(vals, vals2):
-    10   54.738 MiB    0.000 MiB      333332           total += v2 - v1
-    11                                         
-    12   54.738 MiB    0.000 MiB           1       return total
-</code></pre></div></p>
-<p><div class="highlight"><pre><span></span><code><span class="o">%%</span><span class="n">file</span> <span class="n">sos1</span><span class="o">.</span><span class="n">py</span>
-<span class="sd">&quot;&quot;&quot;memory_profiler example&quot;&quot;&quot;</span>
-
-<span class="k">def</span> <span class="nf">sum_of_diffs</span><span class="p">(</span><span class="n">vals</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Compute sum of diffs&quot;&quot;&quot;</span>
-    <span class="n">vals2</span> <span class="o">=</span> <span class="n">vals</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-
-    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">vals2</span><span class="p">):</span>
-        <span class="n">total</span> <span class="o">+=</span> <span class="n">v2</span> <span class="o">-</span> <span class="n">v1</span>
-
-    <span class="k">return</span> <span class="n">total</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">vals</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100_000_000</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">sum_of_diffs</span><span class="p">(</span><span class="n">vals</span><span class="p">))</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>Writing sos1.py
-</code></pre></div></p>
-<p>mprof generates profile data</p>
-<p><div class="highlight"><pre><span></span><code><span class="err">!</span><span class="n">mprof</span> <span class="n">run</span> <span class="n">sos1</span><span class="o">.</span><span class="n">py</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>mprof: Sampling memory every 0.1s
-running new process
-running as a Python program...
-99999996
-</code></pre></div></p>
-<p><div class="highlight"><pre><span></span><code><span class="err">!</span><span class="n">mprof</span> <span class="n">plot</span> <span class="n">mprofile_20211225174100</span><span class="o">.</span><span class="n">dat</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>&lt;Figure size 1260x540 with 1 Axes&gt;
-</code></pre></div></p>
-<h2 id="reducing-memory-consumption-with-slots">Reducing Memory Consumption with Slots</h2>
-<p>Slots in Python is a special mechanism that is used to reduce memory of the objects. In Python, all the objects use a dynamic dictionary for adding an attribute. Slots is a static type method in this no dynamic dictionary are required for allocating attribute.
-<div class="highlight"><pre><span></span><code><span class="c1"># defining the class.</span>
-<span class="k">class</span> <span class="nc">myCourse</span><span class="p">:</span>
-
-    <span class="c1"># defining the slots.</span>
-    <span class="vm">__slots__</span> <span class="o">=</span><span class="p">(</span><span class="s1">&#39;course&#39;</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-        <span class="c1"># initializing the values</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">course</span> <span class="o">=</span><span class="s1">&#39;MAth&#39;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="mi">300</span>
-
-<span class="c1"># create an object of gfg class</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">myCourse</span><span class="p">()</span>
-
-<span class="c1"># print the slot</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="vm">__slots__</span><span class="p">)</span>
-
-<span class="c1"># print the slot variable</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">course</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">price</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>(&#39;course&#39;, &#39;price&#39;)
-MAth 300
-</code></pre></div>
-When we create objects for classes, it requires memory and the attribute are stored in the form of a dictionary. In case if we need to allocate thousands of objects, it will take a lot of memory space. slots provide a special mechanism to reduce the size of objects.It is a concept of memory optimisation on objects. As every object in Python contains a dynamic dictionary that allows adding attributes. For every instance object, we will have an instance of a dictionary that consumes more space and wastes a lot of RAM. In Python, there is no default functionality to allocate a static amount of memory while creating the object to store all its attributes. Usage of slots reduce the wastage of space and speed up the program by allocating space for a fixed amount of attributes.</p>
-<p><div class="highlight"><pre><span></span><code><span class="c1">#Example of python object without slots</span>
-<span class="k">class</span> <span class="nc">MFT</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">instance</span> <span class="o">=</span> <span class="n">MFT</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>{&#39;a&#39;: 1, &#39;b&#39;: 2}
-</code></pre></div></p>
-<p><div class="highlight"><pre><span></span><code><span class="c1">#Example of python object with slots </span>
-<span class="k">class</span> <span class="nc">MFT</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="vm">__slots__</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">instance</span> <span class="o">=</span> <span class="n">MFT</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="vm">__slots__</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>[&#39;a&#39;, &#39;b&#39;]
-</code></pre></div></p>
-<p><strong>Result of using slots:</strong></p>
+<p>Clustering is a type of unsupervised learning that allows us to find groups of similar objects, objects that are more related to each other than to the objects in other groups. This is often used when we don’t have access to the ground truth, in other words, the labels are missing.</p>
+<p>Examples of business use cases include the grouping of documents, music, and movies based on their contents, or finding customer segments based on purchase behavior as a basis for recommendation engines.</p>
+<p>The goal of clustering is to separate the data into groups, or clusters, with more similar traits to each other than to the data in the other clusters.</p>
+<p>In general, there are four types:</p>
 <ul>
-<li>Fast access to attributes</li>
-<li>Saves memory space</li>
+<li>
+<p><strong>Centroid based models</strong> - each cluster is represented by a single mean vector (e.g., <a href="#k-means">k-means</a>),</p>
+</li>
+<li>
+<p><strong>Connectivity based models</strong> - built based on distance connectivity (e.g., hierarchical clustering)</p>
+</li>
+<li>
+<p><strong>Distribution based models</strong> - built using statistical distributions (e.g., Gaussian mixtures)</p>
+</li>
+<li>
+<p><strong>Density based models</strong> - clusters are defined as dense areas (e.g., DBSCAN)</p>
+</li>
 </ul>
+<h2 id="k-means">K-means</h2>
+<p>The algorithm has gained great popularity because it is easy to implement and scales well to large datasets. However, it is difficult to predict the number of clusters, it can get stuck in local optimums, and it can perform poorly when the clusters are of varying sizes and density.</p>
+<p>One major shortcoming of k-means is that the random initial guess for the centroids can result in bad clustering, and k-means++ algorithm addresses this obstacle by specifying a procedure to initialize the centroids before proceeding with the standard k-means algorithm. In scikit-learn, the initialization mechanism is set to k-means++, by default.</p>
+<p><strong>Pre-processing: Standardization</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_wine</span>
+
+<span class="n">wine</span> <span class="o">=</span> <span class="n">load_wine</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="c1"># instantiate the scaler</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="c1"># compute the mean and std to be used later for scaling</span>
+<span class="n">scale</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="c1"># StandardScaler(copy=True, with_mean=True, with_std=True)</span>
+<span class="n">X_scaled</span> <span class="o">=</span> <span class="n">scale</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</code></pre></div>
 
               
             </article>
@@ -2711,7 +2522,7 @@ When we create objects for classes, it requires memory and the attribute are sto
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../pyTimeP/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Time Profiling" rel="prev">
+        <a href="../pyNN/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Neural Networks" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -2720,20 +2531,20 @@ When we create objects for classes, it requires memory and the attribute are sto
               <span class="md-footer__direction">
                 Previous
               </span>
-              Time Profiling
+              Neural Networks
             </div>
           </div>
         </a>
       
       
         
-        <a href="../pylog/" class="md-footer__link md-footer__link--next" aria-label="Next: Logging" rel="next">
+        <a href="../../Algo/pyGen/" class="md-footer__link md-footer__link--next" aria-label="Next: General" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Logging
+              General
             </div>
           </div>
           <div class="md-footer__button md-icon">
