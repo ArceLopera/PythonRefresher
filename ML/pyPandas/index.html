@@ -2168,6 +2168,26 @@
     DataFrames
   </a>
   
+    <nav class="md-nav" aria-label="DataFrames">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2602,6 +2622,26 @@
     DataFrames
   </a>
   
+    <nav class="md-nav" aria-label="DataFrames">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2761,8 +2801,8 @@
 </code></pre></div></p>
 <h2 id="dataframes">DataFrames</h2>
 <p>In data science, data is usually more than one-dimensional, and of different data types; thus Series is not sufficient. DataFrames are 2darrays with both row and column labels. The easiest way to create a DataFrame is using a dictionary. Each key is a column, while the value is an array representing the data for that column.And then, we can pass this dictionary to the DataFrame constructor.</p>
-<p>The DataFrame automatically creates a numeric index for each row. We can specify a custom index, when creating the DataFrame. We can access a row using its index and the loc[] function. loc uses square brackets to specify the index.</p>
-<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<p>The DataFrame automatically creates a numeric index for each row. We can specify a custom index, when creating the DataFrame. </p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
    <span class="s1">&#39;ages&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">42</span><span class="p">],</span>
@@ -2770,29 +2810,193 @@
 <span class="p">}</span> 
 <span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
+<span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;James&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span><span class="s1">&#39;Ana&#39;</span><span class="p">,</span><span class="s1">&#39;Susan&#39;</span><span class="p">])</span>
+</code></pre></div>
+<h3 id="attributes">Attributes</h3>
+<ul>
+<li>
+<p><strong>df.index</strong> : The index (row labels) of the DataFrame.
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">index</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Index([&#39;Jim&#39;, &#39;Bob&#39;, &#39;Ana&#39;, &#39;Susan&#39;], dtype=&#39;object&#39;)
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>df.columns</strong>: The column labels of the DataFrame.
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Index([&#39;ages&#39;, &#39;heights&#39;], dtype=&#39;object&#39;)
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>df.axes</strong>: Both index and columns.
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">axes</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[Index([&#39;Jim&#39;, &#39;Bob&#39;, &#39;Ana&#39;, &#39;Susan&#39;], dtype=&#39;object&#39;),
+ Index([&#39;ages&#39;, &#39;heights&#39;], dtype=&#39;object&#39;)]
+</code></pre></div></p>
+</li>
+<li>
+<p><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.shape.html"><strong>df.shape</strong></a> : Tuple representing the dimensionality of the DataFrame. (Similar to numpy)
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>(3, 2)
+</code></pre></div></p>
+</li>
+<li>
+<p><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.size.html#pandas.DataFrame.size"><strong>df.size</strong></a> to return an integer representing the number of elements in this object.
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">size</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>6
+</code></pre></div></p>
+</li>
+<li>
+<p><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.ndim.html#pandas.DataFrame.ndim"><strong>df.ndim</strong></a> : Return an int representing the number of axes / array dimensions. Return 1 if Series. Otherwise return 2 if DataFrame.</p>
+</li>
+<li>
+<p><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html#pandas.DataFrame.loc"><strong>df.loc[]</strong></a>: We can access a row using its index and the loc[] attribute. loc uses square brackets to specify the index.
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="s1">&#39;ages&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">42</span><span class="p">],</span>
+   <span class="s1">&#39;heights&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">165</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">176</span><span class="p">,</span> <span class="mi">184</span><span class="p">]</span>
+<span class="p">}</span> 
 <span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;James&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span><span class="s1">&#39;Ana&#39;</span><span class="p">,</span><span class="s1">&#39;Susan&#39;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Bob&quot;</span><span class="p">])</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>ages        18
 heights    180
 Name: Bob, dtype: int64
+</code></pre></div>
+To set values with loc:
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;Bob&#39;</span><span class="p">],[</span><span class="s1">&#39;ages&#39;</span><span class="p">]]</span><span class="o">=</span><span class="mi">10</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Bob&#39;</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>ages        10
+heights    180
+Name: Bob, dtype: int64
 </code></pre></div></p>
-<p>Similar to numpy, to get the dimensions of a DataFrame, use .shape</p>
-<p>Size also works on DataFrame to return an integer representing the number of elements in this object.</p>
-<h2 id="importing-and-exporting-data">Importing and Exporting Data</h2>
-<p>Generally data is stored in CSV (comma-separated values) files, which we can easily read in with panda’s read_csv function. Pandas also supports reading from JSON files, as well as SQL databases.</p>
-<ul>
-<li>
-<p>The <strong>head</strong> method returns the first 5 rows. You can instruct it to return the number of rows you would like as an argument (for example, df.head(10) will return the first 10 rows). Similarly, you can get the last rows using the <strong>tail()</strong> function.</p>
 </li>
 <li>
-<p>The <strong>info()</strong> function is used to get essential information about your dataset, such as number of rows, columns, data types, etc. Pandas automatically generates an index for the DataFrame, if none is specified. We can set our own index column by using the set_index() function.
+<p><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iloc.html#pandas.DataFrame.iloc"><strong>df.iloc[]</strong></a>: Purely int-location based indexing for selection by position. 
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>ages        14
+heights    165
+Name: Jim, dtype: int64
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">]]</span>
+</code></pre></div></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ages</th>
+<th>heights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jim</td>
+<td>14</td>
+<td>165</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ages</th>
+<th>heights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jim</td>
+<td>14</td>
+<td>165</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>18</td>
+<td>180</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ages</th>
+<th>heights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jim</td>
+<td>14</td>
+<td>165</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>18</td>
+<td>180</td>
+</tr>
+<tr>
+<td>Ana</td>
+<td>24</td>
+<td>176</td>
+</tr>
+</tbody>
+</table>
+<p>Using Masks:
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]]</span>
+</code></pre></div></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ages</th>
+<th>heights</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jim</td>
+<td>14</td>
+<td>165</td>
+</tr>
+<tr>
+<td>Ana</td>
+<td>24</td>
+<td>176</td>
+</tr>
+</tbody>
+</table>
+<p>Using both axes:
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>165
+</code></pre></div></p>
+<h3 id="methods">Methods</h3>
+<ul>
+<li>
+<p>The <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.head.html"><strong>head()</strong></a> method returns the first 5 rows. You can instruct it to return the number of rows you would like as an argument (for example, df.head(10) will return the first 10 rows). Similarly, you can get the last rows using the <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.tail.html#pandas.DataFrame.tail"><strong>tail()</strong></a> function.</p>
+</li>
+<li>
+<p>The <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.info.html"><strong>info()</strong></a> function is used to get essential information about your dataset, such as number of rows, columns, data types, etc. Pandas automatically generates an index for the DataFrame, if none is specified. We can set our own index column by using the <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.set_index.html">set_index()</a> function.
 <code>df.setIndex("Sex", inplace=True)</code>
 The inplace=True argument specifies that the change will be applied to our DataFrame, without the need to assign it to a new DataFrame variable.</p>
 </li>
 <li>
-<p>The <strong>describe</strong> method returns a table of statistics about the columns. We add a line in the code below to force python to display all 6 columns. Without the line, it will abbreviate the results. We can also get the summary stats for a single column.</p>
+<p>The <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html"><strong>describe()</strong></a> method returns a table of statistics about the columns. We add a line in the code below to force python to display all 6 columns. Without the line, it will abbreviate the results. We can also get the summary stats for a single column. <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html"><strong>.describe()</strong></a> ignores the null values, such as <code>NaN</code> (Not a Number) and generates the descriptive statistics that summarize the central tendency (i.e., mean), dispersion (i.e., standard deviation), and shape (i.e., min, max, and quantiles) of a dataset’s distribution.</p>
 <ul>
 <li>Count: This is the number of rows that have a value. In our case, every passenger has a value for each of the columns, so the value is 887 (the total number of passengers).</li>
 <li>Mean: Recall that the mean is the standard average.</li>
@@ -2804,12 +3008,12 @@ The inplace=True argument specifies that the change will be applied to our DataF
 <li>Max: The largest value</li>
 </ul>
 </li>
+<li>
+<p><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.count.html#pandas.DataFrame.count"><strong>df.count()</strong></a> : Number of non-NA values</p>
+</li>
 </ul>
-<p><strong>.describe()</strong> ignores the null values, such as <code>NaN</code> (Not a Number) and generates the descriptive statistics that summarize the central tendency (i.e., mean), dispersion (i.e., standard deviation), and shape (i.e., min, max, and quantiles) of a dataset’s distribution.</p>
-<p><strong>df.shape</strong></p>
-<p><strong>df.index</strong> : Describe index</p>
-<p><strong>df.columns</strong></p>
-<p><strong>df.count()</strong> : Number of non-NA values</p>
+<h2 id="importing-and-exporting-data">Importing and Exporting Data</h2>
+<p>Generally data is stored in CSV (comma-separated values) files, which we can easily read in with panda’s read_csv function. Pandas also supports reading from JSON files, as well as SQL databases.</p>
 <h3 id="csv">CSV</h3>
 <p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
 <span class="c1">#read csv</span>
