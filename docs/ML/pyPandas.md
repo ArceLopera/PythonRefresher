@@ -37,7 +37,7 @@ s3['a']
 
 In data science, data is usually more than one-dimensional, and of different data types; thus Series is not sufficient. DataFrames are 2darrays with both row and column labels. The easiest way to create a DataFrame is using a dictionary. Each key is a column, while the value is an array representing the data for that column.And then, we can pass this dictionary to the DataFrame constructor.
 
-The DataFrame automatically creates a numeric index for each row. We can specify a custom index, when creating the DataFrame. We can access a row using its index and the loc[] function. loc uses square brackets to specify the index.
+The DataFrame automatically creates a numeric index for each row. We can specify a custom index, when creating the DataFrame. 
 
 ``` py
 import pandas as pd
@@ -48,7 +48,64 @@ data = {
 } 
 df=pd.DataFrame(data)
 
+df=pd.DataFrame(data, index=['James', 'Bob','Ana','Susan'])
 
+```
+
+### Attributes
+
++ **df.index** : The index (row labels) of the DataFrame.
+``` py
+df.index
+```
+```
+Index(['Jim', 'Bob', 'Ana', 'Susan'], dtype='object')
+```
+
++ **df.columns**: The column labels of the DataFrame.
+``` py
+df.columns
+```
+```
+Index(['ages', 'heights'], dtype='object')
+```
+
++ **df.axes**: Both index and columns.
+``` py
+df.axes
+```
+```
+[Index(['Jim', 'Bob', 'Ana', 'Susan'], dtype='object'),
+ Index(['ages', 'heights'], dtype='object')]
+```
+
+
++ [**df.shape**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.shape.html) : Tuple representing the dimensionality of the DataFrame. (Similar to numpy)
+``` py
+df.shape
+```
+```
+(3, 2)
+```
+
++ [**df.size**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.size.html#pandas.DataFrame.size) to return an integer representing the number of elements in this object.
+``` py
+df.size
+```
+```
+6
+```
+
++ [**df.ndim**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.ndim.html#pandas.DataFrame.ndim) : Return an int representing the number of axes / array dimensions. Return 1 if Series. Otherwise return 2 if DataFrame.
+
++ [**df.loc[]**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html#pandas.DataFrame.loc): We can access a row using its index and the loc[] attribute. loc uses square brackets to specify the index.
+``` py
+import pandas as pd
+
+data = {
+   'ages': [14, 18, 24, 42],
+   'heights': [165, 180, 176, 184]
+} 
 df=pd.DataFrame(data, index=['James', 'Bob','Ana','Susan'])
 print(df.loc["Bob"])
 ```
@@ -57,22 +114,82 @@ ages        18
 heights    180
 Name: Bob, dtype: int64
 ```
+To set values with loc:
+``` py
+df.loc[['Bob'],['ages']]=10
+df.loc['Bob']
+```
+```
+ages        10
+heights    180
+Name: Bob, dtype: int64
+```
 
-Similar to numpy, to get the dimensions of a DataFrame, use .shape
++ [**df.iloc[]**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iloc.html#pandas.DataFrame.iloc): Purely int-location based indexing for selection by position. 
+``` py
+df.iloc[0]
+```
+```
+ages        14
+heights    165
+Name: Jim, dtype: int64
+```
+``` py
+df.iloc[[0]]
+```
 
-Size also works on DataFrame to return an integer representing the number of elements in this object.
+||	ages|	heights|
+||||
+|Jim|	14|	165|
 
-## Importing and Exporting Data
 
-Generally data is stored in CSV (comma-separated values) files, which we can easily read in with panda’s read_csv function. Pandas also supports reading from JSON files, as well as SQL databases.
 
-* The **head** method returns the first 5 rows. You can instruct it to return the number of rows you would like as an argument (for example, df.head(10) will return the first 10 rows). Similarly, you can get the last rows using the **tail()** function.
+``` py
+df.iloc[[0, 1]]
+```
 
-* The **info()** function is used to get essential information about your dataset, such as number of rows, columns, data types, etc. Pandas automatically generates an index for the DataFrame, if none is specified. We can set our own index column by using the set_index() function.
+||	ages|	heights|
+||||
+|Jim|	14|	165|
+|Bob|	18|	180|
+
+``` py
+df.iloc[:3]
+```
+
+||	ages|	heights|
+||||
+|Jim|	14|	165|
+|Bob|	18|	180|
+|Ana|	24|	176|
+
+Using Masks:
+``` py
+df.iloc[[True, False, True]]
+```
+
+||	ages|	heights|
+||||
+|Jim|	14|	165|
+|Ana|	24|	176|
+
+Using both axes:
+``` py
+df.iloc[0, 1]
+```
+```
+165
+```
+
+### Methods
+
+* The [**head()**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.head.html) method returns the first 5 rows. You can instruct it to return the number of rows you would like as an argument (for example, df.head(10) will return the first 10 rows). Similarly, you can get the last rows using the [**tail()**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.tail.html#pandas.DataFrame.tail) function.
+
+* The [**info()**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.info.html) function is used to get essential information about your dataset, such as number of rows, columns, data types, etc. Pandas automatically generates an index for the DataFrame, if none is specified. We can set our own index column by using the [set_index()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.set_index.html) function.
 `df.setIndex("Sex", inplace=True)`
 The inplace=True argument specifies that the change will be applied to our DataFrame, without the need to assign it to a new DataFrame variable.
 
-* The **describe** method returns a table of statistics about the columns. We add a line in the code below to force python to display all 6 columns. Without the line, it will abbreviate the results. We can also get the summary stats for a single column.
+* The [**describe()**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html) method returns a table of statistics about the columns. We add a line in the code below to force python to display all 6 columns. Without the line, it will abbreviate the results. We can also get the summary stats for a single column. [**.describe()**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html) ignores the null values, such as `NaN` (Not a Number) and generates the descriptive statistics that summarize the central tendency (i.e., mean), dispersion (i.e., standard deviation), and shape (i.e., min, max, and quantiles) of a dataset’s distribution.
 
     - Count: This is the number of rows that have a value. In our case, every passenger has a value for each of the columns, so the value is 887 (the total number of passengers).
     - Mean: Recall that the mean is the standard average.
@@ -82,16 +199,13 @@ The inplace=True argument specifies that the change will be applied to our DataF
     - 50%: The 50th percentile, also known as the median.
     - 75%: The 75th percentile
     - Max: The largest value
+    
+*  [**df.count()**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.count.html#pandas.DataFrame.count) : Number of non-NA values
 
-  **.describe()** ignores the null values, such as `NaN` (Not a Number) and generates the descriptive statistics that summarize the central tendency (i.e., mean), dispersion (i.e., standard deviation), and shape (i.e., min, max, and quantiles) of a dataset’s distribution.
 
-  **df.shape**
+## Importing and Exporting Data
 
-  **df.index** : Describe index
-
-  **df.columns**
-
-  **df.count()** : Number of non-NA values
+Generally data is stored in CSV (comma-separated values) files, which we can easily read in with panda’s read_csv function. Pandas also supports reading from JSON files, as well as SQL databases.
 
 ### CSV
 
