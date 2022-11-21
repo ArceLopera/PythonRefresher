@@ -204,6 +204,7 @@ nav:
      - Random Forest : ML/pyRandomFor.md
      - Neural Networks : ML/pyNN.md
      - Clustering : ML/pyClust.md
+     - Pipelines : ML/pyPipe.md
   - Algo :
      - General : Algo/pyGen.md
   - Exercises : 

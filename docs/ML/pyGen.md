@@ -13,3 +13,4 @@ Useful modules for ML and Data Science
     + [Random Forest](pyRandomFor.md)
     + [Neural Networks](pyNN.md)
     + [Clustering](pyClust.md)
+    + [Pipelines](pyPipe.md)
