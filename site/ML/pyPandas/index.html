@@ -3177,11 +3177,6 @@ Name: Fare, Length: 887, dtype: float64
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
 <span class="c1">#rows 2 to 3</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
-
-<span class="c1">#Conditionals</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;ages&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">18</span><span class="p">])</span>
-<span class="c1">#Conditionals</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;ages&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">18</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;heights&#39;</span><span class="p">]</span><span class="o">&lt;</span> <span class="mi">180</span> <span class="p">)])</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>ages        24
 heights    176
@@ -3193,7 +3188,13 @@ Ana      24      176
      ages  heights
 Bob    18      180
 Ana    24      176
-       ages  heights
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">#Conditionals</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;ages&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">18</span><span class="p">])</span>
+<span class="c1">#Conditionals</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;ages&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">18</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;heights&#39;</span><span class="p">]</span><span class="o">&lt;</span> <span class="mi">180</span> <span class="p">)])</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>       ages  heights
 Ana      24      176
 Susan    42      184
      ages  heights
