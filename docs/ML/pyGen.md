@@ -14,3 +14,4 @@ Useful modules for ML and Data Science
     + [Neural Networks](pyNN.md)
     + [Clustering](pyClust.md)
     + [Pipelines](pyPipe.md)
+    + [Cross-Validation](pyCrossVal.md)

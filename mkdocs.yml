@@ -205,6 +205,7 @@ nav:
      - Neural Networks : ML/pyNN.md
      - Clustering : ML/pyClust.md
      - Pipelines : ML/pyPipe.md
+     - Cross-Validation : ML/pyCrossVal.md
   - Algo :
      - General : Algo/pyGen.md
   - Exercises : 
