@@ -398,11 +398,6 @@ print(df.iloc[2])
 print(df.iloc[:3])
 #rows 2 to 3
 print(df.iloc[1:3])
-
-#Conditionals
-print(df[df['ages']>18])
-#Conditionals
-print(df[(df['ages']>18) & ( df['heights']< 180 )])
 ```
 ```
 ages        24
@@ -415,6 +410,14 @@ Ana      24      176
      ages  heights
 Bob    18      180
 Ana    24      176
+```
+``` py
+#Conditionals
+print(df[df['ages']>18])
+#Conditionals
+print(df[(df['ages']>18) & ( df['heights']< 180 )])
+```
+```
        ages  heights
 Ana      24      176
 Susan    42      184
