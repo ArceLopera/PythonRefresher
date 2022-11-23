@@ -15,3 +15,4 @@ Useful modules for ML and Data Science
     + [Clustering](pyClust.md)
     + [Pipelines](pyPipe.md)
     + [Cross-Validation](pyCrossVal.md)
+    + [Gradient Boosting](pyGradBoost.md)

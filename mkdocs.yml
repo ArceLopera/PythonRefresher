@@ -206,6 +206,7 @@ nav:
      - Clustering : ML/pyClust.md
      - Pipelines : ML/pyPipe.md
      - Cross-Validation : ML/pyCrossVal.md
+     - Gradient Boosting : ML/pyGradBoost.md
   - Algo :
      - General : Algo/pyGen.md
   - Exercises : 
