@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/ML/pyClust/">
+        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/ML/pyGradBoost/">
       
       <link rel="icon" href="../../Images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Clustering - Python Refresher</title>
+        <title>Gradient Boosting - Python Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#k-means" class="md-skip">
+        <a href="#parameter-tuning" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Clustering
+              Gradient Boosting
             
           </span>
         </div>
@@ -2279,48 +2279,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Clustering
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../pyClust/" class="md-nav__link">
         Clustering
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#k-means" class="md-nav__link">
-    K-means
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2358,11 +2321,82 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../pyGradBoost/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Gradient Boosting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Gradient Boosting
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameter-tuning" class="md-nav__link">
+    Parameter Tuning
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameter Tuning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#n_estimators" class="md-nav__link">
+    n_estimators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#early_stopping_rounds" class="md-nav__link">
+    early_stopping_rounds
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning_rate" class="md-nav__link">
+    learning_rate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n_jobs" class="md-nav__link">
+    n_jobs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2495,9 +2529,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#k-means" class="md-nav__link">
-    K-means
+  <a href="#parameter-tuning" class="md-nav__link">
+    Parameter Tuning
   </a>
+  
+    <nav class="md-nav" aria-label="Parameter Tuning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#n_estimators" class="md-nav__link">
+    n_estimators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#early_stopping_rounds" class="md-nav__link">
+    early_stopping_rounds
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning_rate" class="md-nav__link">
+    learning_rate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n_jobs" class="md-nav__link">
+    n_jobs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2515,41 +2583,84 @@
                 
 
 
-  <h1>Clustering</h1>
+  <h1>Gradient Boosting</h1>
 
-<p>Clustering is a type of unsupervised learning that allows us to find groups of similar objects, objects that are more related to each other than to the objects in other groups. This is often used when we don’t have access to the ground truth, in other words, the labels are missing.</p>
-<p>Examples of business use cases include the grouping of documents, music, and movies based on their contents, or finding customer segments based on purchase behavior as a basis for recommendation engines.</p>
-<p>The goal of clustering is to separate the data into groups, or clusters, with more similar traits to each other than to the data in the other clusters.</p>
-<p>In general, there are four types:</p>
-<ul>
-<li>
-<p><strong>Centroid based models</strong> - each cluster is represented by a single mean vector (e.g., <a href="#k-means">k-means</a>),</p>
-</li>
-<li>
-<p><strong>Connectivity based models</strong> - built based on distance connectivity (e.g., hierarchical clustering)</p>
-</li>
-<li>
-<p><strong>Distribution based models</strong> - built using statistical distributions (e.g., Gaussian mixtures)</p>
-</li>
-<li>
-<p><strong>Density based models</strong> - clusters are defined as dense areas (e.g., DBSCAN)</p>
-</li>
-</ul>
-<h2 id="k-means">K-means</h2>
-<p>The algorithm has gained great popularity because it is easy to implement and scales well to large datasets. However, it is difficult to predict the number of clusters, it can get stuck in local optimums, and it can perform poorly when the clusters are of varying sizes and density.</p>
-<p>One major shortcoming of k-means is that the random initial guess for the centroids can result in bad clustering, and k-means++ algorithm addresses this obstacle by specifying a procedure to initialize the centroids before proceeding with the standard k-means algorithm. In scikit-learn, the initialization mechanism is set to k-means++, by default.</p>
-<p><strong>Pre-processing: Standardization</strong></p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
-<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_wine</span>
+<p>Gradient boosting is a method that goes through cycles to iteratively add models into an ensemble.</p>
+<p>It begins by initializing the ensemble with a single model, whose predictions can be pretty naive. (Even if its predictions are wildly inaccurate, subsequent additions to the ensemble will address those errors.)</p>
+<p>Then, we start the cycle:</p>
+<p>First, we use the current ensemble to generate predictions for each observation in the dataset. To make a prediction, we add the predictions from all models in the ensemble. These predictions are used to calculate a loss function (like mean squared error, for instance). Then, we use the loss function to fit a new model that will be added to the ensemble. Specifically, we determine model parameters so that adding this new model to the ensemble will reduce the loss. (Side note: The "gradient" in "gradient boosting" refers to the fact that we'll use gradient descent on the loss function to determine the parameters in this new model.) Finally, we add the new model to ensemble, and ... ... repeat!</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 
-<span class="n">wine</span> <span class="o">=</span> <span class="n">load_wine</span><span class="p">()</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
-<span class="c1"># instantiate the scaler</span>
-<span class="n">scale</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
-<span class="c1"># compute the mean and std to be used later for scaling</span>
-<span class="n">scale</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="c1"># StandardScaler(copy=True, with_mean=True, with_std=True)</span>
-<span class="n">X_scaled</span> <span class="o">=</span> <span class="n">scale</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="c1"># Read the data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/esabunor/MLWorkspace/master/melb_data.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Select subset of predictors</span>
+<span class="n">cols_to_use</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Rooms&#39;</span><span class="p">,</span> <span class="s1">&#39;Distance&#39;</span><span class="p">,</span> <span class="s1">&#39;Landsize&#39;</span><span class="p">,</span> <span class="s1">&#39;BuildingArea&#39;</span><span class="p">,</span> <span class="s1">&#39;YearBuilt&#39;</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">cols_to_use</span><span class="p">]</span>
+
+<span class="c1"># Select target</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">Price</span>
+
+<span class="c1"># Separate data into training and validation sets</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_valid</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_valid</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</code></pre></div>
+<p>In this example, you'll work with the XGBoost library. XGBoost stands for extreme gradient boosting, which is an implementation of gradient boosting with several additional features focused on performance and speed. (Scikit-learn has another version of gradient boosting, but XGBoost has some technical advantages.) <a href="https://xgboost.readthedocs.io/en/latest/">XGBoost</a> is a the leading software library for working with standard tabular data (the type of data you store in Pandas DataFrames, as opposed to more exotic types of data like images and videos). With careful parameter tuning, you can train highly accurate models.</p>
+<p>In the next code cell, we import the scikit-learn API for XGBoost (xgboost.XGBRegressor). This allows us to build and fit a model just as we would in scikit-learn. As you'll see in the output, the XGBRegressor class has many tunable parameters.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">xgboost</span> <span class="kn">import</span> <span class="n">XGBRegressor</span>
+
+<span class="n">my_model</span> <span class="o">=</span> <span class="n">XGBRegressor</span><span class="p">()</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</code></pre></div>
+<p>We also make predictions and evaluate the model.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
+
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">my_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mean Absolute Error: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">y_valid</span><span class="p">)))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Mean Absolute Error: 274873.6334291422
+</code></pre></div></p>
+<h2 id="parameter-tuning">Parameter Tuning</h2>
+<p>XGBoost has a few parameters that can dramatically affect accuracy and training speed. The first parameters you should understand are:</p>
+<h3 id="n_estimators">n_estimators</h3>
+<p>n_estimators specifies how many times to go through the modeling cycle described above. It is equal to the number of models that we include in the ensemble.</p>
+<p>Too low a value causes underfitting, which leads to inaccurate predictions on both training data and test data. Too high a value causes overfitting, which causes accurate predictions on training data, but inaccurate predictions on test data (which is what we care about). Typical values range from 100-1000, though this depends a lot on the learning_rate parameter discussed below.</p>
+<p>Here is the code to set the number of models in the ensemble:</p>
+<div class="highlight"><pre><span></span><code><span class="n">my_model</span> <span class="o">=</span> <span class="n">XGBRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="early_stopping_rounds">early_stopping_rounds</h3>
+<p>early_stopping_rounds offers a way to automatically find the ideal value for n_estimators. Early stopping causes the model to stop iterating when the validation score stops improving, even if we aren't at the hard stop for n_estimators. It's smart to set a high value for n_estimators and then use early_stopping_rounds to find the optimal time to stop iterating.</p>
+<p>Since random chance sometimes causes a single round where validation scores don't improve, you need to specify a number for how many rounds of straight deterioration to allow before stopping. Setting early_stopping_rounds=5 is a reasonable choice. In this case, we stop after 5 straight rounds of deteriorating validation scores.</p>
+<p>When using early_stopping_rounds, you also need to set aside some data for calculating the validation scores - this is done by setting the eval_set parameter.</p>
+<p>We can modify the example above to include early stopping:</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">my_model</span> <span class="o">=</span> <span class="n">XGBRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> 
+             <span class="n">early_stopping_rounds</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> 
+             <span class="n">eval_set</span><span class="o">=</span><span class="p">[(</span><span class="n">X_valid</span><span class="p">,</span> <span class="n">y_valid</span><span class="p">)],</span>
+             <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+If you later want to fit a model with all of your data, set n_estimators to whatever value you found to be optimal when run with early stopping.</p>
+<h3 id="learning_rate">learning_rate</h3>
+<p>Instead of getting predictions by simply adding up the predictions from each component model, we can multiply the predictions from each model by a small number (known as the learning rate) before adding them in.</p>
+<p>This means each tree we add to the ensemble helps us less. So, we can set a higher value for n_estimators without overfitting. If we use early stopping, the appropriate number of trees will be determined automatically.</p>
+<p>In general, a small learning rate and large number of estimators will yield more accurate XGBoost models, though it will also take the model longer to train since it does more iterations through the cycle. As default, XGBoost sets learning_rate=0.1.</p>
+<p>Modifying the example above to change the learning rate yields the following code:</p>
+<div class="highlight"><pre><span></span><code><span class="n">my_model</span> <span class="o">=</span> <span class="n">XGBRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> 
+             <span class="n">early_stopping_rounds</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> 
+             <span class="n">eval_set</span><span class="o">=</span><span class="p">[(</span><span class="n">X_valid</span><span class="p">,</span> <span class="n">y_valid</span><span class="p">)],</span> 
+             <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="n_jobs">n_jobs</h3>
+<p>On larger datasets where runtime is a consideration, you can use parallelism to build your models faster. It's common to set the parameter n_jobs equal to the number of cores on your machine. On smaller datasets, this won't help.</p>
+<p>The resulting model won't be any better, so micro-optimizing for fitting time is typically nothing but a distraction. But, it's useful in large datasets where you would otherwise spend a long time waiting during the fit command.</p>
+<p>Here's the modified example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">my_model</span> <span class="o">=</span> <span class="n">XGBRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> 
+             <span class="n">early_stopping_rounds</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> 
+             <span class="n">eval_set</span><span class="o">=</span><span class="p">[(</span><span class="n">X_valid</span><span class="p">,</span> <span class="n">y_valid</span><span class="p">)],</span> 
+             <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </code></pre></div>
 
               
@@ -2564,7 +2675,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../pyNN/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Neural Networks" rel="prev">
+        <a href="../pyCrossVal/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cross-Validation" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -2573,20 +2684,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Neural Networks
+              Cross-Validation
             </div>
           </div>
         </a>
       
       
         
-        <a href="../pyPipe/" class="md-footer__link md-footer__link--next" aria-label="Next: Pipelines" rel="next">
+        <a href="../../Algo/pyGen/" class="md-footer__link md-footer__link--next" aria-label="Next: General" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Pipelines
+              General
             </div>
           </div>
           <div class="md-footer__button md-icon">
