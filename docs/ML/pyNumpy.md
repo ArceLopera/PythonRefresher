@@ -106,15 +106,6 @@ print(arr.shape) #(887, 3)
 (887, 3)
 ```
 
-## Select from a Numpy Array
-
-We can select a single element, a row or a column from a numpy array.
-
-``` py
-print(arr[0,1]) ##Select single element data
-print(arr[0]) ##Select row
-print(arr[:,2]) #Select column
-```
 ## Mask & Subsetting
 
 A mask is a boolean array (True/False values) that tells us which values from the array we’re interested in. Masking is used to extract, modify, count, or otherwise manipulate values in an array based on some criterion. We can create a mask satisfying more than one criteria. We use & to separate the conditions and each condition is encapsulated with parentheses "()"
