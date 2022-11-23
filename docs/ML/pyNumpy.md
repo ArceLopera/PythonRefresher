@@ -70,7 +70,7 @@ array([[ 3.    ,  7.25  , 22.    ],
        [ 3.    ,  7.75  , 32.    ]])
 ```
 
-## Array Properties
+## Array Attributes
 
 Can be accessed using a dot.
 
