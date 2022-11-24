@@ -25,9 +25,26 @@ Variance:  40.22222222222222
 
 In Python, lists are used to store data. NumPy provides an array structure for performing operations with data. NumPy arrays are faster and more compact than lists. NumPy arrays are homogeneous, meaning they can contain only a single data type, while lists can contain multiple different types of data. To check the data type, use numpy.ndarray.dtype
 
-NumPy arrays are often called ndarrays, which stands for "N-dimensional array", because they can have multiple dimensions.
+NumPy arrays are ndarrays, which stands for "N-dimensional array", because they can have multiple dimensions. However, we can use array as an alias.
+
+## [Array Creation](https://numpy.org/doc/stable/reference/routines.array-creation.html)
+
+### From shape or value
+
++ **np.empty(shape[, dtype, order, like])** returns a new array of given shape and type, without initializing entries.
+
++ **np.ones(shape[, dtype, order, like])** return a new array of given shape and type, filled with ones.
+
++ **np.zeros(shape[, dtype, order, like])** return a new array of given shape and type, filled with zeros.
+
++ **np.full(shape, fill_value[, dtype, order, like])** return a new array of given shape and type, filled with fill_value.
+
+### From existing data
+
++ **np.array(object[, dtype, copy, order, subok, ...])** Create an array.
 
 A NumPy array can be created using the np.array() function, providing it a list as the argument
+
 
 ``` py
 import numpy as np
@@ -44,31 +61,54 @@ print(x[1][2])
 6
 ```
 
-## Pandas Series to Numpy Array
+``` py
+import numpy as np 
+
+x = np.array([2, 4, 6]) # create a rank 1 array
+A = np.array([[1, 3, 5], [2, 4, 6]]) # create a rank 2 array
+B = np.array([[1, 2, 3], [4, 5, 6]])
+
+print("Matrix A: \n")
+print(A)
+
+print("\nMatrix B: \n")
+print(B)
+```
+```
+Matrix A: 
+
+[[1 3 5]
+ [2 4 6]]
+
+Matrix B: 
+
+[[1 2 3]
+ [4 5 6]]
+```
+
++ **np.fromfunction(function, shape, *[, dtype, like])** construct an array by executing a function over each coordinate.
+
+### Numerical ranges
+
++ **np.arange([start,] stop[, step,][, dtype, like])** return evenly spaced values within a given interval.
+
++ **np.linspace(start, stop[, num, endpoint, ...])** return evenly spaced numbers over a specified interval.
 
 
-We often start with our data in a Pandas DataFrame, but then want to convert it to a numpy array. The values attribute does this for us.
+### Pandas to Numpy Array
 
-Let's convert the Fare column to a numpy array.
 
-First we recall that we can use the single bracket notation to get a pandas Series of the Fare column as follows.
+We often start with our data in a Pandas DataFrame, but then want to convert it to a numpy array. The values attribute does this for us. However, it is better to use .to_numpy() function.
 
 ``` py
-print(df['Fare'].values) #The values attribute of a Pandas Series give the data as a numpy array.
+# instead of values attribute
+df['Fare'].values # For series
+df[['Pclass', 'Fare', 'Age']].values # or Dataframes
+# Use .to_numpy()
+print(df['Fare'].to_numpy())
+print(df[['Pclass', 'Fare', 'Age']].to_numpy())
 ```
-If we have a pandas DataFrame (instead of a Series as in the last part), we can still use the values attribute, but it returns a 2-dimensional numpy array. This is a 2-dimensional numpy array. You can tell because there’s two sets of brackets, and it expands both across the page and down. The values attribute of a Pandas DataFrame give the data as a 2d numpy array.
-``` py
-df[['Pclass', 'Fare', 'Age']].values 
-```
-```
-array([[ 3.    ,  7.25  , 22.    ],
-       [ 1.    , 71.2833, 38.    ],
-       [ 3.    ,  7.925 , 26.    ],
-       ...,
-       [ 3.    , 23.45  ,  7.    ],
-       [ 1.    , 30.    , 26.    ],
-       [ 3.    ,  7.75  , 32.    ]])
-```
+
 
 ## Array Attributes
 
@@ -105,38 +145,7 @@ print(arr.shape) #(887, 3)
 ```
 (887, 3)
 ```
-
-
-## Matrix
-
-The [NumPy](http://www.numpy.org/) library endows Python with a host of scientific computing capabilities. Chief among these is the Array object, which provides a multidimensional way to organize values of the same type. Numpy arrays allow slicing and indexing similar to lists. Most importantly, Numpy has a formidable number of mathematical operations that can be used to transform arrays and perform computations between arrays.  For those familiar with MATLab, these operations should be reminiscent of many matrix operations.
-
-``` py
-import numpy as np 
-
-x = np.array([2, 4, 6]) # create a rank 1 array
-A = np.array([[1, 3, 5], [2, 4, 6]]) # create a rank 2 array
-B = np.array([[1, 2, 3], [4, 5, 6]])
-
-print("Matrix A: \n")
-print(A)
-
-print("\nMatrix B: \n")
-print(B)
-```
-```
-Matrix A: 
-
-[[1 3 5]
- [2 4 6]]
-
-Matrix B: 
-
-[[1 2 3]
- [4 5 6]]
-```
-
-### Indexing and Slicing
+## Indexing and Slicing
 
 Negative indexes count from the end of the array, so, [-3:] will result in the last 3 elements.
 
@@ -167,7 +176,7 @@ print(x[x<4])
 [1 2 3]
 ```
 
-### Mask & Subsetting
+## Mask & Subsetting
 
 A mask is a boolean array (True/False values) that tells us which values from the array we’re interested in. Masking is used to extract, modify, count, or otherwise manipulate values in an array based on some criterion. We can create a mask satisfying more than one criteria. We use & to separate the conditions and each condition is encapsulated with parentheses "()"
 
@@ -247,22 +256,6 @@ n addition, a 1darray or a 2darry can be assigned to a subset of another 2darray
 arr[:,0]=[10,1]
 ```
 
-## Combining Two Arrays
-
-Oftentime we obtain data stored in different arrays and we need to combine them into one to keep it in one place. We can stack them horizontally (by column) to get a 2darray using 'hstack'. if we want to combine the arrays vertically (by row), we can use 'vstack'. To combine more than two arrays horizontally, simply add the additional arrays into the tuple.
-``` py
-arr3 = np.vstack((arr1, arr2))
-```
-
-## Concatenate
-
-More generally, we can use the function numpy.concatenate. If we want to concatenate, link together, two arrays along rows, then pass 'axis = 1' to achieve the same result as using numpy.hstack; and pass 'axis = 0' if you want to combine arrays vertically.
-
-You can use np.hstack to concatenate arrays ONLY if they have the same number of rows.
-
-``` py
-np.concatenate((arr1, arr2), axis=1)
-```
 
 ## Broadcasting
 
@@ -378,21 +371,16 @@ Matrix X:
 [16 19 24]
 ```
 
-## Summing and Counting
 
-Let’s say we want to know how many of our passengers are children. We still have the same array definition and can take our mask or boolean values from the previous part. Recall that True values are interpreted as 1 and False values are interpreted as 0. So we can just sum up the array and that’s equivalent to counting the number of true values.
+## [Array Manipulation](https://numpy.org/doc/stable/reference/routines.array-manipulation.html)
 
-``` py
-print(mask.sum()) 
-print((arr[:, 2] < 18).sum())
-```
-```
-130
-130
-```
-### np.arange() & np.reshape()
+### Changing Array Shape
 
-np.arange() allows you to create an array that contains a range of evenly spaced intervals (similar to a Python range).
++ **np.reshape()** Gives a new shape to an array without changing its data.
+
++ **np.ravel(a[, order])** Return a contiguous flattened array.
+
++ **np.flatten([order])** Return a copy of the array collapsed into one dimension.
 
 When you use the reshape method, the array you want to produce needs to have the same number of elements as the original array. Reshape can also do the opposite: take a 2-dimensional array and make a 1-dimensional array from it. The same result can be achieved using the flatten() function.
 
@@ -441,8 +429,34 @@ Rank-1 array X:
 Using Flatten
 [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15]
 ```
+### Transpose
 
-### Other Functions
++ **np.transpose(a[, axes])** Reverse or permute the axes of an array; returns the modified array.
+
+### Combining  Arrays
+
+Oftentime we obtain data stored in different arrays and we need to combine them into one to keep it in one place. We can stack them horizontally (by column) to get a 2darray using 'hstack'. if we want to combine the arrays vertically (by row), we can use 'vstack'. To combine more than two arrays horizontally, simply add the additional arrays into the tuple.
+``` py
+arr3 = np.vstack((arr1, arr2))
+```
+
++ **np.vstack(tup)** Stack arrays in sequence vertically (row wise).
++ **np.hstack(tup)** Stack arrays in sequence horizontally (column wise).
++ **np.concatenate([axis, out, dtype, casting])** Join a sequence of arrays along an existing axis.
+
+More generally, we can use the function numpy.concatenate. If we want to concatenate, link together, two arrays along rows, then pass 'axis = 1' to achieve the same result as using numpy.hstack; and pass 'axis = 0' if you want to combine arrays vertically.
+
+You can use np.hstack to concatenate arrays ONLY if they have the same number of rows.
+
+``` py
+np.concatenate((arr1, arr2), axis=1)
+```
+
+### Adding and removing elements
+
++ **np.delete(arr, obj[, axis])** Return a new array with sub-arrays along an axis deleted.
++ **np.insert(arr, obj, values[, axis])** Insert values along the given axis before the given indices.
++ **np.append(arr, values[, axis])** Append values to the end of an array.
 
 We can add, remove and sort an array using the np.append(), np.delete() and np.sort() functions.
 
