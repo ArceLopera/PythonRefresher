@@ -106,27 +106,6 @@ print(arr.shape) #(887, 3)
 (887, 3)
 ```
 
-## Mask & Subsetting
-
-A mask is a boolean array (True/False values) that tells us which values from the array we’re interested in. Masking is used to extract, modify, count, or otherwise manipulate values in an array based on some criterion. We can create a mask satisfying more than one criteria. We use & to separate the conditions and each condition is encapsulated with parentheses "()"
-
-``` py
-mask = arr[:, 2] < 18 #all children passengers
-print(arr[mask])
-# or arr[arr[:, 2] < 18] 
-```
-## Summing and Counting
-
-Let’s say we want to know how many of our passengers are children. We still have the same array definition and can take our mask or boolean values from the previous part. Recall that True values are interpreted as 1 and False values are interpreted as 0. So we can just sum up the array and that’s equivalent to counting the number of true values.
-
-``` py
-print(mask.sum()) 
-print((arr[:, 2] < 18).sum())
-```
-```
-130
-130
-```
 
 ## Matrix
 
@@ -188,6 +167,16 @@ print(x[x<4])
 [1 2 3]
 ```
 
+### Mask & Subsetting
+
+A mask is a boolean array (True/False values) that tells us which values from the array we’re interested in. Masking is used to extract, modify, count, or otherwise manipulate values in an array based on some criterion. We can create a mask satisfying more than one criteria. We use & to separate the conditions and each condition is encapsulated with parentheses "()"
+
+``` py
+mask = arr[:, 2] < 18 #all children passengers
+print(arr[mask])
+# or arr[arr[:, 2] < 18] 
+```
+
 The condition can also be assigned to a variable, which will be an array of boolean values showing whether or not the values in the array fulfill the condition: y = (x>5) & (x%2==0)
 
 ``` py
@@ -199,6 +188,10 @@ print(x[y])
 [6 8]
 [6 8]
 ```
+
+We can use operations including "<", ">", ">=", "<=", and "==" . To find out how many rows satisfy the condition, use .sum() on the resultant 1d boolean array, e.g., (arr[:, 1] == 10).sum(). True is treated as 1 and False as 0 in the sum.
+
+## Arithmethic Functions
 
 ``` py
 # Arithmetic Examples
@@ -234,7 +227,7 @@ Matrix E (the transpose of B):
 [44 56]
 ```
 
-### Assigning Values
+## Assigning Values
 
 We can use slicing for multiple elements. For example, to replace the first row by 10.
 
@@ -247,21 +240,21 @@ We can also combine slicing to change any subset of the array. For example, to r
 ``` py
 arr[:2,:2] = 0
 ```
-### Assigning an Array to an Array
+## Assigning an Array to an Array
 
 n addition, a 1darray or a 2darry can be assigned to a subset of another 2darray, as long as their shapes match.
 ``` py
 arr[:,0]=[10,1]
 ```
 
-### Combining Two Arrays
+## Combining Two Arrays
 
 Oftentime we obtain data stored in different arrays and we need to combine them into one to keep it in one place. We can stack them horizontally (by column) to get a 2darray using 'hstack'. if we want to combine the arrays vertically (by row), we can use 'vstack'. To combine more than two arrays horizontally, simply add the additional arrays into the tuple.
 ``` py
 arr3 = np.vstack((arr1, arr2))
 ```
 
-### Concatenate
+## Concatenate
 
 More generally, we can use the function numpy.concatenate. If we want to concatenate, link together, two arrays along rows, then pass 'axis = 1' to achieve the same result as using numpy.hstack; and pass 'axis = 0' if you want to combine arrays vertically.
 
@@ -271,7 +264,7 @@ You can use np.hstack to concatenate arrays ONLY if they have the same number of
 np.concatenate((arr1, arr2), axis=1)
 ```
 
-### Broadcasting
+## Broadcasting
 
 Operations between the array and a single number. NumPy understands that the given operation should be performed with each element. This is called broadcasting.
 
@@ -294,7 +287,7 @@ xxxxxx
  [ 6  9 12]]
 ```
 
-### np.min() and np.max()
+## np.min() and np.max()
 
 min() and max() can be used to get the smallest and largest elements.
 
@@ -345,7 +338,7 @@ Matrix X:
 [ 9 10 11]
 ```
 
-### np.sum() & np.mean()
+## np.sum() & np.mean()
 
 These work similarly to the max operations -- use the axis argument to denote if summing over rows or columns
 
@@ -383,6 +376,19 @@ Matrix X:
  Row-wise sum of X: 
 
 [16 19 24]
+```
+
+## Summing and Counting
+
+Let’s say we want to know how many of our passengers are children. We still have the same array definition and can take our mask or boolean values from the previous part. Recall that True values are interpreted as 1 and False values are interpreted as 0. So we can just sum up the array and that’s equivalent to counting the number of true values.
+
+``` py
+print(mask.sum()) 
+print((arr[:, 2] < 18).sum())
+```
+```
+130
+130
 ```
 ### np.arange() & np.reshape()
 
@@ -459,6 +465,3 @@ print(x[1])
 [2 4 6]
 3
 ```
-### Comparisons
-
-We can use operations including "<", ">", ">=", "<=", and "==" . To find out how many rows satisfy the condition, use .sum() on the resultant 1d boolean array, e.g., (arr[:, 1] == 10).sum(). True is treated as 1 and False as 0 in the sum.
