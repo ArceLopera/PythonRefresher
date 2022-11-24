@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/lib/pyMemP/">
+        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/ML/pyDataLeak/">
       
       <link rel="icon" href="../../Images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Memory Profiling - Python Refresher</title>
+        <title>Data Leakage - Python Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-tracemalloc" class="md-skip">
+        <a href="#target-leakage" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Memory Profiling
+              Data Leakage
             
           </span>
         </div>
@@ -271,15 +271,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../pyGen/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../lib/pyGen/" class="md-tabs__link">
         Useful Libraries
       </a>
     </li>
@@ -289,13 +287,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../ML/pyGen/" class="md-tabs__link">
+      <a href="../pyGen/" class="md-tabs__link md-tabs__link--active">
         ML
       </a>
     </li>
@@ -1853,14 +1853,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
       
       
       
@@ -1883,7 +1881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyGen/" class="md-nav__link">
+      <a href="../../lib/pyGen/" class="md-nav__link">
         General
       </a>
     </li>
@@ -1897,7 +1895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyIO/" class="md-nav__link">
+      <a href="../../lib/pyIO/" class="md-nav__link">
         IO & OS
       </a>
     </li>
@@ -1911,7 +1909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyIter/" class="md-nav__link">
+      <a href="../../lib/pyIter/" class="md-nav__link">
         Itertools
       </a>
     </li>
@@ -1925,7 +1923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyBisect/" class="md-nav__link">
+      <a href="../../lib/pyBisect/" class="md-nav__link">
         Bisect
       </a>
     </li>
@@ -1939,7 +1937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyRandom/" class="md-nav__link">
+      <a href="../../lib/pyRandom/" class="md-nav__link">
         Random
       </a>
     </li>
@@ -1953,7 +1951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyPack/" class="md-nav__link">
+      <a href="../../lib/pyPack/" class="md-nav__link">
         Packaging
       </a>
     </li>
@@ -1967,7 +1965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pydatetime/" class="md-nav__link">
+      <a href="../../lib/pydatetime/" class="md-nav__link">
         Dates and Time
       </a>
     </li>
@@ -1981,7 +1979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pySerial/" class="md-nav__link">
+      <a href="../../lib/pySerial/" class="md-nav__link">
         Serialization
       </a>
     </li>
@@ -2009,7 +2007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyEmoji/" class="md-nav__link">
+      <a href="../../lib/pyEmoji/" class="md-nav__link">
         Emoji
       </a>
     </li>
@@ -2023,7 +2021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyTimeP/" class="md-nav__link">
+      <a href="../../lib/pyTimeP/" class="md-nav__link">
         Time Profiling
       </a>
     </li>
@@ -2035,69 +2033,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Memory Profiling
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../lib/pyMemP/" class="md-nav__link">
         Memory Profiling
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#using-tracemalloc" class="md-nav__link">
-    Using Tracemalloc
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-psutil" class="md-nav__link">
-    Using Psutil
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-memory-profiler" class="md-nav__link">
-    Using Memory Profiler
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reducing-memory-consumption-with-slots" class="md-nav__link">
-    Reducing Memory Consumption with Slots
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2109,7 +2049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pylog/" class="md-nav__link">
+      <a href="../../lib/pylog/" class="md-nav__link">
         Logging
       </a>
     </li>
@@ -2123,7 +2063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyTest/" class="md-nav__link">
+      <a href="../../lib/pyTest/" class="md-nav__link">
         Testing
       </a>
     </li>
@@ -2143,12 +2083,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       
       
@@ -2171,7 +2113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyGen/" class="md-nav__link">
+      <a href="../pyGen/" class="md-nav__link">
         General
       </a>
     </li>
@@ -2185,7 +2127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyPandas/" class="md-nav__link">
+      <a href="../pyPandas/" class="md-nav__link">
         Pandas
       </a>
     </li>
@@ -2199,7 +2141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyNumpy/" class="md-nav__link">
+      <a href="../pyNumpy/" class="md-nav__link">
         Numpy
       </a>
     </li>
@@ -2213,7 +2155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyNumba/" class="md-nav__link">
+      <a href="../pyNumba/" class="md-nav__link">
         Numba
       </a>
     </li>
@@ -2227,7 +2169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyPlot/" class="md-nav__link">
+      <a href="../pyPlot/" class="md-nav__link">
         MatplotLib
       </a>
     </li>
@@ -2241,7 +2183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyEda/" class="md-nav__link">
+      <a href="../pyEda/" class="md-nav__link">
         EDA
       </a>
     </li>
@@ -2255,7 +2197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pylinReg/" class="md-nav__link">
+      <a href="../pylinReg/" class="md-nav__link">
         Linear Regression
       </a>
     </li>
@@ -2269,7 +2211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyLogReg/" class="md-nav__link">
+      <a href="../pyLogReg/" class="md-nav__link">
         Logistic Regression
       </a>
     </li>
@@ -2283,7 +2225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyknn/" class="md-nav__link">
+      <a href="../pyknn/" class="md-nav__link">
         K-Nearest Neighbors
       </a>
     </li>
@@ -2297,7 +2239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyDecTree/" class="md-nav__link">
+      <a href="../pyDecTree/" class="md-nav__link">
         Decision Trees
       </a>
     </li>
@@ -2311,7 +2253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyRandomFor/" class="md-nav__link">
+      <a href="../pyRandomFor/" class="md-nav__link">
         Random Forest
       </a>
     </li>
@@ -2325,7 +2267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyNN/" class="md-nav__link">
+      <a href="../pyNN/" class="md-nav__link">
         Neural Networks
       </a>
     </li>
@@ -2339,7 +2281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyClust/" class="md-nav__link">
+      <a href="../pyClust/" class="md-nav__link">
         Clustering
       </a>
     </li>
@@ -2353,7 +2295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyPipe/" class="md-nav__link">
+      <a href="../pyPipe/" class="md-nav__link">
         Pipelines
       </a>
     </li>
@@ -2367,7 +2309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyCrossVal/" class="md-nav__link">
+      <a href="../pyCrossVal/" class="md-nav__link">
         Cross-Validation
       </a>
     </li>
@@ -2381,7 +2323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ML/pyGradBoost/" class="md-nav__link">
+      <a href="../pyGradBoost/" class="md-nav__link">
         Gradient Boosting
       </a>
     </li>
@@ -2393,11 +2335,83 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../ML/pyDataLeak/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Data Leakage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Data Leakage
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#target-leakage" class="md-nav__link">
+    Target Leakage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#train-test-contamination" class="md-nav__link">
+    Train-Test Contamination
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case-1-the-data-science-of-shoelaces" class="md-nav__link">
+    Case 1: The Data Science of Shoelaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case-2-crypto-rush" class="md-nav__link">
+    Case 2: Crypto Rush
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case-3-preventing-infections" class="md-nav__link">
+    Case 3: Preventing Infections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case-4-housing-prices" class="md-nav__link">
+    Case 4: Housing Prices
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2530,29 +2544,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-tracemalloc" class="md-nav__link">
-    Using Tracemalloc
+  <a href="#target-leakage" class="md-nav__link">
+    Target Leakage
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-psutil" class="md-nav__link">
-    Using Psutil
+  <a href="#train-test-contamination" class="md-nav__link">
+    Train-Test Contamination
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-memory-profiler" class="md-nav__link">
-    Using Memory Profiler
+  <a href="#case-1-the-data-science-of-shoelaces" class="md-nav__link">
+    Case 1: The Data Science of Shoelaces
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reducing-memory-consumption-with-slots" class="md-nav__link">
-    Reducing Memory Consumption with Slots
+  <a href="#case-2-crypto-rush" class="md-nav__link">
+    Case 2: Crypto Rush
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case-3-preventing-infections" class="md-nav__link">
+    Case 3: Preventing Infections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case-4-housing-prices" class="md-nav__link">
+    Case 4: Housing Prices
   </a>
   
 </li>
@@ -2571,189 +2599,273 @@
                 
 
 
-  <h1>Memory Profiling</h1>
+  <h1>Data Leakage</h1>
 
-<p>Managing memory is important in any programming logic but this becomes necessary for python. As python is used in Ml and AI where vast data are used which needs to be managed. Memory leaks, i.e. the program is out of memory after running for several hours. To manage these memory leaks memory monitoring is essential. Monitoring memory is also called profiling. As a developer, it’s a necessity that we profile our program and use less memory allocation as much as possible.</p>
-<h2 id="using-tracemalloc">Using Tracemalloc</h2>
-<p>Tracemalloc is a library module that traces every memory block in python. The tracing starts by using the start() during runtime. This library module can also give information about the total size, number, and average size of allocated memory blocks.</p>
-<p><div class="highlight"><pre><span></span><code><span class="c1"># importing the module</span>
-<span class="kn">import</span> <span class="nn">tracemalloc</span>
+<p>Data leakage (or leakage) happens when your training data contains information about the target, but similar data will not be available when the model is used for prediction. This leads to high performance on the training set (and possibly even the validation data), but the model will perform poorly in production.</p>
+<p>In other words, leakage causes a model to look accurate until you start making decisions with the model, and then the model becomes very inaccurate.</p>
+<p>There are two main types of leakage: target leakage and train-test contamination.</p>
+<h2 id="target-leakage">Target Leakage</h2>
+<p>Target leakage occurs when your predictors include data that will not be available at the time you make predictions. It is important to think about target leakage in terms of the timing or chronological order that data becomes available, not merely whether a feature helps make good predictions.</p>
+<p>An example will be helpful. Imagine you want to predict who will get sick with pneumonia. The top few rows of your raw data look like this:</p>
+<table>
+<thead>
+<tr>
+<th>got_pneumonia</th>
+<th>age</th>
+<th>weight</th>
+<th>male</th>
+<th>took_antibiotic_medicine</th>
+<th>...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>False</td>
+<td>65</td>
+<td>100</td>
+<td>False</td>
+<td>False</td>
+<td>...</td>
+</tr>
+<tr>
+<td>False</td>
+<td>72</td>
+<td>130</td>
+<td>True</td>
+<td>False</td>
+<td>...</td>
+</tr>
+<tr>
+<td>True</td>
+<td>58</td>
+<td>100</td>
+<td>False</td>
+<td>True</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<p>People take antibiotic medicines after getting pneumonia in order to recover. The raw data shows a strong relationship between those columns, but took_antibiotic_medicine is frequently changed after the value for got_pneumonia is determined. This is target leakage.</p>
+<p>The model would see that anyone who has a value of False for took_antibiotic_medicine didn't have pneumonia. Since validation data comes from the same source as training data, the pattern will repeat itself in validation, and the model will have great validation (or cross-validation) scores.</p>
+<p>But the model will be very inaccurate when subsequently deployed in the real world, because even patients who will get pneumonia won't have received antibiotics yet when we need to make predictions about their future health.</p>
+<p>To prevent this type of data leakage, any variable updated (or created) after the target value is realized should be excluded.</p>
+<h2 id="train-test-contamination">Train-Test Contamination</h2>
+<p>A different type of leak occurs when you aren't careful to distinguish training data from validation data.</p>
+<p>Recall that validation is meant to be a measure of how the model does on data that it hasn't considered before. You can corrupt this process in subtle ways if the validation data affects the preprocessing behavior. This is sometimes called train-test contamination.</p>
+<p>For example, imagine you run preprocessing (like fitting an imputer for missing values) before calling train_test_split(). The end result? Your model may get good validation scores, giving you great confidence in it, but perform poorly when you deploy it to make decisions.</p>
+<p>After all, you incorporated data from the validation or test data into how you make predictions, so the may do well on that particular data even if it can't generalize to new data. This problem becomes even more subtle (and more dangerous) when you do more complex feature engineering.</p>
+<p>If your validation is based on a simple train-test split, exclude the validation data from any type of fitting, including the fitting of preprocessing steps. This is easier if you use scikit-learn pipelines. When using cross-validation, it's even more critical that you do your preprocessing inside the pipeline!</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="c1"># code or function for which memory</span>
-<span class="c1"># has to be monitored</span>
-<span class="k">def</span> <span class="nf">app</span><span class="p">():</span>
-    <span class="n">lt</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100000</span><span class="p">):</span>
-        <span class="n">lt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="c1"># Read the data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/YoshiKitaguchi/Credit-card-verification-project/master/AER_credit_card_data.csv&#39;</span><span class="p">,</span> 
+                   <span class="n">true_values</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;yes&#39;</span><span class="p">],</span> <span class="n">false_values</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;no&#39;</span><span class="p">])</span>
 
-<span class="c1"># starting the monitoring</span>
-<span class="n">tracemalloc</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="c1"># Select target</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">card</span>
 
-<span class="c1"># function call</span>
-<span class="n">app</span><span class="p">()</span>
+<span class="c1"># Select predictors</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;card&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="c1"># displaying the memory</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">tracemalloc</span><span class="o">.</span><span class="n">get_traced_memory</span><span class="p">())</span>
-
-<span class="c1"># stopping the library</span>
-<span class="n">tracemalloc</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of rows in the dataset:&quot;</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">X</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>(729, 3617551)
+<div class="highlight"><pre><span></span><code>Number of rows in the dataset: 1319
 </code></pre></div></p>
-<p>The output is given in form of (current, peak), i.e. current memory is the memory the code is currently using and peak memory is the maximum space the program used while executing.</p>
-<h2 id="using-psutil">Using Psutil</h2>
-<p>Psutil is a python system library used to keep track of various resources in the system and their utilization. The library is used for profiling, limiting, and management of process resources.</p>
-<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">psutil</span>
+<table>
+<thead>
+<tr>
+<th>reports</th>
+<th>age</th>
+<th>income</th>
+<th>share</th>
+<th>expenditure</th>
+<th>owner</th>
+<th>selfemp</th>
+<th>dependents</th>
+<th>months</th>
+<th>majorcards</th>
+<th>active</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>37.66667</td>
+<td>4.5200</td>
+<td>0.033270</td>
+<td>124.983300</td>
+<td>True</td>
+<td>False</td>
+<td>3</td>
+<td>54</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>33.25000</td>
+<td>2.4200</td>
+<td>0.005217</td>
+<td>9.854167</td>
+<td>False</td>
+<td>False</td>
+<td>3</td>
+<td>34</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+<td>33.66667</td>
+<td>4.5000</td>
+<td>0.004156</td>
+<td>15.000000</td>
+<td>True</td>
+<td>False</td>
+<td>4</td>
+<td>58</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0</td>
+<td>30.50000</td>
+<td>2.5400</td>
+<td>0.065214</td>
+<td>137.869200</td>
+<td>False</td>
+<td>False</td>
+<td>0</td>
+<td>25</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0</td>
+<td>32.16667</td>
+<td>9.7867</td>
+<td>0.067051</td>
+<td>546.503300</td>
+<td>True</td>
+<td>False</td>
+<td>2</td>
+<td>64</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">make_pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
 
-<span class="n">p</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">())</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-        <span class="n">mem_usage</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">memory_info</span><span class="p">()</span><span class="o">.</span><span class="n">rss</span> <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2"> MB&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">mem_usage</span><span class="p">))</span>
+<span class="c1"># Since there is no preprocessing, we don&#39;t need a pipeline (used anyway as best practice!)</span>
+<span class="n">my_pipeline</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">))</span>
+<span class="n">cv_scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">my_pipeline</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> 
+                            <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                            <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cross-validation accuracy: </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">cv_scores</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">memory_usage_psutil</span><span class="p">():</span>
-    <span class="c1"># return the memory usage in MB</span>
-    <span class="kn">import</span> <span class="nn">psutil</span>
-    <span class="n">process</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">())</span>
-    <span class="n">mem</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">get_memory_info</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">20</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">mem</span>
-</code></pre></div>
-The above function returns the memory usage of the current Python process in MiB. Depending on the platform it will choose the most accurate and fastest way to get this information. For example, in Windows it will use the C++ Win32 API while in Linux it will read from /proc, hiding the implementation details and proving on each platform a fast and accurate measurement.</p>
-<p>If you are looking for an easy way to get the memory consumption within Python this in my opinion your best shot.</p>
-<h2 id="using-memory-profiler">Using Memory Profiler</h2>
-<p><div class="highlight"><pre><span></span><code><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">memory</span><span class="o">-</span><span class="n">profiler</span> 
-</code></pre></div>
-Notice the @profile this is a decorator. Any function which is decorated by this decorator, that function will be tracked.</p>
-<p><div class="highlight"><pre><span></span><code><span class="o">%%</span><span class="n">file</span> <span class="n">sos</span><span class="o">.</span><span class="n">py</span>
-<span class="sd">&quot;&quot;&quot;memory_profiler example&quot;&quot;&quot;</span>
-
-<span class="nd">@profile</span>
-<span class="k">def</span> <span class="nf">sum_of_diffs</span><span class="p">(</span><span class="n">vals</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Compute sum of diffs&quot;&quot;&quot;</span>
-    <span class="n">vals2</span> <span class="o">=</span> <span class="n">vals</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-
-    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">vals2</span><span class="p">):</span>
-        <span class="n">total</span> <span class="o">+=</span> <span class="n">v2</span> <span class="o">-</span> <span class="n">v1</span>
-
-    <span class="k">return</span> <span class="n">total</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">vals</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1_000_000</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">sum_of_diffs</span><span class="p">(</span><span class="n">vals</span><span class="p">))</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>Writing sos.py
+<div class="highlight"><pre><span></span><code>Cross-validation accuracy: 0.981049
 </code></pre></div></p>
-<p><div class="highlight"><pre><span></span><code><span class="err">!</span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">memory_profiler</span> <span class="n">sos</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>999996
-Filename: /content/sos.py
-
-Line #    Mem usage    Increment  Occurrences   Line Contents
-=============================================================
-     3   52.160 MiB   52.160 MiB           1   @profile
-     4                                         def sum_of_diffs(vals):
-     5                                             &quot;&quot;&quot;Compute sum of diffs&quot;&quot;&quot;
-     6   54.738 MiB    2.578 MiB           1       vals2 = vals[1:]
-     7                                         
-     8   54.738 MiB    0.000 MiB           1       total = 0
-     9   54.738 MiB    0.000 MiB      333333       for v1, v2 in zip(vals, vals2):
-    10   54.738 MiB    0.000 MiB      333332           total += v2 - v1
-    11                                         
-    12   54.738 MiB    0.000 MiB           1       return total
-</code></pre></div></p>
-<p><div class="highlight"><pre><span></span><code><span class="o">%%</span><span class="n">file</span> <span class="n">sos1</span><span class="o">.</span><span class="n">py</span>
-<span class="sd">&quot;&quot;&quot;memory_profiler example&quot;&quot;&quot;</span>
-
-<span class="k">def</span> <span class="nf">sum_of_diffs</span><span class="p">(</span><span class="n">vals</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Compute sum of diffs&quot;&quot;&quot;</span>
-    <span class="n">vals2</span> <span class="o">=</span> <span class="n">vals</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-
-    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">v1</span><span class="p">,</span> <span class="n">v2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">vals2</span><span class="p">):</span>
-        <span class="n">total</span> <span class="o">+=</span> <span class="n">v2</span> <span class="o">-</span> <span class="n">v1</span>
-
-    <span class="k">return</span> <span class="n">total</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">vals</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100_000_000</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">sum_of_diffs</span><span class="p">(</span><span class="n">vals</span><span class="p">))</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>Writing sos1.py
-</code></pre></div></p>
-<p>mprof generates profile data</p>
-<p><div class="highlight"><pre><span></span><code><span class="err">!</span><span class="n">mprof</span> <span class="n">run</span> <span class="n">sos1</span><span class="o">.</span><span class="n">py</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>mprof: Sampling memory every 0.1s
-running new process
-running as a Python program...
-99999996
-</code></pre></div></p>
-<p><div class="highlight"><pre><span></span><code><span class="err">!</span><span class="n">mprof</span> <span class="n">plot</span> <span class="n">mprofile_20211225174100</span><span class="o">.</span><span class="n">dat</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>&lt;Figure size 1260x540 with 1 Axes&gt;
-</code></pre></div></p>
-<h2 id="reducing-memory-consumption-with-slots">Reducing Memory Consumption with Slots</h2>
-<p>Slots in Python is a special mechanism that is used to reduce memory of the objects. In Python, all the objects use a dynamic dictionary for adding an attribute. Slots is a static type method in this no dynamic dictionary are required for allocating attribute.
-<div class="highlight"><pre><span></span><code><span class="c1"># defining the class.</span>
-<span class="k">class</span> <span class="nc">myCourse</span><span class="p">:</span>
-
-    <span class="c1"># defining the slots.</span>
-    <span class="vm">__slots__</span> <span class="o">=</span><span class="p">(</span><span class="s1">&#39;course&#39;</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-        <span class="c1"># initializing the values</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">course</span> <span class="o">=</span><span class="s1">&#39;MAth&#39;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="mi">300</span>
-
-<span class="c1"># create an object of gfg class</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">myCourse</span><span class="p">()</span>
-
-<span class="c1"># print the slot</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="vm">__slots__</span><span class="p">)</span>
-
-<span class="c1"># print the slot variable</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">course</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">price</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>(&#39;course&#39;, &#39;price&#39;)
-MAth 300
-</code></pre></div>
-When we create objects for classes, it requires memory and the attribute are stored in the form of a dictionary. In case if we need to allocate thousands of objects, it will take a lot of memory space. slots provide a special mechanism to reduce the size of objects.It is a concept of memory optimisation on objects. As every object in Python contains a dynamic dictionary that allows adding attributes. For every instance object, we will have an instance of a dictionary that consumes more space and wastes a lot of RAM. In Python, there is no default functionality to allocate a static amount of memory while creating the object to store all its attributes. Usage of slots reduce the wastage of space and speed up the program by allocating space for a fixed amount of attributes.</p>
-<p><div class="highlight"><pre><span></span><code><span class="c1">#Example of python object without slots</span>
-<span class="k">class</span> <span class="nc">MFT</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">instance</span> <span class="o">=</span> <span class="n">MFT</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>{&#39;a&#39;: 1, &#39;b&#39;: 2}
-</code></pre></div></p>
-<p><div class="highlight"><pre><span></span><code><span class="c1">#Example of python object with slots </span>
-<span class="k">class</span> <span class="nc">MFT</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="vm">__slots__</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">instance</span> <span class="o">=</span> <span class="n">MFT</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="vm">__slots__</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>[&#39;a&#39;, &#39;b&#39;]
-</code></pre></div></p>
-<p><strong>Result of using slots:</strong></p>
+<p>With experience, you'll find that it's very rare to find models that are accurate 98% of the time. It happens, but it's uncommon enough that we should inspect the data more closely for target leakage.</p>
+<p>Here is a summary of the data, which you can also find under the data tab:</p>
 <ul>
-<li>Fast access to attributes</li>
-<li>Saves memory space</li>
+<li>card: 1 if credit card application accepted, 0 if not</li>
+<li>reports: Number of major derogatory reports</li>
+<li>age: Age n years plus twelfths of a year</li>
+<li>income: Yearly income (divided by 10,000)</li>
+<li>share: Ratio of monthly credit card expenditure to yearly income</li>
+<li>expenditure: Average monthly credit card expenditure</li>
+<li>owner: 1 if owns home, 0 if rents</li>
+<li>selfempl: 1 if self-employed, 0 if not</li>
+<li>dependents: 1 + number of dependents</li>
+<li>months: Months living at current address</li>
+<li>majorcards: Number of major credit cards held</li>
+<li>active: Number of active credit accounts
+A few variables look suspicious. For example, does expenditure mean expenditure on this card or on cards used before appying?</li>
 </ul>
+<p>At this point, basic data comparisons can be very helpful:</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Drop leaky predictors from dataset</span>
+<span class="n">potential_leaks</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;expenditure&#39;</span><span class="p">,</span> <span class="s1">&#39;share&#39;</span><span class="p">,</span> <span class="s1">&#39;active&#39;</span><span class="p">,</span> <span class="s1">&#39;majorcards&#39;</span><span class="p">]</span>
+<span class="n">X2</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">potential_leaks</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Evaluate the model with leaky predictors removed</span>
+<span class="n">cv_scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">my_pipeline</span><span class="p">,</span> <span class="n">X2</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> 
+                            <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                            <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cross-val accuracy: </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">cv_scores</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Cross-val accuracy: 0.830168
+</code></pre></div></p>
+<p>This accuracy is quite a bit lower, which might be disappointing. However, we can expect it to be right about 80% of the time when used on new applications, whereas the leaky model would likely do much worse than that (in spite of its higher apparent score in cross-validation).</p>
+<p>Data leakage can be multi-million dollar mistake in many data science applications. Careful separation of training and validation data can prevent train-test contamination, and pipelines can help implement this separation. Likewise, a combination of caution, common sense, and data exploration can help identify target leakage.</p>
+<h2 id="case-1-the-data-science-of-shoelaces">Case 1: The Data Science of Shoelaces</h2>
+<p>Nike has hired you as a data science consultant to help them save money on shoe materials. Your first assignment is to review a model one of their employees built to predict how many shoelaces they'll need each month. The features going into the machine learning model include:</p>
+<ul>
+<li>The current month (January, February, etc) </li>
+<li>Advertising expenditures in the previous month </li>
+<li>Various macroeconomic features (like the unemployment rate) as of the beginning of the current month </li>
+<li>The amount of leather they ended up using in the current month </li>
+</ul>
+<p>The results show the model is almost perfectly accurate if you include the feature about how much leather they used. But it is only moderately accurate if you leave that feature out. You realize this is because the amount of leather they use is a perfect indicator of how many shoes they produce, which in turn tells you how many shoelaces they need.</p>
+<p>This is tricky, and it depends on details of how data is collected (which is common when thinking about leakage). Would you at the beginning of the month decide how much leather will be used that month? If so, this is ok. But if that is determined during the month, you would not have access to it when you make the prediction. If you have a guess at the beginning of the month, and it is subsequently changed during the month, the actual amount used during the month cannot be used as a feature (because it causes leakage).</p>
+<p>You have a new idea. You could use the amount of leather Nike ordered (rather than the amount they actually used) leading up to a given month as a predictor in your shoelace model.</p>
+<p>Does this change your answer about whether there is a leakage problem? If you answer "it depends," what does it depend on?</p>
+<p>This could be fine, but it depends on whether they order shoelaces first or leather first. If they order shoelaces first, you won't know how much leather they've ordered when you predict their shoelace needs. If they order leather first, then you'll have that number available when you place your shoelace order, and you should be ok.</p>
+<h2 id="case-2-crypto-rush">Case 2: Crypto Rush</h2>
+<p>You saved Nike so much money that they gave you a bonus. Congratulations.</p>
+<p>Your friend, who is also a data scientist, says he has built a model that will let you turn your bonus into millions of dollars. Specifically, his model predicts the price of a new cryptocurrency (like Bitcoin, but a newer one) one day ahead of the moment of prediction. His plan is to purchase the cryptocurrency whenever the model says the price of the currency (in dollars) is about to go up.</p>
+<p>The most important features in his model are:</p>
+<ul>
+<li>Current price of the currency</li>
+<li>Amount of the currency sold in the last 24 hours</li>
+<li>Change in the currency price in the last 24 hours</li>
+<li>Change in the currency price in the last 1 hour</li>
+<li>Number of new tweets in the last 24 hours that mention the currency</li>
+</ul>
+<p>The value of the cryptocurrency in dollars has fluctuated up and down by over <span class="arithmatex">\(\$\)</span>100 in the last year, and yet his model's average error is less than <span class="arithmatex">\(\$\)</span>1. He says this is proof his model is accurate, and you should invest with him, buying the currency whenever the model says it is about to go up.</p>
+<p>Is he right? If there is a problem with his model, what is it?</p>
+<p>There is no source of leakage here. These features should be available at the moment you want to make a predition, and they're unlikely to be changed in the training data after the prediction target is determined. But, the way he describes accuracy could be misleading if you aren't careful. If the price moves gradually, today's price will be an accurate predictor of tomorrow's price, but it may not tell you whether it's a good time to invest. For instance, if it is  100 today predicting a price of 100 tomorrow may seem accurate, even if it can't tell you whether the price is going up or down from the current price. A better prediction target would be the change in price over the next day. If you can consistently predict whether the price is about to go up or down (and by how much), you may have a winning investment opportunity.</p>
+<h2 id="case-3-preventing-infections">Case 3: Preventing Infections</h2>
+<p>An agency that provides healthcare wants to predict which patients from a rare surgery are at risk of infection, so it can alert the nurses to be especially careful when following up with those patients.</p>
+<p>You want to build a model. Each row in the modeling dataset will be a single patient who received the surgery, and the prediction target will be whether they got an infection.</p>
+<p>Some surgeons may do the procedure in a manner that raises or lowers the risk of infection. But how can you best incorporate the surgeon information into the model?</p>
+<p>You have a clever idea.</p>
+<p>Take all surgeries by each surgeon and calculate the infection rate among those surgeons.
+For each patient in the data, find out who the surgeon was and plug in that surgeon's average infection rate as a feature.
+Does this pose any target leakage issues? Does it pose any train-test contamination issues?</p>
+<p>This poses a risk of both target leakage and train-test contamination (though you may be able to avoid both if you are careful).</p>
+<p>You have target leakage if a given patient's outcome contributes to the infection rate for his surgeon, which is then plugged back into the prediction model for whether that patient becomes infected. You can avoid target leakage if you calculate the surgeon's infection rate by using only the surgeries before the patient we are predicting for. Calculating this for each surgery in your training data may be a little tricky.</p>
+<p>You also have a train-test contamination problem if you calculate this using all surgeries a surgeon performed, including those from the test-set. The result would be that your model could look very accurate on the test set, even if it wouldn't generalize well to new patients after the model is deployed. This would happen because the surgeon-risk feature accounts for data in the test set. Test sets exist to estimate how the model will do when seeing new data. So this contamination defeats the purpose of the test set.</p>
+<h2 id="case-4-housing-prices">Case 4: Housing Prices</h2>
+<p>You will build a model to predict housing prices. The model will be deployed on an ongoing basis, to predict the price of a new house when a description is added to a website. Here are four features that could be used as predictors.</p>
+<ol>
+<li>Size of the house (in square meters)</li>
+<li>Average sales price of homes in the same neighborhood</li>
+<li>Latitude and longitude of the house</li>
+<li>Whether the house has a basement</li>
+</ol>
+<p>You have historic data to train and validate the model.</p>
+<p>Which of the features is most likely to be a source of leakage?</p>
+<p>2 is the source of target leakage. Here is an analysis for each feature:</p>
+<ol>
+<li>
+<p>The size of a house is unlikely to be changed after it is sold (though technically it's possible). But typically this will be available when we need to make a prediction, and the data won't be modified after the home is sold. So it is pretty safe.</p>
+</li>
+<li>
+<p>We don't know the rules for when this is updated. If the field is updated in the raw data after a home was sold, and the home's sale is used to calculate the average, this constitutes a case of target leakage. At an extreme, if only one home is sold in the neighborhood, and it is the home we are trying to predict, then the average will be exactly equal to the value we are trying to predict. In general, for neighborhoods with few sales, the model will perform very well on the training data. But when you apply the model, the home you are predicting won't have been sold yet, so this feature won't work the same as it did in the training data.</p>
+</li>
+<li>
+<p>These don't change, and will be available at the time we want to make a prediction. So there's no risk of target leakage here.</p>
+</li>
+<li>
+<p>This also doesn't change, and it is available at the time we want to make a prediction. So there's no risk of target leakage here.</p>
+</li>
+</ol>
 
               
             </article>
@@ -2767,7 +2879,7 @@ When we create objects for classes, it requires memory and the attribute are sto
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../pyTimeP/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Time Profiling" rel="prev">
+        <a href="../pyGradBoost/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Gradient Boosting" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -2776,20 +2888,20 @@ When we create objects for classes, it requires memory and the attribute are sto
               <span class="md-footer__direction">
                 Previous
               </span>
-              Time Profiling
+              Gradient Boosting
             </div>
           </div>
         </a>
       
       
         
-        <a href="../pylog/" class="md-footer__link md-footer__link--next" aria-label="Next: Logging" rel="next">
+        <a href="../../Algo/pyGen/" class="md-footer__link md-footer__link--next" aria-label="Next: General" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Logging
+              General
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -2240,8 +2240,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#arithmethic-functions" class="md-nav__link">
-    Arithmethic Functions
+  <a href="#basic-operations" class="md-nav__link">
+    Basic Operations
   </a>
   
 </li>
@@ -2513,6 +2513,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pyDataLeak/" class="md-nav__link">
+        Data Leakage
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2709,8 +2723,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#arithmethic-functions" class="md-nav__link">
-    Arithmethic Functions
+  <a href="#basic-operations" class="md-nav__link">
+    Basic Operations
   </a>
   
 </li>
@@ -2968,13 +2982,14 @@ Matrix B:
 [6 8]
 </code></pre></div></p>
 <p>We can use operations including "&lt;", "&gt;", "&gt;=", "&lt;=", and "==" . To find out how many rows satisfy the condition, use .sum() on the resultant 1d boolean array, e.g., (arr[:, 1] == 10).sum(). True is treated as 1 and False as 0 in the sum.</p>
-<h2 id="arithmethic-functions">Arithmethic Functions</h2>
+<h2 id="basic-operations">Basic Operations</h2>
+<p>Arithmetic operators on arrays apply elementwise. A new array is created and filled with the result.</p>
 <p><div class="highlight"><pre><span></span><code><span class="c1"># Arithmetic Examples</span>
-<span class="n">C</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="mi">2</span> <span class="c1"># multiplies every elemnt of A by two</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="mi">2</span> <span class="c1"># multiplies every element of A by two</span>
 <span class="n">D</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">B</span> <span class="c1"># elementwise multiplication rather than matrix multiplication</span>
 <span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
 <span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">E</span><span class="p">)</span> <span class="c1"># performs matrix multiplication -- could also use np.dot()</span>
-<span class="n">G</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># performs matrix-vector multiplication -- again could also use np.dot()</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="c1"># performs matrix-vector multiplication -- again could also use np.dot() </span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Matrix E (the transpose of B): </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>

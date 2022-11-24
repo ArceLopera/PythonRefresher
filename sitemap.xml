@@ -281,6 +281,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://arcelopera.github.io/PythonRefresher/ML/pyDataLeak/</loc>
+         <lastmod>2022-11-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://arcelopera.github.io/PythonRefresher/ML/pyDecTree/</loc>
          <lastmod>2022-11-24</lastmod>
          <changefreq>daily</changefreq>
