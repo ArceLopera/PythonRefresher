@@ -200,15 +200,17 @@ print(x[y])
 
 We can use operations including "<", ">", ">=", "<=", and "==" . To find out how many rows satisfy the condition, use .sum() on the resultant 1d boolean array, e.g., (arr[:, 1] == 10).sum(). True is treated as 1 and False as 0 in the sum.
 
-## Arithmethic Functions
+## Basic Operations
+
+Arithmetic operators on arrays apply elementwise. A new array is created and filled with the result.
 
 ``` py
 # Arithmetic Examples
-C = A * 2 # multiplies every elemnt of A by two
+C = A * 2 # multiplies every element of A by two
 D = A * B # elementwise multiplication rather than matrix multiplication
 E = np.transpose(B)
 F = np.matmul(A, E) # performs matrix multiplication -- could also use np.dot()
-G = np.matmul(A, x) # performs matrix-vector multiplication -- again could also use np.dot()
+G = np.matmul(A, x) # performs matrix-vector multiplication -- again could also use np.dot() 
 
 print("\n Matrix E (the transpose of B): \n")
 print(E)

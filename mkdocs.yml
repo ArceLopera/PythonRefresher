@@ -207,6 +207,7 @@ nav:
      - Pipelines : ML/pyPipe.md
      - Cross-Validation : ML/pyCrossVal.md
      - Gradient Boosting : ML/pyGradBoost.md
+     - Data Leakage : ML/pyDataLeak.md
   - Algo :
      - General : Algo/pyGen.md
   - Exercises : 
