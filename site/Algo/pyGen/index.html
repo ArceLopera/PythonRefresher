@@ -68,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#divide-and-conquer" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2387,9 +2392,65 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          General
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         General
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#divide-and-conquer" class="md-nav__link">
+    Divide and Conquer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transform-and-conquer" class="md-nav__link">
+    Transform and Conquer
+  </a>
+  
+    <nav class="md-nav" aria-label="Transform and Conquer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#presorting-instance-simplification" class="md-nav__link">
+    Presorting: Instance simplification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heaps-representation-change" class="md-nav__link">
+    Heaps:  Representation change
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2468,6 +2529,48 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#divide-and-conquer" class="md-nav__link">
+    Divide and Conquer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transform-and-conquer" class="md-nav__link">
+    Transform and Conquer
+  </a>
+  
+    <nav class="md-nav" aria-label="Transform and Conquer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#presorting-instance-simplification" class="md-nav__link">
+    Presorting: Instance simplification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heaps-representation-change" class="md-nav__link">
+    Heaps:  Representation change
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2484,8 +2587,8 @@
 
 <p>Useful Algorithms</p>
 <ul>
-<li>Divide and Conquer</li>
-<li>Transform and Conquer</li>
+<li><a href="#divide-and-conquer">Divide and Conquer</a></li>
+<li><a href="#transform-and-conquer">Transform and Conquer</a></li>
 <li>Dynamic Programming</li>
 <li>Sorting Algorithms</li>
 <li>Searching Algorithms</li>
@@ -2496,6 +2599,192 @@
 <li>Strategies</li>
 <li>Patterns</li>
 </ul>
+<h2 id="divide-and-conquer">Divide and Conquer</h2>
+<p>A typical Divide and Conquer algorithm solves a problem using following three steps:</p>
+<ol>
+<li>Divide: This involves dividing the problem into smaller sub-problems.</li>
+<li>Conquer: Solve sub-problems by calling recursively until solved.</li>
+<li>Combine: Combine the sub-problems to get the final solution of the whole problem.</li>
+</ol>
+<p>Divide and Conquer deals with non-overlapping subproblems. When subproblems overlap use Dynamic Programming.</p>
+<p>Examples:</p>
+<ol>
+<li><strong>Quicksort</strong> is a sorting algorithm. The algorithm picks a pivot element and rearranges the array elements so that all elements smaller than the picked pivot element move to the left side of the pivot, and all greater elements move to the right side. Finally, the algorithm recursively sorts the subarrays on the left and right of the pivot element.</li>
+<li><strong>Merge Sort</strong> is also a sorting algorithm. The algorithm divides the array into two halves, recursively sorts them, and finally merges the two sorted halves.</li>
+<li><strong>Closest Pair of Points</strong> The problem is to find the closest pair of points in a set of points in the x-y plane. The problem can be solved in O(n^2) time by calculating the distances of every pair of points and comparing the distances to find the minimum. The Divide and Conquer algorithm solves the problem in O(N log N) time.</li>
+<li><strong>Strassen’s Algorithm</strong> is an efficient algorithm to multiply two matrices. A simple method to multiply two matrices needs 3 nested loops and is O(n^3). Strassen’s algorithm multiplies two matrices in O(n^2.8974) time.
+Cooley–Tukey Fast Fourier Transform (FFT) algorithm is the most common algorithm for FFT. It is a divide and conquer algorithm which works in O(N log N) time.</li>
+<li><strong>Karatsuba algorithm for fast multiplication</strong> does the multiplication of two n-digit numbers in at most 3n^{log_{2}^{3}}\approx 3n^{1.585} single-digit multiplications in general (and exactly n^{\log_23}        when n is a power of 2). It is, therefore, faster than the classical algorithm, which requires n2 single-digit products. If n = 210 = 1024, in particular, the exact counts are 310 = 59, 049 and (210)2 = 1, 048, 576, respectively.</li>
+</ol>
+<h2 id="transform-and-conquer"><a href="http://www.csl.mtu.edu/cs4321/www/Lectures/Lecture%2012%20-%20Transform%20and%20Conquer-Presort%20and%20Heap.htm">Transform and Conquer</a></h2>
+<p>Transform and Conquer is a technique whose main idea is to transfer the problem into some easier or similar versions using some procedure and then solve that easier or simpler versions and combine those versions to get the solution of the actual one. The design consists of two parts: </p>
+<p>The first stage involves the transformation/breakdown of the complex problem into other problems that is simpler than the original one.
+The second stage involves solving the simpler problems and after the problem is solved the solutions are combined and converted back to get the solution of the original problem.</p>
+<p>There are three ways to do that:</p>
+<ol>
+<li><strong>Instance simplification:</strong> a technique of simplifying the problem to more convenient or simpler instances. e.g. <a href="#presorting-instance-simplification">Presorting</a></li>
+<li><strong>Representation change:</strong> the data structure is transformed to represent the problem more efficiently.</li>
+<li><strong>Problem reduction:</strong> the problem can be transformed to an easier problem to solve</li>
+</ol>
+<h3 id="presorting-instance-simplification">Presorting: Instance simplification</h3>
+<p>"Presorting" is a common example of "instance simplification." Presorting is sorting ahead of time, to make repetitive solutions faster. For example if you wish to find many kth statistics in an array then it might make sense to sort the array ahead of time for so that the cost for determining each statistics is constant time.</p>
+<p>Presorting is a form of preconditioning. Preconditioning is manipulating the data to make the algorithm faster.</p>
+<p>Another example is the problem to determine the uniqueness of array elements. The brute force algorithm would compare each array element with the rest of the array. The cost would be Θ(n2). If we presort the array then the algorithm only needs to compare adjacent elements for uniqueness. The cost for determining uniqueness (without the sorting cost) is Θ(n).</p>
+<p>The total cost is</p>
+<p>T(n) = Tsort(n) + Tscan(n) ε Θ(n log n) + Θ(n) = Θ(n log n)</p>
+<p>Another example is computing the mode of an array. The mode is the most frequent array element. The brute force cost would be quadratic. If the array is sorted then we only need to count runs of value. </p>
+<div class="highlight"><pre><span></span><code><span class="n">Algorithm</span><span class="w"> </span><span class="nf">PresortMode</span><span class="p">(</span><span class="n">A</span><span class="o">[</span><span class="mf">0.</span><span class="p">..</span><span class="na">n</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
+
+<span class="c1">// assumes that A is sorted</span><span class="w"></span>
+<span class="n">i</span><span class="w"> </span><span class="err">←</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="n">modefrequency</span><span class="w"> </span><span class="err">←</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="k">while</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="k">do</span><span class="w"></span>
+<span class="n">runlength</span><span class="w"> </span><span class="err">←</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="n">runvalue</span><span class="w"> </span><span class="err">←</span><span class="w"> </span><span class="n">A</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"></span>
+
+<span class="k">while</span><span class="w"> </span><span class="n">i</span><span class="o">+</span><span class="n">runlength</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">A</span><span class="o">[</span><span class="n">i</span><span class="o">+</span><span class="n">runlength</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">runvalue</span><span class="w"> </span><span class="k">do</span><span class="w"></span>
+<span class="n">runlength</span><span class="o">++</span><span class="w"></span>
+
+<span class="k">if</span><span class="w"> </span><span class="n">runlength</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">modefequency</span><span class="w"> </span><span class="n">then</span><span class="w"></span>
+<span class="n">modefrequency</span><span class="w"> </span><span class="err">←</span><span class="w"> </span><span class="n">runlength</span><span class="w"></span>
+<span class="n">modevalue</span><span class="w"> </span><span class="err">←</span><span class="w"> </span><span class="n">runvalue</span><span class="w"></span>
+<span class="k">return</span><span class="w"> </span><span class="n">modevalue</span><span class="w"></span>
+</code></pre></div>
+<p>The algorithm runs in linear time, so the cost is sorting is presorting the array.</p>
+<p>Geometrical problems frequently sort the collection of points before solving the problem. Also diagraphs algorithms frequently do a topological sort before running.</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">mode_presort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="n">arr</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>  <span class="c1"># Array must be sorted before we apply the algorithm.</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">mode_frequency</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+        <span class="n">run_length</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">run_value</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">+</span> <span class="n">run_length</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="ow">and</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">run_length</span><span class="p">]</span> <span class="o">==</span> <span class="n">run_value</span><span class="p">:</span>
+            <span class="n">run_length</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">run_length</span> <span class="o">&gt;</span> <span class="n">mode_frequency</span><span class="p">:</span>
+            <span class="n">mode_frequency</span> <span class="o">=</span> <span class="n">run_length</span>
+            <span class="n">mode_value</span> <span class="o">=</span> <span class="p">[</span><span class="n">run_value</span><span class="p">]</span>  <span class="c1"># Make it a list</span>
+        <span class="k">elif</span> <span class="n">run_length</span> <span class="o">==</span> <span class="n">mode_frequency</span><span class="p">:</span>  <span class="c1"># Also deal with this case</span>
+            <span class="c1"># Add alternative to existing list of modes</span>
+            <span class="n">mode_value</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">run_value</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="n">run_length</span>
+    <span class="k">return</span> <span class="n">mode_value</span>
+
+
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mode_presort</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mode_presort</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">29</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mode_presort</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[1]
+[1, 2]
+[23]
+</code></pre></div></p>
+<p><div class="highlight"><pre><span></span><code><span class="c1">## Number placement puzzle</span>
+
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">PUZZLE_SIZE</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Create random puzzle</span>
+<span class="c1"># random.sample ensures no duplicates</span>
+<span class="n">puzzle_nums</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="n">PUZZLE_SIZE</span><span class="p">)</span>
+<span class="n">puzzle_symbols</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Randomly assign inequalities</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">PUZZLE_SIZE</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">puzzle_symbols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&gt;&quot;</span> <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">.5</span> <span class="k">else</span> <span class="s2">&quot;&lt;&quot;</span><span class="p">)</span>
+
+<span class="c1"># print(puzzle_nums)</span>
+<span class="c1"># print(puzzle_symbols)</span>
+
+<span class="c1"># Sort puzzle numbers first</span>
+<span class="c1"># Use largest remaining if greater than, smallest remaining if less than</span>
+<span class="n">sorted_puzzle_nums</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">puzzle_nums</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Vars for the &quot;two pointer&quot; method</span>
+<span class="n">high</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">low</span> <span class="o">=</span> <span class="n">PUZZLE_SIZE</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="c1"># store solution values</span>
+<span class="n">solution_values</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Integrate through the puzzle symbols and apply solution algorithm</span>
+<span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="n">puzzle_symbols</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">symbol</span> <span class="o">==</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">:</span>
+        <span class="n">solution_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sorted_puzzle_nums</span><span class="p">[</span><span class="n">high</span><span class="p">])</span>
+        <span class="n">high</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">symbol</span> <span class="o">==</span> <span class="s2">&quot;&lt;&quot;</span><span class="p">:</span>
+        <span class="n">solution_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sorted_puzzle_nums</span><span class="p">[</span><span class="n">low</span><span class="p">])</span>
+        <span class="n">low</span> <span class="o">-=</span> <span class="mi">1</span>
+<span class="n">solution_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sorted_puzzle_nums</span><span class="p">[</span><span class="n">high</span><span class="p">])</span>
+
+<span class="c1"># Convert solution_values to list of strings</span>
+<span class="n">solution_values</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">solution_values</span><span class="p">))</span>
+
+<span class="c1"># Create a list to store the final solution representation</span>
+<span class="n">final_solution_representation</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">solution_values</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">puzzle_symbols</span><span class="p">))</span>
+
+<span class="c1"># Create solution representation using nifty slicing with step parameter</span>
+<span class="n">final_solution_representation</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">solution_values</span>
+<span class="n">final_solution_representation</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">puzzle_symbols</span>
+
+<span class="c1"># Display final solution</span>
+<span class="c1"># The join() method takes all items in an iterable and joins them into one string</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">final_solution_representation</span><span class="p">))</span>
+
+<span class="c1"># Evaluate whether solution is correct. Some say eval is evil!</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">final_solution_representation</span><span class="p">)))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>18 &lt; 21 &lt; 99 &gt; 94 &gt; 44 &lt; 93 &gt; 53 &lt; 92 &gt; 90 &gt; 74
+True
+</code></pre></div></p>
+<h3 id="heaps-representation-change">Heaps:  Representation change</h3>
+<p>A heap is a priority queue that is a complete tree. The textbook has the largest key at the root, so parent keys are larger than their children. The data structure finds the largest priority item in constant time. Removing the highest priority item and adding new item are lg(n) time, using bubble down and bubble up algorithm.</p>
+<p>Properties of Heaps</p>
+<ol>
+<li>The height of a heap is floor(lg n).</li>
+<li>The root contains the highest priority item.</li>
+<li>A node and all the descendants is a heap</li>
+<li>A heap can be implemented using an array and all operations are in-place.</li>
+<li>if index of the root = 1 then index of left child = 2i and right child = 2i+1</li>
+<li>Level i of the heap has 2i elements</li>
+<li>heap order, the parent value is larger than the children</li>
+</ol>
+<p>The naive construction of the heap is by adding the items one at a time. The cost is Θ(n lg n).</p>
+<p>There is a faster construction in linear time, <strong>bottom-up heap construction</strong>.</p>
+<p>Bottom-up heap construction starts at the last trivial sub heap, floor(n/2), and checks for heap ordering and correctly. Iteratively the algorithm moves up the heap checking the heap ordering and correcting.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Algorithm</span><span class="w"> </span><span class="nf">HeapBottomUp</span><span class="p">(</span><span class="n">H</span><span class="o">[</span><span class="mf">1.</span><span class="p">..</span><span class="na">n</span><span class="o">]</span><span class="p">)</span><span class="w"></span>
+
+<span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="err">←</span><span class="w"> </span><span class="n">floor</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="n">down</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">do</span><span class="w"></span>
+
+<span class="n">k</span><span class="w"> </span><span class="err">←</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="c1">// parent index</span><span class="w"></span>
+
+<span class="n">v</span><span class="w"> </span><span class="err">←</span><span class="w"> </span><span class="n">H</span><span class="o">[</span><span class="n">k</span><span class="o">]</span><span class="w"> </span><span class="c1">// proposed parent value</span><span class="w"></span>
+
+<span class="n">heap</span><span class="w"> </span><span class="err">←</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
+
+<span class="k">while</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">heap</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="w"> </span><span class="err">≤</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="k">do</span><span class="w"></span>
+
+<span class="n">j</span><span class="w"> </span><span class="err">←</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="w">  </span><span class="c1">// left child index</span><span class="w"></span>
+
+<span class="k">if</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="w">  </span><span class="n">then</span><span class="w"> </span><span class="c1">// there are children</span><span class="w"></span>
+
+<span class="k">if</span><span class="w"> </span><span class="n">H</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">H</span><span class="o">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="n">then</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="w"> </span><span class="c1">// find the larger child value</span><span class="w"></span>
+
+<span class="k">if</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="err">≥</span><span class="w"> </span><span class="n">H</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="n">then</span><span class="w"> </span><span class="n">heap</span><span class="w"> </span><span class="err">←</span><span class="w"> </span><span class="kc">true</span><span class="w">  </span><span class="c1">// check heap ordering</span><span class="w"></span>
+
+<span class="k">else</span><span class="w"> </span><span class="c1">// correct the heap ordering</span><span class="w"></span>
+
+<span class="n">H</span><span class="o">[</span><span class="n">k</span><span class="o">]</span><span class="w"> </span><span class="err">←</span><span class="w"> </span><span class="n">H</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="c1">// bubble down</span><span class="w"></span>
+
+<span class="n">k</span><span class="w"> </span><span class="err">←</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="c1">// move down the heap</span><span class="w"></span>
+
+<span class="n">H</span><span class="o">[</span><span class="n">k</span><span class="o">]</span><span class="w"> </span><span class="err">←</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="c1">// insert the value</span><span class="w"></span>
+</code></pre></div>
+<p>The worst case cost is O(n), less than 2n comparisons.</p>
 
               
             </article>
