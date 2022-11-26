@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/ML/pyPipe/">
+        <link rel="canonical" href="https://arcelopera.github.io/PythonRefresher/Algo/pyDynamic/">
       
       <link rel="icon" href="../../Images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Pipelines - Python Refresher</title>
+        <title>Dynamic Programming - Python Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#step-1-define-preprocessing-steps" class="md-skip">
+        <a href="#memoization-top-down-approach" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pipelines
+              Dynamic Programming
             
           </span>
         </div>
@@ -287,15 +287,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../pyGen/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../ML/pyGen/" class="md-tabs__link">
         ML
       </a>
     </li>
@@ -305,13 +303,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../Algo/pyGen/" class="md-tabs__link">
+      <a href="../pyGen/" class="md-tabs__link md-tabs__link--active">
         Algo
       </a>
     </li>
@@ -2083,14 +2083,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
       
       
       
@@ -2113,7 +2111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyGen/" class="md-nav__link">
+      <a href="../../ML/pyGen/" class="md-nav__link">
         General
       </a>
     </li>
@@ -2127,7 +2125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyPandas/" class="md-nav__link">
+      <a href="../../ML/pyPandas/" class="md-nav__link">
         Pandas
       </a>
     </li>
@@ -2141,7 +2139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyNumpy/" class="md-nav__link">
+      <a href="../../ML/pyNumpy/" class="md-nav__link">
         Numpy
       </a>
     </li>
@@ -2155,7 +2153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyNumba/" class="md-nav__link">
+      <a href="../../ML/pyNumba/" class="md-nav__link">
         Numba
       </a>
     </li>
@@ -2169,7 +2167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyPlot/" class="md-nav__link">
+      <a href="../../ML/pyPlot/" class="md-nav__link">
         MatplotLib
       </a>
     </li>
@@ -2183,7 +2181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyEda/" class="md-nav__link">
+      <a href="../../ML/pyEda/" class="md-nav__link">
         EDA
       </a>
     </li>
@@ -2197,7 +2195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pylinReg/" class="md-nav__link">
+      <a href="../../ML/pylinReg/" class="md-nav__link">
         Linear Regression
       </a>
     </li>
@@ -2211,7 +2209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyLogReg/" class="md-nav__link">
+      <a href="../../ML/pyLogReg/" class="md-nav__link">
         Logistic Regression
       </a>
     </li>
@@ -2225,7 +2223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyknn/" class="md-nav__link">
+      <a href="../../ML/pyknn/" class="md-nav__link">
         K-Nearest Neighbors
       </a>
     </li>
@@ -2239,7 +2237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyDecTree/" class="md-nav__link">
+      <a href="../../ML/pyDecTree/" class="md-nav__link">
         Decision Trees
       </a>
     </li>
@@ -2253,7 +2251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyRandomFor/" class="md-nav__link">
+      <a href="../../ML/pyRandomFor/" class="md-nav__link">
         Random Forest
       </a>
     </li>
@@ -2267,7 +2265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyNN/" class="md-nav__link">
+      <a href="../../ML/pyNN/" class="md-nav__link">
         Neural Networks
       </a>
     </li>
@@ -2281,7 +2279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyClust/" class="md-nav__link">
+      <a href="../../ML/pyClust/" class="md-nav__link">
         Clustering
       </a>
     </li>
@@ -2293,62 +2291,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Pipelines
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../ML/pyPipe/" class="md-nav__link">
         Pipelines
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-define-preprocessing-steps" class="md-nav__link">
-    Step 1: Define Preprocessing Steps
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-define-the-model" class="md-nav__link">
-    Step 2: Define the Model
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-create-and-evaluate-the-pipeline" class="md-nav__link">
-    Step 3: Create and Evaluate the Pipeline
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2360,7 +2307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyCrossVal/" class="md-nav__link">
+      <a href="../../ML/pyCrossVal/" class="md-nav__link">
         Cross-Validation
       </a>
     </li>
@@ -2374,7 +2321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyGradBoost/" class="md-nav__link">
+      <a href="../../ML/pyGradBoost/" class="md-nav__link">
         Gradient Boosting
       </a>
     </li>
@@ -2388,7 +2335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyDataLeak/" class="md-nav__link">
+      <a href="../../ML/pyDataLeak/" class="md-nav__link">
         Data Leakage
       </a>
     </li>
@@ -2408,12 +2355,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
       
       
       
@@ -2436,7 +2385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Algo/pyGen/" class="md-nav__link">
+      <a href="../pyGen/" class="md-nav__link">
         General
       </a>
     </li>
@@ -2448,11 +2397,88 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Algo/pyDynamic/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Dynamic Programming
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Dynamic Programming
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#memoization-top-down-approach" class="md-nav__link">
+    Memoization : TOP-DOWN Approach
+  </a>
+  
+    <nav class="md-nav" aria-label="Memoization : TOP-DOWN Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complexity" class="md-nav__link">
+    Complexity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recursion-limit" class="md-nav__link">
+    Recursion limit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabulation-bottom-up-approach" class="md-nav__link">
+    Tabulation: BOTTOM-UP Approach
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabulation: BOTTOM-UP Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convert-to-an-iterative-approach" class="md-nav__link">
+    Convert to an Iterative Approach:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2537,23 +2563,49 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-1-define-preprocessing-steps" class="md-nav__link">
-    Step 1: Define Preprocessing Steps
+  <a href="#memoization-top-down-approach" class="md-nav__link">
+    Memoization : TOP-DOWN Approach
   </a>
+  
+    <nav class="md-nav" aria-label="Memoization : TOP-DOWN Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complexity" class="md-nav__link">
+    Complexity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recursion-limit" class="md-nav__link">
+    Recursion limit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-define-the-model" class="md-nav__link">
-    Step 2: Define the Model
+  <a href="#tabulation-bottom-up-approach" class="md-nav__link">
+    Tabulation: BOTTOM-UP Approach
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabulation: BOTTOM-UP Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convert-to-an-iterative-approach" class="md-nav__link">
+    Convert to an Iterative Approach:
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-create-and-evaluate-the-pipeline" class="md-nav__link">
-    Step 3: Create and Evaluate the Pipeline
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2571,226 +2623,351 @@
                 
 
 
-  <h1>Pipelines</h1>
+  <h1>Dynamic Programming</h1>
 
-<p>Pipelines are a simple way to keep your data preprocessing and modeling code organized. Specifically, a pipeline bundles preprocessing and modeling steps so you can use the whole bundle as if it were a single step.</p>
-<p>Many data scientists hack together models without pipelines, but pipelines have some important benefits. Those include:</p>
-<ol>
-<li><strong>Cleaner Code:</strong> Accounting for data at each step of preprocessing can get messy. With a pipeline, you won't need to manually keep track of your training and validation data at each step.</li>
-<li><strong>Fewer Bugs:</strong> There are fewer opportunities to misapply a step or forget a preprocessing step.</li>
-<li><strong>Easier to Productionize:</strong> It can be surprisingly hard to transition a model from a prototype to something deployable at scale. .</li>
-<li><strong>More Options for Model Validation:</strong> cross-validation.</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<div class="highlight"><pre><span></span><code><span class="n">Those</span> <span class="n">who</span> <span class="n">cannot</span> <span class="n">remember</span> <span class="n">the</span> <span class="n">past</span> <span class="n">are</span> <span class="n">condemned</span> <span class="n">to</span> <span class="n">repeat</span> <span class="n">it</span><span class="o">.*</span> 
 
-<span class="c1"># Read the data</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/esabunor/MLWorkspace/master/melb_data.csv&#39;</span><span class="p">)</span>
-
-<span class="c1"># Separate target from predictors</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">Price</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Price&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># Divide data into training and validation subsets</span>
-<span class="n">X_train_full</span><span class="p">,</span> <span class="n">X_valid_full</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_valid</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
-                                                                <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="c1"># &quot;Cardinality&quot; means the number of unique values in a column</span>
-<span class="c1"># Select categorical columns with relatively low cardinality (convenient but arbitrary)</span>
-<span class="n">categorical_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">cname</span> <span class="k">for</span> <span class="n">cname</span> <span class="ow">in</span> <span class="n">X_train_full</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">X_train_full</span><span class="p">[</span><span class="n">cname</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="ow">and</span> 
-                        <span class="n">X_train_full</span><span class="p">[</span><span class="n">cname</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="s2">&quot;object&quot;</span><span class="p">]</span>
-
-<span class="c1"># Select numerical columns</span>
-<span class="n">numerical_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">cname</span> <span class="k">for</span> <span class="n">cname</span> <span class="ow">in</span> <span class="n">X_train_full</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">X_train_full</span><span class="p">[</span><span class="n">cname</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;int64&#39;</span><span class="p">,</span> <span class="s1">&#39;float64&#39;</span><span class="p">]]</span>
-
-<span class="c1"># Keep selected columns only</span>
-<span class="n">my_cols</span> <span class="o">=</span> <span class="n">categorical_cols</span> <span class="o">+</span> <span class="n">numerical_cols</span>
-<span class="n">X_train</span> <span class="o">=</span> <span class="n">X_train_full</span><span class="p">[</span><span class="n">my_cols</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">X_valid</span> <span class="o">=</span> <span class="n">X_valid_full</span><span class="p">[</span><span class="n">my_cols</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-<span class="n">X_train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+                                         <span class="err">—</span> <span class="n">Dynamic</span> <span class="n">Programming</span>
 </code></pre></div>
+<p>Dynamic programming is an algorithmic paradigm that divides broader problems into smaller subproblems and stores the result for later use, eliminating the need for any re-computation. This problem-solving approach is quite similar to the divide and conquer approach.</p>
+<p>We solve problems in both these paradigms by integrating the answers to smaller subproblems. However, unlike divide and conquer, the subproblems in dynamic programming repeat themselves multiple times. This means dynamic programming has different properties than the divide and conquer approach. If the problem abides by properties given below, only then it can be solved using a dynamic programming paradigm:</p>
+<ul>
+<li>
+<p><strong>Optimal Substructure:</strong> A problem is said to have an optimal substructure if we can formulate a recurrence relation.</p>
+</li>
+<li>
+<p><strong>Overlapping Subproblem:</strong>  Dynamic programming is used where the solutions of the same sub-problems are required again and again.</p>
+</li>
+</ul>
+<p>Dynamic programming is used because the solutions of sub-problems can be stored in a table so that it does not need to recompute again and again. Dynamic programming is not required when there are no common or overlapping sub-problems as there is no use of storing the results in a table again and again.</p>
+<p>For example, Binary search does not require dynamic programming as it has no common sub-problems. In contrast, a recursive program of Fibonacci series has many common sub-problems, so it requires a dynamic programming approach to solve the problem optimally.</p>
+<p>There are two ways that we can use to store the values:</p>
+<ul>
+<li><a href="#memoization--top-down-approach">Memoization</a></li>
+<li><a href="#tabulation-bottom-up-approach">Tabulation</a></li>
+</ul>
+<p>Both tabulation and memoization are used to store the solutions of sub-problems. In memoization, table entry is filled on demand; it means that its not mandatory that all the entries are completely filled. In the tabulation technique, all the table entries are filled one by one starting from the very first entry.</p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th>Type</th>
-<th>Method</th>
-<th>Regionname</th>
-<th>Unnamed: 0</th>
-<th>Rooms</th>
-<th>Distance</th>
-<th>Postcode</th>
-<th>Bedroom2</th>
-<th>Bathroom</th>
-<th>Car</th>
-<th>Landsize</th>
-<th>BuildingArea</th>
-<th>YearBuilt</th>
-<th>Lattitude</th>
-<th>Longtitude</th>
-<th>Propertycount</th>
+<th align="center">Top-Down Approach</th>
+<th align="center">Bottom-Up Approach</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>2573</td>
-<td>h</td>
-<td>SP</td>
-<td>Northern Metropolitan</td>
-<td>3349</td>
-<td>4</td>
-<td>7.8</td>
-<td>3058.0</td>
-<td>4.0</td>
-<td>2.0</td>
-<td>1.0</td>
-<td>381.0</td>
-<td>NaN</td>
-<td>1938.0</td>
-<td>-37.7337</td>
-<td>144.9548</td>
-<td>11204.0</td>
+<td align="center">Uses memorization technique</td>
+<td align="center">Uses tabulation technique</td>
 </tr>
 <tr>
-<td>2091</td>
-<td>h</td>
-<td>SP</td>
-<td>Southern Metropolitan</td>
-<td>2686</td>
-<td>3</td>
-<td>7.8</td>
-<td>3124.0</td>
-<td>3.0</td>
-<td>1.0</td>
-<td>1.0</td>
-<td>544.0</td>
-<td>160.0</td>
-<td>1930.0</td>
-<td>-37.8436</td>
-<td>145.0581</td>
-<td>8920.0</td>
+<td align="center">Recursive nature</td>
+<td align="center">Iterative nature</td>
 </tr>
 <tr>
-<td>4683</td>
-<td>u</td>
-<td>S</td>
-<td>Southern Metropolitan</td>
-<td>6065</td>
-<td>2</td>
-<td>5.6</td>
-<td>3101.0</td>
-<td>2.0</td>
-<td>1.0</td>
-<td>1.0</td>
-<td>121.0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>-37.8126</td>
-<td>145.0534</td>
-<td>10331.0</td>
+<td align="center">Structured programming languages such as COBOL, Fortran, C</td>
+<td align="center">Object-oriented programming languages</td>
 </tr>
 <tr>
-<td>8832</td>
-<td>h</td>
-<td>VB</td>
-<td>Southern Metropolitan</td>
-<td>11346</td>
-<td>3</td>
-<td>7.5</td>
-<td>3123.0</td>
-<td>3.0</td>
-<td>2.0</td>
-<td>2.0</td>
-<td>200.0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>-37.8396</td>
-<td>145.0514</td>
-<td>6482.0</td>
+<td align="center">Uses decomposition</td>
+<td align="center">Uses composition</td>
 </tr>
 <tr>
-<td>10469</td>
-<td>u</td>
-<td>S</td>
-<td>Southern Metropolitan</td>
-<td>13474</td>
-<td>2</td>
-<td>4.5</td>
-<td>3181.0</td>
-<td>2.0</td>
-<td>1.0</td>
-<td>1.0</td>
-<td>2842.0</td>
-<td>84.0</td>
-<td>1920.0</td>
-<td>-37.8513</td>
-<td>144.9943</td>
-<td>7717.0</td>
+<td align="center">A lookup table is maintained and checked before computation of any subproblem</td>
+<td align="center">The solution is built from a bottom-most case using iteration</td>
 </tr>
 </tbody>
 </table>
-<p>We construct the full pipeline in three steps.</p>
-<h2 id="step-1-define-preprocessing-steps">Step 1: Define Preprocessing Steps</h2>
-<p>Similar to how a pipeline bundles together preprocessing and modeling steps, we use the ColumnTransformer class to bundle together different preprocessing steps. The code below:</p>
-<p>imputes missing values in numerical data, and imputes missing values and applies a one-hot encoding to categorical data. </p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">ColumnTransformer</span>
-<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
-<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
+<h2 id="memoization-top-down-approach">Memoization : TOP-DOWN Approach</h2>
+<p>Memoization is a technique that stores the result of the sub-problem. Memoization technique is almost similar to the recursive technique with a small difference that memorization looks into the lookup table before computing the sub-problem. In the memorization technique, a lookup table is used. Initially, a look up table is initialized with NIL values. Whenever we require a solution of the sub-problem then we first look into the look up table and if we do not find the solution into the look up table then we compute the sub-problem and stores the result into the look up table so that it can be reused later.</p>
+<p>The top-down approach follows the memorization technique. It consists of two distinct events: recursion and caching. ‘Recursion’ represents the process of computation by calling functions repeatedly, whereas ‘caching’ represents the storing of intermediate results.</p>
+<ul>
+<li>Advantages</li>
+<li>Easy to understand and implement</li>
+<li>Solves the subproblem only if the solution is not memorized. When not all the subproblems need to be solved, memoization means only the necessary ones are computed.</li>
+<li>Debugging is easier.</li>
+<li>Disadvantages</li>
+<li>Uses recursion, which takes up more memory space in the call stack, degrading the overall performance.Trades speed for memory.</li>
+<li>Possibility of a stack overflow error.</li>
+</ul>
+<p>Simple recursion:</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span>  <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="c1"># Preprocessing for numerical data</span>
-<span class="n">numerical_transformer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;constant&#39;</span><span class="p">)</span>
-
-<span class="c1"># Preprocessing for categorical data</span>
-<span class="n">categorical_transformer</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[</span>
-    <span class="p">(</span><span class="s1">&#39;imputer&#39;</span><span class="p">,</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;most_frequent&#39;</span><span class="p">)),</span>
-    <span class="p">(</span><span class="s1">&#39;onehot&#39;</span><span class="p">,</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">))</span>
-<span class="p">])</span>
-
-<span class="c1"># Bundle preprocessing for numerical and categorical data</span>
-<span class="n">preprocessor</span> <span class="o">=</span> <span class="n">ColumnTransformer</span><span class="p">(</span>
-    <span class="n">transformers</span><span class="o">=</span><span class="p">[</span>
-        <span class="p">(</span><span class="s1">&#39;num&#39;</span><span class="p">,</span> <span class="n">numerical_transformer</span><span class="p">,</span> <span class="n">numerical_cols</span><span class="p">),</span>
-        <span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">categorical_transformer</span><span class="p">,</span> <span class="n">categorical_cols</span><span class="p">)</span>
-    <span class="p">])</span>
+<span class="n">fibonacci</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="step-2-define-the-model">Step 2: Define the Model</h2>
-<p>Next, we define a random forest model with the familiar RandomForestRegressor class.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
-
-<span class="n">model</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>4
+3
+2
+1
+0
+1
+2
+1
+0
+3
 </code></pre></div>
-<h2 id="step-3-create-and-evaluate-the-pipeline">Step 3: Create and Evaluate the Pipeline</h2>
-<p>Finally, we use the Pipeline class to define a pipeline that bundles the preprocessing and modeling steps. There are a few important things to notice:</p>
-<p>With the pipeline, we preprocess the training data and fit the model in a single line of code. (In contrast, without a pipeline, we have to do imputation, one-hot encoding, and model training in separate steps. This becomes especially messy if we have to deal with both numerical and categorical variables!) With the pipeline, we supply the unprocessed features in X_valid to the predict() command, and the pipeline automatically preprocesses the features before generating predictions. (However, without a pipeline, we have to remember to preprocess the validation data before making predictions.)</p>
-<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
+Here’s a stack graph that shows all stack frames created during this function call.</p>
+<p>Note that these frames are not all on the stack at the same time.</p>
+<p><img alt="stack" src="../Images/stack.png" /></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">known</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
 
-<span class="c1"># Bundle preprocessing and modeling code in a pipeline</span>
-<span class="n">my_pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;preprocessor&#39;</span><span class="p">,</span> <span class="n">preprocessor</span><span class="p">),</span>
-                              <span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
-                             <span class="p">])</span>
+<span class="k">def</span> <span class="nf">fibonacci_memo</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">known</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">known</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
 
-<span class="c1"># Preprocessing of training data, fit model </span>
-<span class="n">my_pipeline</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">fibonacci_memo</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci_memo</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">known</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span>
+    <span class="k">return</span> <span class="n">res</span>
 
-<span class="c1"># Preprocessing of validation data, get predictions</span>
-<span class="n">preds</span> <span class="o">=</span> <span class="n">my_pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid</span><span class="p">)</span>
-
-<span class="c1"># Evaluate the model</span>
-<span class="n">score</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_valid</span><span class="p">,</span> <span class="n">preds</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MAE:&#39;</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
+<span class="n">fibonacci_memo</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>MAE: 177453.58753804347
+<div class="highlight"><pre><span></span><code>4
+3
+2
+3
+</code></pre></div></p>
+<p>known is a dictionary that keeps track of the Fibonacci numbers we already know. It starts with two items: 0 maps to 0 and 1 maps to 1.</p>
+<p>Whenever fibonacci is called, it checks known. If the result is already there, it can return immediately. Otherwise it has to compute the new value, add it to the dictionary, and return it.</p>
+<p>If you run this version of fibonacci and compare it with the original, you will find that it is much faster.</p>
+<h3 id="complexity">Complexity</h3>
+<p><strong>Time Complexity:</strong> Time Complexity is defined as the number of times a particular instruction set is executed rather than the total time is taken. It is because the total time took also depends on some external factors like the compiler used, processor’s speed, etc.</p>
+<p><strong>Space Complexity:</strong> Space Complexity is the total memory space required by the program for its execution.</p>
+<p>Both are calculated as the function of input size(n).</p>
+<p>One important thing here is that in spite of these parameters the efficiency of an algorithm also depends upon the nature and size of the input. </p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">lru_cache</span>
+
+
+<span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the n-th Fibonacci number.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+
+
+<span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">fib_lru</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the n-th Fibonacci number.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="n">fib_lru</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib_lru</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+
+
+<span class="c1"># Manual caching using a dictionary.</span>
+<span class="k">def</span> <span class="nf">fib_cache</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">cache</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">cache</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">cache</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">cache</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">fib_cache</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cache</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib_cache</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">cache</span><span class="p">)</span>
+    <span class="n">cache</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">35</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+<span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Plain recursive version. Seconds taken: </span><span class="si">{:.7f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">))</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+<span class="n">fib_lru</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;lru cache version. Seconds taken: </span><span class="si">{:.7f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">))</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+<span class="n">fib_cache</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Manual cache version. Seconds taken: </span><span class="si">{:.7f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">))</span>
 </code></pre></div>
-Now, you'll use your trained model to generate predictions with the test data.</p>
-<p><div class="highlight"><pre><span></span><code><span class="c1"># Preprocessing of test data, fit model</span>
-<span class="n">preds_test</span> <span class="o">=</span> <span class="n">my_pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>Plain recursive version. Seconds taken: 4.4927939
+lru cache version. Seconds taken: 0.0000846
+Manual cache version. Seconds taken: 0.0000724
+</code></pre></div></p>
+<h3 id="recursion-limit">Recursion limit</h3>
+<ul>
+<li>Use sys.setrecursionlimit() to set the maximum depth of the Python interpreter stack to the integer value required for the program.</li>
+<li>It will raise a Recursion Error exception if the new limit is too low at the current recursion depth.</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Python3 program to explain the sys.setrecursionlimit() method</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1"># Print the current recursion limit</span>
+<span class="c1"># using sys.getrecursionlimit()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original recursion limit was: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getrecursionlimit</span><span class="p">())</span>
+
+<span class="c1"># Set a new recursion limit</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">setrecursionlimit</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="c1"># Print the new recursion limit</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;New recursion limit is: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getrecursionlimit</span><span class="p">())</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Save test predictions to file</span>
-<span class="n">output</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Id&#39;</span><span class="p">:</span> <span class="n">X_test</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
-                       <span class="s1">&#39;SalePrice&#39;</span><span class="p">:</span> <span class="n">preds_test</span><span class="p">})</span>
-<span class="n">output</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;submission.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>Original recursion limit was: 
+1000
+New recursion limit is: 
+1000000
+</code></pre></div></p>
+<h2 id="tabulation-bottom-up-approach">Tabulation: BOTTOM-UP Approach</h2>
+<p>In the tabulation technique, we solve the sub-problems in a bottom-up fashion and use the solutions of sub-problems to reach at the bigger sub-problems. The tabulation technique can be used as generating the solutions of bigger sub-problems iteratively by using the solutions of the smaller sub-problems.</p>
+<p>It addresses the same problems as before, but without recursion. The recursion is replaced with iteration in this approach. Hence, there is no stack overflow error or overhead of recursive procedures. We maintain a table (e.g. 3D matrix) to solve the problem in this method.</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Fibonacci using the bottom up approach</span>
+<span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># f(i - 2)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># f(i - 1)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>  <span class="c1"># end of range is exclusive</span>
+        <span class="c1"># the old &quot;a&quot; is no longer accessible after this</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+    <span class="k">return</span> <span class="n">b</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+<span class="n">fib</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bottum-up version. Seconds taken: </span><span class="si">{:.7f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">))</span>
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code>Bottum-up version. Seconds taken: 0.0000956
+</code></pre></div>
+<p>Both memoization and bottom-up approach are linear in time for calculation. Though the bottom-up approach is faster in a constant factor. The big difference is in memory usage. Bottom-up approach uses a small constant space, while recursion needs a linear space.</p>
+<p>Bottom up approach represent recursive problems as a Directed acyclic graphs (DAGs). The Dag can be traversed in order of dependency, solving sobproblems before they are needed and using minimal time and space.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">tabulate</span> <span class="kn">import</span> <span class="n">tabulate</span>
+
+
+<span class="k">def</span> <span class="nf">knapsack</span><span class="p">(</span><span class="n">max_capacity</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+    <span class="n">num_items</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+    <span class="n">results_table</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_capacity</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_items</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+
+    <span class="c1"># Build results table in bottom-up manner</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_items</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_capacity</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="c1"># This initial empty rows and columns</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">results_table</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="c1"># The rest of the cells</span>
+            <span class="k">elif</span> <span class="n">weights</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">j</span><span class="p">:</span>
+                <span class="n">results_table</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">results_table</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+                                          <span class="o">+</span> <span class="n">results_table</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">weights</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">results_table</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">results_table</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+
+    <span class="c1"># Display results table</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">results_table</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s2">&quot;pretty&quot;</span><span class="p">))</span>
+
+    <span class="c1"># for row in results_table:</span>
+    <span class="c1">#     for el in row:</span>
+    <span class="c1">#         print(el, end=&quot;,&quot;)</span>
+    <span class="c1">#     print()</span>
+
+    <span class="k">return</span> <span class="n">results_table</span><span class="p">[</span><span class="n">num_items</span><span class="p">][</span><span class="n">max_capacity</span><span class="p">]</span>
+
+
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">35</span><span class="p">]</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">max_capacity</span> <span class="o">=</span> <span class="mi">6</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">knapsack</span><span class="p">(</span><span class="n">max_capacity</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">values</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>+---+----+----+----+----+----+----+
+| 0 | 0  | 0  | 0  | 0  | 0  | 0  |
+| 0 | 10 | 10 | 10 | 10 | 10 | 10 |
+| 0 | 10 | 10 | 15 | 15 | 15 | 15 |
+| 0 | 10 | 10 | 20 | 30 | 30 | 35 |
+| 0 | 10 | 10 | 20 | 30 | 35 | 45 |
++---+----+----+----+----+----+----+
+45
+</code></pre></div></p>
+<ul>
+<li>Dynamic programming is useful when you’re trying to optimize
+something given a constraint. In the knapsack problem, you had to
+maximize the value of the goods you stole, constrained by the size of
+the knapsack.</li>
+<li>
+<p>You can use dynamic programming when the problem can be broken
+into discrete subproblems, and they don’t depend on each other</p>
+</li>
+<li>
+<p>Every dynamic-programming solution involves a grid.</p>
+</li>
+<li>
+<p>The values in the cells are usually what you’re trying to optimize.</p>
+</li>
+<li>
+<p>Each cell is a subproblem, so think about how you can divide
+your problem into subproblems. That will help you figure out what
+the axes are</p>
+</li>
+</ul>
+<p>References:</p>
+<p>Useful <a href="https://www.youtube.com/watch?v=oBt53YbR9Kk">Youtube video</a></p>
+<p><a href="https://www.youtube.com/watch?v=yfTlyYTnfKM">Other</a></p>
+<h3 id="convert-to-an-iterative-approach"><strong>Convert to an Iterative Approach:</strong></h3>
+<ul>
+<li>Any problem of recursion can be converted to an iterative approach, so try to use the iterative approach instead of recursion.</li>
+<li>Using Stack and while loop may save the execution time of the program.</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Program to show the time taken in</span>
+<span class="c1"># iteration and recursion</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># Recursive function to find factorial</span>
+<span class="c1"># of the given number N</span>
+<span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+
+      <span class="c1"># Base Case</span>
+    <span class="k">if</span> <span class="n">N</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+
+    <span class="c1"># Recursive Call</span>
+    <span class="k">return</span> <span class="n">N</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Driver Code</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">20</span>
+
+    <span class="c1"># Find the time taken for the</span>
+    <span class="c1"># recursive approach</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calculated using recursion: &quot;</span><span class="p">,</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+
+    <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time taken in recursion: &quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{0:.9f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">))</span>
+
+    <span class="c1"># Find time taken for iterative</span>
+    <span class="c1"># approach</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">*=</span> <span class="n">n</span>
+        <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calculated using the iterative method: &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+
+    <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time taken in iteration: &quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{0:.9f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Calculated using recursion:  2432902008176640000
+Time taken in recursion:  0.004770568
+Calculated using the iterative method:  2432902008176640000
+Time taken in iteration:  0.000037236
 </code></pre></div></p>
 
               
@@ -2805,7 +2982,7 @@ Now, you'll use your trained model to generate predictions with the test data.</
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../pyClust/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Clustering" rel="prev">
+        <a href="../pyGen/" class="md-footer__link md-footer__link--prev" aria-label="Previous: General" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -2814,20 +2991,20 @@ Now, you'll use your trained model to generate predictions with the test data.</
               <span class="md-footer__direction">
                 Previous
               </span>
-              Clustering
+              General
             </div>
           </div>
         </a>
       
       
         
-        <a href="../pyCrossVal/" class="md-footer__link md-footer__link--next" aria-label="Next: Cross-Validation" rel="next">
+        <a href="../../Exe/pyGen/" class="md-footer__link md-footer__link--next" aria-label="Next: General" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Cross-Validation
+              General
             </div>
           </div>
           <div class="md-footer__button md-icon">
