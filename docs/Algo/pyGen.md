@@ -2,7 +2,7 @@ Useful Algorithms
 
 + [Divide and Conquer](#divide-and-conquer)
 + [Transform and Conquer](#transform-and-conquer)
-+ Dynamic Programming
++ [Dynamic Programming](pyDynamic.md)
 + Sorting Algorithms
 + Searching Algorithms
 + Array Algorithms

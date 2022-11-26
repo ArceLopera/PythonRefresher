@@ -210,6 +210,7 @@ nav:
      - Data Leakage : ML/pyDataLeak.md
   - Algo :
      - General : Algo/pyGen.md
+     - Dynamic Programming : Algo/pyDynamic.md
   - Exercises : 
      - General : Exe/pyGen.md
 
