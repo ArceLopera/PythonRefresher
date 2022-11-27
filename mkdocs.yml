@@ -211,6 +211,7 @@ nav:
   - Algo :
      - General : Algo/pyGen.md
      - Dynamic Programming : Algo/pyDynamic.md
+     - Sorting Algorithms : Algo/pySort.md
   - Exercises : 
      - General : Exe/pyGen.md
 
