@@ -2456,6 +2456,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#bubble-sort" class="md-nav__link">
+    Bubble Sort
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2557,6 +2564,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#bubble-sort" class="md-nav__link">
+    Bubble Sort
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2602,7 +2616,7 @@
 <td>Selection</td>
 </tr>
 <tr>
-<td>Bubble Sort</td>
+<td><a href="#bubble-sort">Bubble Sort</a></td>
 <td>O(n)</td>
 <td>O(n^2)</td>
 <td>O(n^2)</td>
@@ -2689,6 +2703,52 @@
 </tr>
 </tbody>
 </table>
+<h2 id="bubble-sort">Bubble Sort</h2>
+<p>Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order. Two values are compared to each other incrementally, the largest value is shifted until it is at the top.</p>
+<ul>
+<li><strong>Complexity:</strong> O(n^2)</li>
+<li><strong>Worst and Average Case Time Complexity:</strong> O(n*n). Worst case occurs when array is reverse sorted.</li>
+<li><strong>Best Case Time Complexity:</strong> O(n). Best case occurs when array is already sorted.</li>
+<li><strong>Auxiliary Space:</strong> O(1)</li>
+<li><strong>Boundary Cases:</strong> Bubble sort takes minimum time (Order of n) when elements are already sorted.</li>
+<li><strong>Sorting In Place:</strong> Yes</li>
+<li><strong>Stable:</strong> Yes</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Python program for implementation of Bubble Sort</span>
+
+<span class="k">def</span> <span class="nf">bubbleSort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+    <span class="c1"># Traverse through all array elements</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+
+        <span class="c1"># Last i elements are already in place</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+
+            <span class="c1"># traverse the array from 0 to n-i-1</span>
+            <span class="c1"># Swap if the element found is greater</span>
+            <span class="c1"># than the next element</span>
+            <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="p">:</span>
+                <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+
+<span class="c1"># Driver code to test above</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">64</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">90</span><span class="p">]</span>
+
+<span class="n">bubbleSort</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Sorted array is:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Sorted array is:
+11
+12
+22
+25
+34
+64
+90
+</code></pre></div></p>
 
               
             </article>
