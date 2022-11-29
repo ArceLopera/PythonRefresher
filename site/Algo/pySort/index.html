@@ -2463,6 +2463,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#selection-sort" class="md-nav__link">
+    Selection Sort
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2571,6 +2578,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#selection-sort" class="md-nav__link">
+    Selection Sort
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2607,7 +2621,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Selection Sort</td>
+<td><a href="#selection-sort">Selection Sort</a></td>
 <td>O(n^2)</td>
 <td>O(n^2)</td>
 <td>O(n^2)</td>
@@ -2748,6 +2762,77 @@
 34
 64
 90
+</code></pre></div></p>
+<h2 id="selection-sort">Selection Sort</h2>
+<p>When you want to store multiple elements, use an array or a list.</p>
+<p>• With an array, all your elements are stored right next to each other.</p>
+<p>• With a list, elements are strewn all over, and one element stores the address of the next one.</p>
+<p>• Arrays allow fast reads.</p>
+<p>• Linked lists allow fast inserts and deletes.</p>
+<p>• All elements in the array should be the same type (all ints,
+all doubles, and so on).</p>
+<p>The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array.
+1) The subarray which is already sorted. 
+2) Remaining subarray which is unsorted.
+In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray. </p>
+<ul>
+<li><strong>Time Complexity:</strong> O(n2) as there are two nested loops.</li>
+<li><strong>Auxiliary Space:</strong> O(1) 
+The good thing about selection sort is it never makes more than O(n) swaps and can be useful when memory write is a costly operation. </li>
+<li><strong>Stability :</strong> The default implementation is not stable. However it can be made stable. Please see <a href="https://www.geeksforgeeks.org/stable-selection-sort/">stable selection sort</a> for details.</li>
+<li><strong>In Place :</strong> Yes, it does not require extra space.</li>
+</ul>
+<p>A sorting algorithm is said to be stable if two objects with equal or same keys appear in the same order in sorted output as they appear in the input array to be sorted.</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">findSmallest</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+  <span class="n">smallest</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#Stores the smallest value</span>
+  <span class="n">smallest_index</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Stores the index of the smallest value</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">smallest</span><span class="p">:</span>
+      <span class="n">smallest</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+      <span class="n">smallest_index</span> <span class="o">=</span> <span class="n">i</span>
+  <span class="k">return</span> <span class="n">smallest_index</span>
+
+<span class="k">def</span> <span class="nf">selectionSort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span> <span class="c1">#Sorts an array</span>
+  <span class="n">newArr</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+    <span class="n">smallest</span> <span class="o">=</span> <span class="n">findSmallest</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="n">newArr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">smallest</span><span class="p">))</span>
+  <span class="k">return</span> <span class="n">newArr</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">selectionSort</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">]))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[2, 3, 5, 6, 10]
+</code></pre></div></p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Python program for implementation of Selection</span>
+<span class="c1"># Sort</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">64</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+
+<span class="c1"># Traverse through all array elements</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)):</span>
+
+    <span class="c1"># Find the minimum element in remaining</span>
+    <span class="c1"># unsorted array</span>
+    <span class="n">min_idx</span> <span class="o">=</span> <span class="n">i</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">A</span><span class="p">[</span><span class="n">min_idx</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+            <span class="n">min_idx</span> <span class="o">=</span> <span class="n">j</span>
+
+    <span class="c1"># Swap the found minimum element with</span>
+    <span class="c1"># the first element </span>
+    <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">min_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">min_idx</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="c1"># Driver code to test above</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Sorted array&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Sorted array
+11
+12
+22
+25
+64
 </code></pre></div></p>
 
               

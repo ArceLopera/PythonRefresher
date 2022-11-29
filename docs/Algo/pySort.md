@@ -7,7 +7,7 @@ There are two types of sorting algorithms:
 
 | Algorithm      |Best	|Average|	Worst| Memory | Stable |Method|
 | ----------- | ----------- |----------- | ----------- | ----------- | ----------- | ----------- |
-|Selection Sort|	O(n^2)	|O(n^2)	|O(n^2)|	1 |No| Selection|
+|[Selection Sort](#selection-sort)|	O(n^2)	|O(n^2)	|O(n^2)|	1 |No| Selection|
 |[Bubble Sort](#bubble-sort)	|O(n)	|O(n^2)|	O(n^2)|	 1|Yes|Exchanging|
 |Insertion Sort|	O(n)|	O(n^2)|	O(n^2)|1|Yes|Insertion|	 
 |Heap Sort	|O(n log(n))|	O(n log(n))	|O(n log(n))|		1 |No| Selection| 
@@ -75,3 +75,87 @@ Sorted array is:
 90
 ```
 
+## Selection Sort
+
+When you want to store multiple elements, use an array or a list.
+
+• With an array, all your elements are stored right next to each other.
+
+• With a list, elements are strewn all over, and one element stores the address of the next one.
+
+• Arrays allow fast reads.
+
+• Linked lists allow fast inserts and deletes.
+
+• All elements in the array should be the same type (all ints,
+all doubles, and so on).
+
+The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array.
+1) The subarray which is already sorted. 
+2) Remaining subarray which is unsorted.
+In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray. 
+
++ **Time Complexity:** O(n2) as there are two nested loops.
++ **Auxiliary Space:** O(1) 
+The good thing about selection sort is it never makes more than O(n) swaps and can be useful when memory write is a costly operation. 
++ **Stability :** The default implementation is not stable. However it can be made stable. Please see [stable selection sort](https://www.geeksforgeeks.org/stable-selection-sort/) for details.
++ **In Place :** Yes, it does not require extra space.
+
+A sorting algorithm is said to be stable if two objects with equal or same keys appear in the same order in sorted output as they appear in the input array to be sorted.
+
+``` py
+def findSmallest(arr):
+  smallest = arr[0] #Stores the smallest value
+  smallest_index = 0 #Stores the index of the smallest value
+  for i in range(1, len(arr)):
+    if arr[i] < smallest:
+      smallest = arr[i]
+      smallest_index = i
+  return smallest_index
+
+def selectionSort(arr): #Sorts an array
+  newArr = []
+  for i in range(len(arr)):
+    smallest = findSmallest(arr)
+    newArr.append(arr.pop(smallest))
+  return newArr
+
+print(selectionSort([5, 3, 6, 2, 10]))
+```
+```
+[2, 3, 5, 6, 10]
+```
+
+``` py
+# Python program for implementation of Selection
+# Sort
+import sys
+A = [64, 25, 12, 22, 11]
+
+# Traverse through all array elements
+for i in range(len(A)):
+	
+	# Find the minimum element in remaining
+	# unsorted array
+	min_idx = i
+	for j in range(i+1, len(A)):
+		if A[min_idx] > A[j]:
+			min_idx = j
+			
+	# Swap the found minimum element with
+	# the first element	
+	A[i], A[min_idx] = A[min_idx], A[i]
+
+# Driver code to test above
+print ("Sorted array")
+for i in range(len(A)):
+	print("%d" %A[i]),
+```
+```
+Sorted array
+11
+12
+22
+25
+64
+```
