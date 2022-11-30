@@ -2470,6 +2470,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#quicksort-divide-and-conquer" class="md-nav__link">
+    QuickSort (Divide and Conquer)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merge-sort" class="md-nav__link">
+    Merge Sort
+  </a>
+  
+    <nav class="md-nav" aria-label="Merge Sort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#applications-of-merge-sort" class="md-nav__link">
+    Applications of Merge Sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drawbacks-of-merge-sort" class="md-nav__link">
+    Drawbacks of Merge Sort
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counting-sort" class="md-nav__link">
+    Counting Sort
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radix-sort" class="md-nav__link">
+    Radix Sort
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2585,6 +2633,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#quicksort-divide-and-conquer" class="md-nav__link">
+    QuickSort (Divide and Conquer)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merge-sort" class="md-nav__link">
+    Merge Sort
+  </a>
+  
+    <nav class="md-nav" aria-label="Merge Sort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#applications-of-merge-sort" class="md-nav__link">
+    Applications of Merge Sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drawbacks-of-merge-sort" class="md-nav__link">
+    Drawbacks of Merge Sort
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counting-sort" class="md-nav__link">
+    Counting Sort
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radix-sort" class="md-nav__link">
+    Radix Sort
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2657,7 +2753,7 @@
 <td>Selection</td>
 </tr>
 <tr>
-<td>Quick Sort</td>
+<td><a href="#quicksort-divide-and-conquer">Quick Sort</a></td>
 <td>O(n log(n))</td>
 <td>O(n log(n))</td>
 <td>O(n^2)</td>
@@ -2666,7 +2762,7 @@
 <td>Partitioning</td>
 </tr>
 <tr>
-<td>Merge Sort</td>
+<td><a href="#merge-sort">Merge Sort</a></td>
 <td>O(n log(n))</td>
 <td>O(n log(n))</td>
 <td>O(n log(n))</td>
@@ -2700,7 +2796,7 @@
 <td>Yes</td>
 </tr>
 <tr>
-<td>Radix Sort</td>
+<td><a href="#radix-sort">Radix Sort</a></td>
 <td>O(nk)</td>
 <td>O(nk)</td>
 <td>O(nk)</td>
@@ -2708,7 +2804,7 @@
 <td>Yes</td>
 </tr>
 <tr>
-<td>Counting Sort</td>
+<td><a href="#counting-sort">Counting Sort</a></td>
 <td>O(n+k)</td>
 <td>O(n+k)</td>
 <td>O(n+k)</td>
@@ -2833,6 +2929,366 @@ The good thing about selection sort is it never makes more than O(n) swaps and c
 22
 25
 64
+</code></pre></div></p>
+<h2 id="quicksort-divide-and-conquer">QuickSort (Divide and Conquer)</h2>
+<p>Quicksort is a sorting algorithm. It’s much faster than selection sort and is frequently used in real life. For example, the C standard library has a function called qsort, which is its implementation of quicksort.</p>
+<p>A quick sort sets a pit point to partition a data set. High and low index values are then used to rearrange data values that are on the "wrong" side of the pivot point.</p>
+<p>Like Merge Sort, QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways.</p>
+<ol>
+<li>Always pick first element as pivot.</li>
+<li>Always pick last element as pivot (implemented below)</li>
+<li>Pick a random element as pivot.</li>
+<li>Pick median as pivot.</li>
+</ol>
+<p>The key process in quickSort is partition(). Target of partitions is, given an array and an element x of array as pivot, put x at its correct position in sorted array and put all smaller elements (smaller than x) before x, and put all greater elements (greater than x) after x. All this should be done in linear time.</p>
+<p><img alt="quick" src="../Images/quicksort.png" /></p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Python3 implementation of QuickSort</span>
+
+<span class="c1"># This Function handles sorting part of quick sort</span>
+<span class="c1"># start and end points to first and last element of</span>
+<span class="c1"># an array respectively</span>
+<span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">array</span><span class="p">):</span>
+
+    <span class="c1"># Initializing pivot&#39;s index to start</span>
+    <span class="n">pivot_index</span> <span class="o">=</span> <span class="n">start</span>
+    <span class="n">pivot</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">pivot_index</span><span class="p">]</span>
+
+    <span class="c1"># This loop runs till start pointer crosses</span>
+    <span class="c1"># end pointer, and when it does we swap the</span>
+    <span class="c1"># pivot with element on end pointer</span>
+    <span class="k">while</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="n">end</span><span class="p">:</span>
+
+        <span class="c1"># Increment the start pointer till it finds an</span>
+        <span class="c1"># element greater than pivot</span>
+        <span class="k">while</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)</span> <span class="ow">and</span> <span class="n">array</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">pivot</span><span class="p">:</span>
+            <span class="n">start</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># Decrement the end pointer till it finds an</span>
+        <span class="c1"># element less than pivot</span>
+        <span class="k">while</span> <span class="n">array</span><span class="p">[</span><span class="n">end</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">pivot</span><span class="p">:</span>
+            <span class="n">end</span> <span class="o">-=</span> <span class="mi">1</span>
+
+        <span class="c1"># If start and end have not crossed each other,</span>
+        <span class="c1"># swap the numbers on start and end</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">start</span> <span class="o">&lt;</span> <span class="n">end</span><span class="p">):</span>
+            <span class="n">array</span><span class="p">[</span><span class="n">start</span><span class="p">],</span> <span class="n">array</span><span class="p">[</span><span class="n">end</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">end</span><span class="p">],</span> <span class="n">array</span><span class="p">[</span><span class="n">start</span><span class="p">]</span>
+
+    <span class="c1"># Swap pivot element with element on end pointer.</span>
+    <span class="c1"># This puts pivot on its correct sorted place.</span>
+    <span class="n">array</span><span class="p">[</span><span class="n">end</span><span class="p">],</span> <span class="n">array</span><span class="p">[</span><span class="n">pivot_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">pivot_index</span><span class="p">],</span> <span class="n">array</span><span class="p">[</span><span class="n">end</span><span class="p">]</span>
+
+    <span class="c1"># Returning end pointer to divide the array into 2</span>
+    <span class="k">return</span> <span class="n">end</span>
+
+<span class="c1"># The main function that implements QuickSort</span>
+<span class="k">def</span> <span class="nf">quick_sort</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">array</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">start</span> <span class="o">&lt;</span> <span class="n">end</span><span class="p">):</span>
+
+        <span class="c1"># p is partitioning index, array[p]</span>
+        <span class="c1"># is at right place</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">array</span><span class="p">)</span>
+
+        <span class="c1"># Sort elements before partition</span>
+        <span class="c1"># and after partition</span>
+        <span class="n">quick_sort</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">p</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">array</span><span class="p">)</span>
+        <span class="n">quick_sort</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">array</span><span class="p">)</span>
+
+<span class="c1"># Driver code</span>
+<span class="n">array</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span> <span class="p">]</span>
+<span class="n">quick_sort</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">array</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sorted array: </span><span class="si">{</span><span class="n">array</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Sorted array: [1, 5, 7, 8, 9, 10]
+</code></pre></div></p>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">quicksort</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">array</span> <span class="c1">#Base case: arrays with 0 or 1 element are already “sorted.”</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">pivot</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#Recursive case</span>
+    <span class="n">less</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">array</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">pivot</span><span class="p">]</span> <span class="c1">#Sub-array of all the elements less than the pivot</span>
+    <span class="n">greater</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">array</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">pivot</span><span class="p">]</span> <span class="c1">#Sub-array of all the elements greater than the pivot</span>
+    <span class="k">return</span> <span class="n">quicksort</span><span class="p">(</span><span class="n">less</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">pivot</span><span class="p">]</span> <span class="o">+</span> <span class="n">quicksort</span><span class="p">(</span><span class="n">greater</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">quicksort</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[2, 3, 5, 10]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">quicksort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">arr</span>
+    <span class="n">pivot</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="n">left</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">arr</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">]</span>
+    <span class="n">middle</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">arr</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">pivot</span><span class="p">]</span>
+    <span class="n">right</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">arr</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">pivot</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">quicksort</span><span class="p">(</span><span class="n">left</span><span class="p">)</span> <span class="o">+</span> <span class="n">middle</span> <span class="o">+</span> <span class="n">quicksort</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">quicksort_verbose</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Calling quicksort on </span><span class="si">{</span><span class="n">arr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;returning </span><span class="si">{</span><span class="n">arr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">arr</span>
+    <span class="n">pivot</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="n">left</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">arr</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">pivot</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;left: </span><span class="si">{</span><span class="n">left</span><span class="si">}</span><span class="s2">; &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">middle</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">arr</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">pivot</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;middle: </span><span class="si">{</span><span class="n">middle</span><span class="si">}</span><span class="s2">; &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">right</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">arr</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">pivot</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;right: </span><span class="si">{</span><span class="n">right</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">to_return</span> <span class="o">=</span> <span class="n">quicksort_verbose</span><span class="p">(</span><span class="n">left</span><span class="p">)</span> <span class="o">+</span> <span class="n">middle</span> <span class="o">+</span> <span class="n">quicksort_verbose</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;returning: </span><span class="si">{</span><span class="n">to_return</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">to_return</span>
+
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="c1"># print(quicksort(data))</span>
+<span class="c1"># print(quicksort_verbose(data))</span>
+
+<span class="c1"># What about data with duplicates?</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">quicksort</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+</code></pre></div></p>
+<h2 id="merge-sort">Merge Sort</h2>
+<p>A merge sort uses recursion. It breaks down the data into smaller manageable sets. As it sorts the smaller sets, it gradually rebuilds and works its way up to the original full data set. Like QuickSort, Merge Sort is a Divide and Conquer algorithm. It divides the input array into two halves, calls itself for the two halves, and then merges the two sorted halves. The merge() function is used for merging two halves. The merge(arr, l, m, r) is a key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one.</p>
+<p><img alt="merge" src="../Images/mergesort.png" /></p>
+<ul>
+<li><strong>Time Complexity:</strong> Sorting arrays on different machines. Merge Sort is a recursive algorithm and time complexity can be expressed as following recurrence relation. 
+T(n) = 2T(n/2) + θ(n)</li>
+</ul>
+<p>The above recurrence can be solved either using the Recurrence Tree method or the Master method. It falls in case II of Master Method and the solution of the recurrence is θ(nLogn). Time complexity of Merge Sort is  θ(nLogn) in all 3 cases (worst, average and best) as merge sort always divides the array into two halves and takes linear time to merge two halves.</p>
+<ul>
+<li><strong>Auxiliary Space:</strong> O(n)</li>
+<li><strong>Algorithmic Paradigm:</strong> Divide and Conquer</li>
+<li><strong>Sorting In Place:</strong> No in a typical implementation</li>
+<li><strong>Stable:</strong> Yes</li>
+</ul>
+<h3 id="applications-of-merge-sort">Applications of Merge Sort</h3>
+<ul>
+<li>Merge Sort is useful for sorting linked lists in O(nLogn) time.</li>
+<li>Inversion Count Problem</li>
+<li>Used in External Sorting</li>
+</ul>
+<h3 id="drawbacks-of-merge-sort">Drawbacks of Merge Sort</h3>
+<ul>
+<li>Slower comparative to the other sort algorithms for smaller tasks.</li>
+<li>Merge sort algorithm requires an additional memory space of 0(n) for the temporary array.</li>
+<li>It goes through the whole process even if the array is sorted.</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Python program for implementation of MergeSort</span>
+<span class="k">def</span> <span class="nf">mergeSort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+
+        <span class="c1"># Finding the mid of the array</span>
+        <span class="n">mid</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+
+        <span class="c1"># Dividing the array elements</span>
+        <span class="n">L</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[:</span><span class="n">mid</span><span class="p">]</span>
+
+        <span class="c1"># into 2 halves</span>
+        <span class="n">R</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">:]</span>
+
+        <span class="c1"># Sorting the first half</span>
+        <span class="n">mergeSort</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+
+        <span class="c1"># Sorting the second half</span>
+        <span class="n">mergeSort</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+
+        <span class="n">i</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># Copy data to temp arrays L[] and R[]</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">R</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">R</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                <span class="n">arr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">arr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+                <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># Checking if any element was left</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+            <span class="n">arr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">R</span><span class="p">):</span>
+            <span class="n">arr</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># Code to print the list</span>
+
+
+<span class="k">def</span> <span class="nf">printList</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+
+<span class="c1"># Driver Code</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Given array is&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">printList</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="n">mergeSort</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorted array is: &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">printList</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Given array is
+12 11 13 5 6 7 
+Sorted array is: 
+5 6 7 11 12 13 
+</code></pre></div></p>
+<h2 id="counting-sort">Counting Sort</h2>
+<p>Counting sort is a sorting technique based on keys between a specific range. It works by counting the number of objects having distinct key values (kind of hashing). Then doing some arithmetic to calculate the position of each object in the output sequence.</p>
+<p><strong>Time Complexity:</strong> O(n+k) where n is the number of elements in input array and k is the range of input. </p>
+<p><strong>Auxiliary Space:</strong> O(n+k)</p>
+<p>For simplicity, consider the data in the range 0 to 9. Input data: 1, 4, 1, 2, 7, 5, 2</p>
+<p>1) Take a count array to store the count of each unique object.</p>
+<p>Index: 0 1 2 3 4 5 6 7 8 9</p>
+<p>Count: 0 2 2 0 1 1 0 1 0 0</p>
+<p>2) Modify the count array such that each element at each index stores the sum of previous counts.</p>
+<p>Index: 0 1 2 3 4 5 6 7 8 9</p>
+<p>Count: 0 2 4 4 5 6 6 7 7 7</p>
+<p>The modified count array indicates the position of each object in the output sequence.</p>
+<p>3) Rotate the array clockwise for one time.</p>
+<p>Index: 0 1 2 3 4 5 6 7 8 9</p>
+<p>Count: 0 0 2 4 4 5 6 6 7 7</p>
+<p>4) Output each object from the input sequence followed by increasing its count by 1.</p>
+<p>Process the input data: 1, 4, 1, 2, 7, 5, 2. Position of 1 is 0.</p>
+<p>Put data 1 at index 0 in output. Increase count by 1 to place next data 1 at an index 1 greater than this index.</p>
+<p><strong>Points to be noted</strong>: </p>
+<ol>
+<li>Counting sort is efficient if the range of input data is not significantly greater than the number of objects to be sorted. Consider the situation where the input sequence is between range 1 to 10K and the data is 10, 5, 10K, 5K. </li>
+<li>It is not a comparison based sorting. It running time complexity is O(n) with space proportional to the range of data. </li>
+<li>It is often used as a sub-routine to another sorting algorithm like radix sort. </li>
+<li>Counting sort uses a partial hashing to count the occurrence of the data object in O(1). </li>
+<li>Counting sort can be extended to work for negative inputs also.</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Python program for counting sort</span>
+
+<span class="c1"># The main function that sort the given string arr[] in</span>
+<span class="c1"># alphabetical order</span>
+<span class="k">def</span> <span class="nf">countSort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+
+    <span class="c1"># The output character array that will have sorted arr</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">))]</span>
+
+    <span class="c1"># Create a count array to store count of individual</span>
+    <span class="c1"># characters and initialize count array as 0</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">)]</span>
+
+    <span class="c1"># For storing the resulting answer since the</span>
+    <span class="c1"># string is immutable</span>
+    <span class="n">ans</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">]</span>
+
+    <span class="c1"># Store count of each character</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+        <span class="n">count</span><span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># Change count[i] so that count[i] now contains actual</span>
+    <span class="c1"># position of this character in output array</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">):</span>
+        <span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># Build the output character array</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+        <span class="n">output</span><span class="p">[</span><span class="n">count</span><span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">count</span><span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span> <span class="o">-=</span> <span class="mi">1</span>
+
+    <span class="c1"># Copy the output array to arr, so that arr now</span>
+    <span class="c1"># contains sorted characters</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+        <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ans</span>
+
+<span class="c1"># Driver program to test above function</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="s2">&quot;meatforall&quot;</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">countSort</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorted character array is </span><span class="si">% s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ans</span><span class="p">)))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Sorted character array is aaefllmort
+</code></pre></div></p>
+<h2 id="radix-sort">Radix Sort</h2>
+<p>The lower bound for Comparison based sorting algorithm (Merge Sort, Heap Sort, Quick-Sort .. etc) is Ω(nLogn), i.e., they cannot do better than nLogn.</p>
+<p>Counting sort is a linear time sorting algorithm that sort in O(n+k) time when elements are in the range from 1 to k.</p>
+<p>What if the elements are in the range from 1 to n2? We can’t use counting sort because counting sort will take O(n2) which is worse than comparison-based sorting algorithms. Can we sort such an array in linear time?</p>
+<p>Radix Sort is the answer. The idea of Radix Sort is to do digit by digit sort starting from least significant digit to most significant digit. Radix sort uses counting sort as a subroutine to sort.</p>
+<p>Original, unsorted list:</p>
+<p>170, 45, 75, 90, 802, 24, 2, 66</p>
+<p>Sorting by least significant digit (1s place) gives:</p>
+<p>[*Notice that we keep 802 before 2, because 802 occurred before 2 in the original list, and similarly for pairs 170 &amp; 90 and 45 &amp; 75.]</p>
+<p>170, 90, 802, 2, 24, 45, 75, 66</p>
+<p>Sorting by next digit (10s place) gives:</p>
+<p>[*Notice that 802 again comes before 2 as 802 comes before 2 in the previous list.]</p>
+<p>802, 2, 24, 45, 66, 170, 75, 90</p>
+<p>Sorting by the most significant digit (100s place) gives:</p>
+<p>2, 24, 45, 66, 75, 90, 170, 802</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Python program for implementation of Radix Sort</span>
+<span class="c1"># A function to do counting sort of arr[] according to</span>
+<span class="c1"># the digit represented by exp.</span>
+
+<span class="k">def</span> <span class="nf">countingSort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">exp1</span><span class="p">):</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+    <span class="c1"># The output array elements that will have sorted arr</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+    <span class="c1"># initialize count array as 0</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+    <span class="c1"># Store count of occurrences in count[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">//</span> <span class="n">exp1</span>
+        <span class="n">count</span><span class="p">[</span><span class="n">index</span> <span class="o">%</span> <span class="mi">10</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># Change count[i] so that count[i] now contains actual</span>
+    <span class="c1"># position of this digit in output array</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+        <span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">count</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># Build the output array</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">//</span> <span class="n">exp1</span>
+        <span class="n">output</span><span class="p">[</span><span class="n">count</span><span class="p">[</span><span class="n">index</span> <span class="o">%</span> <span class="mi">10</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">count</span><span class="p">[</span><span class="n">index</span> <span class="o">%</span> <span class="mi">10</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+
+    <span class="c1"># Copying the output array to arr[],</span>
+    <span class="c1"># so that arr now contains sorted numbers</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="c1"># Method to do Radix Sort</span>
+<span class="k">def</span> <span class="nf">radixSort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+
+    <span class="c1"># Find the maximum number to know number of digits</span>
+    <span class="n">max1</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+    <span class="c1"># Do counting sort for every digit. Note that instead</span>
+    <span class="c1"># of passing digit number, exp is passed. exp is 10^i</span>
+    <span class="c1"># where i is current digit number</span>
+    <span class="n">exp</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">max1</span> <span class="o">/</span> <span class="n">exp</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">countingSort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">exp</span><span class="p">)</span>
+        <span class="n">exp</span> <span class="o">*=</span> <span class="mi">10</span>
+
+
+<span class="c1"># Driver code</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">170</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">802</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">66</span><span class="p">]</span>
+
+<span class="c1"># Function Call</span>
+<span class="n">radixSort</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>2 24 45 66 75 90 170 802 
 </code></pre></div></p>
 
               
