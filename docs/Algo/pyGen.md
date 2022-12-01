@@ -4,7 +4,7 @@ Useful Algorithms
 + [Transform and Conquer](#transform-and-conquer)
 + [Dynamic Programming](pyDynamic.md)
 + [Sorting Algorithms](pySort.md)
-+ Searching Algorithms
++ [Searching Algorithms](pySearch.md)
 + Array Algorithms
 + Graph Algorithms
 + Other Algorithms
