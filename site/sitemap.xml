@@ -241,7 +241,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://arcelopera.github.io/PythonRefresher/Exe/pyGen/</loc>
+         <loc>https://arcelopera.github.io/PythonRefresher/Exe/pyCodPatterns/</loc>
+         <lastmod>2022-12-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://arcelopera.github.io/PythonRefresher/Exe/pyStrategies/</loc>
          <lastmod>2022-12-02</lastmod>
          <changefreq>daily</changefreq>
     </url>

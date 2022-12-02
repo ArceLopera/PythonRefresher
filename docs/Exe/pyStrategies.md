@@ -1,8 +1,6 @@
-## Strategies for Solving Problems
-
 Not solving coding problems but practicing to map problems onto problems that you have already solved.
 
-### 1 - If input is sorted
+## 1 - If input is sorted
 If the given input is sorted (array, list, or matrix), we will use a variation of Binary Search or a Two Pointers strategy.
 
 **Sample Problem for Binary Search**
@@ -100,7 +98,7 @@ class PairWithTargetSum {
 }
 ```
 
-### 2 - If need top/max/min/closest k ele
+## 2 - If need top/max/min/closest k ele
 
 If we’re dealing with top/maximum/minimum/closest k elements among n elements, we will use a Heap.
 
@@ -169,7 +167,7 @@ class KClosestPointsToOrigin {
 }
 ```
 
-### 3 - If need all combinations (or perm)
+## 3 - If need all combinations (or perm)
 
 If we need to try all combinations (or permutations) of the input, we can either use recursive Backtracking or iterative Breadth-First Search.
 
@@ -229,7 +227,7 @@ class Subsets {
 }
 ```
 
-### 4 - If Trees or Graphs
+## 4 - If Trees or Graphs
 Most of the questions related to Trees or Graphs can be solved through BFS or DFS
 
 **Sample Problem**
@@ -293,23 +291,23 @@ class TreePathSum {
 }
 ```
 
-### 5 - Recursive to Iterative
+## 5 - Recursive to Iterative
 Every recursive solution can be converted to an iterative solution using a Stack
 
-### 6 - Brute force with O(n2) and O(1) space
+## 6 - Brute force with O(n2) and O(1) space
 If a problem where a brute force solution exists in O(n2) time and O(1) space, there must exist other 2 solutions:
 
 Using Map or a Set for O(n) time and O(n)space
 Using sorting for O(nlogn) time and O(1) space
 
-### 7 - If optimization
+## 7 - If optimization
 If the problem is asking for optimization (e.g. maximization or minimization ), we will use Dynamic Programming to solve it.
 
-### 8 - Common substring among a set
+## 8 - Common substring among a set
 If we need to find common substring among a set of strings, we will be using a HashMap or a Trie.
 
-### 9 - Search in strings
+## 9 - Search in strings
 if we need to search among a bunch of strings, Trie will be the best DS
 
-### 10 - If a LinkedList
+## 10 - If a LinkedList
 If the problem involves a LinkedList and we can´t use extra space, then use Fast&Slow pointer approach

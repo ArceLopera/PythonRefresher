@@ -218,5 +218,6 @@ nav:
      - Other Useful Algorithms : Algo/pyOtherAlgo.md
      - Greedy Algorithms : Algo/pyGreedy.md
   - Exercises : 
-     - General : Exe/pyStrategies.md
+     - Strategies for Solving Problems : Exe/pyStrategies.md
+     - Coding Patterns : Exe/pyCodPatterns.md
 
