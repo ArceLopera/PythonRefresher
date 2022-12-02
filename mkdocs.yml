@@ -218,5 +218,5 @@ nav:
      - Other Useful Algorithms : Algo/pyOtherAlgo.md
      - Greedy Algorithms : Algo/pyGreedy.md
   - Exercises : 
-     - General : Exe/pyGen.md
+     - General : Exe/pyStrategies.md
 
