@@ -5,12 +5,10 @@ Useful Algorithms
 + [Dynamic Programming](pyDynamic.md)
 + [Sorting Algorithms](pySort.md)
 + [Searching Algorithms](pySearch.md)
-+ Array Algorithms
-+ Graph Algorithms
-+ Other Algorithms
-+ Greedy Algorithms
-+ Strategies
-+ Patterns
++ [Array Algorithms](pyArrayAlgo.md)
++ [Graph Algorithms](pyGraphAlgo.md)
++ [Other Algorithms](pyOtherAlgo.md)
++ [Greedy Algorithms](pyGreedy.md)
 
 ## Divide and Conquer
 

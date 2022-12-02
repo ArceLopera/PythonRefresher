@@ -213,6 +213,10 @@ nav:
      - Dynamic Programming : Algo/pyDynamic.md
      - Sorting Algorithms : Algo/pySort.md
      - Searching Algorithms : Algo/pySearch.md
+     - Array Algorithms : Algo/pyArrayAlgo.md
+     - Graph Algorithms : Algo/pyGraphAlgo.md
+     - Other Useful Algorithms : Algo/pyOtherAlgo.md
+     - Greedy Algorithms : Algo/pyGreedy.md
   - Exercises : 
      - General : Exe/pyGen.md
 
