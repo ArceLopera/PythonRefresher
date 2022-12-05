@@ -38,3 +38,42 @@ def solution(a):
             return abs(i)
     return -1
 ```
+
+### First Not Repeating Character
+Asked by Amazon - 15 min - Easy
+
+Given a string s consisting of small English letters, find and return the first instance of a non-repeating character in it. If there is no such character, return '_'.
+
+**Example**
+
+For s = "abacabad", the output should be
+solution(s) = 'c'.
+
+There are 2 non-repeating characters in the string: 'c' and 'd'. Return c since it appears in the string first.
+
+For s = "abacabaabacaba", the output should be
+solution(s) = '_'.
+
+There are no characters in this string that do not repeat.
+
+``` py
+from collections import Counter
+def solution(s):
+    st=Counter(s)
+    print(st.keys())
+    for i in st.keys():
+        print(i)
+        if st[i] == 1:
+            return i
+            
+    return'_'
+```
+``` py
+def solution(s):
+    chk = []
+    for i in range(len(s)): 
+        if s[i] not in s[i+1:] and s[i] not in chk:
+            return s[i]
+        chk.append(s[i])
+    return '_'
+```
