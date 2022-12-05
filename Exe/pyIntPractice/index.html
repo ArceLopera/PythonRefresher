@@ -2603,6 +2603,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#first-not-repeating-character" class="md-nav__link">
+    First Not Repeating Character
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2662,6 +2669,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#first-not-repeating-character" class="md-nav__link">
+    First Not Repeating Character
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2709,6 +2723,35 @@
         <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="nb">abs</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
     <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</code></pre></div></p>
+<h3 id="first-not-repeating-character">First Not Repeating Character</h3>
+<p>Asked by Amazon - 15 min - Easy</p>
+<p>Given a string s consisting of small English letters, find and return the first instance of a non-repeating character in it. If there is no such character, return '_'.</p>
+<p><strong>Example</strong></p>
+<p>For s = "abacabad", the output should be
+solution(s) = 'c'.</p>
+<p>There are 2 non-repeating characters in the string: 'c' and 'd'. Return c since it appears in the string first.</p>
+<p>For s = "abacabaabacaba", the output should be
+solution(s) = '_'.</p>
+<p>There are no characters in this string that do not repeat.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">st</span><span class="o">=</span><span class="n">Counter</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">st</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">i</span>
+
+    <span class="k">return</span><span class="s1">&#39;_&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">chk</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span> 
+        <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">chk</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">chk</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">return</span> <span class="s1">&#39;_&#39;</span>
 </code></pre></div></p>
 
               
