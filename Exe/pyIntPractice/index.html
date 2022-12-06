@@ -2610,6 +2610,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#rotate-image" class="md-nav__link">
+    Rotate Image
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2672,6 +2679,13 @@
           <li class="md-nav__item">
   <a href="#first-not-repeating-character" class="md-nav__link">
     First Not Repeating Character
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotate-image" class="md-nav__link">
+    Rotate Image
   </a>
   
 </li>
@@ -2752,6 +2766,28 @@ solution(s) = '_'.</p>
             <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
         <span class="n">chk</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
     <span class="k">return</span> <span class="s1">&#39;_&#39;</span>
+</code></pre></div></p>
+<h3 id="rotate-image">Rotate Image</h3>
+<p>Asked by Amazon, Microsoft, and Apple - 15 min - Easy</p>
+<p>Note: Try to solve this task in-place (with O(1) additional memory), since this is what you'll be asked to do during an interview.</p>
+<p>You are given an n x n 2D matrix that represents an image. Rotate the image by 90 degrees (clockwise).</p>
+<p><strong>Example</strong></p>
+<p>For a = [[1, 2, 3],
+     [4, 5, 6],
+     [7, 8, 9]]
+the output should be solution(a) =
+    [[7, 4, 1],
+     [8, 5, 2],
+     [9, 6, 3]]</p>
+<p><strong>Solutions</strong></p>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">))</span>    
+    <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">l</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">a</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="nb">reversed</span><span class="p">(</span><span class="n">a</span><span class="p">)))</span>
 </code></pre></div></p>
 
               
