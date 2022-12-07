@@ -2617,6 +2617,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sudoku-2" class="md-nav__link">
+    Sudoku 2
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2686,6 +2693,13 @@
           <li class="md-nav__item">
   <a href="#rotate-image" class="md-nav__link">
     Rotate Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sudoku-2" class="md-nav__link">
+    Sudoku 2
   </a>
   
 </li>
@@ -2789,6 +2803,109 @@ the output should be solution(a) =
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="nb">reversed</span><span class="p">(</span><span class="n">a</span><span class="p">)))</span>
 </code></pre></div></p>
+<h3 id="sudoku-2">Sudoku 2</h3>
+<p>Asked by Apple and Uber - 30 min - Easy</p>
+<p>Sudoku is a number-placement puzzle. The objective is to fill a 9 × 9 grid with numbers in such a way that each column, each row, and each of the nine 3 × 3 sub-grids that compose the grid all contain all of the numbers from 1 to 9 one time.</p>
+<p>Implement an algorithm that will check whether the given grid of numbers represents a valid Sudoku puzzle according to the layout rules described above. Note that the puzzle represented by grid does not have to be solvable.</p>
+<p><strong>Example</strong></p>
+<p>For
+<div class="highlight"><pre><span></span><code>grid = [[&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;1&#39;, &#39;4&#39;, &#39;.&#39;, &#39;.&#39;, &#39;2&#39;, &#39;.&#39;],
+        [&#39;.&#39;, &#39;.&#39;, &#39;6&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;],
+        [&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;],
+        [&#39;.&#39;, &#39;.&#39;, &#39;1&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;],
+        [&#39;.&#39;, &#39;6&#39;, &#39;7&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;9&#39;],
+        [&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;8&#39;, &#39;1&#39;, &#39;.&#39;],
+        [&#39;.&#39;, &#39;3&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;6&#39;],
+        [&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;7&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;],
+        [&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;5&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;7&#39;, &#39;.&#39;]]
+</code></pre></div>
+the output should be
+solution(grid) = true;</p>
+<p>For
+<div class="highlight"><pre><span></span><code>grid = [[&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;2&#39;, &#39;.&#39;, &#39;.&#39;, &#39;9&#39;, &#39;.&#39;],
+        [&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;6&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;],
+        [&#39;7&#39;, &#39;1&#39;, &#39;.&#39;, &#39;.&#39;, &#39;7&#39;, &#39;5&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;],
+        [&#39;.&#39;, &#39;7&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;],
+        [&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;8&#39;, &#39;3&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;],
+        [&#39;.&#39;, &#39;.&#39;, &#39;8&#39;, &#39;.&#39;, &#39;.&#39;, &#39;7&#39;, &#39;.&#39;, &#39;6&#39;, &#39;.&#39;],
+        [&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;2&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;],
+        [&#39;.&#39;, &#39;1&#39;, &#39;.&#39;, &#39;2&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;],
+        [&#39;.&#39;, &#39;2&#39;, &#39;.&#39;, &#39;.&#39;, &#39;3&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;]]
+</code></pre></div>
+the output should be
+solution(grid) = false.</p>
+<p>The given grid is not correct because there are two 1s in the second column. Each column, each row, and each 3 × 3 subgrid can only contain the numbers 1 through 9 one time.</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">line_is_valid</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+
+    <span class="n">tmp_dict</span> <span class="o">=</span> <span class="p">{}</span>    
+    <span class="n">valid</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1">#print(row)</span>
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">tmp_dict</span><span class="p">:</span>
+                <span class="n">tmp_dict</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">tmp_dict</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">tmp_dict</span><span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">tmp_dict</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">tmp_dict</span><span class="o">.</span><span class="n">get</span><span class="p">)]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">valid</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">return</span> <span class="n">valid</span>
+
+
+<span class="k">def</span> <span class="nf">grid_is_valid</span><span class="p">(</span><span class="n">grid</span><span class="p">):</span>
+
+    <span class="n">valid</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">grid</span><span class="p">)):</span>       
+        <span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="s1">&#39;.&#39;</span><span class="p">]</span>
+        <span class="c1">#print(row)</span>
+        <span class="n">valid</span> <span class="o">=</span> <span class="n">line_is_valid</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">valid</span><span class="p">:</span>
+            <span class="k">break</span>
+
+    <span class="k">return</span> <span class="n">valid</span>
+
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">grid</span><span class="p">):</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="c1"># check rows:</span>
+    <span class="n">rows_valid</span> <span class="o">=</span> <span class="n">grid_is_valid</span><span class="p">(</span><span class="n">grid</span><span class="p">)</span>
+
+    <span class="c1"># check columns:</span>
+    <span class="n">col_valid</span> <span class="o">=</span> <span class="n">grid_is_valid</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">grid</span><span class="p">)))</span>
+
+    <span class="c1"># check 3x3 grids:</span>
+    <span class="n">grid3x3_valid</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">grid</span><span class="p">),</span> <span class="mi">3</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">grid3x3_valid</span><span class="p">:</span>
+                <span class="k">break</span>
+
+        <span class="n">sub_mat</span> <span class="o">=</span> <span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="mi">3</span><span class="p">):</span>
+
+            <span class="n">tmp_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">:</span><span class="n">j</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sub_mat</span><span class="p">]</span>
+            <span class="c1">#print(tmp_list)</span>
+            <span class="n">tmp_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">tmp_list</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">l</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tmp_list</span><span class="p">))</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tmp_list</span><span class="p">[</span><span class="n">k</span><span class="p">]))]</span>
+
+            <span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tmp_list</span> <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="s1">&#39;.&#39;</span><span class="p">]</span>
+            <span class="n">grid3x3_valid</span> <span class="o">=</span> <span class="n">line_is_valid</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+            <span class="c1">#print(grid3x3_valid)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">grid3x3_valid</span><span class="p">:</span>
+                <span class="k">break</span>
+
+
+    <span class="k">if</span> <span class="n">rows_valid</span> <span class="ow">and</span> <span class="n">col_valid</span> <span class="ow">and</span> <span class="n">grid3x3_valid</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div>
 
               
             </article>
