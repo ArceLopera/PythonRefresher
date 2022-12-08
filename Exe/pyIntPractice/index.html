@@ -2624,6 +2624,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#is-crypt-solution" class="md-nav__link">
+    Is Crypt Solution
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2700,6 +2707,13 @@
           <li class="md-nav__item">
   <a href="#sudoku-2" class="md-nav__link">
     Sudoku 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-crypt-solution" class="md-nav__link">
+    Is Crypt Solution
   </a>
   
 </li>
@@ -2905,6 +2919,65 @@ solution(grid) = false.</p>
         <span class="n">result</span> <span class="o">=</span> <span class="kc">True</span>
 
     <span class="k">return</span> <span class="n">result</span>
+</code></pre></div>
+<h3 id="is-crypt-solution">Is Crypt Solution</h3>
+<p>Asked by Palantir Solutions - 15 min - Easy</p>
+<p>A cryptarithm is a mathematical puzzle for which the goal is to find the correspondence between letters and digits, such that the given arithmetic equation consisting of letters holds true when the letters are converted to digits.</p>
+<p>You have an array of strings crypt, the cryptarithm, and an an array containing the mapping of letters and digits, solution. The array crypt will contain three non-empty strings that follow the structure: [word1, word2, word3], which should be interpreted as the word1 + word2 = word3 cryptarithm.</p>
+<p>If crypt, when it is decoded by replacing all of the letters in the cryptarithm with digits using the mapping in solution, becomes a valid arithmetic equation containing no numbers with leading zeroes, the answer is true. If it does not become a valid arithmetic solution, the answer is false.</p>
+<p>Note that number 0 doesn't contain leading zeroes (while for example 00 or 0123 do).</p>
+<p><strong>Example</strong></p>
+<p>For crypt = ["SEND", "MORE", "MONEY"] and
+<div class="highlight"><pre><span></span><code>solution = [[&#39;O&#39;, &#39;0&#39;],
+            [&#39;M&#39;, &#39;1&#39;],
+            [&#39;Y&#39;, &#39;2&#39;],
+            [&#39;E&#39;, &#39;5&#39;],
+            [&#39;N&#39;, &#39;6&#39;],
+            [&#39;D&#39;, &#39;7&#39;],
+            [&#39;R&#39;, &#39;8&#39;],
+            [&#39;S&#39;, &#39;9&#39;]]
+</code></pre></div>
+the output should be
+solution(crypt, solution) = true.</p>
+<p>When you decrypt "SEND", "MORE", and "MONEY" using the mapping given in crypt, you get 9567 + 1085 = 10652 which is correct and a valid arithmetic equation.</p>
+<p>For crypt = ["TEN", "TWO", "ONE"] and
+<div class="highlight"><pre><span></span><code>solution = [[&#39;O&#39;, &#39;1&#39;],
+            [&#39;T&#39;, &#39;0&#39;],
+            [&#39;W&#39;, &#39;9&#39;],
+            [&#39;E&#39;, &#39;5&#39;],
+            [&#39;N&#39;, &#39;4&#39;]]
+</code></pre></div>
+the output should be
+solution(crypt, solution) = false.</p>
+<p>Even though 054 + 091 = 145, 054 and 091 both contain leading zeroes, meaning that this is not a valid solution.</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">crypt</span><span class="p">,</span> <span class="n">solution</span><span class="p">):</span>
+    <span class="c1"># a + b = c</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">crypt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">crypt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">crypt</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">ch_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">solution</span><span class="p">:</span>
+        <span class="n">ch_dict</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="n">hasLeadingZeros</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">ch_dict</span><span class="p">[</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">ch_dict</span><span class="p">[</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">ch_dict</span><span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">hasLeadingZeros</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="n">n1</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">ch_dict</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">])</span>
+    <span class="n">n2</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">ch_dict</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">b</span><span class="p">])</span>
+    <span class="n">n3</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">ch_dict</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">c</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">n2</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="n">n3</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">hasLeadingZeros</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">n3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">n3</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">n3</span><span class="p">))):</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">elif</span> <span class="n">hasLeadingZeros</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
 </code></pre></div>
 
               
