@@ -2636,6 +2636,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#linkedlists" class="md-nav__link">
+    LinkedLists
+  </a>
+  
+    <nav class="md-nav" aria-label="LinkedLists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-k-from-list" class="md-nav__link">
+    Remove K from List
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2714,6 +2734,26 @@
           <li class="md-nav__item">
   <a href="#is-crypt-solution" class="md-nav__link">
     Is Crypt Solution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linkedlists" class="md-nav__link">
+    LinkedLists
+  </a>
+  
+    <nav class="md-nav" aria-label="LinkedLists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-k-from-list" class="md-nav__link">
+    Remove K from List
   </a>
   
 </li>
@@ -2978,6 +3018,47 @@ solution(crypt, solution) = false.</p>
             <span class="k">return</span> <span class="kc">True</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+<h2 id="linkedlists">LinkedLists</h2>
+<h3 id="remove-k-from-list">Remove K from List</h3>
+<p>15 min - Easy</p>
+<p>Note: Try to solve this task in O(n) time using O(1) additional space, where n is the number of elements in the list, since this is what you'll be asked to do during an interview.</p>
+<p>Given a singly linked list of integers l and an integer k, remove all elements from list l that have a value equal to k.</p>
+<p><strong>Example</strong></p>
+<p>For 
+<div class="highlight"><pre><span></span><code>l = [3, 1, 2, 3, 4, 5] 
+</code></pre></div>
+and k = 3, the output should be
+<div class="highlight"><pre><span></span><code>solution(l, k) = [1, 2, 4, 5];
+</code></pre></div>
+For 
+<div class="highlight"><pre><span></span><code>l = [1, 2, 3, 4, 5, 6, 7] 
+</code></pre></div>
+and k = 10, the output should be
+<div class="highlight"><pre><span></span><code>solution(l, k) = [1, 2, 3, 4, 5, 6, 7].
+</code></pre></div>
+<strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Singly-linked lists are already defined with this interface:</span>
+<span class="c1"># class ListNode(object):</span>
+<span class="c1">#   def __init__(self, x):</span>
+<span class="c1">#     self.value = x</span>
+<span class="c1">#     self.next = None</span>
+<span class="c1">#</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">l</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">l</span>
+    <span class="k">while</span> <span class="n">l</span> <span class="o">!=</span>  <span class="kc">None</span> <span class="ow">and</span> <span class="n">l</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">next</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="n">l</span>
+
+    <span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">n</span><span class="o">.</span><span class="n">next</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
+            <span class="n">n</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">next</span> 
+
+    <span class="k">return</span> <span class="n">l</span>
 </code></pre></div>
 
               
