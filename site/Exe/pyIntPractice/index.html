@@ -2651,6 +2651,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#is-list-palindrome" class="md-nav__link">
+    Is List Palindrome
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2754,6 +2761,13 @@
           <li class="md-nav__item">
   <a href="#remove-k-from-list" class="md-nav__link">
     Remove K from List
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-list-palindrome" class="md-nav__link">
+    Is List Palindrome
   </a>
   
 </li>
@@ -3059,6 +3073,67 @@ and k = 10, the output should be
             <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">next</span> 
 
     <span class="k">return</span> <span class="n">l</span>
+</code></pre></div>
+<h3 id="is-list-palindrome">Is List Palindrome</h3>
+<p>Asked by Amazon and Meta - 30 min - Easy</p>
+<p>Note: Try to solve this task in O(n) time using O(1) additional space, where n is the number of elements in l, since this is what you'll be asked to do during an interview.</p>
+<p>Given a singly linked list of integers, determine whether or not it's a palindrome.</p>
+<p>Note: in examples below and tests preview linked lists are presented as arrays just for simplicity of visualization: in real data you will be given a head node l of the linked list</p>
+<p><strong>Example</strong></p>
+<p>For l = [0, 1, 0], the output should be
+solution(l) = true;</p>
+<p>For l = [1, 2, 2, 3], the output should be
+solution(l) = false.</p>
+<p><strong>Solutions</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Definition for singly-linked list:</span>
+<span class="c1"># class ListNode(object):</span>
+<span class="c1">#   def __init__(self, x):</span>
+<span class="c1">#     self.value = x</span>
+<span class="c1">#     self.next = None</span>
+<span class="c1">#</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="n">l</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">==</span> <span class="n">a</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Definition for singly-linked list:</span>
+<span class="c1"># class ListNode(object):</span>
+<span class="c1">#   def __init__(self, x):</span>
+<span class="c1">#     self.value = x</span>
+<span class="c1">#     self.next = None</span>
+<span class="c1">#</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">l</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">l</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
+    <span class="k">return</span> <span class="kc">True</span>
+  <span class="n">s</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">n</span> <span class="o">=</span> <span class="n">l</span>
+  <span class="k">while</span> <span class="n">n</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">next</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="mi">1</span>
+
+  <span class="n">middle</span> <span class="o">=</span> <span class="n">s</span> <span class="o">//</span> <span class="mi">2</span>
+
+  <span class="n">n</span> <span class="o">=</span> <span class="n">l</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">middle</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">next</span>
+
+  <span class="k">if</span> <span class="n">s</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">next</span>
+
+  <span class="n">r</span> <span class="o">=</span> <span class="n">n</span> <span class="c1"># reverse n</span>
+  <span class="n">m</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">next</span>
+  <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">middle</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># flip n</span>
+    <span class="n">m</span><span class="o">.</span><span class="n">next</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">m</span> <span class="o">=</span> <span class="n">r</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="o">.</span><span class="n">next</span>
+
+  <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">middle</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">value</span> <span class="o">!=</span> <span class="n">l</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+      <span class="k">return</span> <span class="kc">False</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">next</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">next</span>
+
+  <span class="k">return</span> <span class="kc">True</span>
 </code></pre></div>
 
               
