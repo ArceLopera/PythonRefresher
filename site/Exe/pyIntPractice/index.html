@@ -2658,6 +2658,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#add-two-huge-numbers" class="md-nav__link">
+    Add Two Huge Numbers
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2768,6 +2775,13 @@
           <li class="md-nav__item">
   <a href="#is-list-palindrome" class="md-nav__link">
     Is List Palindrome
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-two-huge-numbers" class="md-nav__link">
+    Add Two Huge Numbers
   </a>
   
 </li>
@@ -3134,6 +3148,56 @@ solution(l) = false.</p>
     <span class="n">l</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">next</span>
 
   <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div>
+<h3 id="add-two-huge-numbers">Add Two Huge Numbers</h3>
+<p>30 min - Easy</p>
+<p>You're given 2 huge integers represented by linked lists. Each linked list element is a number from 0 to 9999 that represents a number with exactly 4 digits. The represented number might have leading zeros. Your task is to add up these huge integers and return the result in the same format.</p>
+<p><strong>Example</strong></p>
+<p>For a = [9876, 5432, 1999] and b = [1, 8001], the output should be
+solution(a, b) = [9876, 5434, 0].</p>
+<p>Explanation: 987654321999 + 18001 = 987654340000.</p>
+<p>For a = [123, 4, 5] and b = [100, 100, 100], the output should be
+solution(a, b) = [223, 104, 105].</p>
+<p>Explanation: 12300040005 + 10001000100 = 22301040105.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Definition for singly-linked list:</span>
+<span class="c1"># class ListNode(object):</span>
+<span class="c1">#   def __init__(self, x):</span>
+<span class="c1">#     self.value = x</span>
+<span class="c1">#     self.next = None</span>
+<span class="c1">#</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+    <span class="n">carry</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">while</span> <span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">b</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">carry</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">raw</span> <span class="o">=</span> <span class="p">((</span><span class="n">a</span><span class="o">.</span><span class="n">value</span> <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> 
+               <span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">value</span> <span class="k">if</span> <span class="n">b</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> 
+               <span class="n">carry</span><span class="p">)</span>
+
+        <span class="n">node</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="n">raw</span> <span class="o">%</span> <span class="mi">10000</span><span class="p">)</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">result</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">node</span>
+        <span class="n">carry</span> <span class="o">=</span> <span class="n">raw</span> <span class="o">//</span> <span class="mi">10000</span>
+
+        <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">next</span>
+        <span class="k">if</span> <span class="n">b</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">next</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="nb">list</span>
+    <span class="n">previous</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">while</span> <span class="n">current</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">previous</span><span class="p">,</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span><span class="p">,</span> <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="p">,</span> <span class="n">previous</span><span class="p">,</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
+
+    <span class="k">return</span> <span class="n">previous</span>
 </code></pre></div>
 
               
