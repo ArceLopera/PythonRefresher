@@ -2665,6 +2665,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#merge-two-linkedlists" class="md-nav__link">
+    Merge Two LinkedLists
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reverse-nodes-in-k-groups" class="md-nav__link">
+    Reverse Nodes in K Groups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rearrange-last-n" class="md-nav__link">
+    Rearrange Last N
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2782,6 +2803,27 @@
           <li class="md-nav__item">
   <a href="#add-two-huge-numbers" class="md-nav__link">
     Add Two Huge Numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge-two-linkedlists" class="md-nav__link">
+    Merge Two LinkedLists
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reverse-nodes-in-k-groups" class="md-nav__link">
+    Reverse Nodes in K Groups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rearrange-last-n" class="md-nav__link">
+    Rearrange Last N
   </a>
   
 </li>
@@ -3198,6 +3240,159 @@ solution(a, b) = [223, 104, 105].</p>
         <span class="n">previous</span><span class="p">,</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span><span class="p">,</span> <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="p">,</span> <span class="n">previous</span><span class="p">,</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
 
     <span class="k">return</span> <span class="n">previous</span>
+</code></pre></div>
+<h3 id="merge-two-linkedlists">Merge Two LinkedLists</h3>
+<p>30 min - Medium</p>
+<p>Note: Your solution should have O(l1.length + l2.length) time complexity, since this is what you will be asked to accomplish in an interview.</p>
+<p>Given two singly linked lists sorted in non-decreasing order, your task is to merge them. In other words, return a singly linked list, also sorted in non-decreasing order, that contains the elements from both original lists.</p>
+<p><strong>Example</strong></p>
+<p>For l1 = [1, 2, 3] and l2 = [4, 5, 6], the output should be
+solution(l1, l2) = [1, 2, 3, 4, 5, 6];
+For l1 = [1, 1, 2, 4] and l2 = [0, 3, 5], the output should be
+solution(l1, l2) = [0, 1, 1, 2, 3, 4, 5].</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Singly-linked lists are already defined with this interface:</span>
+<span class="c1"># class ListNode(object):</span>
+<span class="c1">#   def __init__(self, x):</span>
+<span class="c1">#     self.value = x</span>
+<span class="c1">#     self.next = None</span>
+<span class="c1">#</span>
+<span class="c1"># Create &amp; Handle List operations</span>
+<span class="k">class</span> <span class="nc">LinkedList</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># Method to display the list</span>
+    <span class="k">def</span> <span class="nf">printList</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="k">while</span> <span class="n">temp</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">next</span>
+
+    <span class="c1"># Method to add element to list</span>
+    <span class="k">def</span> <span class="nf">addToList</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">newData</span><span class="p">):</span>
+        <span class="n">newNode</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="n">newData</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">newNode</span>
+            <span class="k">return</span>
+
+        <span class="n">last</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+        <span class="k">while</span> <span class="n">last</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
+            <span class="n">last</span> <span class="o">=</span> <span class="n">last</span><span class="o">.</span><span class="n">next</span>
+
+        <span class="n">last</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">newNode</span>
+
+
+<span class="c1"># Function to merge the lists</span>
+<span class="c1"># Takes two lists which are sorted</span>
+<span class="c1"># joins them to get a single sorted list</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">headA</span><span class="p">,</span> <span class="n">headB</span><span class="p">):</span>
+
+    <span class="c1"># A dummy node to store the result</span>
+    <span class="n">dummyNode</span> <span class="o">=</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># Tail stores the last node</span>
+    <span class="n">tail</span> <span class="o">=</span> <span class="n">dummyNode</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+        <span class="c1"># If any of the list gets completely empty</span>
+        <span class="c1"># directly join all the elements of the other list</span>
+        <span class="k">if</span> <span class="n">headA</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">tail</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">headB</span>
+            <span class="k">break</span>
+        <span class="k">if</span> <span class="n">headB</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">tail</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">headA</span>
+            <span class="k">break</span>
+
+        <span class="c1"># Compare the data of the lists and whichever is smaller is</span>
+        <span class="c1"># appended to the last of the merged list and the head is changed</span>
+        <span class="k">if</span> <span class="n">headA</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;=</span> <span class="n">headB</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+            <span class="n">tail</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">headA</span>
+            <span class="n">headA</span> <span class="o">=</span> <span class="n">headA</span><span class="o">.</span><span class="n">next</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">tail</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">headB</span>
+            <span class="n">headB</span> <span class="o">=</span> <span class="n">headB</span><span class="o">.</span><span class="n">next</span>
+
+        <span class="c1"># Advance the tail</span>
+        <span class="n">tail</span> <span class="o">=</span> <span class="n">tail</span><span class="o">.</span><span class="n">next</span>
+
+    <span class="c1"># Returns the head of the merged list</span>
+    <span class="k">return</span> <span class="n">dummyNode</span><span class="o">.</span><span class="n">next</span>
+</code></pre></div>
+<h3 id="reverse-nodes-in-k-groups">Reverse Nodes in K Groups</h3>
+<p>45 min - Hard</p>
+<p>Note: Your solution should have O(n) time complexity, where n is the number of elements in l, and O(1) additional space complexity, since this is what you would be asked to accomplish in an interview.</p>
+<p>Given a linked list l, reverse its nodes k at a time and return the modified list. k is a positive integer that is less than or equal to the length of l. If the number of nodes in the linked list is not a multiple of k, then the nodes that are left out at the end should remain as-is.</p>
+<p>You may not alter the values in the nodes - only the nodes themselves can be changed.</p>
+<p><strong>Example</strong></p>
+<p>For l = [1, 2, 3, 4, 5] and k = 2, the output should be
+solution(l, k) = [2, 1, 4, 3, 5];
+For l = [1, 2, 3, 4, 5] and k = 1, the output should be
+solution(l, k) = [1, 2, 3, 4, 5];
+For l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] and k = 3, the output should be
+solution(l, k) = [3, 2, 1, 6, 5, 4, 9, 8, 7, 10, 11].</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Singly-linked lists are already defined with this interface:</span>
+<span class="c1"># class ListNode(object):</span>
+<span class="c1">#   def __init__(self, x):</span>
+<span class="c1">#     self.value = x</span>
+<span class="c1">#     self.next = None</span>
+<span class="c1">#</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">l</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">l</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">l</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">k</span>
+    <span class="k">while</span> <span class="n">c</span> <span class="ow">and</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">next</span>
+        <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">l</span>
+    <span class="n">curr</span> <span class="o">=</span> <span class="n">l</span>
+    <span class="n">prev</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="nb">next</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">k</span>
+    <span class="k">while</span> <span class="n">curr</span> <span class="ow">and</span> <span class="n">n</span><span class="p">:</span>
+        <span class="nb">next</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="n">next</span>
+        <span class="n">curr</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">prev</span>
+        <span class="n">prev</span> <span class="o">=</span> <span class="n">curr</span>
+        <span class="n">curr</span> <span class="o">=</span> <span class="nb">next</span>
+        <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="nb">next</span><span class="p">:</span>
+        <span class="n">l</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">solution</span><span class="p">(</span><span class="nb">next</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">prev</span>
+</code></pre></div>
+<h3 id="rearrange-last-n">Rearrange Last N</h3>
+<p>40 min - Hard</p>
+<p>Note: Try to solve this task in O(list size) time using O(1) additional space, since this is what you'll be asked during an interview.</p>
+<p>Given a singly linked list of integers l and a non-negative integer n, move the last n list nodes to the beginning of the linked list.</p>
+<p><strong>Example</strong></p>
+<p>For l = [1, 2, 3, 4, 5] and n = 3, the output should be
+solution(l, n) = [3, 4, 5, 1, 2];
+For l = [1, 2, 3, 4, 5, 6, 7] and n = 1, the output should be
+solution(l, n) = [7, 1, 2, 3, 4, 5, 6].</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Singly-linked lists are already defined with this interface:</span>
+<span class="c1"># class ListNode(object):</span>
+<span class="c1">#   def __init__(self, x):</span>
+<span class="c1">#     self.value = x</span>
+<span class="c1">#     self.next = None</span>
+<span class="c1">#</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">l</span>
+    <span class="n">front</span><span class="p">,</span> <span class="n">back</span> <span class="o">=</span> <span class="n">l</span><span class="p">,</span> <span class="n">l</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">front</span> <span class="o">=</span> <span class="n">front</span><span class="o">.</span><span class="n">next</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">front</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">l</span>
+    <span class="k">while</span> <span class="n">front</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
+        <span class="n">front</span> <span class="o">=</span> <span class="n">front</span><span class="o">.</span><span class="n">next</span>
+        <span class="n">back</span> <span class="o">=</span> <span class="n">back</span><span class="o">.</span><span class="n">next</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">back</span><span class="o">.</span><span class="n">next</span>
+    <span class="n">back</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">front</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">l</span>
+    <span class="k">return</span> <span class="n">out</span>
 </code></pre></div>
 
               
