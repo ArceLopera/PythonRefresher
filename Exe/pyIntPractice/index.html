@@ -2691,6 +2691,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hashtables" class="md-nav__link">
+    Hashtables
+  </a>
+  
+    <nav class="md-nav" aria-label="Hashtables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grouping-dishes" class="md-nav__link">
+    Grouping Dishes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#are-following-patterns" class="md-nav__link">
+    Are Following Patterns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contains-close-nuns" class="md-nav__link">
+    Contains Close Nuns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possible-sums" class="md-nav__link">
+    Possible Sums
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swap-lex-order" class="md-nav__link">
+    Swap Lex Order
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2824,6 +2872,54 @@
           <li class="md-nav__item">
   <a href="#rearrange-last-n" class="md-nav__link">
     Rearrange Last N
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hashtables" class="md-nav__link">
+    Hashtables
+  </a>
+  
+    <nav class="md-nav" aria-label="Hashtables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grouping-dishes" class="md-nav__link">
+    Grouping Dishes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#are-following-patterns" class="md-nav__link">
+    Are Following Patterns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contains-close-nuns" class="md-nav__link">
+    Contains Close Nuns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possible-sums" class="md-nav__link">
+    Possible Sums
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swap-lex-order" class="md-nav__link">
+    Swap Lex Order
   </a>
   
 </li>
@@ -3393,6 +3489,141 @@ solution(l, n) = [7, 1, 2, 3, 4, 5, 6].</p>
     <span class="n">back</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">front</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">l</span>
     <span class="k">return</span> <span class="n">out</span>
+</code></pre></div>
+<h2 id="hashtables">Hashtables</h2>
+<h3 id="grouping-dishes">Grouping Dishes</h3>
+<p>Asked by Linkedin - 20 min - Easy</p>
+<p>You are given a list dishes, where each element consists of a list of strings beginning with the name of the dish, followed by all the ingredients used in preparing it. You want to group the dishes by ingredients, so that for each ingredient you'll be able to find all the dishes that contain it (if there are at least 2 such dishes).</p>
+<p>Return an array where each element is a list beginning with the ingredient name, followed by the names of all the dishes that contain this ingredient. The dishes inside each list should be sorted alphabetically, and the result array should be sorted alphabetically by the names of the ingredients.</p>
+<p><strong>Example</strong></p>
+<p>For
+<div class="highlight"><pre><span></span><code>  <span class="n">dishes</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;Salad&quot;</span><span class="p">,</span> <span class="s2">&quot;Tomato&quot;</span><span class="p">,</span> <span class="s2">&quot;Cucumber&quot;</span><span class="p">,</span> <span class="s2">&quot;Salad&quot;</span><span class="p">,</span> <span class="s2">&quot;Sauce&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s2">&quot;Pizza&quot;</span><span class="p">,</span> <span class="s2">&quot;Tomato&quot;</span><span class="p">,</span> <span class="s2">&quot;Sausage&quot;</span><span class="p">,</span> <span class="s2">&quot;Sauce&quot;</span><span class="p">,</span> <span class="s2">&quot;Dough&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s2">&quot;Quesadilla&quot;</span><span class="p">,</span> <span class="s2">&quot;Chicken&quot;</span><span class="p">,</span> <span class="s2">&quot;Cheese&quot;</span><span class="p">,</span> <span class="s2">&quot;Sauce&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s2">&quot;Sandwich&quot;</span><span class="p">,</span> <span class="s2">&quot;Salad&quot;</span><span class="p">,</span> <span class="s2">&quot;Bread&quot;</span><span class="p">,</span> <span class="s2">&quot;Tomato&quot;</span><span class="p">,</span> <span class="s2">&quot;Cheese&quot;</span><span class="p">]]</span>
+</code></pre></div>
+the output should be
+<div class="highlight"><pre><span></span><code>  <span class="n">solution</span><span class="p">(</span><span class="n">dishes</span><span class="p">)</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;Cheese&quot;</span><span class="p">,</span> <span class="s2">&quot;Quesadilla&quot;</span><span class="p">,</span> <span class="s2">&quot;Sandwich&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s2">&quot;Salad&quot;</span><span class="p">,</span> <span class="s2">&quot;Salad&quot;</span><span class="p">,</span> <span class="s2">&quot;Sandwich&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s2">&quot;Sauce&quot;</span><span class="p">,</span> <span class="s2">&quot;Pizza&quot;</span><span class="p">,</span> <span class="s2">&quot;Quesadilla&quot;</span><span class="p">,</span> <span class="s2">&quot;Salad&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s2">&quot;Tomato&quot;</span><span class="p">,</span> <span class="s2">&quot;Pizza&quot;</span><span class="p">,</span> <span class="s2">&quot;Salad&quot;</span><span class="p">,</span> <span class="s2">&quot;Sandwich&quot;</span><span class="p">]]</span>
+</code></pre></div>
+For</p>
+<p><div class="highlight"><pre><span></span><code>  <span class="n">dishes</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;Pasta&quot;</span><span class="p">,</span> <span class="s2">&quot;Tomato Sauce&quot;</span><span class="p">,</span> <span class="s2">&quot;Onions&quot;</span><span class="p">,</span> <span class="s2">&quot;Garlic&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s2">&quot;Chicken Curry&quot;</span><span class="p">,</span> <span class="s2">&quot;Chicken&quot;</span><span class="p">,</span> <span class="s2">&quot;Curry Sauce&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s2">&quot;Fried Rice&quot;</span><span class="p">,</span> <span class="s2">&quot;Rice&quot;</span><span class="p">,</span> <span class="s2">&quot;Onions&quot;</span><span class="p">,</span> <span class="s2">&quot;Nuts&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s2">&quot;Salad&quot;</span><span class="p">,</span> <span class="s2">&quot;Spinach&quot;</span><span class="p">,</span> <span class="s2">&quot;Nuts&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s2">&quot;Sandwich&quot;</span><span class="p">,</span> <span class="s2">&quot;Cheese&quot;</span><span class="p">,</span> <span class="s2">&quot;Bread&quot;</span><span class="p">],</span>
+            <span class="p">[</span><span class="s2">&quot;Quesadilla&quot;</span><span class="p">,</span> <span class="s2">&quot;Chicken&quot;</span><span class="p">,</span> <span class="s2">&quot;Cheese&quot;</span><span class="p">]]</span>
+</code></pre></div>
+the output should be
+<div class="highlight"><pre><span></span><code>  <span class="n">solution</span><span class="p">(</span><span class="n">dishes</span><span class="p">)</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;Cheese&quot;</span><span class="p">,</span> <span class="s2">&quot;Quesadilla&quot;</span><span class="p">,</span> <span class="s2">&quot;Sandwich&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s2">&quot;Chicken&quot;</span><span class="p">,</span> <span class="s2">&quot;Chicken Curry&quot;</span><span class="p">,</span> <span class="s2">&quot;Quesadilla&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s2">&quot;Nuts&quot;</span><span class="p">,</span> <span class="s2">&quot;Fried Rice&quot;</span><span class="p">,</span> <span class="s2">&quot;Salad&quot;</span><span class="p">],</span>
+                      <span class="p">[</span><span class="s2">&quot;Onions&quot;</span><span class="p">,</span> <span class="s2">&quot;Fried Rice&quot;</span><span class="p">,</span> <span class="s2">&quot;Pasta&quot;</span><span class="p">]]</span>
+</code></pre></div></p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">dishes</span><span class="p">):</span>
+    <span class="n">groups</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">d</span><span class="p">,</span> <span class="o">*</span><span class="n">v</span> <span class="ow">in</span> <span class="n">dishes</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
+            <span class="n">groups</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">groups</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="n">x</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">x</span><span class="p">]</span> <span class="o">+</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="n">x</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">ans</span>
+</code></pre></div>
+<h3 id="are-following-patterns">Are Following Patterns</h3>
+<p>Asked by Google - 30 min - Easy</p>
+<p>Given an array strings, determine whether it follows the sequence given in the patterns array. In other words, there should be no i and j for which strings[i] = strings[j] and patterns[i] ≠ patterns[j] or for which strings[i] ≠ strings[j] and patterns[i] = patterns[j].</p>
+<p><strong>Example</strong></p>
+<p>For strings = ["cat", "dog", "dog"] and patterns = ["a", "b", "b"], the output should be
+solution(strings, patterns) = true;
+For strings = ["cat", "dog", "doggy"] and patterns = ["a", "b", "b"], the output should be
+solution(strings, patterns) = false.</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">strings</span><span class="p">,</span> <span class="n">patterns</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">strings</span><span class="p">))</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">patterns</span><span class="p">))</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">strings</span><span class="p">,</span> <span class="n">patterns</span><span class="p">)))</span>
+</code></pre></div>
+<h3 id="contains-close-nuns">Contains Close Nuns</h3>
+<p>Asked by Palantir - 30 min - Medium</p>
+<p>Given an array of integers nums and an integer k, determine whether there are two distinct indices i and j in the array where nums[i] = nums[j] and the absolute difference between i and j is less than or equal to k.</p>
+<p>Example</p>
+<p>For nums = [0, 1, 2, 3, 5, 2] and k = 3, the output should be
+solution(nums, k) = true.</p>
+<p>There are two 2s in nums, and the absolute difference between their positions is exactly 3.</p>
+<p>For nums = [0, 1, 2, 3, 5, 2] and k = 2, the output should be
+solution(nums, k) = false.</p>
+<p>The absolute difference between the positions of the two 2s is 3, which is more than k.</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">dct</span><span class="o">=</span><span class="p">{}</span><span class="c1">#key:number, value:index contains the last occurance index of a number</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">nums</span> <span class="ow">or</span> <span class="n">k</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">num</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">index</span><span class="o">-</span><span class="n">dct</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="n">dct</span><span class="p">[</span><span class="n">num</span><span class="p">]</span><span class="o">=</span><span class="n">index</span>
+
+    <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+<h3 id="possible-sums">Possible Sums</h3>
+<p>Asked by Google - 45 min - Hard</p>
+<p>You have a collection of coins, and you know the values of the coins and the quantity of each type of coin in it. You want to know how many distinct sums you can make from non-empty groupings of these coins.</p>
+<p><strong>Example</strong></p>
+<p>For coins = [10, 50, 100] and quantity = [1, 2, 1], the output should be
+solution(coins, quantity) = 9.</p>
+<p>Here are all the possible sums:</p>
+<p><div class="highlight"><pre><span></span><code>50 = 50;
+10 + 50 = 60;
+50 + 100 = 150;
+10 + 50 + 100 = 160;
+50 + 50 = 100;
+10 + 50 + 50 = 110;
+50 + 50 + 100 = 200;
+10 + 50 + 50 + 100 = 210;
+10 = 10;
+100 = 100;
+10 + 100 = 110.
+</code></pre></div>
+As you can see, there are 9 distinct sums that can be created from non-empty groupings of your coins.</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">coins</span><span class="p">,</span> <span class="n">quantity</span><span class="p">):</span>
+    <span class="n">possible_sums</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">}</span>
+    <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">coins</span><span class="p">,</span> <span class="n">quantity</span><span class="p">):</span>
+        <span class="n">possible_sums</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span> <span class="o">*</span> <span class="n">i</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">possible_sums</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">q</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)}</span>
+
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">possible_sums</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+</code></pre></div>
+<h3 id="swap-lex-order">Swap Lex Order</h3>
+<p>Asked by Meta - 45 min - Hard</p>
+<p>Given a string str and array of pairs that indicates which indices in the string can be swapped, return the lexicographically largest string that results from doing the allowed swaps. You can swap indices any number of times.</p>
+<p><strong>Example</strong></p>
+<p>For str = "abdc" and pairs = [[1, 4], [3, 4]], the output should be
+solution(str, pairs) = "dbca".</p>
+<p>By swapping the given indices, you get the strings: "cbda", "cbad", "dbac", "dbca". The lexicographically largest string in this list is "dbca".</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">strn</span><span class="p">,</span> <span class="n">pairs</span><span class="p">):</span>
+    <span class="c1"># if not strn or not pairs : return strn</span>
+    <span class="c1"># check for connected node groupings which can be sorted individually</span>
+    <span class="n">grp</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># set of all possible locations an index could end up</span>
+    <span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="n">pairs</span> <span class="p">:</span> 
+        <span class="n">g</span> <span class="o">=</span> <span class="n">grp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">a</span><span class="p">,{</span><span class="n">a</span><span class="p">})</span> <span class="o">|</span> <span class="n">grp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">b</span><span class="p">,{</span><span class="n">b</span><span class="p">})</span> 
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">g</span> <span class="p">:</span> <span class="c1"># reset all nodes in group</span>
+            <span class="n">grp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">g</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">grp</span> <span class="p">:</span> 
+        <span class="n">grp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">grp</span><span class="p">[</span><span class="n">n</span><span class="p">]))</span>
+    <span class="n">reord</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">grp</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>  <span class="p">:</span> 
+        <span class="n">word</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">((</span><span class="n">strn</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">c</span><span class="p">),</span> <span class="n">reverse</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">l</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">word</span><span class="p">)</span> <span class="p">:</span> 
+            <span class="n">reord</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">l</span> <span class="c1"># string is 0 indexed</span>
+    <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">reord</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">strn</span><span class="p">))</span>
 </code></pre></div>
 
               
