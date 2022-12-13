@@ -671,3 +671,193 @@ def solution(l, n):
     front.next = l
     return out
 ```
+## Hashtables
+
+### Grouping Dishes
+
+Asked by Linkedin - 20 min - Easy
+
+You are given a list dishes, where each element consists of a list of strings beginning with the name of the dish, followed by all the ingredients used in preparing it. You want to group the dishes by ingredients, so that for each ingredient you'll be able to find all the dishes that contain it (if there are at least 2 such dishes).
+
+Return an array where each element is a list beginning with the ingredient name, followed by the names of all the dishes that contain this ingredient. The dishes inside each list should be sorted alphabetically, and the result array should be sorted alphabetically by the names of the ingredients.
+
+**Example**
+
+For
+``` py 
+  dishes = [["Salad", "Tomato", "Cucumber", "Salad", "Sauce"],
+            ["Pizza", "Tomato", "Sausage", "Sauce", "Dough"],
+            ["Quesadilla", "Chicken", "Cheese", "Sauce"],
+            ["Sandwich", "Salad", "Bread", "Tomato", "Cheese"]]
+```
+the output should be
+``` py 
+  solution(dishes) = [["Cheese", "Quesadilla", "Sandwich"],
+                      ["Salad", "Salad", "Sandwich"],
+                      ["Sauce", "Pizza", "Quesadilla", "Salad"],
+                      ["Tomato", "Pizza", "Salad", "Sandwich"]]
+
+```
+For
+
+``` py
+  dishes = [["Pasta", "Tomato Sauce", "Onions", "Garlic"],
+            ["Chicken Curry", "Chicken", "Curry Sauce"],
+            ["Fried Rice", "Rice", "Onions", "Nuts"],
+            ["Salad", "Spinach", "Nuts"],
+            ["Sandwich", "Cheese", "Bread"],
+            ["Quesadilla", "Chicken", "Cheese"]]
+``` 
+the output should be
+``` py 
+  solution(dishes) = [["Cheese", "Quesadilla", "Sandwich"],
+                      ["Chicken", "Chicken Curry", "Quesadilla"],
+                      ["Nuts", "Fried Rice", "Salad"],
+                      ["Onions", "Fried Rice", "Pasta"]]
+```
+
+**Solution**
+
+``` py 
+def solution(dishes):
+    groups = {}
+    for d, *v in dishes:
+        for x in v:
+            groups.setdefault(x, []).append(d)
+    ans = []
+    for x in sorted(groups):
+        if len(groups[x]) >= 2:
+            ans.append([x] + sorted(groups[x]))
+    return ans
+```
+
+### Are Following Patterns
+
+Asked by Google - 30 min - Easy
+
+Given an array strings, determine whether it follows the sequence given in the patterns array. In other words, there should be no i and j for which strings[i] = strings[j] and patterns[i] ≠ patterns[j] or for which strings[i] ≠ strings[j] and patterns[i] = patterns[j].
+
+**Example**
+
+For strings = ["cat", "dog", "dog"] and patterns = ["a", "b", "b"], the output should be
+solution(strings, patterns) = true;
+For strings = ["cat", "dog", "doggy"] and patterns = ["a", "b", "b"], the output should be
+solution(strings, patterns) = false.
+
+**Solution**
+
+``` py
+def solution(strings, patterns):
+    return len(set(strings)) == len(set(patterns)) == len(set(zip(strings, patterns)))
+
+```
+
+### Contains Close Nuns
+
+Asked by Palantir - 30 min - Medium
+
+Given an array of integers nums and an integer k, determine whether there are two distinct indices i and j in the array where nums[i] = nums[j] and the absolute difference between i and j is less than or equal to k.
+
+Example
+
+For nums = [0, 1, 2, 3, 5, 2] and k = 3, the output should be
+solution(nums, k) = true.
+
+There are two 2s in nums, and the absolute difference between their positions is exactly 3.
+
+For nums = [0, 1, 2, 3, 5, 2] and k = 2, the output should be
+solution(nums, k) = false.
+
+The absolute difference between the positions of the two 2s is 3, which is more than k.
+
+**Solution**
+
+``` py
+def solution(nums, k):
+    dct={}#key:number, value:index contains the last occurance index of a number
+    if not nums or k==0:
+        return False
+
+    for index,num in enumerate(nums):
+        try:
+            if index-dct[num] <= k:
+                return True
+        except:
+            pass
+        dct[num]=index
+
+    return False
+```
+
+### Possible Sums
+
+Asked by Google - 45 min - Hard
+
+You have a collection of coins, and you know the values of the coins and the quantity of each type of coin in it. You want to know how many distinct sums you can make from non-empty groupings of these coins.
+
+**Example**
+
+For coins = [10, 50, 100] and quantity = [1, 2, 1], the output should be
+solution(coins, quantity) = 9.
+
+Here are all the possible sums:
+
+```
+50 = 50;
+10 + 50 = 60;
+50 + 100 = 150;
+10 + 50 + 100 = 160;
+50 + 50 = 100;
+10 + 50 + 50 = 110;
+50 + 50 + 100 = 200;
+10 + 50 + 50 + 100 = 210;
+10 = 10;
+100 = 100;
+10 + 100 = 110.
+```
+As you can see, there are 9 distinct sums that can be created from non-empty groupings of your coins.
+
+**Solution**
+
+``` py
+def solution(coins, quantity):
+    possible_sums = {0}
+    for c, q in zip(coins, quantity):
+        possible_sums = {x + c * i for x in possible_sums for i in range(q + 1)}
+    
+    return len(possible_sums) - 1
+```
+
+### Swap Lex Order
+
+Asked by Meta - 45 min - Hard
+
+Given a string str and array of pairs that indicates which indices in the string can be swapped, return the lexicographically largest string that results from doing the allowed swaps. You can swap indices any number of times.
+
+**Example**
+
+For str = "abdc" and pairs = [[1, 4], [3, 4]], the output should be
+solution(str, pairs) = "dbca".
+
+By swapping the given indices, you get the strings: "cbda", "cbad", "dbac", "dbca". The lexicographically largest string in this list is "dbca".
+
+**Solution**
+
+``` py
+def solution(strn, pairs):
+    # if not strn or not pairs : return strn
+    # check for connected node groupings which can be sorted individually
+    grp = {} # set of all possible locations an index could end up
+    for a,b in pairs : 
+        g = grp.get(a,{a}) | grp.get(b,{b}) 
+        for n in g : # reset all nodes in group
+            grp[n] = g
+    for n in grp : 
+        grp[n] = tuple(sorted(grp[n]))
+    reord = {}
+    for c in set(grp.values())  : 
+        word = sorted((strn[i-1] for i in c), reverse = True)
+        for i,l in zip(c,word) : 
+            reord[i-1] = l # string is 0 indexed
+    return ''.join(reord.get(i,x) for i,x in enumerate(strn))
+```
