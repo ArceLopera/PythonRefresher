@@ -2754,6 +2754,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#is-tree-symmetric" class="md-nav__link">
+    Is Tree Symmetric
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2960,6 +2967,13 @@
           <li class="md-nav__item">
   <a href="#has-path-with-given-sum" class="md-nav__link">
     Has Path With Given Sum
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-tree-symmetric" class="md-nav__link">
+    Is Tree Symmetric
   </a>
   
 </li>
@@ -3788,6 +3802,116 @@ There is no path from root to leaf with the given sum 7.</p>
 
     <span class="k">return</span> <span class="n">solution</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">s</span> <span class="o">-</span> <span class="n">t</span><span class="o">.</span><span class="n">value</span><span class="p">)</span> <span class="ow">or</span> <span class="n">solution</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">s</span> <span class="o">-</span> <span class="n">t</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
 </code></pre></div></p>
+<h3 id="is-tree-symmetric">Is Tree Symmetric</h3>
+<p>Asked by Linkedin and Microsoft - 30 min - Easy</p>
+<p>Given a binary tree t, determine whether it is symmetric around its center, i.e. each side mirrors the other.</p>
+<p><strong>Example</strong></p>
+<p>For
+<div class="highlight"><pre><span></span><code>t = {
+    &quot;value&quot;: 1,
+    &quot;left&quot;: {
+        &quot;value&quot;: 2,
+        &quot;left&quot;: {
+            &quot;value&quot;: 3,
+            &quot;left&quot;: null,
+            &quot;right&quot;: null
+        },
+        &quot;right&quot;: {
+            &quot;value&quot;: 4,
+            &quot;left&quot;: null,
+            &quot;right&quot;: null
+        }
+    },
+    &quot;right&quot;: {
+        &quot;value&quot;: 2,
+        &quot;left&quot;: {
+            &quot;value&quot;: 4,
+            &quot;left&quot;: null,
+            &quot;right&quot;: null
+        },
+        &quot;right&quot;: {
+            &quot;value&quot;: 3,
+            &quot;left&quot;: null,
+            &quot;right&quot;: null
+        }
+    }
+}
+</code></pre></div>
+the output should be solution(t) = true.</p>
+<p>Here's what the tree in this example looks like:
+<div class="highlight"><pre><span></span><code>    1
+   / \
+  2   2
+ / \ / \
+3  4 4  3
+</code></pre></div>
+As you can see, it is symmetric.</p>
+<p>For
+<div class="highlight"><pre><span></span><code>t = {
+    &quot;value&quot;: 1,
+    &quot;left&quot;: {
+        &quot;value&quot;: 2,
+        &quot;left&quot;: null,
+        &quot;right&quot;: {
+            &quot;value&quot;: 3,
+            &quot;left&quot;: null,
+            &quot;right&quot;: null
+        }
+    },
+    &quot;right&quot;: {
+        &quot;value&quot;: 2,
+        &quot;left&quot;: null,
+        &quot;right&quot;: {
+            &quot;value&quot;: 3,
+            &quot;left&quot;: null,
+            &quot;right&quot;: null
+        }
+    }
+}
+</code></pre></div>
+the output should be solution(t) = false.</p>
+<p>Here's what the tree in this example looks like:
+<div class="highlight"><pre><span></span><code>    1
+   / \
+  2   2
+   \   \
+   3    3
+</code></pre></div>
+As you can see, it is not symmetric.</p>
+<p><strong>Solutions</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">#</span>
+<span class="c1"># Definition for binary tree:</span>
+<span class="c1"># class Tree(object):</span>
+<span class="c1">#   def __init__(self, x):</span>
+<span class="c1">#     self.value = x</span>
+<span class="c1">#     self.left = None</span>
+<span class="c1">#     self.right = None</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">mirrorEquals</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="n">right</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">left</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">right</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">left</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">right</span> <span class="o">==</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">left</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="n">right</span><span class="o">.</span><span class="n">value</span> <span class="ow">and</span> \
+               <span class="n">mirrorEquals</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">right</span><span class="p">)</span> <span class="ow">and</span> \
+               <span class="n">mirrorEquals</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mirrorEquals</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">iTS</span><span class="p">(</span><span class="n">le</span><span class="p">,</span> <span class="n">ri</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">le</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">ri</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">elif</span> <span class="n">le</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">ri</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">le</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="n">ri</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">iTS</span><span class="p">(</span><span class="n">le</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">ri</span><span class="o">.</span><span class="n">right</span><span class="p">)</span> <span class="ow">and</span> <span class="n">iTS</span><span class="p">(</span><span class="n">le</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">ri</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">iTS</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+</code></pre></div>
 
               
             </article>
