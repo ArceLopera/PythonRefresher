@@ -2761,6 +2761,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#find-profession" class="md-nav__link">
+    Find Profession
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2974,6 +2981,13 @@
           <li class="md-nav__item">
   <a href="#is-tree-symmetric" class="md-nav__link">
     Is Tree Symmetric
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-profession" class="md-nav__link">
+    Find Profession
   </a>
   
 </li>
@@ -3912,6 +3926,46 @@ As you can see, it is not symmetric.</p>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">iTS</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
 </code></pre></div>
+<h3 id="find-profession">Find Profession</h3>
+<p>20 min - Easy</p>
+<p>Consider a special family of Engineers and Doctors. This family has the following rules:</p>
+<p>Everybody has two children.
+The first child of an Engineer is an Engineer and the second child is a Doctor.
+The first child of a Doctor is a Doctor and the second child is an Engineer.
+All generations of Doctors and Engineers start with an Engineer.
+We can represent the situation using this diagram:
+<div class="highlight"><pre><span></span><code>                E
+           /         \
+          E           D
+        /   \        /  \
+       E     D      D    E
+      / \   / \    / \   / \
+     E   D D   E  D   E E   D
+</code></pre></div></p>
+<p>Given the level and position of a person in the ancestor tree above, find the profession of the person.
+Note: in this tree first child is considered as left child, second - as right.</p>
+<p><strong>Example</strong></p>
+<p>For level = 3 and pos = 3, the output should be
+solution(level, pos) = "Doctor".</p>
+<p><strong>Solution</strong>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Level 1: E</span>
+<span class="sd">    Level 2: ED</span>
+<span class="sd">    Level 3: EDDE</span>
+<span class="sd">    Level 4: EDDEDEED</span>
+<span class="sd">    Level 5: EDDEDEEDDEEDEDDE </span>
+
+<span class="sd">    Level input is not necessary because first elements are the same</span>
+<span class="sd">    The result is based on the count of 1&#39;s in binary representation of position-1</span>
+<span class="sd">    If position is even, then Engineer; Else Doctor</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">bits</span>  <span class="o">=</span> <span class="nb">bin</span><span class="p">(</span><span class="n">pos</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">bits</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="s2">&quot;Engineer&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Doctor&quot;</span>
+</code></pre></div></p>
 
               
             </article>
