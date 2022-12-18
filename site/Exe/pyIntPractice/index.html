@@ -2775,6 +2775,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#is-subtree" class="md-nav__link">
+    Is Subtree
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3002,6 +3009,13 @@
           <li class="md-nav__item">
   <a href="#kth-smallest-in-bst" class="md-nav__link">
     Kth Smallest in BST
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-subtree" class="md-nav__link">
+    Is Subtree
   </a>
   
 </li>
@@ -4116,6 +4130,185 @@ The values of t are [-2, -1, 0, 1], and the 1st smallest is -2.</p>
 
     <span class="k">return</span> <span class="n">predecessor</span>
 </code></pre></div>
+<h3 id="is-subtree">Is Subtree</h3>
+<p>30 min - Medium</p>
+<p>Given two binary trees t1 and t2, determine whether the second tree is a subtree of the first tree. A subtree for vertex v in a binary tree t is a tree consisting of v and all its descendants in t. Determine whether or not there is a vertex v (possibly none) in tree t1 such that a subtree for vertex v (possibly empty) in t1 equals t2.</p>
+<p><strong>Example</strong></p>
+<p>For
+<div class="highlight"><pre><span></span><code>t1 = {
+    &quot;value&quot;: 5,
+    &quot;left&quot;: {
+        &quot;value&quot;: 10,
+        &quot;left&quot;: {
+            &quot;value&quot;: 4,
+            &quot;left&quot;: {
+                &quot;value&quot;: 1,
+                &quot;left&quot;: null,
+                &quot;right&quot;: null
+            },
+            &quot;right&quot;: {
+                &quot;value&quot;: 2,
+                &quot;left&quot;: null,
+                &quot;right&quot;: null
+            }
+        },
+        &quot;right&quot;: {
+            &quot;value&quot;: 6,
+            &quot;left&quot;: null,
+            &quot;right&quot;: {
+                &quot;value&quot;: -1,
+                &quot;left&quot;: null,
+                &quot;right&quot;: null
+            }
+        }
+    },
+    &quot;right&quot;: {
+        &quot;value&quot;: 7,
+        &quot;left&quot;: null,
+        &quot;right&quot;: null
+    }
+}
+</code></pre></div>
+and
+<div class="highlight"><pre><span></span><code>t2 = {
+    &quot;value&quot;: 10,
+    &quot;left&quot;: {
+        &quot;value&quot;: 4,
+        &quot;left&quot;: {
+            &quot;value&quot;: 1,
+            &quot;left&quot;: null,
+            &quot;right&quot;: null
+        },
+        &quot;right&quot;: {
+            &quot;value&quot;: 2,
+            &quot;left&quot;: null,
+            &quot;right&quot;: null
+        }
+    },
+    &quot;right&quot;: {
+        &quot;value&quot;: 6,
+        &quot;left&quot;: null,
+        &quot;right&quot;: {
+            &quot;value&quot;: -1,
+            &quot;left&quot;: null,
+            &quot;right&quot;: null
+        }
+    }
+}
+</code></pre></div>
+the output should be solution(t1, t2) = true.</p>
+<p>This is what these trees look like:
+<div class="highlight"><pre><span></span><code>      t1:             t2:
+       5              10
+      / \            /  \
+    10   7          4    6
+   /  \            / \    \
+  4    6          1   2   -1
+ / \    \
+1   2   -1
+</code></pre></div>
+As you can see, t2 is a subtree of t1 (the vertex in t1 with value 10).</p>
+<p>For
+<div class="highlight"><pre><span></span><code>t1 = {
+    &quot;value&quot;: 5,
+    &quot;left&quot;: {
+        &quot;value&quot;: 10,
+        &quot;left&quot;: {
+            &quot;value&quot;: 4,
+            &quot;left&quot;: {
+                &quot;value&quot;: 1,
+                &quot;left&quot;: null,
+                &quot;right&quot;: null
+            },
+            &quot;right&quot;: {
+                &quot;value&quot;: 2,
+                &quot;left&quot;: null,
+                &quot;right&quot;: null
+            }
+        },
+        &quot;right&quot;: {
+            &quot;value&quot;: 6,
+            &quot;left&quot;: {
+                &quot;value&quot;: -1,
+                &quot;left&quot;: null,
+                &quot;right&quot;: null
+            },
+            &quot;right&quot;: null
+        }
+    },
+    &quot;right&quot;: {
+        &quot;value&quot;: 7,
+        &quot;left&quot;: null,
+        &quot;right&quot;: null
+    }
+}
+</code></pre></div>
+and
+<div class="highlight"><pre><span></span><code>t2 = {
+    &quot;value&quot;: 10,
+    &quot;left&quot;: {
+        &quot;value&quot;: 4,
+        &quot;left&quot;: {
+            &quot;value&quot;: 1,
+            &quot;left&quot;: null,
+            &quot;right&quot;: null
+        },
+        &quot;right&quot;: {
+            &quot;value&quot;: 2,
+            &quot;left&quot;: null,
+            &quot;right&quot;: null
+        }
+    },
+    &quot;right&quot;: {
+        &quot;value&quot;: 6,
+        &quot;left&quot;: null,
+        &quot;right&quot;: {
+            &quot;value&quot;: -1,
+            &quot;left&quot;: null,
+            &quot;right&quot;: null
+        }
+    }
+}
+</code></pre></div>
+the output should be solution(t1, t2) = false.</p>
+<p>This is what these trees look like:
+<div class="highlight"><pre><span></span><code>        t1:            t2:
+         5             10
+       /   \          /  \
+     10     7        4    6
+   /    \           / \    \
+  4     6          1   2   -1
+ / \   / 
+1   2 -1
+</code></pre></div>
+As you can see, there is no vertex v such that the subtree of t1 for vertex v equals t2.</p>
+<p>For
+<div class="highlight"><pre><span></span><code>t1 = {
+    &quot;value&quot;: 1,
+    &quot;left&quot;: {
+        &quot;value&quot;: 2,
+        &quot;left&quot;: null,
+        &quot;right&quot;: null
+    },
+    &quot;right&quot;: {
+        &quot;value&quot;: 2,
+        &quot;left&quot;: null,
+        &quot;right&quot;: null
+    }
+}
+</code></pre></div>
+and
+<div class="highlight"><pre><span></span><code>t2 = {
+    &quot;value&quot;: 2,
+    &quot;left&quot;: {
+        &quot;value&quot;: 1,
+        &quot;left&quot;: null,
+        &quot;right&quot;: null
+    },
+    &quot;right&quot;: null
+}
+</code></pre></div>
+the output should be solution(t1, t2) = false.</p>
 
               
             </article>
