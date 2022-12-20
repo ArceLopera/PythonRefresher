@@ -1643,3 +1643,201 @@ def solution(inorder, preorder):
   root.right = solution(inorder[i+1:],preorder[i+1:])
   return root
 ```
+### Find Substrings
+
+Asked by Uber - 40 min - Hard
+
+You have two arrays of strings, words and parts. Return an array that contains the strings from words, modified so that any occurrences of the substrings from parts are surrounded by square brackets [], following these guidelines:
+
+If several parts substrings occur in one string in words, choose the longest one. If there is still more than one such part, then choose the one that appears first in the string.
+
+**Example**
+
+For words = ["Apple", "Melon", "Orange", "Watermelon"] and parts = ["a", "mel", "lon", "el", "An"], the output should be
+solution(words, parts) = ["Apple", "Me[lon]", "Or[a]nge", "Water[mel]on"].
+
+While "Watermelon" contains three substrings from the parts array, "a", "mel", and "lon", "mel" is the longest substring that appears first in the string.
+
+**Solution**
+
+``` py
+class Trie(object):
+    def __init__(self):
+        self.nxt = {}
+        self.end = False
+
+    def add(self, word):
+        if not word:
+            self.end = True
+        else:
+            self.nxt.setdefault(word[0], Trie()).add(word[1:])
+
+
+def solution(words, parts):
+    trie = Trie()
+    for x in parts:
+        trie.add(x)
+    for i, w in enumerate(words):
+        pos = len(w)
+        L = -1
+        for j in range(len(w)):
+            t = trie
+            k = j
+            while k < len(w) and w[k] in t.nxt:
+                t = t.nxt[w[k]]
+                k += 1
+                if t.end and k - j > L:
+                    L = k - j
+                    pos = j
+        if L > 0:
+            words[i] = "%s[%s]%s" % (w[:pos], w[pos:pos+L], w[pos+L:])
+    return words
+```
+### Delete From BST
+
+30 min - Medium
+
+A tree is considered a binary search tree (BST) if for each of its nodes the following is true:
+
+The left subtree of a node contains only nodes with keys less than the node's key.
+The right subtree of a node contains only nodes with keys greater than the node's key.
+Both the left and the right subtrees must also be binary search trees.
+Removing a value x from a BST t is done in the following way:
+
+If there is no x in t, nothing happens;
+Otherwise, let t' be a subtree of t such that t'.value = x.
+If t' has a left subtree, remove the rightmost node from it and put it at the root of t';
+Otherwise, remove the root of t' and its right subtree becomes the new t's root.
+For example, removing 4 from the following tree has no effect because there is no such value in the tree:
+```
+    5
+   / \
+  2   6
+ / \   \
+1   3   8
+       /
+      7
+```
+Removing 5 causes 3 (the rightmost node in left subtree) to move to the root:
+```
+    3
+   / \
+  2   6
+ /     \
+1       8
+       /
+      7
+```
+And removing 6 after that creates the following tree:
+```
+    3
+   / \
+  2   8
+ /   /
+1   7
+```
+You're given a binary search tree t and an array of numbers queries. Your task is to remove queries[0], queries[1], etc., from t, step by step, following the algorithm above. Return the resulting BST.
+
+**Example**
+
+For
+```
+t = {
+    "value": 5,
+    "left": {
+        "value": 2,
+        "left": {
+            "value": 1,
+            "left": null,
+            "right": null
+        },
+        "right": {
+            "value": 3,
+            "left": null,
+            "right": null
+        }
+    },
+    "right": {
+        "value": 6,
+        "left": null,
+        "right": {
+            "value": 8,
+            "left": {
+                "value": 7,
+                "left": null,
+                "right": null
+            },
+            "right": null
+        }
+    }
+}
+```
+and queries = [4, 5, 6], the output should be
+```
+solution(t, queries) = {
+    "value": 3,
+    "left": {
+        "value": 2,
+        "left": {
+            "value": 1,
+            "left": null,
+            "right": null
+        },
+        "right": null
+    },
+    "right": {
+        "value": 8,
+        "left": {
+            "value": 7,
+            "left": null,
+            "right": null
+        },
+        "right": null
+    }
+}
+```
+
+**Solution**
+
+``` py
+#
+# Definition for binary tree:
+# class Tree(object):
+#   def __init__(self, x):
+#     self.value = x
+#     self.left = None
+#     self.right = None
+def solution(t, queries):
+    
+    def max_of_tree(t):
+        if t is None: return(None)
+        while t.right is not None:
+            t = t.right
+        return(t.value)
+
+    def remove_right(t):
+        if t.right is None:
+            return(t.left)
+        else:
+            t.right = remove_right(t.right)
+        return(t)
+
+    def f1(t, q):
+        if t is None: return(None)
+        if q == t.value:
+            if t.left:
+                t.value = max_of_tree(t.left)
+                t.left = remove_right(t.left)
+            else:
+                t = t.right
+        elif q < t.value:
+            t.left = f1(t.left, q)
+        elif q > t.value:
+            t.right = f1(t.right, q)
+        return(t)
+
+    for q in queries:
+        t = f1(t, q)
+
+    return(t)
+```
