@@ -1,3 +1,4 @@
+# Data Structures
 ## Arrays
 
 ### First Duplicate

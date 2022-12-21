@@ -220,5 +220,7 @@ nav:
   - Exercises : 
      - Strategies for Solving Problems : Exe/pyStrategies.md
      - Coding Patterns : Exe/pyCodPatterns.md
-     - Interview Practice : Exe/pyIntPractice.md
+     - Interview Practice : 
+        - Data Structures : Exe/pyIntPractice_DS.md
+        - Sorting and Searching : Exe/pyIntPractice_SS.md
 
