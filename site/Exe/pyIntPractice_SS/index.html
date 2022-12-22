@@ -2649,6 +2649,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#largest-values-in-tree-rows" class="md-nav__link">
+    Largest Values In Tree Rows
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2713,6 +2720,13 @@
           <li class="md-nav__item">
   <a href="#traverse-tree" class="md-nav__link">
     Traverse Tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#largest-values-in-tree-rows" class="md-nav__link">
+    Largest Values In Tree Rows
   </a>
   
 </li>
@@ -2801,6 +2815,60 @@ solution(t) = [1, 2, 4, 3, 5].</p>
             <span class="n">q</span><span class="o">+=</span><span class="p">[</span><span class="n">v</span><span class="o">.</span><span class="n">right</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">res</span>
 </code></pre></div>
+<h3 id="largest-values-in-tree-rows">Largest Values In Tree Rows</h3>
+<p>30 min - Easy</p>
+<p>You have a binary tree t. Your task is to find the largest value in each row of this tree. In a tree, a row is a set of nodes that have equal depth. For example, a row with depth 0 is a tree root, a row with depth 1 is composed of the root's children, etc.</p>
+<p>Return an array in which the first element is the largest value in the row with depth 0, the second element is the largest value in the row with depth 1, the third element is the largest element in the row with depth 2, etc.</p>
+<p><strong>Example</strong></p>
+<p>For
+<div class="highlight"><pre><span></span><code>t = {
+    &quot;value&quot;: -1,
+    &quot;left&quot;: {
+        &quot;value&quot;: 5,
+        &quot;left&quot;: null,
+        &quot;right&quot;: null
+    },
+    &quot;right&quot;: {
+        &quot;value&quot;: 7,
+        &quot;left&quot;: null,
+        &quot;right&quot;: {
+            &quot;value&quot;: 1,
+            &quot;left&quot;: null,
+            &quot;right&quot;: null
+        }
+    }
+}
+</code></pre></div>
+the output should be solution(t) = [-1, 7, 1].</p>
+<p>The tree in the example looks like this:
+<div class="highlight"><pre><span></span><code>    -1
+   / \
+  5   7
+       \
+        1
+</code></pre></div>
+In the row with depth 0, there is only one vertex - the root with value -1;
+In the row with depth 1, there are two vertices with values 5 and 7, so the largest value here is 7;
+In the row with depth 2, there is only one vertex with value 1.</p>
+<p><strong>Solution</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Definition for binary tree:</span>
+<span class="c1"># class Tree(object):</span>
+<span class="c1">#   def __init__(self, x):</span>
+<span class="c1">#     self.value = x</span>
+<span class="c1">#     self.left = None</span>
+<span class="c1">#     self.right = None</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="n">stack</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="p">]</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">tree</span> <span class="ow">in</span> <span class="n">stack</span><span class="p">))</span>
+        <span class="n">next_row</span> <span class="o">=</span> <span class="p">[</span><span class="n">tree</span><span class="o">.</span><span class="n">left</span> <span class="k">for</span> <span class="n">tree</span> <span class="ow">in</span> <span class="n">stack</span> <span class="k">if</span> <span class="n">tree</span><span class="o">.</span><span class="n">left</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">tree</span><span class="o">.</span><span class="n">right</span> <span class="k">for</span> <span class="n">tree</span> <span class="ow">in</span> <span class="n">stack</span> <span class="k">if</span> <span class="n">tree</span><span class="o">.</span><span class="n">right</span><span class="p">]</span>
+        <span class="n">stack</span> <span class="o">=</span> <span class="n">next_row</span>
+    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div></p>
 
               
             </article>
