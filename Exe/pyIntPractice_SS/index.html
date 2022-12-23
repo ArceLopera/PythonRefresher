@@ -2656,6 +2656,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#digit-tree-sum" class="md-nav__link">
+    Digit Tree Sum
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2727,6 +2734,13 @@
           <li class="md-nav__item">
   <a href="#largest-values-in-tree-rows" class="md-nav__link">
     Largest Values In Tree Rows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#digit-tree-sum" class="md-nav__link">
+    Digit Tree Sum
   </a>
   
 </li>
@@ -2869,6 +2883,92 @@ In the row with depth 2, there is only one vertex with value 1.</p>
         <span class="n">stack</span> <span class="o">=</span> <span class="n">next_row</span>
     <span class="k">return</span> <span class="n">result</span>
 </code></pre></div></p>
+<h3 id="digit-tree-sum">Digit Tree Sum</h3>
+<p>30 min - Medium</p>
+<p>We're going to store numbers in a tree. Each node in this tree will store a single digit (from 0 to 9), and each path from root to leaf encodes a non-negative integer.</p>
+<p>Given a binary tree t, find the sum of all the numbers encoded in it.</p>
+<p><strong>Example</strong></p>
+<p>For
+<div class="highlight"><pre><span></span><code>t = {
+    &quot;value&quot;: 1,
+    &quot;left&quot;: {
+        &quot;value&quot;: 0,
+        &quot;left&quot;: {
+            &quot;value&quot;: 3,
+            &quot;left&quot;: null,
+            &quot;right&quot;: null
+        },
+        &quot;right&quot;: {
+            &quot;value&quot;: 1,
+            &quot;left&quot;: null,
+            &quot;right&quot;: null
+        }
+    },
+    &quot;right&quot;: {
+        &quot;value&quot;: 4,
+        &quot;left&quot;: null,
+        &quot;right&quot;: null
+    }
+}
+</code></pre></div>
+the output should be
+solution(t) = 218.
+There are 3 numbers encoded in this tree:</p>
+<p>Path 1-&gt;0-&gt;3 encodes 103
+Path 1-&gt;0-&gt;1 encodes 101
+Path 1-&gt;4 encodes 14
+and their sum is 103 + 101 + 14 = 218.
+<div class="highlight"><pre><span></span><code>t = {
+    &quot;value&quot;: 0,
+    &quot;left&quot;: {
+        &quot;value&quot;: 9,
+        &quot;left&quot;: null,
+        &quot;right&quot;: null
+    },
+    &quot;right&quot;: {
+        &quot;value&quot;: 9,
+        &quot;left&quot;: {
+            &quot;value&quot;: 1,
+            &quot;left&quot;: null,
+            &quot;right&quot;: null
+        },
+        &quot;right&quot;: {
+            &quot;value&quot;: 3,
+            &quot;left&quot;: null,
+            &quot;right&quot;: null
+        }
+    }
+}
+</code></pre></div>
+the output should be
+solution(t) = 193.
+Because 09 + 091 + 093 = 193</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Definition for binary tree:</span>
+<span class="c1"># class Tree(object):</span>
+<span class="c1">#   def __init__(self, x):</span>
+<span class="c1">#     self.value = x</span>
+<span class="c1">#     self.left = None</span>
+<span class="c1">#     self.right = None</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">t</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+
+    <span class="n">stack</span> <span class="o">=</span> <span class="p">[(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
+
+        <span class="n">cur</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">cur</span><span class="o">.</span><span class="n">left</span> <span class="ow">or</span> <span class="n">cur</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">cur</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">cur</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">cur</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="mi">10</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">cur</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">cur</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">cur</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="mi">10</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">sum</span> <span class="o">+=</span> <span class="n">cur</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="mi">10</span>
+
+    <span class="k">return</span> <span class="nb">sum</span>
+</code></pre></div>
 
               
             </article>
