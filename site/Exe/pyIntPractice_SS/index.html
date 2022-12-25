@@ -2670,6 +2670,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#graph-distances" class="md-nav__link">
+    Graph Distances
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2755,6 +2762,13 @@
           <li class="md-nav__item">
   <a href="#longest-path" class="md-nav__link">
     Longest Path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graph-distances" class="md-nav__link">
+    Graph Distances
   </a>
   
 </li>
@@ -3023,6 +3037,38 @@ solution(fileSystem) = 24.</p>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">pathlen</span><span class="p">[</span><span class="n">depth</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">pathlen</span><span class="p">[</span><span class="n">depth</span><span class="p">]</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
     <span class="k">return</span> <span class="n">maxlen</span>
+</code></pre></div></p>
+<h3 id="graph-distances">Graph Distances</h3>
+<p>Asked by Adobe and Samsung - 45 min - Hard</p>
+<p>You have a strongly connected directed graph that has positive weights in the adjacency matrix g. The graph is represented as a square matrix, where g[i][j] is the weight of the edge (i, j), or -1 if there is no such edge.</p>
+<p>Given g and the index of a start vertex s, find the minimal distances between the start vertex s and each of the vertices of the graph.</p>
+<p><strong>Example</strong></p>
+<p>For
+<div class="highlight"><pre><span></span><code>g = [[-1, 3, 2],
+     [2, -1, 0],
+     [-1, 0, -1]]
+</code></pre></div>
+and s = 0, the output should be
+solution(g, s) = [0, 2, 2].</p>
+<p><img alt="Example" src="../Images/example.png" /></p>
+<p>The distance from the start vertex 0 to itself is 0.
+The distance from the start vertex 0 to vertex 1 is 2 + 0 = 2.
+The distance from the start vertex 0 to vertex 2 is 2.</p>
+<p><strong>Solution</strong>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+    <span class="n">dists</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">g</span><span class="p">]</span>
+    <span class="n">dists</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="n">graphExpand</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">s</span><span class="p">))</span>
+    <span class="k">while</span> <span class="n">q</span><span class="p">:</span>
+        <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">dists</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">val</span> <span class="o">&lt;</span> <span class="n">dists</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">dists</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+            <span class="n">q</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">graphExpand</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">dists</span>
+
+<span class="k">def</span> <span class="nf">graphExpand</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">dist</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[(</span><span class="n">j</span><span class="p">,</span> <span class="n">dist</span> <span class="o">+</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">if</span> <span class="n">v</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div></p>
 
               
