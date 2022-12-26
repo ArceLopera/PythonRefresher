@@ -338,3 +338,91 @@ def solution(g, s):
 def graphExpand(g, i, dist=0):
     return [(j, dist + v) for j, v in enumerate(g[i]) if v != -1]
 ```
+
+## Backtracking
+
+### Climbing Staircase
+
+Asked by Adobe - 30 min - Medium
+
+You need to climb a staircase that has n steps, and you decide to get some extra exercise by jumping up the steps. You can cover at most k steps in a single jump. Return all the possible sequences of jumps that you could take to climb the staircase, sorted.
+
+**Example**
+
+For n = 4 and k = 2, the output should be
+```
+solution(n, k) =
+[[1, 1, 1, 1],
+ [1, 1, 2],
+ [1, 2, 1],
+ [2, 1, 1],
+ [2, 2]]
+```
+There are 4 steps in the staircase, and you can jump up 2 or fewer steps at a time. There are 5 potential sequences in which you jump up the stairs either 2 or 1 at a time.
+
+**Solution**
+``` py
+def solution(n, k):
+    
+    return climb(n, k, [])
+    
+        
+        
+def climb(n, k, jumps):
+    
+    if n == 0:
+        return [jumps]
+    
+    out = []
+    
+    for i in range(1, k+1):
+        
+        if i > n:
+            continue
+        
+        temp = jumps + [i]
+        
+        out += climb(n-i, k, temp)
+        
+    return out
+```
+
+### N Queens
+
+Asked by Amazon and Twitter - 30 min - Hard
+
+In chess, queens can move any number of squares vertically, horizontally, or diagonally. The n-queens puzzle is the problem of placing n queens on an n × n chessboard so that no two queens can attack each other.
+
+Given an integer n, print all possible distinct solutions to the n-queens puzzle. Each solution contains distinct board configurations of the placement of the n queens, where the solutions are arrays that contain permutations of [1, 2, 3, .. n]. The number in the ith position of the results array indicates that the ith column queen is placed in the row with that number. In your solution, the board configurations should be returned in lexicographical order.
+
+**Example**
+
+For n = 1, the output should be
+solution(n) = [[1]];
+
+For n = 4, the output should be
+
+  solution(n) = [[2, 4, 1, 3],
+                 [3, 1, 4, 2]]
+This diagram of the second permutation, [3, 1, 4, 2], will help you visualize its configuration:
+
+![queens](./Images/queens.png)
+
+The element in the 1st position of the array, 3, indicates that the queen for column 1 is placed in row 3. Since the element in the 2nd position of the array is 1, the queen for column 2 is placed in row 1. The element in the 3rd position of the array is 4, meaning that the queen for column 3 is placed in row 4, and the element in the 4th position of the array is 2, meaning that the queen for column 4 is placed in row 2.
+
+**Solution**
+``` py
+def solution(n, state=[], col=1):
+    if col > n: return [state]
+    res = []
+    for i in range(1, n+1):
+        if invalid(state, i): continue
+        for sol in solution(n, state + [i], col+1): res += [sol]
+    return res
+
+def invalid(s, r2):
+    if not s: return False
+    if r2 in s: return True
+    c2 = len(s) + 1
+    return any(abs(c1-c2) == abs(r1-r2) for c1, r1 in enumerate(s,1))
+```
