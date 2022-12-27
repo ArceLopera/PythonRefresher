@@ -2704,6 +2704,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sum-subsets" class="md-nav__link">
+    Sum Subsets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#word-boggle" class="md-nav__link">
+    Word Boggle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combination-sum" class="md-nav__link">
+    Combination Sum
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2823,6 +2844,27 @@
           <li class="md-nav__item">
   <a href="#n-queens" class="md-nav__link">
     N Queens
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sum-subsets" class="md-nav__link">
+    Sum Subsets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#word-boggle" class="md-nav__link">
+    Word Boggle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combination-sum" class="md-nav__link">
+    Combination Sum
   </a>
   
 </li>
@@ -3191,6 +3233,92 @@ This diagram of the second permutation, [3, 1, 4, 2], will help you visualize it
     <span class="n">c2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="nb">any</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">c1</span><span class="o">-</span><span class="n">c2</span><span class="p">)</span> <span class="o">==</span> <span class="nb">abs</span><span class="p">(</span><span class="n">r1</span><span class="o">-</span><span class="n">r2</span><span class="p">)</span> <span class="k">for</span> <span class="n">c1</span><span class="p">,</span> <span class="n">r1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 </code></pre></div></p>
+<h3 id="sum-subsets">Sum Subsets</h3>
+<p>Asked by Palantir - 30 min - Hard</p>
+<p>Given a sorted array of integers arr and an integer num, find all possible unique subsets of arr that add up to num. Both the array of subsets and the subsets themselves should be sorted in lexicographical order.</p>
+<p><strong>Example</strong></p>
+<p>For arr = [1, 2, 3, 4, 5] and num = 5, the output should be
+solution(arr, num) = [[1, 4], [2, 3], [5]].</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">addSumSubsets</span><span class="p">(</span><span class="n">arr_i</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">subset</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">target</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">arr_i</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="ow">or</span> <span class="n">target</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">arr_i</span><span class="p">]</span>
+            <span class="n">addSumSubsets</span><span class="p">(</span><span class="n">arr_i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">-</span><span class="n">n</span><span class="p">,</span> <span class="n">subset</span><span class="o">+</span><span class="p">(</span><span class="n">n</span><span class="p">,))</span>
+            <span class="n">addSumSubsets</span><span class="p">(</span><span class="n">arr_i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">subset</span><span class="p">)</span>
+
+    <span class="n">addSumSubsets</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="p">())</span>
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+</code></pre></div>
+<h3 id="word-boggle">Word Boggle</h3>
+<p>35 min - Medium</p>
+<p>Boggle is a popular word game in which players attempt to find words in sequences of adjacent letters on a rectangular board.</p>
+<p>Given a two-dimensional array board that represents the character cells of the Boggle board and an array of unique strings words, find all the possible words from words that can be formed on the board.</p>
+<p>Note that in Boggle when you're finding a word, you can move from a cell to any of its 8 neighbors, but you can't use the same cell twice in one word.</p>
+<p><strong>Example</strong></p>
+<p>For
+<div class="highlight"><pre><span></span><code>board = [
+    [&#39;R&#39;, &#39;L&#39;, &#39;D&#39;],
+    [&#39;U&#39;, &#39;O&#39;, &#39;E&#39;],
+    [&#39;C&#39;, &#39;S&#39;, &#39;O&#39;]
+]
+</code></pre></div>
+and words = ["CODE", "SOLO", "RULES", "COOL"], the output should be
+solution(board, words) = ["CODE", "RULES"]</p>
+<p><img alt="boggle" src="../Images/boggle.png" /></p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">words</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">canBoggle</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">word</span><span class="p">):</span>
+            <span class="n">r</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">canBoggle</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">word</span><span class="p">,</span> <span class="n">used</span> <span class="o">=</span> <span class="p">[]):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">board</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">used</span> <span class="ow">and</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">used</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">used</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span><span class="o">&lt;=</span><span class="mi">1</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">used</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">j</span><span class="p">)</span><span class="o">&lt;=</span> <span class="mi">1</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">canBoggle</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span><span class="n">used</span> <span class="o">+</span> <span class="p">[(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)]):</span>
+                        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>    
+</code></pre></div>
+<h3 id="combination-sum">Combination Sum</h3>
+<p>Asked by Amazon, Adobe and Microsoft - 40 min - Hard</p>
+<p>Given an array of integers a and an integer sum, find all of the unique combinations in a that add up to sum.
+The same number from a can be used an unlimited number of times in a combination.
+Elements in a combination (a1 a2 … ak) must be sorted in non-descending order, while the combinations themselves must be sorted in ascending order.
+If there are no possible combinations that add up to sum, the output should be the string "Empty".</p>
+<p><strong>Example</strong></p>
+<p>For a = [2, 3, 5, 9] and sum = 9, the output should be
+solution(a, sum) = "(2 2 2 3)(2 2 5)(3 3 3)(9)".</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+    <span class="n">ans</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">comb_recur</span><span class="p">([],</span> <span class="n">arr</span><span class="p">,</span> <span class="n">s</span><span class="p">))</span>
+    <span class="n">ans</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Empty&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;(</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;)(&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">row</span><span class="p">))</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">ans</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">comb_recur</span><span class="p">(</span><span class="n">pref</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">val</span> <span class="o">==</span> <span class="n">s</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">pref</span> <span class="o">+</span> <span class="p">[</span><span class="n">val</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">val</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">:</span>
+            <span class="k">yield from</span> <span class="n">comb_recur</span><span class="p">(</span><span class="n">pref</span> <span class="o">+</span> <span class="p">[</span><span class="n">val</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">:],</span> <span class="n">s</span><span class="o">-</span><span class="n">val</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">val</span> <span class="o">&gt;</span> <span class="n">s</span><span class="p">:</span>
+            <span class="k">break</span>
+</code></pre></div>
 
               
             </article>

@@ -426,3 +426,116 @@ def invalid(s, r2):
     c2 = len(s) + 1
     return any(abs(c1-c2) == abs(r1-r2) for c1, r1 in enumerate(s,1))
 ```
+### Sum Subsets
+
+Asked by Palantir - 30 min - Hard
+
+Given a sorted array of integers arr and an integer num, find all possible unique subsets of arr that add up to num. Both the array of subsets and the subsets themselves should be sorted in lexicographical order.
+
+**Example**
+
+For arr = [1, 2, 3, 4, 5] and num = 5, the output should be
+solution(arr, num) = [[1, 4], [2, 3], [5]].
+
+**Solution**
+
+``` py
+
+def solution(arr, num):
+    result = set()
+    
+    def addSumSubsets(arr_i, target, subset):
+        if target == 0:
+            result.add(subset)
+        elif arr_i >= len(arr) or target < 0:
+            return
+        else:
+            n = arr[arr_i]
+            addSumSubsets(arr_i+1, target-n, subset+(n,))
+            addSumSubsets(arr_i+1, target, subset)
+    
+    addSumSubsets(0, num, ())
+    return sorted(list(result))
+```
+### Word Boggle
+
+35 min - Medium
+
+Boggle is a popular word game in which players attempt to find words in sequences of adjacent letters on a rectangular board.
+
+Given a two-dimensional array board that represents the character cells of the Boggle board and an array of unique strings words, find all the possible words from words that can be formed on the board.
+
+Note that in Boggle when you're finding a word, you can move from a cell to any of its 8 neighbors, but you can't use the same cell twice in one word.
+
+**Example**
+
+For
+```
+board = [
+    ['R', 'L', 'D'],
+    ['U', 'O', 'E'],
+    ['C', 'S', 'O']
+]
+```
+and words = ["CODE", "SOLO", "RULES", "COOL"], the output should be
+solution(board, words) = ["CODE", "RULES"]
+
+![boggle](./Images/boggle.png)
+
+**Solution**
+
+``` py
+def solution(board, words):
+    r = []
+    for word in words:
+        if canBoggle(board,word):
+            r.append(word)
+    return sorted(r)
+
+def canBoggle(board, word, used = []):
+    if len(word) == 0:
+        return True
+    for i in range(len(board)):
+        for j in range(len(board[0])):
+            if (i,j) not in used and board[i][j] == word[0]:
+                if len(used)==0 or (abs(used[-1][0] - i)<=1 and abs(used[-1][1] - j)<= 1):
+                    if canBoggle(board,word[1:],used + [(i,j)]):
+                        return True
+    return False    
+```
+
+### Combination Sum
+
+Asked by Amazon, Adobe and Microsoft - 40 min - Hard
+
+Given an array of integers a and an integer sum, find all of the unique combinations in a that add up to sum.
+The same number from a can be used an unlimited number of times in a combination.
+Elements in a combination (a1 a2 … ak) must be sorted in non-descending order, while the combinations themselves must be sorted in ascending order.
+If there are no possible combinations that add up to sum, the output should be the string "Empty".
+
+**Example**
+
+For a = [2, 3, 5, 9] and sum = 9, the output should be
+solution(a, sum) = "(2 2 2 3)(2 2 5)(3 3 3)(9)".
+
+**Solution**
+
+``` py
+def solution(a, s):
+    arr = sorted(set(a))
+    ans = list(comb_recur([], arr, s))
+    ans.sort()
+    if len(ans) == 0:
+        return 'Empty'
+    else:
+        return '({})'.format(')('.join(' '.join(map(str, row)) for row in ans))
+
+def comb_recur(pref, arr, s):
+    for i, val in enumerate(arr):
+        if val == s:
+            yield pref + [val]
+        elif val < s:
+            yield from comb_recur(pref + [val], arr[i:], s-val)
+        elif val > s:
+            break
+```
