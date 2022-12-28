@@ -223,4 +223,5 @@ nav:
      - Interview Practice : 
         - Data Structures : Exe/pyIntPractice_DS.md
         - Sorting and Searching : Exe/pyIntPractice_SS.md
+        - Other Topics : Exe/pyIntPractice_O.md
 
