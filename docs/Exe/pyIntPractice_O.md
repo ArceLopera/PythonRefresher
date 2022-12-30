@@ -66,3 +66,27 @@ def house(nums):
     return max(house(nums[1:]), house(nums[2:]) + nums[0])
 
 ```
+### Compose Ranges
+
+Asked by Google - 15 min - Easy
+
+Given a sorted integer array that does not contain any duplicates, return a summary of the number ranges it contains.
+
+**Example**
+
+For nums = [-1, 0, 1, 2, 6, 7, 9], the output should be
+solution(nums) = ["-1->2", "6->7", "9"].
+
+**Solution**
+
+``` py
+def solution(nums):
+
+    ranges = []
+    while nums:
+        start = end = nums.pop(0)
+        while nums and nums[0] - end == 1:
+            end = nums.pop(0)
+        ranges.append(str(start) + ('', '->' + str(end))[start != end])
+    return ranges
+```
