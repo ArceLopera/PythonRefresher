@@ -2670,6 +2670,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#compose-ranges" class="md-nav__link">
+    Compose Ranges
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2745,6 +2752,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#compose-ranges" class="md-nav__link">
+    Compose Ranges
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2808,6 +2822,23 @@ solution(nums) = 2.</p>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">0</span>
     <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">house</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">:]),</span> <span class="n">house</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div>
+<h3 id="compose-ranges">Compose Ranges</h3>
+<p>Asked by Google - 15 min - Easy</p>
+<p>Given a sorted integer array that does not contain any duplicates, return a summary of the number ranges it contains.</p>
+<p><strong>Example</strong></p>
+<p>For nums = [-1, 0, 1, 2, 6, 7, 9], the output should be
+solution(nums) = ["-1-&gt;2", "6-&gt;7", "9"].</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+
+    <span class="n">ranges</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="n">nums</span><span class="p">:</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">end</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">while</span> <span class="n">nums</span> <span class="ow">and</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">end</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">ranges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">start</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;-&gt;&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">end</span><span class="p">))[</span><span class="n">start</span> <span class="o">!=</span> <span class="n">end</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">ranges</span>
 </code></pre></div>
 
               
