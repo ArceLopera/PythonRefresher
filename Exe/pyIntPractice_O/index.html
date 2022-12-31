@@ -2677,6 +2677,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#map-decoding" class="md-nav__link">
+    Map Decoding
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2755,6 +2762,13 @@
           <li class="md-nav__item">
   <a href="#compose-ranges" class="md-nav__link">
     Compose Ranges
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-decoding" class="md-nav__link">
+    Map Decoding
   </a>
   
 </li>
@@ -2839,6 +2853,31 @@ solution(nums) = ["-1-&gt;2", "6-&gt;7", "9"].</p>
             <span class="n">end</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
         <span class="n">ranges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">start</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;-&gt;&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">end</span><span class="p">))[</span><span class="n">start</span> <span class="o">!=</span> <span class="n">end</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">ranges</span>
+</code></pre></div>
+<h3 id="map-decoding">Map Decoding</h3>
+<p>Asked by Microsoft, Uber and Meta - 30 min - Hard</p>
+<p>A top secret message containing uppercase letters from 'A' to 'Z' has been encoded as numbers using the following mapping:
+<div class="highlight"><pre><span></span><code>&#39;A&#39; -&gt; 1
+&#39;B&#39; -&gt; 2
+...
+&#39;Z&#39; -&gt; 26
+</code></pre></div>
+You are an FBI agent and you need to determine the total number of ways that the message can be decoded.</p>
+<p>Since the answer could be very large, take it modulo 109 + 7.</p>
+<p><strong>Example</strong></p>
+<p>For message = "123", the output should be
+solution(message) = 3.</p>
+<p>"123" can be decoded as "ABC" (1 2 3), "LC" (12 3) or "AW" (1 23), so the total number of ways is 3.</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span> <span class="o">+</span> <span class="mi">7</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">msg</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span><span class="p">:</span>
+            <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">a</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="ow">and</span> <span class="n">msg</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="s2">&quot;26&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="o">%</span> <span class="n">M</span><span class="p">,</span> <span class="n">a</span>
+    <span class="k">return</span> <span class="n">a</span>
 </code></pre></div>
 
               
