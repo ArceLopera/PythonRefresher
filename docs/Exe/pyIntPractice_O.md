@@ -90,3 +90,40 @@ def solution(nums):
         ranges.append(str(start) + ('', '->' + str(end))[start != end])
     return ranges
 ```
+
+### Map Decoding
+
+Asked by Microsoft, Uber and Meta - 30 min - Hard
+
+A top secret message containing uppercase letters from 'A' to 'Z' has been encoded as numbers using the following mapping:
+```
+'A' -> 1
+'B' -> 2
+...
+'Z' -> 26
+```
+You are an FBI agent and you need to determine the total number of ways that the message can be decoded.
+
+Since the answer could be very large, take it modulo 109 + 7.
+
+**Example**
+
+For message = "123", the output should be
+solution(message) = 3.
+
+"123" can be decoded as "ABC" (1 2 3), "LC" (12 3) or "AW" (1 23), so the total number of ways is 3.
+
+**Solution**
+
+``` py
+def solution(msg):
+    a, b = 1, 0
+    M = 10 ** 9 + 7
+    for i in range(len(msg)-1, -1, -1):
+        if msg[i] == "0":
+            a, b = 0, a
+        else:
+            a, b = (a + (i+2 <= len(msg) and msg[i:i+2] <= "26") * b) % M, a
+    return a
+
+```
