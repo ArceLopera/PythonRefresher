@@ -2711,6 +2711,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sum-of-two" class="md-nav__link">
+    Sum Of Two
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2823,6 +2830,13 @@
           <li class="md-nav__item">
   <a href="#contains-duplicates" class="md-nav__link">
     Contains Duplicates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sum-of-two" class="md-nav__link">
+    Sum Of Two
   </a>
   
 </li>
@@ -2965,6 +2979,27 @@ solution(a) = false.</p>
 <p><strong>Solution</strong></p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="sum-of-two">Sum Of Two</h3>
+<p>Asked by Google - 20 min - Easy</p>
+<p>You have two integer arrays, a and b, and an integer target value v. Determine whether there is a pair of numbers, where one number is taken from a and the other from b, that can be added together to get a sum of v. Return true if such a pair exists, otherwise return false.</p>
+<p><strong>Example</strong></p>
+<p>For a = [1, 2, 3], b = [10, 20, 30, 40], and v = 42, the output should be
+solution(a, b, v) = true.</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="c1">#No need to iterate a huge list, if the other list is empty</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">a</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">b</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="c1">#kill duplicates</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+    <span class="c1">#iterate through list a to look if the wanted difference is in b</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">v</span><span class="o">-</span><span class="n">x</span><span class="p">)</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
 </code></pre></div>
 
               
