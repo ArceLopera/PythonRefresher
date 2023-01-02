@@ -2684,6 +2684,40 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#filling-blocks" class="md-nav__link">
+    Filling Blocks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-techniques-basic" class="md-nav__link">
+    Common Techniques : Basic
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Techniques : Basic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contains-duplicates" class="md-nav__link">
+    Contains Duplicates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sum-of-two" class="md-nav__link">
+    Sum Of Two
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2769,6 +2803,40 @@
           <li class="md-nav__item">
   <a href="#map-decoding" class="md-nav__link">
     Map Decoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filling-blocks" class="md-nav__link">
+    Filling Blocks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-techniques-basic" class="md-nav__link">
+    Common Techniques : Basic
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Techniques : Basic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contains-duplicates" class="md-nav__link">
+    Contains Duplicates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sum-of-two" class="md-nav__link">
+    Sum Of Two
   </a>
   
 </li>
@@ -2878,6 +2946,60 @@ solution(message) = 3.</p>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="ow">and</span> <span class="n">msg</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="s2">&quot;26&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="o">%</span> <span class="n">M</span><span class="p">,</span> <span class="n">a</span>
     <span class="k">return</span> <span class="n">a</span>
+</code></pre></div>
+<h3 id="filling-blocks">Filling Blocks</h3>
+<p>Asked by Uber - 30 min - Hard</p>
+<p>You have a block with the dimensions 4 × n. Find the number of different ways you can fill this block with smaller blocks that have the dimensions 1 × 2. You are allowed to rotate the smaller blocks.</p>
+<p><strong>Example</strong></p>
+<p>For n = 1, the output should be
+solution(n) = 1.</p>
+<p>There is only one possible way to arrange the smaller 1 × 2 blocks inside the 4 × 1 block.</p>
+<p>For n = 4, the output should be
+solution(n) = 36.</p>
+<p>Here are the 36 possible configuration of smaller blocks inside the 4 × 4 block:</p>
+<p><img alt="Block" src="../Images/block.png" /></p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">11</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">4</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+</code></pre></div>
+<h2 id="common-techniques-basic">Common Techniques : Basic</h2>
+<h3 id="contains-duplicates">Contains Duplicates</h3>
+<p>Asked by Palantir - 15 min - Easy</p>
+<p>Given an array of integers, write a function that determines whether the array contains any duplicates. Your function should return true if any element appears at least twice in the array, and it should return false if every element is distinct.</p>
+<p><strong>Example</strong></p>
+<p>For a = [1, 2, 3, 1], the output should be
+solution(a) = true.</p>
+<p>There are two 1s in the given array.</p>
+<p>For a = [3, 1], the output should be
+solution(a) = false.</p>
+<p>The given array contains no duplicates.</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="sum-of-two">Sum Of Two</h3>
+<p>Asked by Google - 20 min - Easy</p>
+<p>You have two integer arrays, a and b, and an integer target value v. Determine whether there is a pair of numbers, where one number is taken from a and the other from b, that can be added together to get a sum of v. Return true if such a pair exists, otherwise return false.</p>
+<p><strong>Example</strong></p>
+<p>For a = [1, 2, 3], b = [10, 20, 30, 40], and v = 42, the output should be
+solution(a, b, v) = true.</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="c1">#No need to iterate a huge list, if the other list is empty</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">a</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">b</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="c1">#kill duplicates</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+    <span class="c1">#iterate through list a to look if the wanted difference is in b</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">v</span><span class="o">-</span><span class="n">x</span><span class="p">)</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
 </code></pre></div>
 
               
