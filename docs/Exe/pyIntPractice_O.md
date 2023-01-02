@@ -127,3 +127,90 @@ def solution(msg):
     return a
 
 ```
+
+### Filling Blocks
+
+Asked by Uber - 30 min - Hard
+
+You have a block with the dimensions 4 × n. Find the number of different ways you can fill this block with smaller blocks that have the dimensions 1 × 2. You are allowed to rotate the smaller blocks.
+
+**Example**
+
+For n = 1, the output should be
+solution(n) = 1.
+
+There is only one possible way to arrange the smaller 1 × 2 blocks inside the 4 × 1 block.
+
+For n = 4, the output should be
+solution(n) = 36.
+
+Here are the 36 possible configuration of smaller blocks inside the 4 × 4 block:
+
+![Block](./Images/block.png)
+
+**Solution**
+
+``` py
+def solution(n):
+    a = [1,1,5,11]
+    for i in range(4,n+1):
+        a.append(a[i-1]+5*a[i-2]+a[i-3]-a[i-4])
+    return a[n]
+```
+
+## Common Techniques : Basic
+
+### Contains Duplicates
+
+Asked by Palantir - 15 min - Easy
+
+Given an array of integers, write a function that determines whether the array contains any duplicates. Your function should return true if any element appears at least twice in the array, and it should return false if every element is distinct.
+
+**Example**
+
+For a = [1, 2, 3, 1], the output should be
+solution(a) = true.
+
+There are two 1s in the given array.
+
+For a = [3, 1], the output should be
+solution(a) = false.
+
+The given array contains no duplicates.
+
+**Solution**
+
+``` py
+def solution(a):
+    return len(set(a)) != len(a)
+```
+
+### Sum Of Two
+
+Asked by Google - 20 min - Easy
+
+You have two integer arrays, a and b, and an integer target value v. Determine whether there is a pair of numbers, where one number is taken from a and the other from b, that can be added together to get a sum of v. Return true if such a pair exists, otherwise return false.
+
+**Example**
+
+For a = [1, 2, 3], b = [10, 20, 30, 40], and v = 42, the output should be
+solution(a, b, v) = true.
+
+**Solution**
+
+``` py
+def solution(a, b, v):
+    #No need to iterate a huge list, if the other list is empty
+    if not a or not b:
+        return False
+    
+    #kill duplicates
+    b = set(b)
+    
+    #iterate through list a to look if the wanted difference is in b
+    for x in a:
+        if (v-x) in b:
+            return True
+    return False
+```
+
