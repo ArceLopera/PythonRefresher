@@ -2725,6 +2725,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#array-max-consecutive-sum-2" class="md-nav__link">
+    Array Max Consecutive Sum 2
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2851,6 +2858,13 @@
           <li class="md-nav__item">
   <a href="#sum-in-range" class="md-nav__link">
     Sum In Range
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array-max-consecutive-sum-2" class="md-nav__link">
+    Array Max Consecutive Sum 2
   </a>
   
 </li>
@@ -3028,6 +3042,25 @@ solution(nums, queries) = 10.</p>
     <span class="n">a</span> <span class="p">,</span><span class="n">res</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">accumulate</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">n</span><span class="p">)),</span><span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="n">q</span><span class="p">:</span><span class="n">res</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
     <span class="k">return</span> <span class="n">res</span> <span class="o">%</span> <span class="mi">1000000007</span>
+</code></pre></div>
+<h3 id="array-max-consecutive-sum-2">Array Max Consecutive Sum 2</h3>
+<p>Asked by Amazon, LinkedIn, Microsoft, and Samsung - 30 min - Easy</p>
+<p>Given an array of integers, find the maximum possible sum you can get from one of its contiguous subarrays. The subarray from which this sum comes must contain at least 1 element.</p>
+<p><strong>Example</strong></p>
+<p>For inputArray = [-2, 2, 5, -11, 6], the output should be
+solution(inputArray) = 7.</p>
+<p>The contiguous subarray that gives the maximum possible sum is [2, 5], with a sum of 7.</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">inputArray</span><span class="p">):</span>
+    <span class="n">maxsum</span> <span class="o">=</span> <span class="n">inputArray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">inputArray</span><span class="p">)</span>
+    <span class="n">cumsum</span> <span class="o">=</span> <span class="n">inputArray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span><span class="p">):</span>
+        <span class="n">cumsum</span> <span class="o">+=</span> <span class="n">inputArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">inputArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">cumsum</span><span class="p">:</span>
+            <span class="n">cumsum</span> <span class="o">=</span> <span class="n">inputArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">maxsum</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">maxsum</span><span class="p">,</span> <span class="n">cumsum</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">maxsum</span>
 </code></pre></div>
 
               
