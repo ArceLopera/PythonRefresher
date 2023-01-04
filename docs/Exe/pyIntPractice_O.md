@@ -236,3 +236,32 @@ def solution(n, q):
     for i,j in q:res += a[j+1]-a[i] 
     return res % 1000000007
 ```
+
+### Array Max Consecutive Sum 2
+
+Asked by Amazon, LinkedIn, Microsoft, and Samsung - 30 min - Easy
+
+Given an array of integers, find the maximum possible sum you can get from one of its contiguous subarrays. The subarray from which this sum comes must contain at least 1 element.
+
+**Example**
+
+For inputArray = [-2, 2, 5, -11, 6], the output should be
+solution(inputArray) = 7.
+
+The contiguous subarray that gives the maximum possible sum is [2, 5], with a sum of 7.
+
+
+**Solution**
+
+``` py
+def solution(inputArray):
+    maxsum = inputArray[0]
+    l = len(inputArray)
+    cumsum = inputArray[0]
+    for i in range(1, l):
+        cumsum += inputArray[i]
+        if inputArray[i] > cumsum:
+            cumsum = inputArray[i]
+        maxsum = max(maxsum, cumsum)
+    return maxsum
+```
