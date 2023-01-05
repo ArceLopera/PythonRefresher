@@ -2732,6 +2732,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#find-longest-subarray-by-sum" class="md-nav__link">
+    Find Longest Subarray By Sum
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2865,6 +2872,13 @@
           <li class="md-nav__item">
   <a href="#array-max-consecutive-sum-2" class="md-nav__link">
     Array Max Consecutive Sum 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-longest-subarray-by-sum" class="md-nav__link">
+    Find Longest Subarray By Sum
   </a>
   
 </li>
@@ -3061,6 +3075,33 @@ solution(inputArray) = 7.</p>
             <span class="n">cumsum</span> <span class="o">=</span> <span class="n">inputArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
         <span class="n">maxsum</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">maxsum</span><span class="p">,</span> <span class="n">cumsum</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">maxsum</span>
+</code></pre></div>
+<h3 id="find-longest-subarray-by-sum">Find Longest Subarray By Sum</h3>
+<p>Asked by Palantir and Meta - 30 min - Medium</p>
+<p>You have an unsorted array arr of non-negative integers and a number s. Find a longest contiguous subarray in arr that has a sum equal to s. Return two integers that represent its inclusive bounds. If there are several possible answers, return the one with the smallest left bound. If there are no answers, return [-1].</p>
+<p>Your answer should be 1-based, meaning that the first position of the array is 1 instead of 0.</p>
+<p><strong>Example</strong></p>
+<p>For s = 12 and arr = [1, 2, 3, 7, 5], the output should be
+solution(s, arr) = [2, 4].</p>
+<p>The sum of elements from the 2nd position to the 4th position (1-based) is equal to 12: 2 + 3 + 7.</p>
+<p>For s = 15 and arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], the output should be
+solution(s, arr) = [1, 5].</p>
+<p>The sum of elements from the 1st position to the 5th position (1-based) is equal to 15: 1 + 2 + 3 + 4 + 5.</p>
+<p>For s = 15 and arr = [1, 2, 3, 4, 5, 0, 0, 0, 6, 7, 8, 9, 10], the output should be
+solution(s, arr) = [1, 8].</p>
+<p>The sum of elements from the 1st position to the 8th position (1-based) is equal to 15: 1 + 2 + 3 + 4 + 5 + 0 + 0 + 0.</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">v</span>
+        <span class="k">while</span> <span class="n">j</span><span class="o">&lt;=</span><span class="n">i</span> <span class="ow">and</span> <span class="n">total</span><span class="o">&gt;</span><span class="n">s</span><span class="p">:</span>
+            <span class="n">total</span> <span class="o">-=</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">total</span> <span class="o">==</span> <span class="n">s</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="p">):</span>
+            <span class="n">res</span><span class="o">=</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span> <span class="k">if</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">else</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div>
 
               
