@@ -2739,6 +2739,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#product-except-self" class="md-nav__link">
+    Product Except Self
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2879,6 +2886,13 @@
           <li class="md-nav__item">
   <a href="#find-longest-subarray-by-sum" class="md-nav__link">
     Find Longest Subarray By Sum
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#product-except-self" class="md-nav__link">
+    Product Except Self
   </a>
   
 </li>
@@ -3102,6 +3116,25 @@ solution(s, arr) = [1, 8].</p>
         <span class="k">if</span> <span class="p">(</span><span class="n">total</span> <span class="o">==</span> <span class="n">s</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="p">):</span>
             <span class="n">res</span><span class="o">=</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">res</span> <span class="k">if</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">else</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+<h3 id="product-except-self">Product Except Self</h3>
+<p>Asked by Amazon, Linkedin, Meta, Microsoft, and Apple - 30 min - Hard</p>
+<p>You have an array nums. We determine two functions to perform on nums. In both cases, n is the length of nums:</p>
+<p>fi(nums) = nums[0] · nums[1] · ... · nums[i - 1] · nums[i + 1] · ... · nums[n - 1]. </p>
+<p>(In other words, fi(nums) is the product of all array elements except the ithf.)</p>
+<p>g(nums) = f0(nums) + f1(nums) + ... + fn-1(nums).</p>
+<p>Using these two functions, calculate all values of f modulo the given m. Take these new values and add them together to get g. You should return the value of g modulo the given m.</p>
+<p><strong>Example</strong></p>
+<p>For nums = [1, 2, 3, 4] and m = 12, the output should be
+solution(nums, m) = 2.</p>
+<p>The array of the values of f is: [24, 12, 8, 6]. If we take all the elements modulo m, we get:
+[0, 0, 8, 6]. The sum of those values is 8 + 6 = 14, making the answer 14 % 12 = 2.</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+  <span class="n">s</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+  <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+    <span class="n">s</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="n">s</span><span class="o">*</span><span class="n">num</span><span class="p">)</span> <span class="o">%</span> <span class="n">m</span><span class="p">,</span> <span class="n">p</span><span class="o">*</span><span class="n">num</span> <span class="o">%</span> <span class="n">m</span>
+  <span class="k">return</span> <span class="n">s</span>
 </code></pre></div>
 
               
