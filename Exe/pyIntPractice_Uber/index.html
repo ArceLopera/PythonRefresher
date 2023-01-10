@@ -2693,6 +2693,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#perfect-city" class="md-nav__link">
+    Perfect City
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2753,6 +2760,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#perfect-city" class="md-nav__link">
+    Perfect City
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2792,6 +2806,26 @@ ride_time = 30,</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">ride_time</span><span class="p">,</span> <span class="n">ride_distance</span><span class="p">,</span> <span class="n">cost_per_minute</span><span class="p">,</span> <span class="n">cost_per_mile</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">ride_time</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="n">ride_distance</span><span class="o">*</span><span class="n">j</span> <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">cost_per_minute</span><span class="p">,</span><span class="n">cost_per_mile</span><span class="p">)]</span>
 </code></pre></div></p>
+<h2 id="perfect-city">Perfect City</h2>
+<p>30 min - Medium</p>
+<p>Consider a city where the streets are perfectly laid out to form an infinite square grid. In this city finding the shortest path between two given points (an origin and a destination) is much easier than in other more complex cities. As a new Uber developer, you are tasked to create an algorithm that does this calculation.</p>
+<p>Given user's departure and destination coordinates, each of them located on some street, find the length of the shortest route between them assuming that cars can only move along the streets. Each street can be represented as a straight line defined by the x = n or y = n formula, where n is an integer.</p>
+<p><strong>Example</strong></p>
+<p>For departure = [0.4, 1] and destination = [0.9, 3], the output should be
+solution(departure, destination) = 2.7.</p>
+<p>0.6 + 2 + 0.1 = 2.7, which is the answer.</p>
+<p><img alt="PerfectCity" src="../Images/perfCity.png" /></p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">departure</span><span class="p">,</span> <span class="n">destination</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">departure</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">==</span><span class="n">departure</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">departure</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">destination</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">departure</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">destination</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">departure</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">destination</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="nb">min</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">departure</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">destination</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">departure</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">destination</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">departure</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">destination</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">departure</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">destination</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">departure</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">destination</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="nb">min</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">departure</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">destination</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">departure</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">destination</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</code></pre></div>
 
               
             </article>
