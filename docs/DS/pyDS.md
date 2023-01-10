@@ -1,10 +1,14 @@
-##Python Collections
+## Available Resources
 
-###**Iterable** 
+[eBook: DS and IR in Python](https://allendowney.github.io/DSIRP/index.html#)
+For learning: - Basic Python Syntax, Essential Frameworks and Libraries, and Data Structures and Algorithms. 
+## Python Collections
+
+### **Iterable** 
 Anything that you can loop over using a for loop
 e.g: list, tuples, strings, set and dictionaries
 
-###**Sequence** 
+### **Sequence** 
 a subset of Iterables that have: 
 1. A length
 2. An Index
@@ -14,7 +18,7 @@ e.g: Strings, list, tuples
 
 Not dictionaries, sets, files and generators
 
-###**Data Structures**
+### **Data Structures**
 
 Python supports the following data structures: [lists](pyList.md), [dictionaries](pyDict.md), [tuples](pyTuple.md), [sets](pySet.md). For arrays, see [array](pyArray.md) or [numpy array](../ML/pyNumpy.md#numpy-array).
 

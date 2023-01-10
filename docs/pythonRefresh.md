@@ -6,3 +6,9 @@ A unique aspect of the Python language: indentation. While a language like C use
  
 1.   Free e-book [Python Like You Mean It](https://www.pythonlikeyoumeanit.com/intro.html), by Ryan Soklaski, will provide a more comprehensive introduction to Python for scientific computing.
 2.   The website <http://www.python.org>, [Tutorial](https://docs.python.org/3/tutorial/index.html) and [doc](https://docs.python.org/3/index.html)
+3.   [eBook: DS and IR in Python](https://allendowney.github.io/DSIRP/index.html#)
+For learning: - Basic Python Syntax, Essential Frameworks and Libraries, and Data Structures and Algorithms. 
+4.   [Kaggle](https://www.kaggle.com/learn)
+
+
+This material is a work in progress, so your feedback is welcome. The best way to provide that feedback is [to click here and create an issue in this GitHub repository](https://github.com/ArceLopera/PythonRefresher/issues).

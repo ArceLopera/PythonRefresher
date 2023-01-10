@@ -1,3 +1,9 @@
+## Resources
+
+1. [Tech Interview Handbook](https://www.techinterviewhandbook.org/)
+
+## Strategy
+
 Not solving coding problems but practicing to map problems onto problems that you have already solved.
 
 ## 1 - If input is sorted
