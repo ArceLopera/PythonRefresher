@@ -2700,6 +2700,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#parking-spot" class="md-nav__link">
+    Parking Spot
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2767,6 +2774,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#parking-spot" class="md-nav__link">
+    Parking Spot
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2825,6 +2839,44 @@ solution(departure, destination) = 2.7.</p>
         <span class="n">x</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">departure</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">destination</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
         <span class="n">y</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">departure</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">destination</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
         <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">departure</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">destination</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="nb">min</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">departure</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">destination</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">departure</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">destination</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</code></pre></div>
+<h2 id="parking-spot">Parking Spot</h2>
+<p>30 min - Medium</p>
+<p>This time you are an Uber driver and you are trying your best to park your car in a parking lot.</p>
+<p>Your car has length carDimensions[0] and width carDimensions[1]. You have already picked your lucky spot (rectangle of the same size as the car with upper left corner at (luckySpot[0], luckySpot[1])) and bottom right corner at (luckySpot[2], luckySpot[3]) and you need to find out if it's possible to park there or not.</p>
+<p>It is possible to park your car at a given spot if and only if you can drive through the parking lot without any turns to your lucky spot (for safety reasons, the car can only move in two directions inside the parking lot - forwards or backwards along the long side of the car) starting from some side of the lot (all four sides are valid options).</p>
+<p>Naturally, you can't park your car if the lucky spot is already occupied. The car can't drive through or park at any of the occupied spots.</p>
+<p><strong>Example</strong></p>
+<p>For carDimensions = [3, 2],
+<div class="highlight"><pre><span></span><code>parkingLot = [[1, 0, 1, 0, 1, 0],
+              [0, 0, 0, 0, 1, 0],
+              [0, 0, 0, 0, 0, 1],
+              [1, 0, 1, 1, 1, 1]]
+</code></pre></div>
+and
+luckySpot = [1, 1, 2, 3], the output should be</p>
+<p>solution(carDimensions, parkingLot, luckySpot) = true</p>
+<p><img alt="Parking" src="../Images/parkin.png" /></p>
+<p>For carDimensions = [3, 2],
+<div class="highlight"><pre><span></span><code>parkingLot = [[1, 0, 1, 0, 1, 0],
+              [1, 0, 0, 0, 1, 0],
+              [0, 0, 0, 0, 0, 1],
+              [1, 0, 0, 0, 1, 1]]
+</code></pre></div>
+and
+luckySpot = [1, 1, 2, 3], the output should be</p>
+<p>solution(carDimensions, parkingLot, luckySpot) = false;</p>
+<p>For carDimensions = [4, 1],
+<div class="highlight"><pre><span></span><code>parkingLot = [[1, 0, 1, 0, 1, 0],
+              [1, 0, 0, 0, 1, 0],
+              [0, 0, 0, 0, 0, 1],
+              [1, 0, 0, 0, 1, 1]]
+</code></pre></div>
+and
+luckySpot = [0, 3, 3, 3], the output should be</p>
+<p>solution(carDimensions, parkingLot, luckySpot) = true.</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">##TODO</span>
 </code></pre></div>
 
               
