@@ -126,4 +126,5 @@ solution(carDimensions, parkingLot, luckySpot) = true.
 
 ``` py
 ##TODO
+
 ```
