@@ -2707,6 +2707,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#fancy-ride" class="md-nav__link">
+    Fancy Ride
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2777,6 +2784,13 @@
         <li class="md-nav__item">
   <a href="#parking-spot" class="md-nav__link">
     Parking Spot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fancy-ride" class="md-nav__link">
+    Fancy Ride
   </a>
   
 </li>
@@ -2877,6 +2891,22 @@ luckySpot = [0, 3, 3, 3], the output should be</p>
 <p>solution(carDimensions, parkingLot, luckySpot) = true.</p>
 <p><strong>Solution</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1">##TODO</span>
+</code></pre></div>
+<h2 id="fancy-ride">Fancy Ride</h2>
+<p>5 min - Easy</p>
+<p>Being a new Uber user, you have $20 off your first ride. You want to make the most out of it and drive in the fanciest car you can afford, without spending any out-of-pocket money. There are 5 options, from the least to the most expensive: "UberX", "UberXL", "UberPlus", "UberBlack" and "UberSUV".</p>
+<p>You know the length l of your ride in miles and how much one mile costs for each car. Find the best car you can afford.</p>
+<p><strong>Example</strong></p>
+<p>For l = 30 and fares = [0.3, 0.5, 0.7, 1, 1.3], the output should be
+solution(l, fares) = "UberXL".</p>
+<p>The cost for the ride in this car would be $15, which you can afford, but "UberPlus" would cost $21, which is too much for you.</p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">fares</span><span class="p">):</span>
+    <span class="n">opt</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;UberX&quot;</span><span class="p">,</span> <span class="s2">&quot;UberXL&quot;</span><span class="p">,</span> <span class="s2">&quot;UberPlus&quot;</span><span class="p">,</span> <span class="s2">&quot;UberBlack&quot;</span><span class="p">,</span> <span class="s2">&quot;UberSUV&quot;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">ride</span><span class="p">,</span><span class="n">cost</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">fares</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">cost</span><span class="o">*</span><span class="n">l</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">:</span>
+            <span class="n">ans</span> <span class="o">=</span> <span class="n">opt</span><span class="p">[</span><span class="n">ride</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ans</span> 
 </code></pre></div>
 
               
