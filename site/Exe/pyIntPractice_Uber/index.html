@@ -2714,6 +2714,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#night-route" class="md-nav__link">
+    Night Route
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2791,6 +2798,13 @@
         <li class="md-nav__item">
   <a href="#fancy-ride" class="md-nav__link">
     Fancy Ride
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#night-route" class="md-nav__link">
+    Night Route
   </a>
   
 </li>
@@ -2890,7 +2904,22 @@ and
 luckySpot = [0, 3, 3, 3], the output should be</p>
 <p>solution(carDimensions, parkingLot, luckySpot) = true.</p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><pre><span></span><code><span class="c1">##TODO</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">lot</span><span class="p">,</span> <span class="n">spot</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_empty</span><span class="p">(</span><span class="n">lot</span><span class="p">,</span><span class="n">spot</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span><span class="n">spot</span><span class="p">[</span><span class="mi">2</span><span class="p">:]):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">if</span> <span class="n">spot</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">-</span> <span class="n">spot</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">spot</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">spot</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">is_empty</span><span class="p">(</span><span class="n">lot</span><span class="p">,</span> <span class="p">(</span><span class="n">spot</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">0</span><span class="p">),(</span><span class="n">spot</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">spot</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="ow">or</span> <span class="n">is_empty</span><span class="p">(</span><span class="n">lot</span><span class="p">,(</span><span class="n">spot</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">spot</span><span class="p">[</span><span class="mi">3</span><span class="p">]),(</span><span class="n">spot</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">lot</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">is_empty</span><span class="p">(</span><span class="n">lot</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">spot</span><span class="p">[</span><span class="mi">1</span><span class="p">]),(</span><span class="n">spot</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">spot</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span> <span class="ow">or</span> <span class="n">is_empty</span><span class="p">(</span><span class="n">lot</span><span class="p">,</span> <span class="p">(</span><span class="n">spot</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">spot</span><span class="p">[</span><span class="mi">1</span><span class="p">]),(</span> <span class="nb">len</span><span class="p">(</span><span class="n">lot</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">spot</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+
+
+<span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
 </code></pre></div>
 <h2 id="fancy-ride">Fancy Ride</h2>
 <p>5 min - Easy</p>
@@ -2908,6 +2937,32 @@ solution(l, fares) = "UberXL".</p>
             <span class="n">ans</span> <span class="o">=</span> <span class="n">opt</span><span class="p">[</span><span class="n">ride</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">ans</span> 
 </code></pre></div>
+<h2 id="night-route">Night Route</h2>
+<p>15 min - Medium</p>
+<p>Consider a big city located on n islands. There are bridges connecting the islands, but they all have only one-way traffic. To make matters worse, most of the bridges are closed at night, so there is at most one bridge with traffic going from any island A to any other island B.</p>
+<p>There is a programmer who turns a penny by working nights as an Uber driver. One night his phone dies right after he picks up a rider going from island 0 to island (n - 1). He has the map of the city bridges in his laptop though (stored as a matrix of distances), so he decides to implement an algorithm that calculates the shortest path between those two islands and evaluate the cost based on the distance of the path. Assume that each mile of the trip is 1$.</p>
+<p><strong>Example</strong></p>
+<p>For
+<div class="highlight"><pre><span></span><code>city = [[-1, 5, 20],
+        [21, -1, 10],
+        [-1, 1, -1]]
+</code></pre></div>
+the output should be solution(city) = 15.</p>
+<p>city[i][j] equals the distance between the ith and the jth islands in miles, or -1 if there is no bridge by which one can move from island i to island j.</p>
+<p>solution(city) should be 15, since the shortest distance from the 0th to the 2nd island is 15. The distance from the 0th to the 1st is city[0][1] = 5, and from the 1st to the 2nd is city[1][2] = 10.</p>
+<p><img alt="uber1" src="../Images/uber1.png" /></p>
+<p>For
+<div class="highlight"><pre><span></span><code>city = [[-1, 5, 2, 15],
+        [2, -1, 0, 3],
+        [1, -1, -1, 9],
+        [0, 0, 0, -1]]
+</code></pre></div>
+the output should be solution(city) = 8.</p>
+<p>The shortest path is 0 -&gt; 1 -&gt; 3 which costs 5 + 3 = 8.</p>
+<p><img alt="uber2" src="../Images/uber2.png" /></p>
+<p><strong>Solution</strong>
+<div class="highlight"><pre><span></span><code><span class="c1">#Todo</span>
+</code></pre></div></p>
 
               
             </article>
