@@ -2721,6 +2721,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#closest-location" class="md-nav__link">
+    Closest Location
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2809,6 +2816,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#closest-location" class="md-nav__link">
+    Closest Location
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2844,10 +2858,13 @@ ride_time = 30,</p>
 30 * 0.4 + 7 * 2.3 = 12 + 16.1 = 28.1
 30 * 0.45 + 7 * 3.5 = 13.5 + 24.5 = 38
 </code></pre></div>
-<p><strong>Solution</strong>
+<details>
+  <summary>Click me for proposed solution</summary>
+**Solution**
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">ride_time</span><span class="p">,</span> <span class="n">ride_distance</span><span class="p">,</span> <span class="n">cost_per_minute</span><span class="p">,</span> <span class="n">cost_per_mile</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">ride_time</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="n">ride_distance</span><span class="o">*</span><span class="n">j</span> <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">cost_per_minute</span><span class="p">,</span><span class="n">cost_per_mile</span><span class="p">)]</span>
-</code></pre></div></p>
+</code></pre></div>
+</details>
 <h2 id="perfect-city">Perfect City</h2>
 <p>30 min - Medium</p>
 <p>Consider a city where the streets are perfectly laid out to form an infinite square grid. In this city finding the shortest path between two given points (an origin and a destination) is much easier than in other more complex cities. As a new Uber developer, you are tasked to create an algorithm that does this calculation.</p>
@@ -2857,7 +2874,11 @@ ride_time = 30,</p>
 solution(departure, destination) = 2.7.</p>
 <p>0.6 + 2 + 0.1 = 2.7, which is the answer.</p>
 <p><img alt="PerfectCity" src="../Images/perfCity.png" /></p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me for proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">departure</span><span class="p">,</span> <span class="n">destination</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">departure</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">==</span><span class="n">departure</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">departure</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">destination</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
@@ -2868,6 +2889,7 @@ solution(departure, destination) = 2.7.</p>
         <span class="n">y</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">departure</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">destination</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
         <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">departure</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">destination</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="nb">min</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">departure</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">destination</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">departure</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">destination</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 </code></pre></div>
+</details>
 <h2 id="parking-spot">Parking Spot</h2>
 <p>30 min - Medium</p>
 <p>This time you are an Uber driver and you are trying your best to park your car in a parking lot.</p>
@@ -2903,7 +2925,10 @@ luckySpot = [1, 1, 2, 3], the output should be</p>
 and
 luckySpot = [0, 3, 3, 3], the output should be</p>
 <p>solution(carDimensions, parkingLot, luckySpot) = true.</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me for proposed solution</summary>
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">lot</span><span class="p">,</span> <span class="n">spot</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">is_empty</span><span class="p">(</span><span class="n">lot</span><span class="p">,</span><span class="n">spot</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span><span class="n">spot</span><span class="p">[</span><span class="mi">2</span><span class="p">:]):</span>
         <span class="k">return</span> <span class="kc">False</span>
@@ -2921,6 +2946,7 @@ luckySpot = [0, 3, 3, 3], the output should be</p>
                 <span class="k">return</span> <span class="kc">False</span>
     <span class="k">return</span> <span class="kc">True</span>
 </code></pre></div>
+</details>
 <h2 id="fancy-ride">Fancy Ride</h2>
 <p>5 min - Easy</p>
 <p>Being a new Uber user, you have $20 off your first ride. You want to make the most out of it and drive in the fanciest car you can afford, without spending any out-of-pocket money. There are 5 options, from the least to the most expensive: "UberX", "UberXL", "UberPlus", "UberBlack" and "UberSUV".</p>
@@ -2929,7 +2955,10 @@ luckySpot = [0, 3, 3, 3], the output should be</p>
 <p>For l = 30 and fares = [0.3, 0.5, 0.7, 1, 1.3], the output should be
 solution(l, fares) = "UberXL".</p>
 <p>The cost for the ride in this car would be $15, which you can afford, but "UberPlus" would cost $21, which is too much for you.</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me for proposed solution</summary>
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">fares</span><span class="p">):</span>
     <span class="n">opt</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;UberX&quot;</span><span class="p">,</span> <span class="s2">&quot;UberXL&quot;</span><span class="p">,</span> <span class="s2">&quot;UberPlus&quot;</span><span class="p">,</span> <span class="s2">&quot;UberBlack&quot;</span><span class="p">,</span> <span class="s2">&quot;UberSUV&quot;</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">ride</span><span class="p">,</span><span class="n">cost</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">fares</span><span class="p">):</span>
@@ -2937,6 +2966,8 @@ solution(l, fares) = "UberXL".</p>
             <span class="n">ans</span> <span class="o">=</span> <span class="n">opt</span><span class="p">[</span><span class="n">ride</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">ans</span> 
 </code></pre></div>
+</details>
+
 <h2 id="night-route">Night Route</h2>
 <p>15 min - Medium</p>
 <p>Consider a big city located on n islands. There are bridges connecting the islands, but they all have only one-way traffic. To make matters worse, most of the bridges are closed at night, so there is at most one bridge with traffic going from any island A to any other island B.</p>
@@ -2960,9 +2991,131 @@ the output should be solution(city) = 15.</p>
 the output should be solution(city) = 8.</p>
 <p>The shortest path is 0 -&gt; 1 -&gt; 3 which costs 5 + 3 = 8.</p>
 <p><img alt="uber2" src="../Images/uber2.png" /></p>
-<p><strong>Solution</strong>
-<div class="highlight"><pre><span></span><code><span class="c1">#Todo</span>
-</code></pre></div></p>
+<details>
+  <summary>Click me for proposed solution</summary>
+**Solution**
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">city</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">shortest</span><span class="p">(</span><span class="n">city</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nb">set</span><span class="p">())</span>
+
+<span class="k">def</span> <span class="nf">shortest</span><span class="p">(</span><span class="n">city</span><span class="p">,</span><span class="n">cur</span><span class="p">,</span><span class="n">visited</span><span class="p">):</span>
+    <span class="c1"># Base case</span>
+    <span class="k">if</span> <span class="n">cur</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">city</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span> <span class="c1">#arrive to target</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="n">best</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">#print(f&#39;current :{cur}&#39;)</span>
+    <span class="k">for</span> <span class="n">nxt</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">city</span><span class="p">[</span><span class="n">cur</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">nxt</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span> <span class="ow">and</span> <span class="n">d</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="c1">#print(nxt)</span>
+            <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">nxt</span><span class="p">)</span>
+            <span class="n">path_nxt_n</span> <span class="o">=</span> <span class="n">shortest</span><span class="p">(</span><span class="n">city</span><span class="p">,</span> <span class="n">nxt</span><span class="p">,</span> <span class="n">visited</span><span class="p">)</span>
+            <span class="n">visited</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">nxt</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">path_nxt_n</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">path_cur_n</span> <span class="o">=</span> <span class="n">path_nxt_n</span> <span class="o">+</span> <span class="n">d</span>
+                <span class="k">if</span> <span class="n">best</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">path_cur_n</span> <span class="o">&lt;</span> <span class="n">best</span><span class="p">:</span>
+                    <span class="n">best</span> <span class="o">=</span> <span class="n">path_cur_n</span>
+    <span class="k">return</span> <span class="n">best</span>
+</code></pre></div>
+</details>
+
+<h2 id="closest-location">Closest Location</h2>
+<p>35 min - Medium</p>
+<p>The Uber app has an integrated map that simplifies selecting a destination. To make it even better, Uber guesses the location even if there is a typo in the inputted address.</p>
+<p>Consider a map with streets and buildings located on the Cartesian plane with integer coordinates. The distances on this map are calculated as follows:</p>
+<p>The distance between two points is the length of the segment connecting them.
+The distance between a segment and a point is defined as the shortest distance between the given point and any point on the segment.
+A user has started to type in their destination, and it's your task to guess what they are looking for.</p>
+<p>Let the rider's position be at [0, 0]. Given the positions of some objects around them, and the address they have already typed in, find out what their destination is. To do this, find the object closest to the rider with a name that has a prefix which is similar to the text that's already entered. Since it's possible that there is a typo in the input, let similar mean one of the following:</p>
+<p>the typed in address is identical to the prefix of the object's address;
+they differ only by one symbol;
+user's input has one extra symbol;
+user's input has one missing symbol.
+Note that the comparison should be case-insensitive.</p>
+<p>For example, if the user typed in "Cat", the following can be suggested: "Cat street", "Bat building", "_At avenue" (the first letter is deleted), and "Cast exhibition".</p>
+<p><strong>Example</strong></p>
+<p>For address = "Cat", objects = [[-2, 0], [1, 2], [2, 1, 2, 4], [-3, -1, 4, -1]], and
+names = ["Bat building", "Cast exhibition", "At street", "Cat avenue"], the output should be
+solution(address, objects, names) = "Cat avenue".</p>
+<p>Since all the names are similar to what the user has typed, and the distances to them are respectively 2, √5, √5 and 1 (see the picture below for better understanding).</p>
+<p><img alt="closestLoc" src="../Images/closestloc.png" /></p>
+<details>
+  <summary>Click me for proposed solution</summary>
+**Solution**
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">objects</span><span class="p">,</span> <span class="n">names</span><span class="p">):</span>
+    <span class="n">ind</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">chkTypos</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+            <span class="n">ind</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span>
+    <span class="n">min_dist</span><span class="o">=</span><span class="kc">None</span>
+    <span class="n">min_ind</span><span class="o">=</span><span class="kc">None</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ind</span><span class="p">:</span>
+        <span class="n">obj</span><span class="o">=</span><span class="n">objects</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span> <span class="c1">#Obj is a point</span>
+            <span class="n">dist</span><span class="o">=</span><span class="n">dist_sq</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">obj</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span> <span class="c1">#Obj is a segment</span>
+            <span class="n">dist</span><span class="o">=</span> <span class="n">dist_seg</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">obj</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">min_dist</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">dist</span> <span class="o">&lt;</span> <span class="n">min_dist</span><span class="p">:</span>
+            <span class="n">min_dist</span> <span class="o">=</span> <span class="n">dist</span>
+            <span class="n">min_ind</span><span class="o">=</span><span class="n">i</span>  
+    <span class="k">return</span> <span class="n">names</span><span class="p">[</span><span class="n">min_ind</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">dist_seg</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">seg</span><span class="p">):</span>
+    <span class="c1">## Vertical Segment</span>
+    <span class="k">if</span> <span class="n">seg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">seg</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="ow">and</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="nb">min</span><span class="p">(</span><span class="n">seg</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">seg</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="ow">and</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nb">max</span><span class="p">(</span><span class="n">seg</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">seg</span><span class="p">[</span><span class="mi">3</span><span class="p">]):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">seg</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>
+    <span class="c1">## Horizontal Segment</span>
+    <span class="k">if</span> <span class="n">seg</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">seg</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="ow">and</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="nb">min</span><span class="p">(</span><span class="n">seg</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">seg</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="ow">and</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nb">max</span><span class="p">(</span><span class="n">seg</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">seg</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">seg</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">dist_sq</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">seg</span><span class="p">[:</span><span class="mi">2</span><span class="p">]),</span><span class="n">dist_sq</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">seg</span><span class="p">[</span><span class="mi">2</span><span class="p">:]))</span>
+    <span class="c1">##When point is outside the segment</span>
+
+<span class="k">def</span> <span class="nf">dist_sq</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">chkTypos</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">location</span><span class="p">):</span>
+    <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">location</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">word</span> <span class="o">==</span> <span class="n">location</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)]:</span> <span class="c1">#use location prefix</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="n">chkDiff</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">location</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="n">chkMiss</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">location</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="n">chkMiss</span><span class="p">(</span><span class="n">location</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">word</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+
+<span class="k">def</span> <span class="nf">chkDiff</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">location</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">location</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">location</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">diff</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+            <span class="n">diff</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+<span class="k">def</span> <span class="nf">chkMiss</span><span class="p">(</span><span class="n">w1</span><span class="p">,</span><span class="n">w2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">w1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">w2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="n">missing</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">w1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">w2</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">w1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">w2</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">missing</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+            <span class="n">missing</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div>
+</details>
 
               
             </article>
