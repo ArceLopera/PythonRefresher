@@ -31,13 +31,14 @@ Since:
 30 * 0.4 + 7 * 2.3 = 12 + 16.1 = 28.1
 30 * 0.45 + 7 * 3.5 = 13.5 + 24.5 = 38
 ```
-
+<details>
+  <summary>Click me for proposed solution</summary>
 **Solution**
 ``` py
 def solution(ride_time, ride_distance, cost_per_minute, cost_per_mile):
     return [ride_time*i+ride_distance*j for (i,j) in zip(cost_per_minute,cost_per_mile)]
 ```
-
+</details>
 ## Perfect City
 
 30 min - Medium
@@ -54,6 +55,8 @@ solution(departure, destination) = 2.7.
 0.6 + 2 + 0.1 = 2.7, which is the answer.
 
 ![PerfectCity](./Images/perfCity.png)
+<details>
+  <summary>Click me for proposed solution</summary>
 
 **Solution**
 
@@ -68,7 +71,7 @@ def solution(departure, destination):
         y = math.floor(max(departure[1],destination[1]))
         return abs(departure[0]-destination[0])+min(abs(x-departure[1])+abs(x-destination[1]),abs(y-departure[1])+abs(y-destination[1]))
 ```
-
+</details>
 ## Parking Spot
 
 30 min - Medium
@@ -122,6 +125,8 @@ luckySpot = [0, 3, 3, 3], the output should be
 
 solution(carDimensions, parkingLot, luckySpot) = true.
 
+<details>
+  <summary>Click me for proposed solution</summary>
 **Solution**
 
 ``` py
@@ -142,7 +147,7 @@ def is_empty(l,p1,p2):
                 return False
     return True
 ```
-
+</details>
 ## Fancy Ride
 
 5 min - Easy
@@ -157,7 +162,8 @@ For l = 30 and fares = [0.3, 0.5, 0.7, 1, 1.3], the output should be
 solution(l, fares) = "UberXL".
 
 The cost for the ride in this car would be $15, which you can afford, but "UberPlus" would cost $21, which is too much for you.
-
+<details>
+  <summary>Click me for proposed solution</summary>
 **Solution**
 
 ``` py
@@ -168,6 +174,7 @@ def solution(l, fares):
             ans = opt[ride]
     return ans 
 ```
+</details>
 
 ## Night Route
 
@@ -206,7 +213,141 @@ The shortest path is 0 -> 1 -> 3 which costs 5 + 3 = 8.
 
 ![uber2](./Images/uber2.png)
 
+<details>
+  <summary>Click me for proposed solution</summary>
 **Solution**
+
 ``` py
-#Todo
+def solution(city):
+    return shortest(city,0,set())
+    
+def shortest(city,cur,visited):
+    # Base case
+    if cur == len(city) - 1: #arrive to target
+        return 0
+    best = None
+    #print(f'current :{cur}')
+    for nxt, d in enumerate(city[cur]):
+        if nxt not in visited and d != -1:
+            #print(nxt)
+            visited.add(nxt)
+            path_nxt_n = shortest(city, nxt, visited)
+            visited.remove(nxt)
+            if path_nxt_n is not None:
+                path_cur_n = path_nxt_n + d
+                if best is None or path_cur_n < best:
+                    best = path_cur_n
+    return best
 ```
+</details>
+
+## Closest Location
+
+35 min - Medium
+
+The Uber app has an integrated map that simplifies selecting a destination. To make it even better, Uber guesses the location even if there is a typo in the inputted address.
+
+Consider a map with streets and buildings located on the Cartesian plane with integer coordinates. The distances on this map are calculated as follows:
+
+The distance between two points is the length of the segment connecting them.
+The distance between a segment and a point is defined as the shortest distance between the given point and any point on the segment.
+A user has started to type in their destination, and it's your task to guess what they are looking for.
+
+Let the rider's position be at [0, 0]. Given the positions of some objects around them, and the address they have already typed in, find out what their destination is. To do this, find the object closest to the rider with a name that has a prefix which is similar to the text that's already entered. Since it's possible that there is a typo in the input, let similar mean one of the following:
+
+the typed in address is identical to the prefix of the object's address;
+they differ only by one symbol;
+user's input has one extra symbol;
+user's input has one missing symbol.
+Note that the comparison should be case-insensitive.
+
+For example, if the user typed in "Cat", the following can be suggested: "Cat street", "Bat building", "_At avenue" (the first letter is deleted), and "Cast exhibition".
+
+**Example**
+
+For address = "Cat", objects = [[-2, 0], [1, 2], [2, 1, 2, 4], [-3, -1, 4, -1]], and
+names = ["Bat building", "Cast exhibition", "At street", "Cat avenue"], the output should be
+solution(address, objects, names) = "Cat avenue".
+
+Since all the names are similar to what the user has typed, and the distances to them are respectively 2, √5, √5 and 1 (see the picture below for better understanding).
+
+![closestLoc](./Images/closestloc.png)
+<details>
+  <summary>Click me for proposed solution</summary>
+**Solution**
+  
+``` py
+def solution(address, objects, names):
+    ind = set()
+    for i,name in enumerate(names):
+        if chkTypos(address, name):
+            ind.add(i)
+            
+    print(ind)
+    min_dist=None
+    min_ind=None
+    for i in ind:
+        obj=objects[i]
+        if len(obj)==2: #Obj is a point
+            dist=dist_sq((0,0),obj)
+        else: #Obj is a segment
+            dist= dist_seg((0,0),obj)
+        if min_dist is None or dist < min_dist:
+            min_dist = dist
+            min_ind=i  
+    return names[min_ind]
+
+def dist_seg(p, seg):
+    ## Vertical Segment
+    if seg[0] == seg[2] and p[1] >= min(seg[1], seg[3]) and p[1] <= max(seg[1],seg[3]):
+        return (p[0] - seg[0])**2
+    ## Horizontal Segment
+    if seg[1] == seg[3] and p[0] >= min(seg[0], seg[2]) and p[0] <= max(seg[0],seg[2]):
+        return (p[1] - seg[1])**2
+    return min(dist_sq(p,seg[:2]),dist_sq(p,seg[2:]))
+    ##When point is outside the segment
+
+def dist_sq(p1,p2):
+    return (p1[0]-p2[0])**2 + (p1[1]-p2[1])**2
+
+def chkTypos(word, location):
+    word = word.lower()
+    location = location.lower()
+    if word == location[:len(word)]: #use location prefix
+        return True
+    if chkDiff(word, location):
+        return True
+    if chkMiss(word, location[:len(word)+1]):
+        return True
+    if chkMiss(location[:len(word)-1],word):
+        return True
+    return False
+
+def chkDiff(word, location):
+    if len(word) > len(location):
+        return False
+    diff = False
+    for i in range(len(word)):
+        if word[i] != location[i]:
+            if diff:
+                return False
+            diff = True
+    return True
+
+def chkMiss(w1,w2):
+    if (len(w1)+1) != len(w2):
+        return False
+    missing = False
+    i, j = (0,0)
+    while i < len(w1) and j < len(w2):
+        if w1[i] != w2[j]:
+            if missing:
+                return False
+            missing = True
+            j += 1
+        else:
+            i += 1
+            j += 1
+    return True
+```
+</details>
