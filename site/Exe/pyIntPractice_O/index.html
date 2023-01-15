@@ -2988,13 +2988,19 @@ solution(n) = 1;</p>
 <p>For n = 2, the output should be
 solution(n) = 2.</p>
 <p>You can either climb 2 steps at once or climb 1 step two times.</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
         <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
     <span class="k">return</span> <span class="n">a</span>
 </code></pre></div>
+</details>
+
 <h3 id="house-robber">House Robber</h3>
 <p>Asked by Linkedin - 20 min - Medium</p>
 <p>You are planning to rob houses on a specific street, and you know that every house on the street has a certain amount of money hidden. The only thing stopping you from robbing all of them in one night is that adjacent houses on the street have a connected security system. The system will automatically trigger an alarm if two adjacent houses are broken into on the same night.</p>
@@ -3003,7 +3009,11 @@ solution(n) = 2.</p>
 <p>For nums = [1, 1, 1], the output should be
 solution(nums) = 2.</p>
 <p>The optimal way to get the most money in one night is to rob the first and the third houses for a total of 2.</p>
-<p><strong>Solutions</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solutions**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
     <span class="n">prev_max</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">prev_prev_max</span> <span class="o">=</span> <span class="mi">0</span>
@@ -3011,6 +3021,7 @@ solution(nums) = 2.</p>
         <span class="n">prev_prev_max</span><span class="p">,</span> <span class="n">prev_max</span> <span class="o">=</span> <span class="n">prev_max</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">prev_prev_max</span> <span class="o">+</span> <span class="n">n</span><span class="p">,</span> <span class="n">prev_max</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">prev_max</span>
 </code></pre></div>
+
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">lru_cache</span>
 
 <span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
@@ -3022,13 +3033,19 @@ solution(nums) = 2.</p>
         <span class="k">return</span> <span class="mi">0</span>
     <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">house</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">:]),</span> <span class="n">house</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </code></pre></div>
+</details>
+
 <h3 id="compose-ranges">Compose Ranges</h3>
 <p>Asked by Google - 15 min - Easy</p>
 <p>Given a sorted integer array that does not contain any duplicates, return a summary of the number ranges it contains.</p>
 <p><strong>Example</strong></p>
 <p>For nums = [-1, 0, 1, 2, 6, 7, 9], the output should be
 solution(nums) = ["-1-&gt;2", "6-&gt;7", "9"].</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
 
     <span class="n">ranges</span> <span class="o">=</span> <span class="p">[]</span>
@@ -3039,6 +3056,8 @@ solution(nums) = ["-1-&gt;2", "6-&gt;7", "9"].</p>
         <span class="n">ranges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">start</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;-&gt;&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">end</span><span class="p">))[</span><span class="n">start</span> <span class="o">!=</span> <span class="n">end</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">ranges</span>
 </code></pre></div>
+</details>
+
 <h3 id="map-decoding">Map Decoding</h3>
 <p>Asked by Microsoft, Uber and Meta - 30 min - Hard</p>
 <p>A top secret message containing uppercase letters from 'A' to 'Z' has been encoded as numbers using the following mapping:
@@ -3053,7 +3072,11 @@ You are an FBI agent and you need to determine the total number of ways that the
 <p>For message = "123", the output should be
 solution(message) = 3.</p>
 <p>"123" can be decoded as "ABC" (1 2 3), "LC" (12 3) or "AW" (1 23), so the total number of ways is 3.</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
     <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
     <span class="n">M</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span> <span class="o">+</span> <span class="mi">7</span>
@@ -3064,6 +3087,8 @@ solution(message) = 3.</p>
             <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="ow">and</span> <span class="n">msg</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="s2">&quot;26&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="o">%</span> <span class="n">M</span><span class="p">,</span> <span class="n">a</span>
     <span class="k">return</span> <span class="n">a</span>
 </code></pre></div>
+</details>
+
 <h3 id="filling-blocks">Filling Blocks</h3>
 <p>Asked by Uber - 30 min - Hard</p>
 <p>You have a block with the dimensions 4 × n. Find the number of different ways you can fill this block with smaller blocks that have the dimensions 1 × 2. You are allowed to rotate the smaller blocks.</p>
@@ -3075,13 +3100,19 @@ solution(n) = 1.</p>
 solution(n) = 36.</p>
 <p>Here are the 36 possible configuration of smaller blocks inside the 4 × 4 block:</p>
 <p><img alt="Block" src="../Images/block.png" /></p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">11</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">4</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
 </code></pre></div>
+</details>
+
 <h2 id="common-techniques-basic">Common Techniques : Basic</h2>
 <h3 id="contains-duplicates">Contains Duplicates</h3>
 <p>Asked by Palantir - 15 min - Easy</p>
@@ -3093,17 +3124,27 @@ solution(a) = true.</p>
 <p>For a = [3, 1], the output should be
 solution(a) = false.</p>
 <p>The given array contains no duplicates.</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </code></pre></div>
+</details>
+
 <h3 id="sum-of-two">Sum Of Two</h3>
 <p>Asked by Google - 20 min - Easy</p>
 <p>You have two integer arrays, a and b, and an integer target value v. Determine whether there is a pair of numbers, where one number is taken from a and the other from b, that can be added together to get a sum of v. Return true if such a pair exists, otherwise return false.</p>
 <p><strong>Example</strong></p>
 <p>For a = [1, 2, 3], b = [10, 20, 30, 40], and v = 42, the output should be
 solution(a, b, v) = true.</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
     <span class="c1">#No need to iterate a huge list, if the other list is empty</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">a</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">b</span><span class="p">:</span>
@@ -3118,6 +3159,8 @@ solution(a, b, v) = true.</p>
             <span class="k">return</span> <span class="kc">True</span>
     <span class="k">return</span> <span class="kc">False</span>
 </code></pre></div>
+</details>
+
 <h3 id="sum-in-range">Sum In Range</h3>
 <p>Asked by Palantir - 30 min - Medium</p>
 <p>You have an array of integers nums and an array queries, where queries[i] is a pair of indices (0-based). Find the sum of the elements in nums from the indices at queries[i][0] to queries[i][1] (inclusive) for each query, then add all of the sums for all the queries together. Return that number modulo 109 + 7.</p>
@@ -3125,13 +3168,19 @@ solution(a, b, v) = true.</p>
 <p>For nums = [3, 0, -2, 6, -3, 2] and queries = [[0, 2], [2, 5], [0, 5]], the output should be
 solution(nums, queries) = 10.</p>
 <p>The array of results for queries is [1, 3, 6], so the answer is 1 + 3 + 6 = 10</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">accumulate</span>
 <span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
     <span class="n">a</span> <span class="p">,</span><span class="n">res</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">accumulate</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">n</span><span class="p">)),</span><span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="n">q</span><span class="p">:</span><span class="n">res</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
     <span class="k">return</span> <span class="n">res</span> <span class="o">%</span> <span class="mi">1000000007</span>
 </code></pre></div>
+</details>
+
 <h3 id="array-max-consecutive-sum-2">Array Max Consecutive Sum 2</h3>
 <p>Asked by Amazon, LinkedIn, Microsoft, and Samsung - 30 min - Easy</p>
 <p>Given an array of integers, find the maximum possible sum you can get from one of its contiguous subarrays. The subarray from which this sum comes must contain at least 1 element.</p>
@@ -3139,7 +3188,11 @@ solution(nums, queries) = 10.</p>
 <p>For inputArray = [-2, 2, 5, -11, 6], the output should be
 solution(inputArray) = 7.</p>
 <p>The contiguous subarray that gives the maximum possible sum is [2, 5], with a sum of 7.</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">inputArray</span><span class="p">):</span>
     <span class="n">maxsum</span> <span class="o">=</span> <span class="n">inputArray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">l</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">inputArray</span><span class="p">)</span>
@@ -3151,6 +3204,8 @@ solution(inputArray) = 7.</p>
         <span class="n">maxsum</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">maxsum</span><span class="p">,</span> <span class="n">cumsum</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">maxsum</span>
 </code></pre></div>
+</details>
+
 <h3 id="find-longest-subarray-by-sum">Find Longest Subarray By Sum</h3>
 <p>Asked by Palantir and Meta - 30 min - Medium</p>
 <p>You have an unsorted array arr of non-negative integers and a number s. Find a longest contiguous subarray in arr that has a sum equal to s. Return two integers that represent its inclusive bounds. If there are several possible answers, return the one with the smallest left bound. If there are no answers, return [-1].</p>
@@ -3165,7 +3220,11 @@ solution(s, arr) = [1, 5].</p>
 <p>For s = 15 and arr = [1, 2, 3, 4, 5, 0, 0, 0, 6, 7, 8, 9, 10], the output should be
 solution(s, arr) = [1, 8].</p>
 <p>The sum of elements from the 1st position to the 8th position (1-based) is equal to 15: 1 + 2 + 3 + 4 + 5 + 0 + 0 + 0.</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
     <span class="n">total</span> <span class="o">=</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
@@ -3178,6 +3237,8 @@ solution(s, arr) = [1, 8].</p>
             <span class="n">res</span><span class="o">=</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">res</span> <span class="k">if</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">else</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div>
+</details>
+
 <h3 id="product-except-self">Product Except Self</h3>
 <p>Asked by Amazon, Linkedin, Meta, Microsoft, and Apple - 30 min - Hard</p>
 <p>You have an array nums. We determine two functions to perform on nums. In both cases, n is the length of nums:</p>
@@ -3190,13 +3251,19 @@ solution(s, arr) = [1, 8].</p>
 solution(nums, m) = 2.</p>
 <p>The array of the values of f is: [24, 12, 8, 6]. If we take all the elements modulo m, we get:
 [0, 0, 8, 6]. The sum of those values is 8 + 6 = 14, making the answer 14 % 12 = 2.</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
   <span class="n">s</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
   <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
     <span class="n">s</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="n">s</span><span class="o">*</span><span class="n">num</span><span class="p">)</span> <span class="o">%</span> <span class="n">m</span><span class="p">,</span> <span class="n">p</span><span class="o">*</span><span class="n">num</span> <span class="o">%</span> <span class="n">m</span>
   <span class="k">return</span> <span class="n">s</span>
 </code></pre></div>
+</details>
+
 <h3 id="min-substring-with-all-chars">Min Substring With All Chars</h3>
 <p>Asked by Meta - 30 min - Easy</p>
 <p>You have two strings, s and t. The string t contains only unique elements. Find and return the minimum consecutive substring of s that contains all of the elements from t.</p>
@@ -3204,7 +3271,11 @@ solution(nums, m) = 2.</p>
 <p><strong>Example</strong></p>
 <p>For s = "adobecodebanc" and t = "abc", the output should be
 solution(s, t) = "banc".</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
@@ -3220,6 +3291,7 @@ solution(s, t) = "banc".</p>
 
     <span class="k">return</span> <span class="s2">&quot;&quot;</span>
 </code></pre></div>
+</details>
 
               
             </article>

@@ -3207,8 +3207,12 @@
 <p>There are 2 duplicates: numbers 2 and 3. The second occurrence of 3 has a smaller index than the second occurrence of 2 does, so the answer is 3.</p>
 <p>For a = [2, 2], the output should be solution(a) = 2;</p>
 <p>For a = [2, 4, 3, 5, 1], the output should be solution(a) = -1.</p>
-<p><strong>Solutions</strong></p>
-<p>Solution 1
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solutions**
+
+Solution 1
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
     <span class="n">seen</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
@@ -3216,15 +3220,18 @@
             <span class="k">return</span> <span class="n">i</span>
         <span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
     <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
-</code></pre></div></p>
-<p>Solution 2
+</code></pre></div>
+
+Solution 2
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
         <span class="n">a</span><span class="p">[</span><span class="nb">abs</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
         <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="nb">abs</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
     <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
-</code></pre></div></p>
+</code></pre></div>
+</details>
+
 <h3 id="first-not-repeating-character">First Not Repeating Character</h3>
 <p>Asked by Amazon - 15 min - Easy</p>
 <p>Given a string s consisting of small English letters, find and return the first instance of a non-repeating character in it. If there is no such character, return '_'.</p>
@@ -3235,7 +3242,10 @@ solution(s) = 'c'.</p>
 <p>For s = "abacabaabacaba", the output should be
 solution(s) = '_'.</p>
 <p>There are no characters in this string that do not repeat.</p>
-<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 <span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="n">st</span><span class="o">=</span><span class="n">Counter</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
@@ -3253,7 +3263,9 @@ solution(s) = '_'.</p>
             <span class="k">return</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
         <span class="n">chk</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
     <span class="k">return</span> <span class="s1">&#39;_&#39;</span>
-</code></pre></div></p>
+</code></pre></div>
+</details>
+
 <h3 id="rotate-image">Rotate Image</h3>
 <p>Asked by Amazon, Microsoft, and Apple - 15 min - Easy</p>
 <p>Note: Try to solve this task in-place (with O(1) additional memory), since this is what you'll be asked to do during an interview.</p>
@@ -3266,8 +3278,12 @@ the output should be solution(a) =
     [[7, 4, 1],
      [8, 5, 2],
      [9, 6, 3]]</p>
-<p><strong>Solutions</strong></p>
-<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solutions**
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
     <span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">))</span>    
     <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">l</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
 
@@ -3275,7 +3291,9 @@ the output should be solution(a) =
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="nb">reversed</span><span class="p">(</span><span class="n">a</span><span class="p">)))</span>
-</code></pre></div></p>
+</code></pre></div>
+</details>
+
 <h3 id="sudoku-2">Sudoku 2</h3>
 <p>Asked by Apple and Uber - 30 min - Easy</p>
 <p>Sudoku is a number-placement puzzle. The objective is to fill a 9 × 9 grid with numbers in such a way that each column, each row, and each of the nine 3 × 3 sub-grids that compose the grid all contain all of the numbers from 1 to 9 one time.</p>
@@ -3308,7 +3326,11 @@ solution(grid) = true;</p>
 the output should be
 solution(grid) = false.</p>
 <p>The given grid is not correct because there are two 1s in the second column. Each column, each row, and each 3 × 3 subgrid can only contain the numbers 1 through 9 one time.</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">line_is_valid</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
 
     <span class="n">tmp_dict</span> <span class="o">=</span> <span class="p">{}</span>    
@@ -3379,6 +3401,8 @@ solution(grid) = false.</p>
 
     <span class="k">return</span> <span class="n">result</span>
 </code></pre></div>
+</details>
+
 <h3 id="is-crypt-solution">Is Crypt Solution</h3>
 <p>Asked by Palantir Solutions - 15 min - Easy</p>
 <p>A cryptarithm is a mathematical puzzle for which the goal is to find the correspondence between letters and digits, such that the given arithmetic equation consisting of letters holds true when the letters are converted to digits.</p>
@@ -3409,7 +3433,11 @@ solution(crypt, solution) = true.</p>
 the output should be
 solution(crypt, solution) = false.</p>
 <p>Even though 054 + 091 = 145, 054 and 091 both contain leading zeroes, meaning that this is not a valid solution.</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">crypt</span><span class="p">,</span> <span class="n">solution</span><span class="p">):</span>
     <span class="c1"># a + b = c</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">crypt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -3438,6 +3466,8 @@ solution(crypt, solution) = false.</p>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
 </code></pre></div>
+</details>
+
 <h2 id="linkedlists">LinkedLists</h2>
 <h3 id="remove-k-from-list">Remove K from List</h3>
 <p>15 min - Easy</p>
@@ -3455,8 +3485,12 @@ For
 </code></pre></div>
 and k = 10, the output should be
 <div class="highlight"><pre><span></span><code>solution(l, k) = [1, 2, 3, 4, 5, 6, 7].
-</code></pre></div>
-<strong>Solution</strong></p>
+</code></pre></div></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="c1"># Singly-linked lists are already defined with this interface:</span>
 <span class="c1"># class ListNode(object):</span>
 <span class="c1">#   def __init__(self, x):</span>
@@ -3479,6 +3513,8 @@ and k = 10, the output should be
 
     <span class="k">return</span> <span class="n">l</span>
 </code></pre></div>
+</details>
+
 <h3 id="is-list-palindrome">Is List Palindrome</h3>
 <p>Asked by Amazon and Meta - 30 min - Easy</p>
 <p>Note: Try to solve this task in O(n) time using O(1) additional space, where n is the number of elements in l, since this is what you'll be asked to do during an interview.</p>
@@ -3489,7 +3525,11 @@ and k = 10, the output should be
 solution(l) = true;</p>
 <p>For l = [1, 2, 2, 3], the output should be
 solution(l) = false.</p>
-<p><strong>Solutions</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solutions**
+
 <div class="highlight"><pre><span></span><code><span class="c1"># Definition for singly-linked list:</span>
 <span class="c1"># class ListNode(object):</span>
 <span class="c1">#   def __init__(self, x):</span>
@@ -3503,6 +3543,7 @@ solution(l) = false.</p>
         <span class="n">l</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">next</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">==</span> <span class="n">a</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div>
+
 <div class="highlight"><pre><span></span><code><span class="c1"># Definition for singly-linked list:</span>
 <span class="c1"># class ListNode(object):</span>
 <span class="c1">#   def __init__(self, x):</span>
@@ -3540,6 +3581,8 @@ solution(l) = false.</p>
 
   <span class="k">return</span> <span class="kc">True</span>
 </code></pre></div>
+</details>
+
 <h3 id="add-two-huge-numbers">Add Two Huge Numbers</h3>
 <p>30 min - Easy</p>
 <p>You're given 2 huge integers represented by linked lists. Each linked list element is a number from 0 to 9999 that represents a number with exactly 4 digits. The represented number might have leading zeros. Your task is to add up these huge integers and return the result in the same format.</p>
@@ -3550,6 +3593,9 @@ solution(a, b) = [9876, 5434, 0].</p>
 <p>For a = [123, 4, 5] and b = [100, 100, 100], the output should be
 solution(a, b) = [223, 104, 105].</p>
 <p>Explanation: 12300040005 + 10001000100 = 22301040105.</p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 <div class="highlight"><pre><span></span><code><span class="c1"># Definition for singly-linked list:</span>
 <span class="c1"># class ListNode(object):</span>
 <span class="c1">#   def __init__(self, x):</span>
@@ -3590,6 +3636,8 @@ solution(a, b) = [223, 104, 105].</p>
 
     <span class="k">return</span> <span class="n">previous</span>
 </code></pre></div>
+</details>
+
 <h3 id="merge-two-linkedlists">Merge Two LinkedLists</h3>
 <p>30 min - Medium</p>
 <p>Note: Your solution should have O(l1.length + l2.length) time complexity, since this is what you will be asked to accomplish in an interview.</p>
@@ -3599,7 +3647,11 @@ solution(a, b) = [223, 104, 105].</p>
 solution(l1, l2) = [1, 2, 3, 4, 5, 6];
 For l1 = [1, 1, 2, 4] and l2 = [0, 3, 5], the output should be
 solution(l1, l2) = [0, 1, 1, 2, 3, 4, 5].</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="c1"># Singly-linked lists are already defined with this interface:</span>
 <span class="c1"># class ListNode(object):</span>
 <span class="c1">#   def __init__(self, x):</span>
@@ -3668,6 +3720,8 @@ solution(l1, l2) = [0, 1, 1, 2, 3, 4, 5].</p>
     <span class="c1"># Returns the head of the merged list</span>
     <span class="k">return</span> <span class="n">dummyNode</span><span class="o">.</span><span class="n">next</span>
 </code></pre></div>
+</details>
+
 <h3 id="reverse-nodes-in-k-groups">Reverse Nodes in K Groups</h3>
 <p>45 min - Hard</p>
 <p>Note: Your solution should have O(n) time complexity, where n is the number of elements in l, and O(1) additional space complexity, since this is what you would be asked to accomplish in an interview.</p>
@@ -3680,7 +3734,11 @@ For l = [1, 2, 3, 4, 5] and k = 1, the output should be
 solution(l, k) = [1, 2, 3, 4, 5];
 For l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] and k = 3, the output should be
 solution(l, k) = [3, 2, 1, 6, 5, 4, 9, 8, 7, 10, 11].</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="c1"># Singly-linked lists are already defined with this interface:</span>
 <span class="c1"># class ListNode(object):</span>
 <span class="c1">#   def __init__(self, x):</span>
@@ -3711,6 +3769,8 @@ solution(l, k) = [3, 2, 1, 6, 5, 4, 9, 8, 7, 10, 11].</p>
         <span class="n">l</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">solution</span><span class="p">(</span><span class="nb">next</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">prev</span>
 </code></pre></div>
+</details>
+
 <h3 id="rearrange-last-n">Rearrange Last N</h3>
 <p>40 min - Hard</p>
 <p>Note: Try to solve this task in O(list size) time using O(1) additional space, since this is what you'll be asked during an interview.</p>
@@ -3720,7 +3780,11 @@ solution(l, k) = [3, 2, 1, 6, 5, 4, 9, 8, 7, 10, 11].</p>
 solution(l, n) = [3, 4, 5, 1, 2];
 For l = [1, 2, 3, 4, 5, 6, 7] and n = 1, the output should be
 solution(l, n) = [7, 1, 2, 3, 4, 5, 6].</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="c1"># Singly-linked lists are already defined with this interface:</span>
 <span class="c1"># class ListNode(object):</span>
 <span class="c1">#   def __init__(self, x):</span>
@@ -3743,6 +3807,8 @@ solution(l, n) = [7, 1, 2, 3, 4, 5, 6].</p>
     <span class="n">front</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">l</span>
     <span class="k">return</span> <span class="n">out</span>
 </code></pre></div>
+</details>
+
 <h2 id="hashtables">Hashtables</h2>
 <h3 id="grouping-dishes">Grouping Dishes</h3>
 <p>Asked by Linkedin - 20 min - Easy</p>
@@ -3775,7 +3841,11 @@ the output should be
                       <span class="p">[</span><span class="s2">&quot;Nuts&quot;</span><span class="p">,</span> <span class="s2">&quot;Fried Rice&quot;</span><span class="p">,</span> <span class="s2">&quot;Salad&quot;</span><span class="p">],</span>
                       <span class="p">[</span><span class="s2">&quot;Onions&quot;</span><span class="p">,</span> <span class="s2">&quot;Fried Rice&quot;</span><span class="p">,</span> <span class="s2">&quot;Pasta&quot;</span><span class="p">]]</span>
 </code></pre></div></p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">dishes</span><span class="p">):</span>
     <span class="n">groups</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">d</span><span class="p">,</span> <span class="o">*</span><span class="n">v</span> <span class="ow">in</span> <span class="n">dishes</span><span class="p">:</span>
@@ -3787,6 +3857,8 @@ the output should be
             <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">x</span><span class="p">]</span> <span class="o">+</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="n">x</span><span class="p">]))</span>
     <span class="k">return</span> <span class="n">ans</span>
 </code></pre></div>
+</details>
+
 <h3 id="are-following-patterns">Are Following Patterns</h3>
 <p>Asked by Google - 30 min - Easy</p>
 <p>Given an array strings, determine whether it follows the sequence given in the patterns array. In other words, there should be no i and j for which strings[i] = strings[j] and patterns[i] ≠ patterns[j] or for which strings[i] ≠ strings[j] and patterns[i] = patterns[j].</p>
@@ -3795,10 +3867,16 @@ the output should be
 solution(strings, patterns) = true;
 For strings = ["cat", "dog", "doggy"] and patterns = ["a", "b", "b"], the output should be
 solution(strings, patterns) = false.</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">strings</span><span class="p">,</span> <span class="n">patterns</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">strings</span><span class="p">))</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">patterns</span><span class="p">))</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">strings</span><span class="p">,</span> <span class="n">patterns</span><span class="p">)))</span>
 </code></pre></div>
+</details>
+
 <h3 id="contains-close-nuns">Contains Close Nuns</h3>
 <p>Asked by Palantir - 30 min - Medium</p>
 <p>Given an array of integers nums and an integer k, determine whether there are two distinct indices i and j in the array where nums[i] = nums[j] and the absolute difference between i and j is less than or equal to k.</p>
@@ -3809,7 +3887,11 @@ solution(nums, k) = true.</p>
 <p>For nums = [0, 1, 2, 3, 5, 2] and k = 2, the output should be
 solution(nums, k) = false.</p>
 <p>The absolute difference between the positions of the two 2s is 3, which is more than k.</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
     <span class="n">dct</span><span class="o">=</span><span class="p">{}</span><span class="c1">#key:number, value:index contains the last occurance index of a number</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">nums</span> <span class="ow">or</span> <span class="n">k</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
@@ -3825,6 +3907,8 @@ solution(nums, k) = false.</p>
 
     <span class="k">return</span> <span class="kc">False</span>
 </code></pre></div>
+</details>
+
 <h3 id="possible-sums">Possible Sums</h3>
 <p>Asked by Google - 45 min - Hard</p>
 <p>You have a collection of coins, and you know the values of the coins and the quantity of each type of coin in it. You want to know how many distinct sums you can make from non-empty groupings of these coins.</p>
@@ -3845,7 +3929,11 @@ solution(coins, quantity) = 9.</p>
 10 + 100 = 110.
 </code></pre></div>
 As you can see, there are 9 distinct sums that can be created from non-empty groupings of your coins.</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">coins</span><span class="p">,</span> <span class="n">quantity</span><span class="p">):</span>
     <span class="n">possible_sums</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">}</span>
     <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">coins</span><span class="p">,</span> <span class="n">quantity</span><span class="p">):</span>
@@ -3853,6 +3941,8 @@ As you can see, there are 9 distinct sums that can be created from non-empty gro
 
     <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">possible_sums</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
 </code></pre></div>
+</details>
+
 <h3 id="swap-lex-order">Swap Lex Order</h3>
 <p>Asked by Meta - 45 min - Hard</p>
 <p>Given a string str and array of pairs that indicates which indices in the string can be swapped, return the lexicographically largest string that results from doing the allowed swaps. You can swap indices any number of times.</p>
@@ -3860,7 +3950,11 @@ As you can see, there are 9 distinct sums that can be created from non-empty gro
 <p>For str = "abdc" and pairs = [[1, 4], [3, 4]], the output should be
 solution(str, pairs) = "dbca".</p>
 <p>By swapping the given indices, you get the strings: "cbda", "cbad", "dbac", "dbca". The lexicographically largest string in this list is "dbca".</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">strn</span><span class="p">,</span> <span class="n">pairs</span><span class="p">):</span>
     <span class="c1"># if not strn or not pairs : return strn</span>
     <span class="c1"># check for connected node groupings which can be sorted individually</span>
@@ -3878,6 +3972,8 @@ solution(str, pairs) = "dbca".</p>
             <span class="n">reord</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">l</span> <span class="c1"># string is 0 indexed</span>
     <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">reord</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">strn</span><span class="p">))</span>
 </code></pre></div>
+</details>
+
 <h2 id="trees-basic">Trees: Basic</h2>
 <h3 id="has-path-with-given-sum">Has Path With Given Sum</h3>
 <p>20 min - Easy</p>
@@ -3987,7 +4083,10 @@ the output should be solution(t, s) = false.</p>
      3  -4 -3
 </code></pre></div>
 There is no path from root to leaf with the given sum 7.</p>
-<p><strong>Solution</strong>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
 <div class="highlight"><pre><span></span><code><span class="c1">#</span>
 <span class="c1"># Definition for binary tree:</span>
 <span class="c1"># class Tree(object):</span>
@@ -4000,7 +4099,9 @@ There is no path from root to leaf with the given sum 7.</p>
         <span class="k">return</span> <span class="n">s</span> <span class="o">==</span> <span class="mi">0</span>    
 
     <span class="k">return</span> <span class="n">solution</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">s</span> <span class="o">-</span> <span class="n">t</span><span class="o">.</span><span class="n">value</span><span class="p">)</span> <span class="ow">or</span> <span class="n">solution</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">s</span> <span class="o">-</span> <span class="n">t</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
+</details>
+
 <h3 id="is-tree-symmetric">Is Tree Symmetric</h3>
 <p>Asked by Linkedin and Microsoft - 30 min - Easy</p>
 <p>Given a binary tree t, determine whether it is symmetric around its center, i.e. each side mirrors the other.</p>
@@ -4077,7 +4178,11 @@ the output should be solution(t) = false.</p>
    3    3
 </code></pre></div>
 As you can see, it is not symmetric.</p>
-<p><strong>Solutions</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solutions**
+
 <div class="highlight"><pre><span></span><code><span class="c1">#</span>
 <span class="c1"># Definition for binary tree:</span>
 <span class="c1"># class Tree(object):</span>
@@ -4094,6 +4199,7 @@ As you can see, it is not symmetric.</p>
                <span class="n">mirrorEquals</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">right</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">mirrorEquals</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
 </code></pre></div>
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="nf">iTS</span><span class="p">(</span><span class="n">le</span><span class="p">,</span> <span class="n">ri</span><span class="p">):</span>
@@ -4111,6 +4217,8 @@ As you can see, it is not symmetric.</p>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">iTS</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
 </code></pre></div>
+</details>
+
 <h3 id="find-profession">Find Profession</h3>
 <p>20 min - Easy</p>
 <p>Consider a special family of Engineers and Doctors. This family has the following rules:</p>
@@ -4132,7 +4240,10 @@ Note: in this tree first child is considered as left child, second - as right.</
 <p><strong>Example</strong></p>
 <p>For level = 3 and pos = 3, the output should be
 solution(level, pos) = "Doctor".</p>
-<p><strong>Solution</strong>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Level 1: E</span>
@@ -4150,7 +4261,9 @@ solution(level, pos) = "Doctor".</p>
         <span class="k">return</span> <span class="s2">&quot;Engineer&quot;</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="s2">&quot;Doctor&quot;</span>
-</code></pre></div></p>
+</code></pre></div>
+</details>
+
 <h3 id="kth-smallest-in-bst">Kth Smallest in BST</h3>
 <p>30 min - Medium</p>
 <p>Note: Your solution should have only one BST traversal and O(1) extra space complexity, since this is what you will be asked to accomplish in an interview.</p>
@@ -4223,7 +4336,10 @@ solution(t, k) = -2.</p>
 -2   0
 </code></pre></div>
 The values of t are [-2, -1, 0, 1], and the 1st smallest is -2.</p>
-<p><strong>Solution</strong>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
 <div class="highlight"><pre><span></span><code><span class="c1">#</span>
 <span class="c1"># Definition for binary tree:</span>
 <span class="c1"># class Tree(object):</span>
@@ -4242,7 +4358,8 @@ The values of t are [-2, -1, 0, 1], and the 1st smallest is -2.</p>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">):</span>
         <span class="n">ans</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">ans</span>
-</code></pre></div></p>
+</code></pre></div>
+
 <div class="highlight"><pre><span></span><code><span class="c1">#</span>
 <span class="c1"># Definition for binary tree:</span>
 <span class="c1"># class Tree(object):</span>
@@ -4287,6 +4404,8 @@ The values of t are [-2, -1, 0, 1], and the 1st smallest is -2.</p>
 
     <span class="k">return</span> <span class="n">predecessor</span>
 </code></pre></div>
+</details>
+
 <h3 id="is-subtree">Is Subtree</h3>
 <p>30 min - Medium</p>
 <p>Given two binary trees t1 and t2, determine whether the second tree is a subtree of the first tree. A subtree for vertex v in a binary tree t is a tree consisting of v and all its descendants in t. Determine whether or not there is a vertex v (possibly none) in tree t1 such that a subtree for vertex v (possibly empty) in t1 equals t2.</p>
@@ -4466,7 +4585,10 @@ and
 }
 </code></pre></div>
 the output should be solution(t1, t2) = false.</p>
-<p><strong>Solution</strong>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
 <div class="highlight"><pre><span></span><code><span class="c1">#</span>
 <span class="c1"># Definition for binary tree:</span>
 <span class="c1"># class Tree(object):</span>
@@ -4492,7 +4614,9 @@ the output should be solution(t1, t2) = false.</p>
     <span class="k">if</span> <span class="n">t1</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="n">t2</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">equals</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">t2</span><span class="o">.</span><span class="n">left</span><span class="p">)</span> <span class="ow">and</span> <span class="n">equals</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">t2</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
     <span class="k">return</span> <span class="kc">False</span>
-</code></pre></div></p>
+</code></pre></div>
+</details>
+
 <h3 id="restore-binary-tree">Restore Binary Tree</h3>
 <p>40 min - Hard</p>
 <p>Note: Your solution should have O(inorder.length) time complexity, since this is what you will be asked to accomplish in an interview.</p>
@@ -4549,7 +4673,11 @@ For inorder = [2, 5] and preorder = [5, 2], the output should be
     &quot;right&quot;: null
 }
 </code></pre></div></p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="c1">#</span>
 <span class="c1"># Definition for binary tree:</span>
 <span class="c1"># class Tree(object):</span>
@@ -4566,6 +4694,8 @@ For inorder = [2, 5] and preorder = [5, 2], the output should be
   <span class="n">root</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">solution</span><span class="p">(</span><span class="n">inorder</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:],</span><span class="n">preorder</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:])</span>
   <span class="k">return</span> <span class="n">root</span>
 </code></pre></div>
+</details>
+
 <h3 id="find-substrings">Find Substrings</h3>
 <p>Asked by Uber - 40 min - Hard</p>
 <p>You have two arrays of strings, words and parts. Return an array that contains the strings from words, modified so that any occurrences of the substrings from parts are surrounded by square brackets [], following these guidelines:</p>
@@ -4574,7 +4704,11 @@ For inorder = [2, 5] and preorder = [5, 2], the output should be
 <p>For words = ["Apple", "Melon", "Orange", "Watermelon"] and parts = ["a", "mel", "lon", "el", "An"], the output should be
 solution(words, parts) = ["Apple", "Me[lon]", "Or[a]nge", "Water[mel]on"].</p>
 <p>While "Watermelon" contains three substrings from the parts array, "a", "mel", and "lon", "mel" is the longest substring that appears first in the string.</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Trie</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nxt</span> <span class="o">=</span> <span class="p">{}</span>
@@ -4607,6 +4741,8 @@ solution(words, parts) = ["Apple", "Me[lon]", "Or[a]nge", "Water[mel]on"].</p>
             <span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">[</span><span class="si">%s</span><span class="s2">]</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">w</span><span class="p">[:</span><span class="n">pos</span><span class="p">],</span> <span class="n">w</span><span class="p">[</span><span class="n">pos</span><span class="p">:</span><span class="n">pos</span><span class="o">+</span><span class="n">L</span><span class="p">],</span> <span class="n">w</span><span class="p">[</span><span class="n">pos</span><span class="o">+</span><span class="n">L</span><span class="p">:])</span>
     <span class="k">return</span> <span class="n">words</span>
 </code></pre></div>
+</details>
+
 <h3 id="delete-from-bst">Delete From BST</h3>
 <p>30 min - Medium</p>
 <p>A tree is considered a binary search tree (BST) if for each of its nodes the following is true:</p>
@@ -4699,7 +4835,11 @@ and queries = [4, 5, 6], the output should be
     }
 }
 </code></pre></div></p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="c1">#</span>
 <span class="c1"># Definition for binary tree:</span>
 <span class="c1"># class Tree(object):</span>
@@ -4741,6 +4881,7 @@ and queries = [4, 5, 6], the output should be
 
     <span class="k">return</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 </code></pre></div>
+</details>
 
               
             </article>

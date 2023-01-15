@@ -215,6 +215,7 @@ The shortest path is 0 -> 1 -> 3 which costs 5 + 3 = 8.
 
 <details>
   <summary>Click me for proposed solution</summary>
+
 **Solution**
 
 ``` py

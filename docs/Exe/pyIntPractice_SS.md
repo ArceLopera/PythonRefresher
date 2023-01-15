@@ -53,6 +53,9 @@ This t looks like this:
     3 5
 ```
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 
 ``` py
@@ -78,6 +81,8 @@ def solution(t):
     return res
 
 ```
+</details>
+
 ### Largest Values In Tree Rows
 
 30 min - Easy
@@ -122,6 +127,9 @@ In the row with depth 0, there is only one vertex - the root with value -1;
 In the row with depth 1, there are two vertices with values 5 and 7, so the largest value here is 7;
 In the row with depth 2, there is only one vertex with value 1.
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 ``` py
 # Definition for binary tree:
@@ -142,6 +150,7 @@ def solution(t):
         stack = next_row
     return result
 ```
+</details>
 
 ### Digit Tree Sum
 
@@ -212,6 +221,9 @@ the output should be
 solution(t) = 193.
 Because 09 + 091 + 093 = 193
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 
 ``` py
@@ -240,6 +252,7 @@ def solution(t):
     
     return sum
 ```
+</details>
 
 ### Longest Path
 
@@ -282,6 +295,9 @@ solution(fileSystem) = 24.
 
 The longest path is "user/documents/notes.txt", and it consists of 24 characters.
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 ``` py
 def solution(fileSystem):
@@ -296,6 +312,8 @@ def solution(fileSystem):
             pathlen[depth+1] = pathlen[depth] + len(name)+1
     return maxlen
 ```
+</details>
+
 ### Graph Distances
 
 Asked by Adobe and Samsung - 45 min - Hard
@@ -321,6 +339,9 @@ The distance from the start vertex 0 to itself is 0.
 The distance from the start vertex 0 to vertex 1 is 2 + 0 = 2.
 The distance from the start vertex 0 to vertex 2 is 2.
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 ``` py
 from collections import deque
@@ -338,6 +359,7 @@ def solution(g, s):
 def graphExpand(g, i, dist=0):
     return [(j, dist + v) for j, v in enumerate(g[i]) if v != -1]
 ```
+</details>
 
 ## Backtracking
 
@@ -359,6 +381,9 @@ solution(n, k) =
  [2, 2]]
 ```
 There are 4 steps in the staircase, and you can jump up 2 or fewer steps at a time. There are 5 potential sequences in which you jump up the stairs either 2 or 1 at a time.
+
+<details>
+  <summary>Click me to view proposed solution</summary>
 
 **Solution**
 ``` py
@@ -386,6 +411,7 @@ def climb(n, k, jumps):
         
     return out
 ```
+</details>
 
 ### N Queens
 
@@ -410,6 +436,9 @@ This diagram of the second permutation, [3, 1, 4, 2], will help you visualize it
 
 The element in the 1st position of the array, 3, indicates that the queen for column 1 is placed in row 3. Since the element in the 2nd position of the array is 1, the queen for column 2 is placed in row 1. The element in the 3rd position of the array is 4, meaning that the queen for column 3 is placed in row 4, and the element in the 4th position of the array is 2, meaning that the queen for column 4 is placed in row 2.
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 ``` py
 def solution(n, state=[], col=1):
@@ -426,6 +455,9 @@ def invalid(s, r2):
     c2 = len(s) + 1
     return any(abs(c1-c2) == abs(r1-r2) for c1, r1 in enumerate(s,1))
 ```
+</details>
+
+
 ### Sum Subsets
 
 Asked by Palantir - 30 min - Hard
@@ -436,6 +468,9 @@ Given a sorted array of integers arr and an integer num, find all possible uniqu
 
 For arr = [1, 2, 3, 4, 5] and num = 5, the output should be
 solution(arr, num) = [[1, 4], [2, 3], [5]].
+
+<details>
+  <summary>Click me to view proposed solution</summary>
 
 **Solution**
 
@@ -457,6 +492,8 @@ def solution(arr, num):
     addSumSubsets(0, num, ())
     return sorted(list(result))
 ```
+</details>
+
 ### Word Boggle
 
 35 min - Medium
@@ -482,6 +519,9 @@ solution(board, words) = ["CODE", "RULES"]
 
 ![boggle](./Images/boggle.png)
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 
 ``` py
@@ -503,6 +543,7 @@ def canBoggle(board, word, used = []):
                         return True
     return False    
 ```
+</details>
 
 ### Combination Sum
 
@@ -517,6 +558,9 @@ If there are no possible combinations that add up to sum, the output should be t
 
 For a = [2, 3, 5, 9] and sum = 9, the output should be
 solution(a, sum) = "(2 2 2 3)(2 2 5)(3 3 3)(9)".
+
+<details>
+  <summary>Click me to view proposed solution</summary>
 
 **Solution**
 
@@ -539,3 +583,4 @@ def comb_recur(pref, arr, s):
         elif val > s:
             break
 ```
+</details>

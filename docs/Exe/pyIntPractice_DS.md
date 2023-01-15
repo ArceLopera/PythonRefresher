@@ -17,6 +17,9 @@ For a = [2, 2], the output should be solution(a) = 2;
 
 For a = [2, 4, 3, 5, 1], the output should be solution(a) = -1.
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+  
 **Solutions**
 
 Solution 1
@@ -39,6 +42,7 @@ def solution(a):
             return abs(i)
     return -1
 ```
+</details>
 
 ### First Not Repeating Character
 Asked by Amazon - 15 min - Easy
@@ -56,6 +60,9 @@ For s = "abacabaabacaba", the output should be
 solution(s) = '_'.
 
 There are no characters in this string that do not repeat.
+
+<details>
+  <summary>Click me to view proposed solution</summary>
 
 ``` py
 from collections import Counter
@@ -78,6 +85,7 @@ def solution(s):
         chk.append(s[i])
     return '_'
 ```
+</details>
 
 ### Rotate Image
 
@@ -97,6 +105,9 @@ the output should be solution(a) =
      [8, 5, 2],
      [9, 6, 3]]
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solutions**
 
 ``` py
@@ -110,6 +121,7 @@ def solution(a):
 def solution(a):
     return list(zip(*reversed(a)))
 ```
+</details>
 
 ### Sudoku 2
 
@@ -153,6 +165,9 @@ the output should be
 solution(grid) = false.
 
 The given grid is not correct because there are two 1s in the second column. Each column, each row, and each 3 × 3 subgrid can only contain the numbers 1 through 9 one time.
+
+<details>
+  <summary>Click me to view proposed solution</summary>
 
 **Solution**
 
@@ -229,6 +244,7 @@ def solution(grid):
     return result
 
 ```
+</details>
 
 ### Is Crypt Solution
 
@@ -273,6 +289,9 @@ solution(crypt, solution) = false.
 
 Even though 054 + 091 = 145, 054 and 091 both contain leading zeroes, meaning that this is not a valid solution.
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 
 ``` py
@@ -304,6 +323,7 @@ def solution(crypt, solution):
     else:
         return False
 ```
+</details>
 
 ## LinkedLists
 
@@ -333,6 +353,9 @@ and k = 10, the output should be
 ```
 solution(l, k) = [1, 2, 3, 4, 5, 6, 7].
 ```
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 
 ``` py
@@ -359,6 +382,8 @@ def solution(l, k):
     return l
 
 ```
+</details>
+
 ### Is List Palindrome
 
 Asked by Amazon and Meta - 30 min - Easy
@@ -376,6 +401,9 @@ solution(l) = true;
 
 For l = [1, 2, 2, 3], the output should be
 solution(l) = false.
+
+<details>
+  <summary>Click me to view proposed solution</summary>
 
 **Solutions**
 
@@ -432,6 +460,7 @@ def solution(l):
   
   return True
 ```
+</details>
 
 ### Add Two Huge Numbers
 
@@ -450,6 +479,8 @@ For a = [123, 4, 5] and b = [100, 100, 100], the output should be
 solution(a, b) = [223, 104, 105].
 
 Explanation: 12300040005 + 10001000100 = 22301040105.
+<details>
+  <summary>Click me to view proposed solution</summary>
 
 ``` py
 # Definition for singly-linked list:
@@ -492,6 +523,8 @@ def reverse(list):
         
     return previous
 ```
+</details>
+
 ### Merge Two LinkedLists
 
 30 min - Medium
@@ -506,6 +539,9 @@ For l1 = [1, 2, 3] and l2 = [4, 5, 6], the output should be
 solution(l1, l2) = [1, 2, 3, 4, 5, 6];
 For l1 = [1, 1, 2, 4] and l2 = [0, 3, 5], the output should be
 solution(l1, l2) = [0, 1, 1, 2, 3, 4, 5].
+
+<details>
+  <summary>Click me to view proposed solution</summary>
 
 **Solution**
 
@@ -578,6 +614,7 @@ def solution(headA, headB):
     # Returns the head of the merged list
     return dummyNode.next
 ```
+</details>
 
 ### Reverse Nodes in K Groups
 
@@ -597,6 +634,9 @@ For l = [1, 2, 3, 4, 5] and k = 1, the output should be
 solution(l, k) = [1, 2, 3, 4, 5];
 For l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] and k = 3, the output should be
 solution(l, k) = [3, 2, 1, 6, 5, 4, 9, 8, 7, 10, 11].
+
+<details>
+  <summary>Click me to view proposed solution</summary>
 
 **Solution**
 
@@ -631,6 +671,7 @@ def solution(l, k):
         l.next = solution(next, k)
     return prev
 ```
+</details>
 
 ### Rearrange Last N
 
@@ -646,6 +687,9 @@ For l = [1, 2, 3, 4, 5] and n = 3, the output should be
 solution(l, n) = [3, 4, 5, 1, 2];
 For l = [1, 2, 3, 4, 5, 6, 7] and n = 1, the output should be
 solution(l, n) = [7, 1, 2, 3, 4, 5, 6].
+
+<details>
+  <summary>Click me to view proposed solution</summary>
 
 **Solution**
 
@@ -672,6 +716,8 @@ def solution(l, n):
     front.next = l
     return out
 ```
+</details>
+
 ## Hashtables
 
 ### Grouping Dishes
@@ -716,6 +762,8 @@ the output should be
                       ["Nuts", "Fried Rice", "Salad"],
                       ["Onions", "Fried Rice", "Pasta"]]
 ```
+<details>
+  <summary>Click me to view proposed solution</summary>
 
 **Solution**
 
@@ -731,6 +779,7 @@ def solution(dishes):
             ans.append([x] + sorted(groups[x]))
     return ans
 ```
+</details>
 
 ### Are Following Patterns
 
@@ -745,6 +794,9 @@ solution(strings, patterns) = true;
 For strings = ["cat", "dog", "doggy"] and patterns = ["a", "b", "b"], the output should be
 solution(strings, patterns) = false.
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 
 ``` py
@@ -752,6 +804,7 @@ def solution(strings, patterns):
     return len(set(strings)) == len(set(patterns)) == len(set(zip(strings, patterns)))
 
 ```
+</details>
 
 ### Contains Close Nuns
 
@@ -771,6 +824,9 @@ solution(nums, k) = false.
 
 The absolute difference between the positions of the two 2s is 3, which is more than k.
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 
 ``` py
@@ -789,6 +845,7 @@ def solution(nums, k):
 
     return False
 ```
+</details>
 
 ### Possible Sums
 
@@ -818,6 +875,9 @@ Here are all the possible sums:
 ```
 As you can see, there are 9 distinct sums that can be created from non-empty groupings of your coins.
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 
 ``` py
@@ -828,6 +888,7 @@ def solution(coins, quantity):
     
     return len(possible_sums) - 1
 ```
+</details>
 
 ### Swap Lex Order
 
@@ -841,6 +902,9 @@ For str = "abdc" and pairs = [[1, 4], [3, 4]], the output should be
 solution(str, pairs) = "dbca".
 
 By swapping the given indices, you get the strings: "cbda", "cbad", "dbac", "dbca". The lexicographically largest string in this list is "dbca".
+
+<details>
+  <summary>Click me to view proposed solution</summary>
 
 **Solution**
 
@@ -862,6 +926,8 @@ def solution(strn, pairs):
             reord[i-1] = l # string is 0 indexed
     return ''.join(reord.get(i,x) for i,x in enumerate(strn))
 ```
+</details>
+
 ## Trees: Basic
 
 ### Has Path With Given Sum
@@ -985,6 +1051,9 @@ This is what this tree looks like:
 ```
 There is no path from root to leaf with the given sum 7.
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 ``` py
 #
@@ -1000,6 +1069,8 @@ def solution(t, s):
 
     return solution(t.left, s - t.value) or solution(t.right, s - t.value)
 ```
+</details>
+
 ### Is Tree Symmetric
 
 Asked by Linkedin and Microsoft - 30 min - Easy
@@ -1088,6 +1159,9 @@ Here's what the tree in this example looks like:
 ```
 As you can see, it is not symmetric.
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solutions**
 
 ``` py
@@ -1126,6 +1200,7 @@ def solution(t):
     else:
         return iTS(t.left, t.right)
 ```
+</details>
 
 ### Find Profession
 
@@ -1156,6 +1231,9 @@ Note: in this tree first child is considered as left child, second - as right.
 For level = 3 and pos = 3, the output should be
 solution(level, pos) = "Doctor".
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 ``` py
 def solution(level, pos):
@@ -1176,6 +1254,7 @@ def solution(level, pos):
     else:
         return "Doctor"
 ```
+</details>
 
 ### Kth Smallest in BST
 
@@ -1264,6 +1343,9 @@ Here is what t looks like:
 ```
 The values of t are [-2, -1, 0, 1], and the 1st smallest is -2.
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 ``` py
 #
@@ -1331,6 +1413,8 @@ def find_predecessor(t):
         
     return predecessor
 ```
+</details>
+
 ### Is Subtree
 
 30 min - Medium
@@ -1527,6 +1611,9 @@ t2 = {
 ```
 the output should be solution(t1, t2) = false.
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 ``` py
 #
@@ -1555,6 +1642,8 @@ def equals(t1, t2):
         return equals(t1.left, t2.left) and equals(t1.right, t2.right)
     return False
 ```
+</details>
+
 ### Restore Binary Tree
 
 40 min - Hard
@@ -1624,6 +1713,8 @@ solution(inorder, preorder) = {
     "right": null
 }
 ```
+<details>
+  <summary>Click me to view proposed solution</summary>
 
 **Solution**
 
@@ -1644,6 +1735,8 @@ def solution(inorder, preorder):
   root.right = solution(inorder[i+1:],preorder[i+1:])
   return root
 ```
+</details>
+
 ### Find Substrings
 
 Asked by Uber - 40 min - Hard
@@ -1658,6 +1751,9 @@ For words = ["Apple", "Melon", "Orange", "Watermelon"] and parts = ["a", "mel", 
 solution(words, parts) = ["Apple", "Me[lon]", "Or[a]nge", "Water[mel]on"].
 
 While "Watermelon" contains three substrings from the parts array, "a", "mel", and "lon", "mel" is the longest substring that appears first in the string.
+
+<details>
+  <summary>Click me to view proposed solution</summary>
 
 **Solution**
 
@@ -1694,6 +1790,8 @@ def solution(words, parts):
             words[i] = "%s[%s]%s" % (w[:pos], w[pos:pos+L], w[pos+L:])
     return words
 ```
+</details>
+
 ### Delete From BST
 
 30 min - Medium
@@ -1797,6 +1895,8 @@ solution(t, queries) = {
     }
 }
 ```
+<details>
+  <summary>Click me to view proposed solution</summary>
 
 **Solution**
 
@@ -1842,3 +1942,4 @@ def solution(t, queries):
 
     return(t)
 ```
+</details>

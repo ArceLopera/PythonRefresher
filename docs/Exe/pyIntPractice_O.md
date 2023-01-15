@@ -18,6 +18,9 @@ solution(n) = 2.
 
 You can either climb 2 steps at once or climb 1 step two times.
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 
 ``` py
@@ -27,6 +30,8 @@ def solution(n):
         a, b = a + b, a
     return a
 ```
+</details>
+
 ### House Robber
 
 Asked by Linkedin - 20 min - Medium
@@ -41,6 +46,9 @@ For nums = [1, 1, 1], the output should be
 solution(nums) = 2.
 
 The optimal way to get the most money in one night is to rob the first and the third houses for a total of 2.
+
+<details>
+  <summary>Click me to view proposed solution</summary>
 
 **Solutions**
 
@@ -66,6 +74,8 @@ def house(nums):
     return max(house(nums[1:]), house(nums[2:]) + nums[0])
 
 ```
+</details>
+
 ### Compose Ranges
 
 Asked by Google - 15 min - Easy
@@ -76,6 +86,9 @@ Given a sorted integer array that does not contain any duplicates, return a summ
 
 For nums = [-1, 0, 1, 2, 6, 7, 9], the output should be
 solution(nums) = ["-1->2", "6->7", "9"].
+
+<details>
+  <summary>Click me to view proposed solution</summary>
 
 **Solution**
 
@@ -90,6 +103,7 @@ def solution(nums):
         ranges.append(str(start) + ('', '->' + str(end))[start != end])
     return ranges
 ```
+</details>
 
 ### Map Decoding
 
@@ -113,6 +127,9 @@ solution(message) = 3.
 
 "123" can be decoded as "ABC" (1 2 3), "LC" (12 3) or "AW" (1 23), so the total number of ways is 3.
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 
 ``` py
@@ -127,6 +144,7 @@ def solution(msg):
     return a
 
 ```
+</details>
 
 ### Filling Blocks
 
@@ -148,6 +166,9 @@ Here are the 36 possible configuration of smaller blocks inside the 4 × 4 block
 
 ![Block](./Images/block.png)
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 
 ``` py
@@ -157,6 +178,7 @@ def solution(n):
         a.append(a[i-1]+5*a[i-2]+a[i-3]-a[i-4])
     return a[n]
 ```
+</details>
 
 ## Common Techniques : Basic
 
@@ -178,12 +200,16 @@ solution(a) = false.
 
 The given array contains no duplicates.
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 
 ``` py
 def solution(a):
     return len(set(a)) != len(a)
 ```
+</details>
 
 ### Sum Of Two
 
@@ -195,6 +221,9 @@ You have two integer arrays, a and b, and an integer target value v. Determine w
 
 For a = [1, 2, 3], b = [10, 20, 30, 40], and v = 42, the output should be
 solution(a, b, v) = true.
+
+<details>
+  <summary>Click me to view proposed solution</summary>
 
 **Solution**
 
@@ -213,6 +242,7 @@ def solution(a, b, v):
             return True
     return False
 ```
+</details>
 
 ### Sum In Range
 
@@ -227,6 +257,9 @@ solution(nums, queries) = 10.
 
 The array of results for queries is [1, 3, 6], so the answer is 1 + 3 + 6 = 10
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 
 ``` py
@@ -236,6 +269,7 @@ def solution(n, q):
     for i,j in q:res += a[j+1]-a[i] 
     return res % 1000000007
 ```
+</details>
 
 ### Array Max Consecutive Sum 2
 
@@ -250,6 +284,8 @@ solution(inputArray) = 7.
 
 The contiguous subarray that gives the maximum possible sum is [2, 5], with a sum of 7.
 
+<details>
+  <summary>Click me to view proposed solution</summary>
 
 **Solution**
 
@@ -265,6 +301,7 @@ def solution(inputArray):
         maxsum = max(maxsum, cumsum)
     return maxsum
 ```
+</details>
 
 ### Find Longest Subarray By Sum
 
@@ -291,6 +328,9 @@ solution(s, arr) = [1, 8].
 
 The sum of elements from the 1st position to the 8th position (1-based) is equal to 15: 1 + 2 + 3 + 4 + 5 + 0 + 0 + 0.
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 
 ``` py
@@ -306,6 +346,7 @@ def solution(s, a):
             res=(j+1,i+1)
     return res if res[0] else [-1]
 ```
+</details>
 
 ### Product Except Self
 
@@ -329,6 +370,9 @@ solution(nums, m) = 2.
 The array of the values of f is: [24, 12, 8, 6]. If we take all the elements modulo m, we get:
 [0, 0, 8, 6]. The sum of those values is 8 + 6 = 14, making the answer 14 % 12 = 2.
 
+<details>
+  <summary>Click me to view proposed solution</summary>
+
 **Solution**
 
 ``` py
@@ -339,6 +383,7 @@ def solution(nums, m):
   return s
 
 ```
+</details>
 
 ### Min Substring With All Chars
 
@@ -352,6 +397,9 @@ It's guaranteed that the answer exists. If there are several answers, return the
 
 For s = "adobecodebanc" and t = "abc", the output should be
 solution(s, t) = "banc".
+
+<details>
+  <summary>Click me to view proposed solution</summary>
 
 **Solution**
 
@@ -371,3 +419,4 @@ def solution(s, t):
     
     return ""
 ```
+</details>
