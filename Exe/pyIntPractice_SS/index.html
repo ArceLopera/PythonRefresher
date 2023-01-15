@@ -2992,7 +2992,11 @@ solution(t) = [1, 2, 4, 3, 5].</p>
    \   /
     3 5
 </code></pre></div></p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="c1">#</span>
 <span class="c1"># Binary trees are already defined with this interface:</span>
 <span class="c1"># class Tree(object):</span>
@@ -3014,6 +3018,8 @@ solution(t) = [1, 2, 4, 3, 5].</p>
             <span class="n">q</span><span class="o">+=</span><span class="p">[</span><span class="n">v</span><span class="o">.</span><span class="n">right</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">res</span>
 </code></pre></div>
+</details>
+
 <h3 id="largest-values-in-tree-rows">Largest Values In Tree Rows</h3>
 <p>30 min - Easy</p>
 <p>You have a binary tree t. Your task is to find the largest value in each row of this tree. In a tree, a row is a set of nodes that have equal depth. For example, a row with depth 0 is a tree root, a row with depth 1 is composed of the root's children, etc.</p>
@@ -3049,7 +3055,10 @@ the output should be solution(t) = [-1, 7, 1].</p>
 In the row with depth 0, there is only one vertex - the root with value -1;
 In the row with depth 1, there are two vertices with values 5 and 7, so the largest value here is 7;
 In the row with depth 2, there is only one vertex with value 1.</p>
-<p><strong>Solution</strong>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
 <div class="highlight"><pre><span></span><code><span class="c1"># Definition for binary tree:</span>
 <span class="c1"># class Tree(object):</span>
 <span class="c1">#   def __init__(self, x):</span>
@@ -3067,7 +3076,9 @@ In the row with depth 2, there is only one vertex with value 1.</p>
         <span class="n">next_row</span> <span class="o">=</span> <span class="p">[</span><span class="n">tree</span><span class="o">.</span><span class="n">left</span> <span class="k">for</span> <span class="n">tree</span> <span class="ow">in</span> <span class="n">stack</span> <span class="k">if</span> <span class="n">tree</span><span class="o">.</span><span class="n">left</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">tree</span><span class="o">.</span><span class="n">right</span> <span class="k">for</span> <span class="n">tree</span> <span class="ow">in</span> <span class="n">stack</span> <span class="k">if</span> <span class="n">tree</span><span class="o">.</span><span class="n">right</span><span class="p">]</span>
         <span class="n">stack</span> <span class="o">=</span> <span class="n">next_row</span>
     <span class="k">return</span> <span class="n">result</span>
-</code></pre></div></p>
+</code></pre></div>
+</details>
+
 <h3 id="digit-tree-sum">Digit Tree Sum</h3>
 <p>30 min - Medium</p>
 <p>We're going to store numbers in a tree. Each node in this tree will store a single digit (from 0 to 9), and each path from root to leaf encodes a non-negative integer.</p>
@@ -3128,7 +3139,11 @@ and their sum is 103 + 101 + 14 = 218.
 the output should be
 solution(t) = 193.
 Because 09 + 091 + 093 = 193</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="c1"># Definition for binary tree:</span>
 <span class="c1"># class Tree(object):</span>
 <span class="c1">#   def __init__(self, x):</span>
@@ -3154,6 +3169,8 @@ Because 09 + 091 + 093 = 193</p>
 
     <span class="k">return</span> <span class="nb">sum</span>
 </code></pre></div>
+</details>
+
 <h3 id="longest-path">Longest Path</h3>
 <p>Asked by Google - 45 min - Hard</p>
 <p>Suppose we represent our file system as a string. For example, the string "user\n\tpictures\n\tdocuments\n\t\tnotes.txt" represents:
@@ -3182,7 +3199,10 @@ File names do not contain spaces at the beginning.</p>
 <p>For fileSystem = "user\f\tpictures\f\tdocuments\f\t\tnotes.txt", the output should be
 solution(fileSystem) = 24.</p>
 <p>The longest path is "user/documents/notes.txt", and it consists of 24 characters.</p>
-<p><strong>Solution</strong>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">fileSystem</span><span class="p">):</span>
     <span class="n">maxlen</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">pathlen</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
@@ -3194,7 +3214,9 @@ solution(fileSystem) = 24.</p>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">pathlen</span><span class="p">[</span><span class="n">depth</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">pathlen</span><span class="p">[</span><span class="n">depth</span><span class="p">]</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
     <span class="k">return</span> <span class="n">maxlen</span>
-</code></pre></div></p>
+</code></pre></div>
+</details>
+
 <h3 id="graph-distances">Graph Distances</h3>
 <p>Asked by Adobe and Samsung - 45 min - Hard</p>
 <p>You have a strongly connected directed graph that has positive weights in the adjacency matrix g. The graph is represented as a square matrix, where g[i][j] is the weight of the edge (i, j), or -1 if there is no such edge.</p>
@@ -3211,7 +3233,10 @@ solution(g, s) = [0, 2, 2].</p>
 <p>The distance from the start vertex 0 to itself is 0.
 The distance from the start vertex 0 to vertex 1 is 2 + 0 = 2.
 The distance from the start vertex 0 to vertex 2 is 2.</p>
-<p><strong>Solution</strong>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
 <span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
     <span class="n">dists</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">g</span><span class="p">]</span>
@@ -3226,7 +3251,9 @@ The distance from the start vertex 0 to vertex 2 is 2.</p>
 
 <span class="k">def</span> <span class="nf">graphExpand</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">dist</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">[(</span><span class="n">j</span><span class="p">,</span> <span class="n">dist</span> <span class="o">+</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">if</span> <span class="n">v</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</code></pre></div></p>
+</code></pre></div>
+</details>
+
 <h2 id="backtracking">Backtracking</h2>
 <h3 id="climbing-staircase">Climbing Staircase</h3>
 <p>Asked by Adobe - 30 min - Medium</p>
@@ -3241,7 +3268,10 @@ The distance from the start vertex 0 to vertex 2 is 2.</p>
  [2, 2]]
 </code></pre></div>
 There are 4 steps in the staircase, and you can jump up 2 or fewer steps at a time. There are 5 potential sequences in which you jump up the stairs either 2 or 1 at a time.</p>
-<p><strong>Solution</strong>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
 
     <span class="k">return</span> <span class="n">climb</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="p">[])</span>
@@ -3265,7 +3295,9 @@ There are 4 steps in the staircase, and you can jump up 2 or fewer steps at a ti
         <span class="n">out</span> <span class="o">+=</span> <span class="n">climb</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">temp</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">out</span>
-</code></pre></div></p>
+</code></pre></div>
+</details>
+
 <h3 id="n-queens">N Queens</h3>
 <p>Asked by Amazon and Twitter - 30 min - Hard</p>
 <p>In chess, queens can move any number of squares vertically, horizontally, or diagonally. The n-queens puzzle is the problem of placing n queens on an n × n chessboard so that no two queens can attack each other.</p>
@@ -3279,7 +3311,10 @@ solution(n) = [[1]];</p>
 This diagram of the second permutation, [3, 1, 4, 2], will help you visualize its configuration:</p>
 <p><img alt="queens" src="../Images/queens.png" /></p>
 <p>The element in the 1st position of the array, 3, indicates that the queen for column 1 is placed in row 3. Since the element in the 2nd position of the array is 1, the queen for column 2 is placed in row 1. The element in the 3rd position of the array is 4, meaning that the queen for column 3 is placed in row 4, and the element in the 4th position of the array is 2, meaning that the queen for column 4 is placed in row 2.</p>
-<p><strong>Solution</strong>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="p">[],</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">col</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span> <span class="k">return</span> <span class="p">[</span><span class="n">state</span><span class="p">]</span>
     <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
@@ -3293,14 +3328,20 @@ This diagram of the second permutation, [3, 1, 4, 2], will help you visualize it
     <span class="k">if</span> <span class="n">r2</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span> <span class="k">return</span> <span class="kc">True</span>
     <span class="n">c2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="nb">any</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">c1</span><span class="o">-</span><span class="n">c2</span><span class="p">)</span> <span class="o">==</span> <span class="nb">abs</span><span class="p">(</span><span class="n">r1</span><span class="o">-</span><span class="n">r2</span><span class="p">)</span> <span class="k">for</span> <span class="n">c1</span><span class="p">,</span> <span class="n">r1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-</code></pre></div></p>
+</code></pre></div>
+</details>
+
 <h3 id="sum-subsets">Sum Subsets</h3>
 <p>Asked by Palantir - 30 min - Hard</p>
 <p>Given a sorted array of integers arr and an integer num, find all possible unique subsets of arr that add up to num. Both the array of subsets and the subsets themselves should be sorted in lexicographical order.</p>
 <p><strong>Example</strong></p>
 <p>For arr = [1, 2, 3, 4, 5] and num = 5, the output should be
 solution(arr, num) = [[1, 4], [2, 3], [5]].</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 
@@ -3317,6 +3358,8 @@ solution(arr, num) = [[1, 4], [2, 3], [5]].</p>
     <span class="n">addSumSubsets</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="p">())</span>
     <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
 </code></pre></div>
+</details>
+
 <h3 id="word-boggle">Word Boggle</h3>
 <p>35 min - Medium</p>
 <p>Boggle is a popular word game in which players attempt to find words in sequences of adjacent letters on a rectangular board.</p>
@@ -3333,7 +3376,11 @@ solution(arr, num) = [[1, 4], [2, 3], [5]].</p>
 and words = ["CODE", "SOLO", "RULES", "COOL"], the output should be
 solution(board, words) = ["CODE", "RULES"]</p>
 <p><img alt="boggle" src="../Images/boggle.png" /></p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">words</span><span class="p">):</span>
     <span class="n">r</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
@@ -3352,6 +3399,8 @@ solution(board, words) = ["CODE", "RULES"]</p>
                         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">return</span> <span class="kc">False</span>    
 </code></pre></div>
+</details>
+
 <h3 id="combination-sum">Combination Sum</h3>
 <p>Asked by Amazon, Adobe and Microsoft - 40 min - Hard</p>
 <p>Given an array of integers a and an integer sum, find all of the unique combinations in a that add up to sum.
@@ -3361,7 +3410,11 @@ If there are no possible combinations that add up to sum, the output should be t
 <p><strong>Example</strong></p>
 <p>For a = [2, 3, 5, 9] and sum = 9, the output should be
 solution(a, sum) = "(2 2 2 3)(2 2 5)(3 3 3)(9)".</p>
-<p><strong>Solution</strong></p>
+<details>
+  <summary>Click me to view proposed solution</summary>
+
+**Solution**
+
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
     <span class="n">arr</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
     <span class="n">ans</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">comb_recur</span><span class="p">([],</span> <span class="n">arr</span><span class="p">,</span> <span class="n">s</span><span class="p">))</span>
@@ -3380,6 +3433,7 @@ solution(a, sum) = "(2 2 2 3)(2 2 5)(3 3 3)(9)".</p>
         <span class="k">elif</span> <span class="n">val</span> <span class="o">&gt;</span> <span class="n">s</span><span class="p">:</span>
             <span class="k">break</span>
 </code></pre></div>
+</details>
 
               
             </article>
