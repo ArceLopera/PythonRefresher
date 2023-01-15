@@ -33,6 +33,7 @@ Since:
 ```
 <details>
   <summary>Click me for proposed solution</summary>
+  
 **Solution**
 ``` py
 def solution(ride_time, ride_distance, cost_per_minute, cost_per_mile):
