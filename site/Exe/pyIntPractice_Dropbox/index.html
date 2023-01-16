@@ -2707,6 +2707,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#campus-cup" class="md-nav__link">
+    Campus Cup
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2763,6 +2770,13 @@
         <li class="md-nav__item">
   <a href="#incorrect-password-attempts" class="md-nav__link">
     Incorrect Password Attempts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#campus-cup" class="md-nav__link">
+    Campus Cup
   </a>
   
 </li>
@@ -2827,6 +2841,78 @@ solution(passcode, attempts) = false.</p>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">failed</span><span class="p">:</span>
             <span class="n">cnt</span> <span class="o">=</span><span class="mi">0</span>
     <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+
+</details>
+
+<h2 id="campus-cup">Campus Cup</h2>
+<p>10 min - Medium</p>
+<p>Dropbox holds a competition between schools called CampusCup. If you verify an email address from a college, university, or higher education institution, you earn 20 points toward your school's overall ranking. When a school receives at least 100 points, all of its registered members receive an additional 3 Gb of bonus space each. When the school receives at least 200 points, its registered members receive an additional 8 Gb. If the school receives at least 300 points, its members receive an additional 15 Gb. And finally, when a school receives at least 500 points, members receive an additional 25 Gb each.</p>
+<p>You are given n registered emails, all of them unique. Each email has the following format: "<name>@<domain>", where <name> and <domain> are non-empty strings consisting of lowercase letters and a '.'. Identical domains correspond to the same school and vice versa.</p>
+<p>Your task is to make a scoreboard, i.e. to sort the schools according to the amount of bonus space they each received (per student not in total). School A must be higher in the standings than school B if A received more space than B, or if they received equal number of gigabytes but the domain string of school A is lexicographically smaller than the one of school B.</p>
+<p>Example</p>
+<p>For emails = ["john.doe@mit.edu", "admin@rain.ifmo.ru", "noname@mit.edu"], the output should be
+solution(emails) = ["mit.edu", "rain.ifmo.ru"].</p>
+<p>"mit.edu" scored 40 points, and "rain.ifmo.ru" just 20. Both universities got no additional space, so "mit.edu" must be higher in the standings because it is lexicographically smaller than "rain.ifmo.ru".</p>
+<p>For
+<div class="highlight"><pre><span></span><code>emails = [&quot;b@harvard.edu&quot;, &quot;c@harvard.edu&quot;, &quot;d@harvard.edu&quot;, 
+          &quot;e@harvard.edu&quot;, &quot;f@harvard.edu&quot;,
+          &quot;a@student.spbu.ru&quot;, &quot;b@student.spbu.ru&quot;, &quot;c@student.spbu.ru&quot;, 
+          &quot;d@student.spbu.ru&quot;, &quot;e@student.spbu.ru&quot;, &quot;f@student.spbu.ru&quot;, 
+          &quot;g@student.spbu.ru&quot;]
+</code></pre></div>
+the output should be
+solution(emails) = ["harvard.edu", "student.spbu.ru"].</p>
+<p>"harvard.edu" - 100 points, 3 Gb of additional space.
+"student.spbu.ru" - 140 points, also 3 Gb of additional space.</p>
+<p>"harvard.edu" must be higher in the standings because it is lexicographically smaller than "student.spbu.ru".</p>
+<p>For
+<div class="highlight"><pre><span></span><code>emails = [&quot;a@rain.ifmo.ru&quot;, &quot;b@rain.ifmo.ru&quot;, &quot;c@rain.ifmo.ru&quot;, 
+          &quot;d@rain.ifmo.ru&quot;, &quot;e@rain.ifmo.ru&quot;, &quot;noname@mit.edu&quot;]
+</code></pre></div>
+the output should be
+solution(emails) = ["rain.ifmo.ru", "mit.edu"].</p>
+<p>"mit.edu" - 20 points, no additional space.
+"rain.ifmo.ru" - 100 points, 3 Gb of additional space.</p>
+<p>Therefore, "rain.ifmo.ru" must be higher in the standings.</p>
+<details>
+  <summary>Click me for proposed solution</summary>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">emails</span><span class="p">):</span>
+    <span class="n">schools</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">emails</span><span class="p">:</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;@&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">e</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">schools</span><span class="p">:</span>
+            <span class="n">schools</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">scores</span><span class="p">[</span><span class="n">schools</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">e</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">20</span>
+
+    <span class="n">five</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">three</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">two</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">one</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">none</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">schools</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">500</span><span class="p">:</span>
+            <span class="n">five</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">schools</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">300</span><span class="p">:</span>
+            <span class="n">three</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">schools</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">200</span><span class="p">:</span>
+            <span class="n">two</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">schools</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">scores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">100</span><span class="p">:</span>
+            <span class="n">one</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">schools</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">none</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">schools</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">five</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">three</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">two</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">one</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">none</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">five</span><span class="o">+</span><span class="n">three</span><span class="o">+</span><span class="n">two</span><span class="o">+</span><span class="n">one</span><span class="o">+</span><span class="n">none</span>
 </code></pre></div>
 
 </details>
