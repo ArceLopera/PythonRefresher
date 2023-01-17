@@ -2714,6 +2714,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#lossless-data-compression" class="md-nav__link">
+    Lossless Data Compression
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2777,6 +2784,13 @@
         <li class="md-nav__item">
   <a href="#campus-cup" class="md-nav__link">
     Campus Cup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lossless-data-compression" class="md-nav__link">
+    Lossless Data Compression
   </a>
   
 </li>
@@ -2914,7 +2928,65 @@ solution(emails) = ["rain.ifmo.ru", "mit.edu"].</p>
 
     <span class="k">return</span> <span class="n">five</span><span class="o">+</span><span class="n">three</span><span class="o">+</span><span class="n">two</span><span class="o">+</span><span class="n">one</span><span class="o">+</span><span class="n">none</span>
 </code></pre></div>
+</details>
 
+<h2 id="lossless-data-compression">Lossless Data Compression</h2>
+<p>25 min - Medium</p>
+<p>In its effort to push the limits of file compression, Dropbox recently developed a lossless compression algorithm for H.264 and JPEG files. Since you are thinking about applying for a job at Dropbox, you decided to experiment with simple lossless compression as part of your interview prep.</p>
+<p>One of the most widely known approaches in the field of compression algorithms is sliding window compression. It works as follows:</p>
+<p>Consider characters one by one. Let the current character index be i.
+Take the last width characters before the current one (i.e. s[i - width, i - 1], where s[i, j] means the substring of s from index i to index j, both inclusive), and call it the window. If there are less than width characters before the current one, then you should use s[0, i - 1] as the window.
+Find such startIndex and length that s[i, i + length - 1] = s[startIndex, startIndex + length - 1] and s[startIndex, startIndex + length - 1] is contained within the window. If there are several such pairs, choose the one with the largest length. If there still remains more than one option, choose the one with the smallest startIndex.
+If the search was successful, append "(startIndex,length)" to the result and move to the index i + length.
+Otherwise, append the current character to the result and move on to the next one.
+Given a string, apply sliding window compression to it.</p>
+<p><strong>Example</strong></p>
+<p>For inputString = "abacabadabacaba" and width = 7, the output should be
+solution(inputString, width) = "ab(0,1)c(0,3)d(4,3)c(8,3)".</p>
+<p>Step 1: i = 0, inputString[i] = 'a', window = "". 'a' is not contained within the window, so it is appended to the result.</p>
+<p>Step 2: i = 1, inputString[i] = 'b', window = "a". 'b' is not contained within the window, so it is appended to the result.</p>
+<p>Step 3: i = 2, inputString[i] = 'a', window = "ab". 'a' can be found in the window. 'a' in the window corresponds to the inputString[0], so (0,1) representing the substring "a" is appended to the result.</p>
+<p>Step 4: i = 3, inputString[i] = 'c', window = "aba". The same situation as in the first two steps.</p>
+<p>Step 5: i = 4, inputString[i] = 'a', window = "abac". Consider startIndex = 0, length = 3. inputString[startIndex, startIndex + length - 1] = "aba" and it is contained within the window, inputString[i, i + length - 1] = "aba". Therefore, "(0,3)" should be added to the result. i += length.</p>
+<p><img alt="lossless" src="../Images/lossless1.png" /></p>
+<p>Step 6: i = 7, inputString[i] = 'd', window = inputString[0, 6] = "abacaba". The same situation as in the first two steps.</p>
+<p>Step 7: i = 8, inputString[i] = 'a', window = inputString[1, 7] = "bacabad". Consider length = 3 again. inputString[i, i + b - 1] = "aba", window[3, 5] = "aba", and it corresponds to inputString[4, 6] since inputString[0, 2] is no longer within the window. So, "(4,3)" should be appended. i += length.</p>
+<p>Step 8: i = 11, inputString[i] = 'c', window = "abadaba". The same situation as at the first two steps.</p>
+<p>Step 9: i = 12, inputString[i] = 'a', window = "badabac". length = 3, inputString[i, i + length - 1] = "aba", window[3, 5] = "aba", and it corresponds to inputString[8, 10]. So, "(8,3)" should be appended. i += length.</p>
+<p><img alt="lossless1" src="../Images/lossless2.png" /></p>
+<p>For inputString = "abacabadabacaba" and width = 8, the output should be
+solution(inputString, width) = "ab(0,1)c(0,3)d(0,7)".</p>
+<p>In both of the above examples the resulting "compressed" string becomes even longer than the initial one. In fact, sliding window compression proves to be efficient for longer inputs.</p>
+<p>For inputString = "aaaaaaaaaaaaaaaaaaaaaaaaaaaa" and width = 12, the output should be
+solution(inputString, width) = "a(0,1)(0,2)(0,4)(0,8)(4,12)".</p>
+<p>In the last example the resulting string is one character shorter than the input one. It is the shortest possible example of the efficient work of sliding window compression. If the input contained even more letters 'a', then the effect of this approach would be even more considerable.</p>
+<details>
+  <summary>Click me for proposed solution</summary>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">inputString</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
+    <span class="n">s</span><span class="o">=</span><span class="n">inputString</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+        <span class="n">window</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="o">-</span><span class="n">width</span><span class="p">):</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">ch</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">ch</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">window</span><span class="p">:</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="n">ch</span>
+            <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">length</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">width</span><span class="o">+</span><span class="mi">2</span><span class="p">)):</span>
+                <span class="k">for</span> <span class="n">startIndex</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="o">-</span><span class="n">width</span><span class="p">),</span><span class="n">i</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">startIndex</span><span class="p">:</span><span class="n">startIndex</span><span class="o">+</span><span class="n">length</span><span class="p">]</span> <span class="ow">in</span> <span class="n">window</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">length</span><span class="p">]</span><span class="o">==</span><span class="n">s</span><span class="p">[</span><span class="n">startIndex</span><span class="p">:</span><span class="n">startIndex</span><span class="o">+</span><span class="n">length</span><span class="p">]:</span>
+                        <span class="k">break</span>
+                <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">startIndex</span><span class="p">:</span><span class="n">startIndex</span><span class="o">+</span><span class="n">length</span><span class="p">]</span> <span class="ow">in</span> <span class="n">window</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">length</span><span class="p">]</span><span class="o">==</span><span class="n">s</span><span class="p">[</span><span class="n">startIndex</span><span class="p">:</span><span class="n">startIndex</span><span class="o">+</span><span class="n">length</span><span class="p">]:</span>
+                        <span class="k">break</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">startIndex</span><span class="p">,</span><span class="n">length</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="n">length</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="s2">&quot;(&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">startIndex</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">length</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;)&quot;</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="n">line</span>
+
+    <span class="k">return</span> <span class="n">output</span>
+</code></pre></div>
 </details>
 
               
