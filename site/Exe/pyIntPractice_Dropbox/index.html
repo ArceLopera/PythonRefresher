@@ -2721,6 +2721,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#file-sync-order" class="md-nav__link">
+    File Sync Order
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2791,6 +2798,13 @@
         <li class="md-nav__item">
   <a href="#lossless-data-compression" class="md-nav__link">
     Lossless Data Compression
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-sync-order" class="md-nav__link">
+    File Sync Order
   </a>
   
 </li>
@@ -2988,6 +3002,61 @@ solution(inputString, width) = "a(0,1)(0,2)(0,4)(0,8)(4,12)".</p>
     <span class="k">return</span> <span class="n">output</span>
 </code></pre></div>
 </details>
+
+<h2 id="file-sync-order">File Sync Order</h2>
+<p>30 min - Hard</p>
+<p>Dropbox uploads files one-by-one and prioritizes them based on size, starting with the smallest. This way, you don't have to worry about your smaller files getting stuck behind larger ones during transfers. At the very beginning and after each file is synchronized, Dropbox selects the next smallest file that can fit the storage limit, and starts the upload. If it's impossible to sync anything, nothing happens until a new file is added or time runs out.</p>
+<p>Given this structure, if you only have access to Internet for a limited time period (duration seconds), some of your files might fail to sync either because you run out of time, or they don't fit the storageLimit.</p>
+<p>Implement a function that tells you which files will be synced in duration seconds given the storageLimit.</p>
+<p><strong>Example</strong></p>
+<p>For
+<div class="highlight"><pre><span></span><code>files = [[10, 5], 
+         [10, 7],
+         [8, 10],
+         [2, 20]]
+</code></pre></div>
+storageLimit = 20,
+uploadSpeed = 2, and
+duration = 100, the output should be</p>
+<p>solution(files, storageLimit, uploadSpeed, duration) = [0, 2, 3].</p>
+<p>There are four files to sync:</p>
+<ul>
+<li>
+<p>The first one is 10 KB, and you add it to your Dropbox folder 5 seconds after launching Dropbox. It takes 10 / 2 = 5 seconds for this file to be synced.</p>
+</li>
+<li>
+<p>The second file is 10 KB. You add it to Dropbox 7 seconds after launching, and it takes 10 / 2 = 5 seconds to sync.</p>
+</li>
+<li>
+<p>The third file is 8 KB, and you add it 10 seconds after launching Dropbox. It takes 8 / 2 = 4 seconds to sync.</p>
+</li>
+<li>
+<p>The fourth and final file is 2 KB, you add it 20 seconds after launching Dropbox, and it takes 2 / 2 = 1 second to sync.</p>
+</li>
+</ul>
+<p>Here's what happens:</p>
+<p>During the first 5 seconds there are no files to upload, so nothing happens.</p>
+<p>5 seconds after launch the first file (with index 0) is added to the Dropbox folder, and the synchronization starts immediately.</p>
+<p>7 seconds after launch the second file (with index 1) is added to the Dropbox folder, while the first file is still syncing.</p>
+<p>Then, 10 seconds after launch two events occur simultaneously:</p>
+<p>the first file finishes syncing;</p>
+<p>the third file is added to the Dropbox folder;</p>
+<p>Since the third file is smaller than the second one, it is next in line to be synced.</p>
+<p>It takes another 4 seconds to upload the third file.</p>
+<p>This means that 14 seconds after launch, only the first and third files have synced.</p>
+<p>And unfortunately, since 18 KB out of 20 KB in storage has been used by the first and third files, at 10 KB the second file would put you over the storage limit of 20 KB.</p>
+<p>However, 20 seconds after launch, the fourth file (with index 3) is added to the Dropbox folder. It fits the storage limit, so synchronization starts right away.</p>
+<p>Finally, 21 seconds after launch, the fourth file finishes syncing.</p>
+<p>So, after 100 seconds all files but the second one are synced.</p>
+<p>Check out the image below for better understanding:</p>
+<p><img alt="sync" src="../Images/sync.png" /></p>
+<p>For
+files = [[10, 5]],
+storageLimit = 100,
+uploadSpeed = 1, and
+duration = 10, the output should be
+solution(files, storageLimit, uploadSpeed, duration) = [].
+There is only one file but since uploadSpeed is quite low duration is not enough to complete the upload.</p>
 
               
             </article>
