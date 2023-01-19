@@ -2728,6 +2728,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#display-diff" class="md-nav__link">
+    Display Diff
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2805,6 +2812,13 @@
         <li class="md-nav__item">
   <a href="#file-sync-order" class="md-nav__link">
     File Sync Order
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-diff" class="md-nav__link">
+    Display Diff
   </a>
   
 </li>
@@ -3057,6 +3071,147 @@ uploadSpeed = 1, and
 duration = 10, the output should be
 solution(files, storageLimit, uploadSpeed, duration) = [].
 There is only one file but since uploadSpeed is quite low duration is not enough to complete the upload.</p>
+<details>
+  <summary>Click me for proposed solution</summary>
+
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">storageLimit</span><span class="p">,</span> <span class="n">uploadSpeed</span><span class="p">,</span> <span class="n">duration</span><span class="p">):</span>
+    <span class="n">sol</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">file</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">files</span><span class="p">):</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">time2Upload</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">uploadSpeed</span>
+        <span class="n">arrivedTime</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="c1"># Check if file can be uploaded when added</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">time2Upload</span> <span class="o">+</span> <span class="n">arrivedTime</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">duration</span> <span class="ow">or</span> <span class="n">storageLimit</span> <span class="o">&lt;</span> <span class="n">file</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">sol</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">arrivedTime</span><span class="p">,</span> <span class="n">time2Upload</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="kc">True</span><span class="p">])</span>
+
+    <span class="n">sol</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="c1"># To order the files</span>
+    <span class="c1">#print(f&#39;Solution original sorted:{sol}&#39;)</span>
+    <span class="n">sol1</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">#Initialize the two limitations</span>
+    <span class="n">transcurredTime</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">usedStorage</span><span class="o">=</span><span class="mi">0</span>
+
+    <span class="n">curSol</span><span class="o">=</span><span class="p">[]</span>
+
+    <span class="k">while</span> <span class="n">isFilesAvailable</span><span class="p">(</span><span class="n">sol</span><span class="p">):</span>
+
+        <span class="n">curSol</span> <span class="o">=</span> <span class="n">getCurrentFiles</span><span class="p">(</span><span class="n">sol</span><span class="p">,</span><span class="n">transcurredTime</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Current Solutions : </span><span class="si">{</span><span class="n">curSol</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">curSol</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">nxt</span><span class="o">=</span> <span class="n">firstTrue</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">nxt</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">nxt</span><span class="o">=</span><span class="n">getNxtFile</span><span class="p">(</span><span class="n">curSol</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Next file </span><span class="si">{</span><span class="n">nxt</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="n">file</span><span class="o">=</span><span class="n">nxt</span>
+
+
+        <span class="k">if</span> <span class="n">file</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span>
+
+            <span class="c1">#print(f&#39;t_time:{transcurredTime}&#39;)</span>
+            <span class="c1">#print(f&#39;u_storage:{usedStorage}&#39;)</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">file</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">usedStorage</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">storageLimit</span><span class="p">:</span>
+                <span class="n">removeFile</span><span class="p">(</span><span class="n">sol</span><span class="p">,</span><span class="n">file</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Solution modified </span><span class="si">{</span><span class="n">sol</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">transcurredTime</span> <span class="o">&gt;=</span> <span class="n">file</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ArrivalTime:</span><span class="si">{</span><span class="n">file</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> &lt; t_time: </span><span class="si">{</span><span class="n">transcurredTime</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">transcurredTime</span><span class="o">+</span><span class="n">file</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="n">duration</span> <span class="ow">and</span> <span class="p">(</span><span class="n">file</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">usedStorage</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">storageLimit</span><span class="p">:</span>
+
+                    <span class="n">removeFile</span><span class="p">(</span><span class="n">sol</span><span class="p">,</span><span class="n">file</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Solution modified </span><span class="si">{</span><span class="n">sol</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+                    <span class="n">sol1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">file</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Solution appended </span><span class="si">{</span><span class="n">sol1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                    <span class="n">transcurredTime</span> <span class="o">+=</span> <span class="n">file</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#update time</span>
+                    <span class="n">usedStorage</span> <span class="o">+=</span> <span class="n">file</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="c1">#update storage</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;t_time:</span><span class="si">{</span><span class="n">transcurredTime</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;u_storage:</span><span class="si">{</span><span class="n">usedStorage</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">removeFile</span><span class="p">(</span><span class="n">sol</span><span class="p">,</span><span class="n">file</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Solution modified </span><span class="si">{</span><span class="n">sol</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ArrivalTime:</span><span class="si">{</span><span class="n">file</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> &gt; t_time: </span><span class="si">{</span><span class="n">transcurredTime</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">file</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">file</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="n">duration</span> <span class="ow">and</span> <span class="p">(</span><span class="n">file</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">usedStorage</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">storageLimit</span><span class="p">:</span>
+
+                    <span class="n">removeFile</span><span class="p">(</span><span class="n">sol</span><span class="p">,</span><span class="n">file</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Solution modified 2</span><span class="si">{</span><span class="n">sol</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+                    <span class="n">sol1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">file</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Solution appended 2</span><span class="si">{</span><span class="n">sol1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+                    <span class="n">transcurredTime</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">file</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                    <span class="n">usedStorage</span> <span class="o">+=</span> <span class="n">file</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;t_time:</span><span class="si">{</span><span class="n">transcurredTime</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;u_storage:</span><span class="si">{</span><span class="n">usedStorage</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">removeFile</span><span class="p">(</span><span class="n">sol</span><span class="p">,</span><span class="n">file</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Solution modified </span><span class="si">{</span><span class="n">sol</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sol1</span>
+
+<span class="k">def</span> <span class="nf">getCurrentFiles</span><span class="p">(</span><span class="n">sol</span><span class="p">,</span> <span class="n">t_time</span><span class="p">):</span>
+    <span class="n">sol1</span><span class="o">=</span><span class="p">[</span><span class="n">file</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">sol</span> <span class="k">if</span> <span class="n">t_time</span> <span class="o">&gt;=</span> <span class="n">file</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">file</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="p">]</span>
+    <span class="k">return</span> <span class="n">sol1</span>
+
+<span class="k">def</span> <span class="nf">getNxtFile</span><span class="p">(</span><span class="n">cur_files</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">cur_files</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">isFilesAvailable</span><span class="p">(</span><span class="n">files</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">any</span><span class="p">([</span><span class="n">file</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span> <span class="k">if</span> <span class="n">file</span><span class="p">[</span><span class="mi">4</span><span class="p">]])</span>
+
+<span class="k">def</span> <span class="nf">firstTrue</span><span class="p">(</span><span class="n">files</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">file</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="n">file</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">removeFile</span><span class="p">(</span><span class="n">sol</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+    <span class="n">col_ind</span> <span class="o">=</span> <span class="p">[</span><span class="n">fil</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="k">for</span> <span class="n">fil</span> <span class="ow">in</span> <span class="n">sol</span><span class="p">]</span> <span class="c1">#Extract column</span>
+    <span class="c1">#print(f&#39;col3...!!!.:{col_ind}&#39;)</span>
+    <span class="n">ind</span> <span class="o">=</span> <span class="n">col_ind</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="c1">#print(f&#39;index:{ind}&#39;)</span>
+
+    <span class="n">sol</span><span class="p">[</span><span class="n">ind</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span><span class="o">=</span><span class="kc">False</span> <span class="c1">#invalid file</span>
+</code></pre></div>
+
+</details>
+
+<h2 id="display-diff">Display Diff</h2>
+<p>35 min - Hard</p>
+<p>When a file in a user's Dropbox folder is changed, while synchronizing Dropbox tries to only upload the parts of the file that are different. The first step to accomplish this involves building a representation of the difference between the two versions of the same file.</p>
+<p>As part of Dropbox's engineering team, you've decided to implement a function that will represent the difference between two strings in the following format:</p>
+<p>Two strings are merged into one.
+Text that is present in both versions is left untouched.
+Text that is present only in the old version is enclosed in parentheses ((, )).
+Text that is present only in the new version is enclosed in brackets ([, ]).
+Among all possible representations, your function returns the shortest one (brackets and parentheses do not count).
+Among representations of minimal length, your function returns the lexicographically smallest one.
+For this task, please, assume that any other character &lt; '(' &lt; ')' &lt; '[' &lt; ']'.
+Now all you have to do is to implement this function.</p>
+<p><strong>Example</strong></p>
+<p>For oldVersion = "same_prefix_1233_same_suffix"
+and newVersion = "same_prefix23123_same_suffix", the output should be
+solution(oldVersion, newVersion) = "same_prefix(_1)23[12]3_same_suffix".</p>
+<details>
+  <summary>Click me for proposed solution</summary>
+
+
+<div class="highlight"><pre><span></span><code><span class="c1">#TODO</span>
+</code></pre></div>
+
+</details>
 
               
             </article>

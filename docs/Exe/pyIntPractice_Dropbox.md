@@ -306,3 +306,154 @@ duration = 10, the output should be
 solution(files, storageLimit, uploadSpeed, duration) = [].
 There is only one file but since uploadSpeed is quite low duration is not enough to complete the upload.
 
+<details>
+  <summary>Click me for proposed solution</summary>
+
+
+``` py
+def solution(files, storageLimit, uploadSpeed, duration):
+    sol = []
+    
+    for i, file in enumerate(files):
+        size = file[0]
+        time2Upload = file[0]/uploadSpeed
+        arrivedTime = file[1]
+        # Check if file can be uploaded when added
+        if (time2Upload + arrivedTime) <= duration or storageLimit < file[0]:
+            sol.append([arrivedTime, time2Upload, size, i, True])
+            
+    sol.sort() # To order the files
+    #print(f'Solution original sorted:{sol}')
+    sol1 = []
+    #Initialize the two limitations
+    transcurredTime=0
+    usedStorage=0
+    
+    curSol=[]
+    
+    while isFilesAvailable(sol):
+        
+        curSol = getCurrentFiles(sol,transcurredTime)
+        print(f'Current Solutions : {curSol}')
+        if len(curSol) == 0:
+            nxt= firstTrue(sol)
+            if nxt == None:
+                break
+        else:
+            nxt=getNxtFile(curSol)
+        print(f'Next file {nxt}')
+        
+        file=nxt
+        
+        
+        if file[4]:
+            
+            #print(f't_time:{transcurredTime}')
+            #print(f'u_storage:{usedStorage}')
+            
+            print(file)
+            
+            if (file[2] + usedStorage) > storageLimit:
+                removeFile(sol,file[3])
+                print(f'Solution modified {sol}')
+            
+            if (transcurredTime >= file[0]):
+                print(f'ArrivalTime:{file[0]} < t_time: {transcurredTime}')
+                
+                
+                if (transcurredTime+file[1]) <= duration and (file[2] + usedStorage) <= storageLimit:
+                    
+                    removeFile(sol,file[3])
+                    print(f'Solution modified {sol}')
+                    
+                    sol1.append(file[3])
+                    print(f'Solution appended {sol1}')
+                    transcurredTime += file[1] #update time
+                    usedStorage += file[2] #update storage
+                    print(f't_time:{transcurredTime}')
+                    print(f'u_storage:{usedStorage}')
+                else:
+                    removeFile(sol,file[3])
+                    print(f'Solution modified {sol}')
+                    
+            else:
+                print(f'ArrivalTime:{file[0]} > t_time: {transcurredTime}')
+                if (file[0]+file[1]) <= duration and (file[2] + usedStorage) <= storageLimit:
+                    
+                    removeFile(sol,file[3])
+                                        
+                    print(f'Solution modified 2{sol}')
+                    
+                    sol1.append(file[3])
+                    print(f'Solution appended 2{sol1}')
+                    
+                    transcurredTime = file[0]+file[1]
+                    usedStorage += file[2]
+                    print(f't_time:{transcurredTime}')
+                    print(f'u_storage:{usedStorage}')
+                else:
+                    removeFile(sol,file[3])
+                    print(f'Solution modified {sol}')
+    
+    return sol1
+
+def getCurrentFiles(sol, t_time):
+    sol1=[file for file in sol if t_time >= file[0] and file[4] ]
+    return sol1
+    
+def getNxtFile(cur_files):
+    return sorted(cur_files, key=lambda x: x[2])[0]
+
+def isFilesAvailable(files):
+    return any([file for file in files if file[4]])
+    
+def firstTrue(files):
+    for file in files:
+        if file[4]:
+            return file
+    return None
+    
+def removeFile(sol, i):
+    col_ind = [fil[3] for fil in sol] #Extract column
+    #print(f'col3...!!!.:{col_ind}')
+    ind = col_ind.index(i)
+    #print(f'index:{ind}')
+    
+    sol[ind][4]=False #invalid file
+```
+
+</details>
+
+## Display Diff
+
+35 min - Hard
+
+When a file in a user's Dropbox folder is changed, while synchronizing Dropbox tries to only upload the parts of the file that are different. The first step to accomplish this involves building a representation of the difference between the two versions of the same file.
+
+As part of Dropbox's engineering team, you've decided to implement a function that will represent the difference between two strings in the following format:
+
+Two strings are merged into one.
+Text that is present in both versions is left untouched.
+Text that is present only in the old version is enclosed in parentheses ((, )).
+Text that is present only in the new version is enclosed in brackets ([, ]).
+Among all possible representations, your function returns the shortest one (brackets and parentheses do not count).
+Among representations of minimal length, your function returns the lexicographically smallest one.
+For this task, please, assume that any other character < '(' < ')' < '[' < ']'.
+Now all you have to do is to implement this function.
+
+**Example**
+
+For oldVersion = "same_prefix_1233_same_suffix"
+and newVersion = "same_prefix23123_same_suffix", the output should be
+solution(oldVersion, newVersion) = "same_prefix(_1)23[12]3_same_suffix".
+
+<details>
+  <summary>Click me for proposed solution</summary>
+
+
+``` py
+
+#TODO
+```
+
+</details>
