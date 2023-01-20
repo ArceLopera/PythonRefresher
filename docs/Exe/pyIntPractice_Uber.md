@@ -353,3 +353,61 @@ def chkMiss(w1,w2):
     return True
 ```
 </details>
+
+## Uber First Tech Interview
+
+During a day, there are millions of transactions happening between banks. Because there are so many transactions, those are sorted only at the end of each day, when the balances between each bank are calculated. This is called “settlement”. The process of calculating the end of day balances between banks, and moving the money from one to another. Because this process is so complex, banks work with “clearing houses”. Those are third party financial institutions to which banks send all their transactions and that processes the “settlement” for them.
+
+We want to build the software for a clearing house.
+
+First step is to simply write software to sort a list of transactions with a payer, payee and amount and calculate all balances between each pair of banks.
+
+**Example**
+```
+transactions = [ {"payee": "BoA", "amount": 132, "payer": "Chase"}, {"payee": "BoA", "amount": 827, "payer": "Chase"}, {"payee": "Wells Fargo", "amount": 751, "payer": "BoA"}, {"payee": "BoA", "amount": 585, "payer": "Chase"}, {"payee": "Chase", "amount": 877, "payer": "Wells Fargo"}, {"payee": "Wells Fargo", "amount": 157, "payer": "Chase"}, {"payee": "Wells Fargo", "amount": 904, "payer": "Chase"}, {"payee": "Chase", "amount": 548, "payer": "Wells Fargo"}, {"payee": "Chase", "amount": 976, "payer": "BoA"}, {"payee": "BoA", "amount": 872, "payer": "Wells Fargo"}, {"payee": "Wells Fargo", "amount": 571, "payer": "Chase"} ]
+
+result: {('BoA', 'Wells Fargo'): -121.0, ('Chase', 'Wells Fargo'): 207.0, ('BoA', 'Chase'): -568.0}
+```
+<details>
+  <summary>Click me for proposed solution</summary>
+**Solution**
+  
+``` py
+from collections import defaultdict
+
+
+transactions = [
+  {"payee": "BoA", "amount": 132, "payer": "Chase"},
+  {"payee": "BoA", "amount": 827, "payer": "Chase"},
+  {"payee": "Wells Fargo", "amount": 751, "payer": "BoA"},
+  {"payee": "BoA", "amount": 585, "payer": "Chase"},
+  {"payee": "Chase", "amount": 877, "payer": "Wells Fargo"},
+  {"payee": "Wells Fargo", "amount": 157, "payer": "Chase"},
+  {"payee": "Wells Fargo", "amount": 904, "payer": "Chase"},
+  {"payee": "Chase", "amount": 548, "payer": "Wells Fargo"},
+  {"payee": "Chase", "amount": 976, "payer": "BoA"},
+  {"payee": "BoA", "amount": 872, "payer": "Wells Fargo"},
+  {"payee": "Wells Fargo", "amount": 571, "payer": "Chase"}
+]
+
+def settlement(transactions):
+    res=defaultdict()
+    for val in transactions:
+        if (val['payee'], val['payer']) in res:  #subtract the transaction value
+            res[(val['payee'],val['payer'])]-=val['amount']
+        elif (val['payer'],val['payee']) in res: #add the transaction value
+            res[(val['payer'],val['payee'])]+=val['amount']
+        else:
+            res[(val['payee'],val['payer'])]=float(-val['amount'])
+            
+    return res
+    
+print(settlement(transactions))
+
+```
+
+```
+defaultdict(None, {('BoA', 'Chase'): -568.0, ('Wells Fargo', 'BoA'): 121.0, ('Chase', 'Wells Fargo'): 207.0})
+```
+
+</details>

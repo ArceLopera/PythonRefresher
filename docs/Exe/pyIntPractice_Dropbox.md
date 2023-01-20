@@ -444,7 +444,9 @@ Now all you have to do is to implement this function.
 **Example**
 
 For oldVersion = "same_prefix_1233_same_suffix"
+
 and newVersion = "same_prefix23123_same_suffix", the output should be
+
 solution(oldVersion, newVersion) = "same_prefix(_1)23[12]3_same_suffix".
 
 <details>

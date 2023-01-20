@@ -2728,6 +2728,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#uber-first-tech-interview" class="md-nav__link">
+    Uber First Tech Interview
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2833,6 +2840,13 @@
         <li class="md-nav__item">
   <a href="#closest-location" class="md-nav__link">
     Closest Location
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uber-first-tech-interview" class="md-nav__link">
+    Uber First Tech Interview
   </a>
   
 </li>
@@ -3131,6 +3145,56 @@ solution(address, objects, names) = "Cat avenue".</p>
             <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="kc">True</span>
 </code></pre></div>
+</details>
+
+<h2 id="uber-first-tech-interview">Uber First Tech Interview</h2>
+<p>During a day, there are millions of transactions happening between banks. Because there are so many transactions, those are sorted only at the end of each day, when the balances between each bank are calculated. This is called “settlement”. The process of calculating the end of day balances between banks, and moving the money from one to another. Because this process is so complex, banks work with “clearing houses”. Those are third party financial institutions to which banks send all their transactions and that processes the “settlement” for them.</p>
+<p>We want to build the software for a clearing house.</p>
+<p>First step is to simply write software to sort a list of transactions with a payer, payee and amount and calculate all balances between each pair of banks.</p>
+<p><strong>Example</strong>
+<div class="highlight"><pre><span></span><code>transactions = [ {&quot;payee&quot;: &quot;BoA&quot;, &quot;amount&quot;: 132, &quot;payer&quot;: &quot;Chase&quot;}, {&quot;payee&quot;: &quot;BoA&quot;, &quot;amount&quot;: 827, &quot;payer&quot;: &quot;Chase&quot;}, {&quot;payee&quot;: &quot;Wells Fargo&quot;, &quot;amount&quot;: 751, &quot;payer&quot;: &quot;BoA&quot;}, {&quot;payee&quot;: &quot;BoA&quot;, &quot;amount&quot;: 585, &quot;payer&quot;: &quot;Chase&quot;}, {&quot;payee&quot;: &quot;Chase&quot;, &quot;amount&quot;: 877, &quot;payer&quot;: &quot;Wells Fargo&quot;}, {&quot;payee&quot;: &quot;Wells Fargo&quot;, &quot;amount&quot;: 157, &quot;payer&quot;: &quot;Chase&quot;}, {&quot;payee&quot;: &quot;Wells Fargo&quot;, &quot;amount&quot;: 904, &quot;payer&quot;: &quot;Chase&quot;}, {&quot;payee&quot;: &quot;Chase&quot;, &quot;amount&quot;: 548, &quot;payer&quot;: &quot;Wells Fargo&quot;}, {&quot;payee&quot;: &quot;Chase&quot;, &quot;amount&quot;: 976, &quot;payer&quot;: &quot;BoA&quot;}, {&quot;payee&quot;: &quot;BoA&quot;, &quot;amount&quot;: 872, &quot;payer&quot;: &quot;Wells Fargo&quot;}, {&quot;payee&quot;: &quot;Wells Fargo&quot;, &quot;amount&quot;: 571, &quot;payer&quot;: &quot;Chase&quot;} ]
+
+result: {(&#39;BoA&#39;, &#39;Wells Fargo&#39;): -121.0, (&#39;Chase&#39;, &#39;Wells Fargo&#39;): 207.0, (&#39;BoA&#39;, &#39;Chase&#39;): -568.0}
+</code></pre></div></p>
+<details>
+  <summary>Click me for proposed solution</summary>
+**Solution**
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+
+<span class="n">transactions</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span><span class="s2">&quot;payee&quot;</span><span class="p">:</span> <span class="s2">&quot;BoA&quot;</span><span class="p">,</span> <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">132</span><span class="p">,</span> <span class="s2">&quot;payer&quot;</span><span class="p">:</span> <span class="s2">&quot;Chase&quot;</span><span class="p">},</span>
+  <span class="p">{</span><span class="s2">&quot;payee&quot;</span><span class="p">:</span> <span class="s2">&quot;BoA&quot;</span><span class="p">,</span> <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">827</span><span class="p">,</span> <span class="s2">&quot;payer&quot;</span><span class="p">:</span> <span class="s2">&quot;Chase&quot;</span><span class="p">},</span>
+  <span class="p">{</span><span class="s2">&quot;payee&quot;</span><span class="p">:</span> <span class="s2">&quot;Wells Fargo&quot;</span><span class="p">,</span> <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">751</span><span class="p">,</span> <span class="s2">&quot;payer&quot;</span><span class="p">:</span> <span class="s2">&quot;BoA&quot;</span><span class="p">},</span>
+  <span class="p">{</span><span class="s2">&quot;payee&quot;</span><span class="p">:</span> <span class="s2">&quot;BoA&quot;</span><span class="p">,</span> <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">585</span><span class="p">,</span> <span class="s2">&quot;payer&quot;</span><span class="p">:</span> <span class="s2">&quot;Chase&quot;</span><span class="p">},</span>
+  <span class="p">{</span><span class="s2">&quot;payee&quot;</span><span class="p">:</span> <span class="s2">&quot;Chase&quot;</span><span class="p">,</span> <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">877</span><span class="p">,</span> <span class="s2">&quot;payer&quot;</span><span class="p">:</span> <span class="s2">&quot;Wells Fargo&quot;</span><span class="p">},</span>
+  <span class="p">{</span><span class="s2">&quot;payee&quot;</span><span class="p">:</span> <span class="s2">&quot;Wells Fargo&quot;</span><span class="p">,</span> <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">157</span><span class="p">,</span> <span class="s2">&quot;payer&quot;</span><span class="p">:</span> <span class="s2">&quot;Chase&quot;</span><span class="p">},</span>
+  <span class="p">{</span><span class="s2">&quot;payee&quot;</span><span class="p">:</span> <span class="s2">&quot;Wells Fargo&quot;</span><span class="p">,</span> <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">904</span><span class="p">,</span> <span class="s2">&quot;payer&quot;</span><span class="p">:</span> <span class="s2">&quot;Chase&quot;</span><span class="p">},</span>
+  <span class="p">{</span><span class="s2">&quot;payee&quot;</span><span class="p">:</span> <span class="s2">&quot;Chase&quot;</span><span class="p">,</span> <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">548</span><span class="p">,</span> <span class="s2">&quot;payer&quot;</span><span class="p">:</span> <span class="s2">&quot;Wells Fargo&quot;</span><span class="p">},</span>
+  <span class="p">{</span><span class="s2">&quot;payee&quot;</span><span class="p">:</span> <span class="s2">&quot;Chase&quot;</span><span class="p">,</span> <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">976</span><span class="p">,</span> <span class="s2">&quot;payer&quot;</span><span class="p">:</span> <span class="s2">&quot;BoA&quot;</span><span class="p">},</span>
+  <span class="p">{</span><span class="s2">&quot;payee&quot;</span><span class="p">:</span> <span class="s2">&quot;BoA&quot;</span><span class="p">,</span> <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">872</span><span class="p">,</span> <span class="s2">&quot;payer&quot;</span><span class="p">:</span> <span class="s2">&quot;Wells Fargo&quot;</span><span class="p">},</span>
+  <span class="p">{</span><span class="s2">&quot;payee&quot;</span><span class="p">:</span> <span class="s2">&quot;Wells Fargo&quot;</span><span class="p">,</span> <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">571</span><span class="p">,</span> <span class="s2">&quot;payer&quot;</span><span class="p">:</span> <span class="s2">&quot;Chase&quot;</span><span class="p">}</span>
+<span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">settlement</span><span class="p">(</span><span class="n">transactions</span><span class="p">):</span>
+    <span class="n">res</span><span class="o">=</span><span class="n">defaultdict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">transactions</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="s1">&#39;payee&#39;</span><span class="p">],</span> <span class="n">val</span><span class="p">[</span><span class="s1">&#39;payer&#39;</span><span class="p">])</span> <span class="ow">in</span> <span class="n">res</span><span class="p">:</span>  <span class="c1">#subtract the transaction value</span>
+            <span class="n">res</span><span class="p">[(</span><span class="n">val</span><span class="p">[</span><span class="s1">&#39;payee&#39;</span><span class="p">],</span><span class="n">val</span><span class="p">[</span><span class="s1">&#39;payer&#39;</span><span class="p">])]</span><span class="o">-=</span><span class="n">val</span><span class="p">[</span><span class="s1">&#39;amount&#39;</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="s1">&#39;payer&#39;</span><span class="p">],</span><span class="n">val</span><span class="p">[</span><span class="s1">&#39;payee&#39;</span><span class="p">])</span> <span class="ow">in</span> <span class="n">res</span><span class="p">:</span> <span class="c1">#add the transaction value</span>
+            <span class="n">res</span><span class="p">[(</span><span class="n">val</span><span class="p">[</span><span class="s1">&#39;payer&#39;</span><span class="p">],</span><span class="n">val</span><span class="p">[</span><span class="s1">&#39;payee&#39;</span><span class="p">])]</span><span class="o">+=</span><span class="n">val</span><span class="p">[</span><span class="s1">&#39;amount&#39;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">res</span><span class="p">[(</span><span class="n">val</span><span class="p">[</span><span class="s1">&#39;payee&#39;</span><span class="p">],</span><span class="n">val</span><span class="p">[</span><span class="s1">&#39;payer&#39;</span><span class="p">])]</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="o">-</span><span class="n">val</span><span class="p">[</span><span class="s1">&#39;amount&#39;</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">res</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">settlement</span><span class="p">(</span><span class="n">transactions</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>defaultdict(None, {(&#39;BoA&#39;, &#39;Chase&#39;): -568.0, (&#39;Wells Fargo&#39;, &#39;BoA&#39;): 121.0, (&#39;Chase&#39;, &#39;Wells Fargo&#39;): 207.0})
+</code></pre></div>
+
 </details>
 
               
