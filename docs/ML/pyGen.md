@@ -19,7 +19,7 @@ Based on [Learn Machine Learning in 3 Months (PyTorch 🔥 Curriculum)](https://
 5. [Transformers](https://huggingface.co/course/chapter1/1)
     -   Transformers
     -   Attention
-    -   Transfer Learninghttps://madewithml.com/
+    -   [Transfer Learning](https://madewithml.com/)
 
 6. [Diffusers](https://www.fast.ai/posts/part2-2022-preview.html)
     -   Generative Modeling
