@@ -74,6 +74,7 @@ def solution(departure, destination):
         return abs(departure[0]-destination[0])+min(abs(x-departure[1])+abs(x-destination[1]),abs(y-departure[1])+abs(y-destination[1]))
 ```
 </details>
+
 ## Parking Spot
 
 30 min - Medium
@@ -150,6 +151,7 @@ def is_empty(l,p1,p2):
     return True
 ```
 </details>
+
 ## Fancy Ride
 
 5 min - Easy
