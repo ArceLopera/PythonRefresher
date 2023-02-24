@@ -40,6 +40,7 @@ def solution(ride_time, ride_distance, cost_per_minute, cost_per_mile):
     return [ride_time*i+ride_distance*j for (i,j) in zip(cost_per_minute,cost_per_mile)]
 ```
 </details>
+
 ## Perfect City
 
 30 min - Medium
