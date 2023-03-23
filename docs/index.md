@@ -1,6 +1,8 @@
 # Welcome to Python Refresher
 
-Everyone can forget about grammar and vocabulary. The most important think is to know where to look.
+Everyone can forget about grammar and vocabulary. 
+
+The most important think is to know where to look.
 
 |  Basic Topics |  Advanced Topics |
 |:-------------:|:----------------:|
