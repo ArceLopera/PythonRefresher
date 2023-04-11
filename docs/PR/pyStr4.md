@@ -1,4 +1,4 @@
-“**Format specifications**” are used within replacement fields contained within a format string to define how individual values are presented
+“**Format specifications**” are used within replacement fields contained within a format string to define how individual values are presented.
 
 A general convention is that an empty format specification produces the same result as if you had called str() on the value. A non-empty format specification typically modifies the result.
 
@@ -55,6 +55,7 @@ The sign option is only valid for number types, and can be one of the following:
 | '+'      | indicates that a sign should be used for both positive as well as negative numbers.       | 
 | '-'   | 	indicates that a sign should be used only for negative numbers (this is the default behavior).        | 
 | space      | indicates that a leading space should be used on positive numbers, and a minus sign on negative numbers. | 
+
 ``` py
 '{:+f}; {:+f}'.format(3.14, -3.14)  # show it always
 ```

@@ -14,3 +14,5 @@ The key to becoming a proficient Python developer is to keep learning and practi
 | [Classes](./Cls/pyGen.md)         |  [Exercises](./Exe/pyStrategies.md)       |
 
 </center>
+
+This material is a work in progress, so your feedback is welcome. The best way to provide that feedback is [to click here and create an issue in this GitHub repository](https://github.com/ArceLopera/PythonRefresher/issues).

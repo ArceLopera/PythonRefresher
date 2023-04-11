@@ -29,13 +29,6 @@ print('The number is {:b}'.format(x))
 The number is 101010
 ``` 
 
-- **count(str)** returns how many times the str substring appears in the given string.
-- **upper()** converts the string to uppercase.
-- **lower()** converts the string to lowercase.
-- **replace(old, new)** replaces all occurrences of old with new.
-- **len(str)** returns the length of the string (number of characters).
-
-Note, that these functions return a new string with the corresponding manipulation
 
 ###**Fstrings (Literal String Interpolation)**
 After Python 3.6, to create an f-string, prefix the string with the letter “ f ”. The string itself can be formatted in much the same way that you would with str.format(). F-strings provide a concise and convenient way to embed python expressions inside string literals for formatting. Simply it is a shortcut for the format method.

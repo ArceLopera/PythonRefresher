@@ -2973,7 +2973,7 @@
 
   <h1>String formatting specifications</h1>
 
-<p>“<strong>Format specifications</strong>” are used within replacement fields contained within a format string to define how individual values are presented</p>
+<p>“<strong>Format specifications</strong>” are used within replacement fields contained within a format string to define how individual values are presented.</p>
 <p>A general convention is that an empty format specification produces the same result as if you had called str() on the value. A non-empty format specification typically modifies the result.</p>
 <p>The general form of a standard format specifier is:</p>
 <table>
@@ -3075,18 +3075,12 @@
 <td>space</td>
 <td>indicates that a leading space should be used on positive numbers, and a minus sign on negative numbers.</td>
 </tr>
-<tr>
-<td><div class="highlight"><pre><span></span><code><span class="s1">&#39;</span><span class="si">{:+f}</span><span class="s1">; </span><span class="si">{:+f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">3.14</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.14</span><span class="p">)</span>  <span class="c1"># show it always</span>
-</code></pre></div></td>
-<td></td>
-</tr>
-<tr>
-<td><div class="highlight"><pre><span></span><code>+3.140000; -3.140000
-</code></pre></div></td>
-<td></td>
-</tr>
 </tbody>
 </table>
+<p><div class="highlight"><pre><span></span><code><span class="s1">&#39;</span><span class="si">{:+f}</span><span class="s1">; </span><span class="si">{:+f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">3.14</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.14</span><span class="p">)</span>  <span class="c1"># show it always</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>+3.140000; -3.140000
+</code></pre></div></p>
 <p><div class="highlight"><pre><span></span><code><span class="s1">&#39;</span><span class="si">{: f}</span><span class="s1">; </span><span class="si">{: f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">3.14</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.14</span><span class="p">)</span>  <span class="c1"># show a space for positive numbers</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code> 3.140000; -3.140000

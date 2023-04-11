@@ -3,7 +3,7 @@ The location where we can find a variable and also access it if required is call
 ### Global Keyword
 Global variables are the ones that are defined and declared outside any function and are not specified to any function. They can be used by any part of the program.
 
-We only need to use the global keyword in a function if we want to do assignments or change the global variable. global is not needed for printing and accessing. Python “assumes” that we want a local variable due to the assignment to s inside of f(), so the first statement throws the error message. Any variable which is changed or created inside of a function is local if it hasn’t been declared as a global variable. To tell Python, that we want to use the global variable, we have to use the keyword “global”
+We only need to use the global keyword in a function if we want to do assignments or change the global variable. global is not needed for printing and accessing. Python “assumes” that we want a local variable due to the assignment to s inside of f(), so the first statement throws the error message. Any variable which is changed or created inside of a function is local if it hasn’t been declared as a global variable. To tell Python, that we want to use the global variable, we have to use the keyword “global”.
 
 ``` py
 a = 1
@@ -43,11 +43,10 @@ Inside h() :  3
 global :  3
 ```
 ###Nonlocal Keyword
-In Python, nonlocal keyword is used in the case of nested functions. This keyword works similar to the global, but rather than global, this keyword declares a variable to point to the variable of outside enclosing function, in case of nested functions.
+In Python, the nonlocal keyword is used in the case of nested functions. This keyword works similarly to the global keyword. This keyword points to a variable outside the enclosing function, in the case of nested functions.
 
 ``` py
-# Python program to demonstrate
-# nonlocal keyword
+# Python program to demonstrate the nonlocal keyword
 
 print ("Value of a using nonlocal is : ", end ="")
 def outer():
@@ -60,8 +59,7 @@ def outer():
 
 outer()
 
-# demonstrating without non local
-# inner loop not changing the value of outer a
+# demonstrating without non local inner loop not changing the value of outer a
 # prints 5
 print ("Value of a without using nonlocal is : ", end ="")
 def outer():
