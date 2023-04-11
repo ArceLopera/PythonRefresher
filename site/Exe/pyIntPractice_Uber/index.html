@@ -2894,6 +2894,7 @@ ride_time = 30,</p>
     <span class="k">return</span> <span class="p">[</span><span class="n">ride_time</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="n">ride_distance</span><span class="o">*</span><span class="n">j</span> <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">cost_per_minute</span><span class="p">,</span><span class="n">cost_per_mile</span><span class="p">)]</span>
 </code></pre></div>
 </details>
+
 <h2 id="perfect-city">Perfect City</h2>
 <p>30 min - Medium</p>
 <p>Consider a city where the streets are perfectly laid out to form an infinite square grid. In this city finding the shortest path between two given points (an origin and a destination) is much easier than in other more complex cities. As a new Uber developer, you are tasked to create an algorithm that does this calculation.</p>
@@ -2919,6 +2920,7 @@ solution(departure, destination) = 2.7.</p>
         <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">departure</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">destination</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="nb">min</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">departure</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">destination</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">departure</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">destination</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 </code></pre></div>
 </details>
+
 <h2 id="parking-spot">Parking Spot</h2>
 <p>30 min - Medium</p>
 <p>This time you are an Uber driver and you are trying your best to park your car in a parking lot.</p>
@@ -2976,6 +2978,7 @@ luckySpot = [0, 3, 3, 3], the output should be</p>
     <span class="k">return</span> <span class="kc">True</span>
 </code></pre></div>
 </details>
+
 <h2 id="fancy-ride">Fancy Ride</h2>
 <p>5 min - Easy</p>
 <p>Being a new Uber user, you have $20 off your first ride. You want to make the most out of it and drive in the fanciest car you can afford, without spending any out-of-pocket money. There are 5 options, from the least to the most expensive: "UberX", "UberXL", "UberPlus", "UberBlack" and "UberSUV".</p>

@@ -1,8 +1,10 @@
 # Welcome to Python Refresher
 
-Everyone can forget about grammar and vocabulary. 
+Everyone can forget about grammar and vocabulary. What is most important is to know where to look.
 
-The most important think is to know where to look.
+The key to becoming a proficient Python developer is to keep learning and practicing regularly. With a strong foundation in the basics, a commitment to ongoing learning, and a willingness to experiment with new tools and technologies, you can refresh your Python skills and take your programming career to the next level.
+
+<center>
 
 |  Basic Topics |  Advanced Topics |
 |:-------------:|:----------------:|
@@ -11,3 +13,4 @@ The most important think is to know where to look.
 | [Functions](./Func/pyGen.md)      |  [Algorithms](./Algo/pyGen.md)     |
 | [Classes](./Cls/pyGen.md)         |  [Exercises](./Exe/pyStrategies.md)       |
 
+</center>
